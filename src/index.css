@@ -1,17 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #f48422;
-  --color-primary-dark: #d9731a;
-  --color-brand-orange: #f48422;
   --color-brand-ink: #28231f;
-  --color-brand-mint: #f2fffb;
-  --color-brand-cream: #f9f4f1;
-  --color-brand-green: #5fa08b;
-  --color-brand-green-mid: #68a391;
-  --color-brand-green-soft: #71c1a7;
-  --color-brand-footer: #43403e;
-  --color-brand-cta: #65a18e;
   --font-fraunces: 'Fraunces', serif;
   --font-poppins: 'Poppins', sans-serif;
   --font-gabriela: 'Gabriela', serif;

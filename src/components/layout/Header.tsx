@@ -16,11 +16,7 @@ export default function Header() {
           }}
         >
           <Link to="/" className="flex shrink-0 items-center gap-3">
-            <img
-              src="/images/home/logo.svg"
-              alt=""
-              className="h-[35px] w-8 brightness-0 invert"
-            />
+            <img src="/images/home/logo.svg" alt="" className="h-[35px] w-8 brightness-0 invert" />
             <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">
               Dental Esthétique
             </span>
@@ -55,8 +51,7 @@ export default function Header() {
 
           <Link
             to="/contact"
-            className="shrink-0 rounded-xl bg-[#F48422] px-5 py-2.5 text-sm font-semibold leading-5 text-white"
-            style={{ fontFamily: 'Inter, Poppins, sans-serif' }}
+            className="shrink-0 rounded-xl bg-[#F48422] px-5 py-2.5 font-[family-name:var(--font-poppins)] text-sm font-semibold leading-5 text-white"
           >
             Book Appointment
           </Link>

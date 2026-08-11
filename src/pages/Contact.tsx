@@ -1,66 +1,139 @@
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import SectionTitle from '@/components/ui/SectionTitle.tsx'
+import { Link } from 'react-router-dom'
+import AppointmentCta from '../components/AppointmentCta'
+import PageHero from '../components/ui/PageHero'
 
-const contactInfo = [
-  { icon: MapPin, label: 'Address', value: '123 Dental Street, New York, NY 10001' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
-  { icon: Mail, label: 'Email', value: 'info@dentalcare.com' },
-  { icon: Clock, label: 'Hours', value: 'Mon-Fri: 9AM - 6PM' },
-]
+const W = 1440
+const H = 1200
 
 export default function Contact() {
   return (
-    <section className="py-20 pt-[160px]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Contact Us" subtitle="Get in touch with us" />
-
-        <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="space-y-6"
+    <div className="w-full overflow-x-auto bg-white">
+      <div
+        className="relative mx-auto shrink-0 overflow-hidden bg-[#F9F4F1]"
+        style={{ width: W, height: H, minWidth: W }}
+      >
+        <PageHero
+          tagline="Contact Us"
+          title="Get in Touch"
+          description="Have questions or want to book an appointment? We'd love to hear from you."
+        >
+          <Link
+            to="/contact"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
-            {contactInfo.map((item) => (
-              <div key={item.label} className="flex items-start gap-4">
-                <item.icon className="mt-1 h-5 w-5 text-primary" />
-                <div>
-                  <h3 className="font-medium text-gray-900">{item.label}</h3>
-                  <p className="text-gray-600">{item.value}</p>
-                </div>
+            Book an appointment
+          </Link>
+        </PageHero>
+
+        <div className="absolute left-[80px] top-[720px] w-[1280px]">
+          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+            CONTACT INFORMATION
+          </p>
+          <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
+            Visit Our Clinic
+          </h2>
+
+          <div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div className="flex flex-col items-start gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#5FA08B"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
               </div>
-            ))}
-          </motion.div>
-
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="space-y-4"
-          >
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full rounded-lg border px-4 py-3 text-sm outline-none focus:border-primary"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full rounded-lg border px-4 py-3 text-sm outline-none focus:border-primary"
-            />
-            <textarea
-              placeholder="Your Message"
-              rows={4}
-              className="w-full rounded-lg border px-4 py-3 text-sm outline-none focus:border-primary"
-            />
-            <button
-              type="submit"
-              className="w-full rounded-lg bg-primary px-6 py-3 text-white transition-colors hover:bg-primary-dark"
-            >
-              Send Message
-            </button>
-          </motion.form>
+              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+                Address
+              </p>
+              <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
+                55, Vindhyachal Marg, Block B, Sector 22, Noida, UP 201307
+              </p>
+            </div>
+            <div className="flex flex-col items-start gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#5FA08B"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+                Phone
+              </p>
+              <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
+                +91 98188 62265
+              </p>
+            </div>
+            <div className="flex flex-col items-start gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#5FA08B"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+                Email
+              </p>
+              <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
+                info@dentalesthetique.com
+              </p>
+            </div>
+            <div className="flex flex-col items-start gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#5FA08B"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+                Hours
+              </p>
+              <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
+                Mon–Sun · 9AM–9PM
+              </p>
+            </div>
+          </div>
         </div>
+
+        <AppointmentCta top={950} />
       </div>
-    </section>
+    </div>
   )
 }

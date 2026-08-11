@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom'
 import AppointmentCta from '../components/AppointmentCta'
-import HeroToothCollage from '../components/HeroToothCollage'
+import PageHero from '../components/ui/PageHero'
 
-/**
- * Doctor Profile — Figma "doc profile" Frame 388 hero + doctor card + focus areas.
- */
-const IMG = '/images/about'
-const HOME = '/images/home'
 const W = 1440
 const H = 2480
 
@@ -47,52 +42,31 @@ export default function DoctorProfile() {
         className="relative mx-auto shrink-0 overflow-hidden bg-[#F9F4F1]"
         style={{ width: W, height: H, minWidth: W }}
       >
-        {/* ========== HERO Frame 388 — 1440×649, #F9F4F1 ========== */}
-        <div className="absolute left-0 top-0 h-[649px] w-[1440px] overflow-visible bg-[#F9F4F1]">
-          <HeroToothCollage />
-
-          {/* Text — Frame 389, gap 8 / buttons gap 12 */}
-          <div
-            className="absolute left-[80px] top-[197px] flex w-[634px] flex-col"
-            style={{ gap: 40, zIndex: 20 }}
-          >
-            <div className="flex w-[634px] flex-col" style={{ gap: 8 }}>
-              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.04em] text-[#F48422]">
-                Doctor Profile
-              </p>
-              <h1 className="w-[634px] font-[family-name:var(--font-fraunces)] text-[54px] font-semibold leading-none text-[#28231F]">
-                Meet the Experts Behind Every Smile.
-              </h1>
-              <p className="mt-2 w-[493px] font-[family-name:var(--font-poppins)] text-base font-normal leading-[1.5] tracking-[0.03em] text-[#767676]">
-                An experienced dental professional dedicated to providing advanced, patient-focused
+        <PageHero
+          tagline="Doctor Profile"
+          title="Meet the Experts Behind Every Smile."
+          description="An experienced dental professional dedicated to providing advanced, patient-focused
                 dental care. Learn about qualifications, expertise, and book your consultation at
-                Dental Esthétique.
-              </p>
-            </div>
+                Dental Esthétique."
+        >
+          <Link
+            to="/contact"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+          >
+            Book an appointment
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
+          >
+            See treatments
+          </Link>
+        </PageHero>
 
-            <div className="flex h-12 w-[634px] items-center" style={{ gap: 12 }}>
-              <Link
-                to="/contact"
-                className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
-              >
-                Book an appointment
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
-              >
-                See treatments
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* ========== DOCTOR CARD — Frame 331: 1273×430, #F2FFFB, r24 ========== */}
         <div
           className="absolute left-[83px] top-[700px] flex h-[430px] w-[1273px] overflow-hidden rounded-[24px] bg-[#F2FFFB]"
           style={{ border: '1px solid rgba(95, 160, 139, 0.76)' }}
         >
-          {/* Frame 333 — left 540×430, #5FA08B */}
           <div className="relative flex h-full w-[540px] shrink-0 flex-col justify-end bg-[#5FA08B] px-12 pb-14">
             <h2 className="font-[family-name:var(--font-fraunces)] text-[32px] font-semibold leading-none text-white">
               Dr. Deepika Singhal
@@ -102,7 +76,6 @@ export default function DoctorProfile() {
             </p>
           </div>
 
-          {/* Frame 338 — right stack, w 616, gap 28 */}
           <div
             className="flex h-full flex-1 flex-col justify-center"
             style={{ padding: '40px 48px', gap: 28 }}
@@ -113,7 +86,6 @@ export default function DoctorProfile() {
               patient stories at this clinic.
             </p>
 
-            {/* 2×2 pills — ~249×55 / Frame 450: r35, pad 8/36 */}
             <div className="grid w-[616px] grid-cols-2" style={{ gap: 16 }}>
               {pills.map((label) => (
                 <div
@@ -131,7 +103,6 @@ export default function DoctorProfile() {
               ))}
             </div>
 
-            {/* Frame 316 — 616×48, r16, #F48422 */}
             <Link
               to="/contact"
               className="flex h-12 w-[616px] items-center justify-center rounded-2xl bg-[#F48422]"
@@ -143,9 +114,7 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        {/* ========== 02 FIELDS OF SPECIALISATION — Frame 401 / 417 ========== */}
         <div className="absolute left-0 top-[1180px] h-[409px] w-[1440px] bg-[#F9F4F1]">
-          {/* Frame 330 — gap 15 */}
           <div
             className="absolute left-[100px] top-[48px] flex w-[1239px] flex-col"
             style={{ gap: 15 }}
@@ -159,7 +128,6 @@ export default function DoctorProfile() {
               </h2>
             </div>
 
-            {/* Frame 417 — horizontal, gap 24; cards 397×208 */}
             <div className="flex w-[1239px]" style={{ gap: 24 }}>
               {specialisations.map((card) => (
                 <div
@@ -186,17 +154,15 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        {/* ========== 03 AWARDS — heading only; leave empty space below (Figma) ========== */}
         <div className="absolute left-[100px] top-[1620px] w-[1239px]">
           <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
-            03-FOCUS AREAS
+            03-AWARDS
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
             Awards
           </h2>
         </div>
 
-        {/* Empty band under Awards (~280px) before CTA */}
         <AppointmentCta top={1980} />
       </div>
     </div>

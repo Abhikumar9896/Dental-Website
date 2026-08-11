@@ -1,7 +1,3 @@
-/**
- * Group 38 — overlapping tooth masks from About / Doctor Profile hero.
- * Baked PNGs already include shape + white border + tilt.
- */
 const IMG = '/images/about'
 
 type HeroToothCollageProps = {
@@ -14,7 +10,6 @@ export default function HeroToothCollage({ className = '' }: HeroToothCollagePro
       className={`pointer-events-none absolute left-0 top-0 h-[649px] w-[1440px] overflow-visible ${className}`}
       style={{ zIndex: 1 }}
     >
-      {/* Soft glows behind collage */}
       <div
         className="absolute left-[820px] top-[160px] h-[320px] w-[320px] rounded-full opacity-40 blur-3xl"
         style={{ background: 'radial-gradient(circle, #B8D4E8 0%, transparent 70%)' }}
@@ -24,11 +19,11 @@ export default function HeroToothCollage({ className = '' }: HeroToothCollagePro
         style={{ background: 'radial-gradient(circle, #F8C9A0 0%, transparent 70%)' }}
       />
 
-      {/* Nudged below nav (nav bottom ≈ 117) so teeth don’t sit under the bar */}
       <img
         src={`${IMG}/hero-tooth.png?v=7`}
         alt=""
         className="absolute"
+        loading="lazy"
         style={{
           left: 804,
           top: 140,
@@ -41,6 +36,7 @@ export default function HeroToothCollage({ className = '' }: HeroToothCollagePro
         src={`${IMG}/hero-smile.png?v=7`}
         alt=""
         className="absolute"
+        loading="lazy"
         style={{
           left: 1123,
           top: 315,

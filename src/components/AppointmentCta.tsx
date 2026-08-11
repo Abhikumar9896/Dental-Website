@@ -1,7 +1,3 @@
-/**
- * Shared CTA banner from Home Figma Frame 2147225250 — 1320×448, #65A18E, r20.
- * Positioned absolutely within the 1440 artboard via `top`.
- */
 const IMG = '/images/home'
 
 type AppointmentCtaProps = {
@@ -15,7 +11,6 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
       className={`absolute left-[60px] h-[448px] w-[1320px] overflow-hidden rounded-[20px] bg-[#65A18E] ${className}`}
       style={{ top }}
     >
-      {/* Left — Frame 2147225256: 381×327 @ 81/60, gap 60 */}
       <div className="absolute left-[81px] top-[60px] flex w-[381px] flex-col" style={{ gap: 60 }}>
         <div className="flex w-[381px] flex-col" style={{ gap: 9 }}>
           <h2 className="font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-white">
@@ -35,11 +30,13 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
             <input
               type="text"
               placeholder="Your Name"
+              aria-label="Your Name"
               className="box-border h-10 min-w-0 flex-1 rounded-xl bg-white px-[30px] py-2 font-[family-name:var(--font-poppins)] text-base tracking-[0.04em] text-[#28231F] outline-none placeholder:text-[#28231F]"
             />
             <input
               type="tel"
               placeholder="Contact Number"
+              aria-label="Contact Number"
               className="box-border h-10 min-w-0 flex-1 rounded-xl bg-white px-[30px] py-2 font-[family-name:var(--font-poppins)] text-base tracking-[0.04em] text-[#28231F] outline-none placeholder:text-[#28231F]"
             />
           </div>
@@ -58,6 +55,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
         src={`${IMG}/cta-blob.png`}
         alt=""
         className="pointer-events-none absolute left-[897px] top-10 z-[1] h-[367px] w-[353px]"
+        loading="lazy"
       />
 
       <div
@@ -77,6 +75,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
           src={`${IMG}/loyalty-ring.svg?v=6`}
           alt=""
           className="pointer-events-none absolute left-[185px] top-[49px] z-[1] h-[110px] w-[111px]"
+          loading="lazy"
         />
 
         <div

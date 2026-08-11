@@ -1,16 +1,38 @@
 import { Link } from 'react-router-dom'
+import HeroToothCollage from '../components/HeroToothCollage'
+
+const W = 1440
+const H = 800
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center">
-      <h1 className="text-6xl font-bold text-gray-300">404</h1>
-      <p className="mt-4 text-lg text-gray-600">Page not found</p>
-      <Link
-        to="/"
-        className="mt-6 rounded-lg bg-primary px-6 py-3 text-white transition-colors hover:bg-primary-dark"
+    <div className="w-full overflow-x-auto bg-white">
+      <div
+        className="relative mx-auto shrink-0 overflow-hidden bg-[#F9F4F1]"
+        style={{ width: W, height: H, minWidth: W }}
       >
-        Go Home
-      </Link>
+        <div className="absolute left-0 top-0 h-[649px] w-[1440px] overflow-visible bg-[#F9F4F1]">
+          <HeroToothCollage />
+
+          <div
+            className="absolute left-1/2 top-[250px] z-[2] flex w-[600px] -translate-x-1/2 flex-col items-center text-center"
+            style={{ gap: 24 }}
+          >
+            <h1 className="font-[family-name:var(--font-fraunces)] text-[96px] font-bold text-[#F48422]">
+              404
+            </h1>
+            <p className="font-[family-name:var(--font-poppins)] text-xl text-[#767676]">
+              Page not found
+            </p>
+            <Link
+              to="/"
+              className="inline-flex h-12 w-[200px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            >
+              Go Home
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

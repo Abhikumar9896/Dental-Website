@@ -1,14 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AppointmentCta from '../components/AppointmentCta'
-import HeroToothCollage from '../components/HeroToothCollage'
+import PageHero from '../components/ui/PageHero'
 
-/**
- * Treatments — Figma treatments page (Frame 388 hero + care catalogue grid).
- * Right hero collage reused via HeroToothCollage (same as About / Doctors).
- */
-const IMG = '/images/about'
-const HOME = '/images/home'
 const TREAT = '/treatment'
 const W = 1440
 const H = 2560
@@ -72,8 +66,7 @@ const treatments = [
 export default function Services() {
   const [active, setActive] = useState<(typeof categories)[number]>('All')
 
-  const visible =
-    active === 'All' ? treatments : treatments.filter((t) => t.category === active)
+  const visible = active === 'All' ? treatments : treatments.filter((t) => t.category === active)
 
   return (
     <div className="w-full overflow-x-auto bg-white">
@@ -81,45 +74,26 @@ export default function Services() {
         className="relative mx-auto shrink-0 overflow-hidden bg-[#F9F4F1]"
         style={{ width: W, height: H, minWidth: W }}
       >
-        {/* ========== HERO Frame 388 — 1440×649 ========== */}
-        <div className="absolute left-0 top-0 h-[649px] w-[1440px] overflow-visible bg-[#F9F4F1]">
-          <HeroToothCollage />
-
-          <div
-            className="absolute left-[80px] top-[197px] flex w-[634px] flex-col"
-            style={{ gap: 40, zIndex: 20 }}
+        <PageHero
+          tagline="Treatments"
+          title="Smile Solutions for Everyone"
+          description="A curated view of our most requested procedures across nine specialities, part of a
+                full menu of 58 treatments offered in-house."
+        >
+          <Link
+            to="/contact"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
-            <div className="flex w-[634px] flex-col" style={{ gap: 8 }}>
-              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.04em] text-[#F48422]">
-                Treatments
-              </p>
-              <h1 className="w-[634px] font-[family-name:var(--font-fraunces)] text-[54px] font-semibold leading-none text-[#28231F]">
-                Smile Solutions for Everyone
-              </h1>
-              <p className="mt-2 w-[493px] font-[family-name:var(--font-poppins)] text-base font-normal leading-[1.5] tracking-[0.03em] text-[#767676]">
-                A curated view of our most requested procedures across nine specialities — part of a
-                full menu of 58 treatments offered in-house.
-              </p>
-            </div>
+            Book an appointment
+          </Link>
+          <a
+            href="#catalogue"
+            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
+          >
+            See treatments
+          </a>
+        </PageHero>
 
-            <div className="flex h-12 w-[634px] items-center" style={{ gap: 12 }}>
-              <Link
-                to="/contact"
-                className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
-              >
-                Book an appointment
-              </Link>
-              <a
-                href="#catalogue"
-                className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
-              >
-                See treatments
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* ========== CARE CATALOGUE — Frame 462 cards ========== */}
         <div id="catalogue" className="absolute left-[80px] top-[700px] w-[1280px]">
           <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
             01- CARE CATALOGUE
@@ -128,7 +102,6 @@ export default function Services() {
             58 Treatments
           </h2>
 
-          {/* Filters — active #F48422; inactive border #FEDECA, text #404040 */}
           <div className="mt-8 flex flex-wrap items-center" style={{ gap: 12 }}>
             {categories.map((cat) => {
               const isActive = active === cat
@@ -149,7 +122,6 @@ export default function Services() {
             })}
           </div>
 
-          {/* 3-col grid — cards ~409×396, gap 24 */}
           <div className="mt-10 grid grid-cols-3" style={{ gap: 24 }}>
             {visible.map((item) => (
               <div
@@ -158,7 +130,7 @@ export default function Services() {
                 style={{ padding: '8px 16px 16px', gap: 10 }}
               >
                 <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-[16px]">
-                  <img src={item.image} alt="" className="h-full w-full object-cover" />
+                  <img src={item.image} alt="" className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
                   <div className="absolute left-5 top-5 flex flex-col" style={{ gap: 4 }}>
                     <span className="font-[family-name:var(--font-fraunces)] text-sm font-normal leading-none text-white">
@@ -196,7 +168,6 @@ export default function Services() {
           </button>
         </div>
 
-        {/* Shared CTA — below catalogue (ends ~1780) + gap */}
         <AppointmentCta top={1920} />
       </div>
     </div>

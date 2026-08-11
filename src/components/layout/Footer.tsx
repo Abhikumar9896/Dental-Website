@@ -23,7 +23,10 @@ export default function Footer() {
               <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
                 Quick links
               </p>
-              <div className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]" style={{ gap: 12 }}>
+              <div
+                className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]"
+                style={{ gap: 12 }}
+              >
                 <Link to="/about">About us</Link>
                 <Link to="/doctors">Doctor Profile</Link>
                 <Link to="/services">Treatments</Link>
@@ -33,18 +36,24 @@ export default function Footer() {
               <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
                 Treatments
               </p>
-              <div className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]" style={{ gap: 12 }}>
-                <span>Dental Implants</span>
-                <span>Smile Designing</span>
-                <span>Root Canal</span>
-                <span>Teeth Whitening</span>
+              <div
+                className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]"
+                style={{ gap: 12 }}
+              >
+                <Link to="/services">Dental Implants</Link>
+                <Link to="/services">Smile Designing</Link>
+                <Link to="/services">Root Canal</Link>
+                <Link to="/services">Teeth Whitening</Link>
               </div>
             </div>
             <div className="flex w-[188px] flex-col" style={{ gap: 20 }}>
               <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
                 Contact
               </p>
-              <div className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]" style={{ gap: 12 }}>
+              <div
+                className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]"
+                style={{ gap: 12 }}
+              >
                 <span>B-55, Sector 22, Noida</span>
                 <a href="tel:+919818862265">+91 98188 62265</a>
                 <span>Mon–Sun · 9AM–9PM</span>
@@ -54,7 +63,10 @@ export default function Footer() {
               <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
                 Book
               </p>
-              <div className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]" style={{ gap: 12 }}>
+              <div
+                className="flex flex-col text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]"
+                style={{ gap: 12 }}
+              >
                 <Link to="/contact">Reserve Online</Link>
                 <a href="tel:+919818862265">Call clinic</a>
               </div>
