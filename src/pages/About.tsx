@@ -14,7 +14,7 @@ const stats = [
 ] as const
 
 const storyPoints = [
-  'Dental Esthétique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
+  'Dental Esthetique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
   'Our clinic offers multi-speciality treatment under one roof, so patients get continuity of care from the first consultation through every follow-up.',
   'We build trust through clear communication, transparent pricing, and treatment plans shaped around real patient goals, not one-size-fits-all protocols.',
 ] as const
@@ -47,7 +47,7 @@ export default function About() {
         style={{ width: W, height: H, minWidth: W }}
       >
         <PageHero
-          tagline="About Dental Esthétique"
+          tagline="About Dental Esthetique"
           title="Care built on trust, not just treatments."
           description="Committed to creating healthier, brighter smiles through expert dental care,
                 advanced technology, and specialised treatments."
@@ -128,7 +128,7 @@ export default function About() {
           >
             <img
               src={`${IMG}/clinic-exterior.png`}
-              alt="Dental Esthétique clinic exterior"
+              alt="Dental Esthetique clinic exterior"
               className="h-full w-full object-cover"
               loading="lazy"
             />

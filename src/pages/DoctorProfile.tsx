@@ -47,7 +47,7 @@ export default function DoctorProfile() {
           title="Meet the Experts Behind Every Smile."
           description="An experienced dental professional dedicated to providing advanced, patient-focused
                 dental care. Learn about qualifications, expertise, and book your consultation at
-                Dental Esthétique."
+                Dental Esthetique."
         >
           <Link
             to="/contact"

@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex items-center" style={{ gap: 12 }}>
               <img src="/images/home/logo-footer.svg" alt="" width={47} height={53} />
               <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
-                Dental Esthétique
+                Dental Esthetique
               </span>
             </div>
             <p className="text-base tracking-[0.04em] text-[rgba(255,255,255,0.51)]">
@@ -76,7 +76,7 @@ export default function Footer() {
 
         <div className="absolute left-[124px] top-[381px] h-px w-[1168px] bg-white/15" />
         <p className="absolute left-[442px] top-[411px] w-[458px] text-center font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
-          © 2026 Dental Esthétique. All rights reserved.
+          © 2026 Dental Esthetique. All rights reserved.
         </p>
       </div>
     </div>
