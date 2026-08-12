@@ -9,7 +9,7 @@ export default function HeroBanner() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === 3 ? 0 : prev + 1))
-    }, 6000)
+    }, 4000)
     return () => clearInterval(timer)
   }, [])
 
