@@ -43,7 +43,7 @@ export default function FourReasons() {
               <span
                 className="font-[family-name:var(--font-fraunces)] text-[128px] font-semibold leading-none"
                 style={{
-                  background: 'linear-gradient(180deg, #E8A87C 0%, rgba(253,230,211,0.25) 85%)',
+                  background: 'linear-gradient(180deg, #A66689 0%, rgba(166,102,137,0.25) 85%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',

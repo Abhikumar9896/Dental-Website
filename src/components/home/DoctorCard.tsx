@@ -18,7 +18,7 @@ function ExperienceBadge({ mirror = false }: { mirror?: boolean }) {
         boxShadow: '0px 4px 6px -4px rgba(0,0,0,0.1)',
       }}
     >
-      <p className="font-[family-name:var(--font-poppins)] text-[22.5px] leading-[27px] text-[#F48422]">
+      <p className="font-[family-name:var(--font-poppins)] text-[22.5px] font-semibold leading-[27px] text-[#A66689]">
         18+
       </p>
       <p className="w-[64px] text-center font-[family-name:var(--font-poppins)] text-[9px] font-medium uppercase leading-3 tracking-[0.1em] text-[rgba(26,28,25,0.6)]">
@@ -32,28 +32,34 @@ function ExperienceBadge({ mirror = false }: { mirror?: boolean }) {
 
 function DoctorPhoto({
   alt,
+  imgSrc,
   badgeLeft = false,
   width = 399,
   flipShape = false,
 }: {
   alt: string
+  imgSrc?: string
   badgeLeft?: boolean
   width?: number
   flipShape?: boolean
 }) {
   return (
     <div className="relative h-[556px] shrink-0" style={{ width: width + (badgeLeft ? 12 : 30) }}>
-      <img
-        src={`${IMG}/doctor.png`}
-        alt={alt}
-        className={`h-[556px] object-cover ${badgeLeft ? 'ml-auto' : ''}`}
-        loading="lazy"
+      <div
+        className={`relative h-full ${badgeLeft ? 'ml-auto' : ''}`}
         style={{
           width,
-          background: '#5FA08B',
-          borderRadius: flipShape ? '24px 140px 24px 140px' : '140px 24px 140px 24px',
+          overflow: 'hidden',
+          background: '#f4f4f4',
         }}
-      />
+      >
+        <img
+          src={imgSrc || `${IMG}/doctor.png`}
+          alt={alt}
+          className="h-full w-full object-cover object-[center_35%] scale-[1.03]"
+          loading="lazy"
+        />
+      </div>
       <ExperienceBadge mirror={badgeLeft} />
     </div>
   )
@@ -79,12 +85,12 @@ function BookAppointmentButton() {
   return (
     <Link
       to="/contact"
-      className="flex h-[47px] w-[442px] items-center justify-center rounded-2xl bg-[#F48422] py-[11px]"
-      style={{ paddingLeft: 114, paddingRight: 114 }}
+      className="group flex h-[54px] w-[350px] items-center justify-center gap-2 rounded-md bg-[#A66689] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-medium text-white transition-all hover:bg-[#8F5675]"
     >
-      <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-white">
-        Book an appointment
-      </span>
+      Book an Appointment
+      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
     </Link>
   )
 }
@@ -94,23 +100,29 @@ export default function DoctorCard({
   role,
   description,
   statPills,
+  bulletPoints = [],
   topHeading,
+  imgSrc,
   badgeLeft = false,
   width = 399,
   flipShape = false,
   className = '',
+  gap,
 }: {
   name: string
   role: string
   description: string
   statPills: Array<{ value: string; label: string }>
+  bulletPoints?: string[]
   topHeading?: string
+  imgSrc?: string
   badgeLeft?: boolean
   width?: number
   flipShape?: boolean
   className?: string
+  gap?: number
 }) {
-  const photo = <DoctorPhoto alt={name} badgeLeft={badgeLeft} width={width} flipShape={flipShape} />
+  const photo = <DoctorPhoto alt={name} imgSrc={imgSrc} badgeLeft={badgeLeft} width={width} flipShape={flipShape} />
 
   const content = (
     <div className="flex w-[577px] flex-col" style={{ gap: topHeading ? 27 : 36 }}>
@@ -123,26 +135,47 @@ export default function DoctorCard({
         </div>
       ) : null}
       <div className="flex flex-col" style={{ gap: 8 }}>
-        <p className="font-[family-name:var(--font-fraunces)] text-[32px] text-[#28231F]">{name}</p>
-        <p className="font-[family-name:var(--font-poppins)] text-base tracking-[0.08em] text-[rgba(40,35,31,0.55)]">
+        <p className="font-[family-name:var(--font-poppins)] text-[34px] font-semibold text-[#333]">{name}</p>
+        <p className="font-[family-name:var(--font-poppins)] text-[15px] font-medium text-[#1E73BE]">
           {role}
         </p>
       </div>
-      <p className="w-[442px] font-[family-name:var(--font-poppins)] text-[13.5px] font-light leading-[21.94px] text-[rgba(26,28,25,0.7)]">
+      <p className="w-[480px] font-[family-name:var(--font-poppins)] text-[15px] leading-relaxed text-gray-500">
         {description}
       </p>
-      <div className="flex h-[55px] w-[442px] items-center" style={{ gap: 16 }}>
-        {statPills.map((pill) => (
-          <StatPill key={pill.label} value={pill.value} label={pill.label} />
-        ))}
+      
+      {statPills && statPills.length > 0 && (
+        <div className="flex h-[55px] w-[442px] items-center" style={{ gap: 16 }}>
+          {statPills.map((pill) => (
+            <StatPill key={pill.label} value={pill.value} label={pill.label} />
+          ))}
+        </div>
+      )}
+
+      {bulletPoints && bulletPoints.length > 0 && (
+        <ul className="flex flex-col gap-3 mt-2">
+          {bulletPoints.map((bp, i) => (
+            <li key={i} className="flex items-center gap-3">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1E73BE]/10 text-[#1E73BE]">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="font-[family-name:var(--font-poppins)] text-[14px] font-medium text-gray-600">{bp}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className="mt-4">
+        <BookAppointmentButton />
       </div>
-      <BookAppointmentButton />
     </div>
   )
 
   if (badgeLeft) {
     return (
-      <div className={`absolute flex h-[556px] items-center ${className}`} style={{ gap: 109 }}>
+      <div className={`absolute flex h-[556px] items-center ${className}`} style={{ gap: gap ?? 109 }}>
         {content}
         {photo}
       </div>
@@ -150,7 +183,7 @@ export default function DoctorCard({
   }
 
   return (
-    <div className={`absolute flex items-start ${className}`} style={{ gap: 109 }}>
+    <div className={`absolute flex items-start ${className}`} style={{ gap: gap ?? 109 }}>
       {photo}
       {content}
     </div>

@@ -6,7 +6,7 @@ export default function ShowcaseSection() {
   return (
     <div className="absolute left-0 top-[3416px] h-[840px] w-[1440px] overflow-hidden">
       <img
-        src={`${IMG}/showcase-bg-462684.png`}
+        src={`${IMG}/bgblue.png`}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
       />
@@ -15,7 +15,7 @@ export default function ShowcaseSection() {
         className="absolute left-1/2 top-[264px] z-[2] flex w-[749px] -translate-x-1/2 flex-col items-center"
         style={{ gap: 28 }}
       >
-        <div className="relative h-[81px] w-[179px] overflow-hidden rounded-[21px] bg-[#E1F0EC] shadow-[0px_8px_24px_rgba(0,0,0,0.08)]">
+        <div className="relative h-[81px] w-[179px] overflow-hidden rounded-[21px] bg-[#EBF4FF] shadow-[0px_8px_24px_rgba(0,0,0,0.08)]">
           <img
             src={`${IMG}/logo.svg`}
             alt=""
@@ -32,7 +32,7 @@ export default function ShowcaseSection() {
         </h2>
       </div>
 
-      <div className="absolute left-[206px] top-[60px] z-[3] h-[240px] w-[251px] overflow-hidden rounded-[20px] bg-[#F2FCF9] shadow-[0px_12px_32px_rgba(0,0,0,0.12)]">
+      <div className="absolute left-[206px] top-[60px] z-[3] h-[240px] w-[251px] overflow-hidden rounded-[20px] bg-[#F4F9FF] shadow-[0px_12px_32px_rgba(0,0,0,0.12)]">
         <div className="absolute left-4 top-6 z-10 flex w-[220px] flex-col" style={{ gap: 7 }}>
           <div
             className="flex h-[31px] w-fit items-center whitespace-nowrap rounded-lg border border-[rgba(0,0,0,0.06)] bg-white"
@@ -47,7 +47,7 @@ export default function ShowcaseSection() {
           </p>
         </div>
         <img
-          src={`${IMG}/gum-aligner.png`}
+          src={`${IMG}/teeth.png`}
           alt=""
           className="pointer-events-none absolute z-[1] max-w-none object-contain"
           loading="lazy"
@@ -62,12 +62,12 @@ export default function ShowcaseSection() {
         />
       </div>
 
-        <img
-          src={`${IMG}/avatar-circle-45d0fa.png`}
-          alt=""
-          className="absolute left-[63px] top-[175px] z-20 h-[98px] w-[98px] rounded-full object-cover shadow-[0px_8px_20px_rgba(0,0,0,0.14)]"
-          loading="lazy"
-        />
+      <img
+        src={`${IMG}/avatar-circle-45d0fa.png`}
+        alt=""
+        className="absolute left-[63px] top-[175px] z-20 h-[98px] w-[98px] rounded-full object-cover shadow-[0px_8px_20px_rgba(0,0,0,0.14)]"
+        loading="lazy"
+      />
 
       <div
         className="absolute left-[968px] top-[93px] z-[3] flex h-[207px] w-[280px] flex-col rounded-[20px] shadow-[0px_12px_32px_rgba(0,0,0,0.1)]"
@@ -82,7 +82,9 @@ export default function ShowcaseSection() {
         <p className="font-[family-name:var(--font-fraunces)] text-[32px] leading-none text-[#28231F]">
           Patient rate
         </p>
-        <StarRating large filled={4} />
+        <div style={{ filter: 'hue-rotate(110deg)' }}>
+          <StarRating large filled={4} />
+        </div>
         <p className="font-[family-name:var(--font-fraunces)] text-[32px] font-semibold leading-none text-[#28231F]">
           4.8/5
         </p>
@@ -111,7 +113,7 @@ export default function ShowcaseSection() {
         </span>
       </div>
       <div
-        className="absolute left-[1134px] top-[461px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-[30px] bg-[#B5E5D6]"
+        className="absolute left-[1134px] top-[461px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-[30px] bg-[#A3C9E2]"
         style={{ padding: '13px 10px', gap: 10 }}
       >
         <span className="font-[family-name:var(--font-fraunces)] text-2xl font-normal leading-none text-[#28231F]">
@@ -171,7 +173,7 @@ export default function ShowcaseSection() {
             gap: 10,
           }}
         >
-          <span className="whitespace-nowrap font-[family-name:var(--font-fraunces)] text-sm font-normal leading-none text-[#058B63] no-underline">
+          <span className="whitespace-nowrap font-[family-name:var(--font-fraunces)] text-sm font-normal leading-none text-[#1E73BE] no-underline">
             Custom Design
           </span>
         </div>

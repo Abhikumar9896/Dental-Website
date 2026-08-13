@@ -7,11 +7,11 @@ export default function KeyTreatments() {
     <div className="absolute left-[80px] top-[2189px] flex w-[1275px] flex-col" style={{ gap: 40 }}>
       <div className="flex w-full items-start" style={{ gap: 378 }}>
         <div
-          className="flex h-[55px] w-[211px] shrink-0 items-center justify-center rounded-[18px] bg-[#F2FFFB]"
+          className="flex h-[55px] w-[211px] shrink-0 items-center justify-center rounded-[18px] bg-[#F0F7FF]"
           style={{
             padding: '15px 28px',
             boxShadow:
-              '0px 4px 6.2px 0px rgba(105,163,145,0.39), 4px 0px 66.8px 0px rgba(255,255,255,0.25)',
+              '0px 4px 6.2px 0px rgba(10,91,168,0.15), 4px 0px 66.8px 0px rgba(255,255,255,0.25)',
           }}
         >
           <span className="whitespace-nowrap font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
@@ -34,7 +34,7 @@ export default function KeyTreatments() {
             </p>
           </div>
           <div
-            className="absolute left-7 top-[212px] flex h-[50px] items-center rounded-[25px] bg-[#71C1A7]"
+            className="absolute left-7 top-[212px] flex h-[50px] items-center rounded-[25px] bg-[#0A5BA8]"
             style={{ padding: '12px 23px', gap: 10 }}
           >
             <span className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-xl text-white">
@@ -42,7 +42,7 @@ export default function KeyTreatments() {
             </span>
           </div>
           <div
-            className="absolute left-[85px] top-[282px] flex h-[50px] items-center rounded-[25px] bg-[#BDE7D9]"
+            className="absolute left-[85px] top-[282px] flex h-[50px] items-center rounded-[25px] bg-[#D6E8F9]"
             style={{ padding: '12px 23px' }}
           >
             <span className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-xl text-[#28231F]">
@@ -58,7 +58,7 @@ export default function KeyTreatments() {
             </span>
           </div>
           <div
-            className="absolute left-[88px] top-[422px] flex h-[50px] items-center rounded-[25px] bg-[#BDE7D9]"
+            className="absolute left-[88px] top-[422px] flex h-[50px] items-center rounded-[25px] bg-[#D6E8F9]"
             style={{ padding: '12px 23px' }}
           >
             <span className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-xl text-[#28231F]">
@@ -93,7 +93,7 @@ export default function KeyTreatments() {
 
           <div className="pointer-events-none absolute left-1/2 top-[118px] z-[1] flex h-[230px] w-[280px] -translate-x-1/2 items-center justify-center">
             <img
-              src={`${IMG}/gum-aligner.png`}
+              src={`${IMG}/teeth.png`}
               alt=""
               className="object-contain"
               style={{
@@ -138,7 +138,7 @@ export default function KeyTreatments() {
           arrowHeight={46}
           radius={20}
           bordered
-          imageSrc={`${IMG}/full-mouth-rehab.png`}
+          imageSrc={`${IMG}/bgblue.png`}
         >
           <div
             className="absolute left-7 top-[29px] z-10 flex w-[501px] flex-col"

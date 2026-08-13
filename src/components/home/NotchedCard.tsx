@@ -54,7 +54,7 @@ function ArrowBtn({ className = '', height = 46 }: { className?: string; height?
   return (
     <Link
       to="/services"
-      className={`flex w-[54px] shrink-0 items-center justify-center rounded-[10px] bg-[#68A391] ${className}`}
+      className={`flex w-[54px] shrink-0 items-center justify-center rounded-[10px] bg-[#0A5BA8] ${className}`}
       style={{
         height,
         padding: height === 39 ? '7px 15px' : '11px 15px',
@@ -121,8 +121,8 @@ export function NotchedCard({
           ) : null}
           {fill === 'gum-gradient' ? (
             <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="1%" stopColor="#E3F3EE" />
-              <stop offset="100%" stopColor="#A9DFCE" />
+              <stop offset="1%" stopColor="#F2F8FF" />
+              <stop offset="100%" stopColor="#C6E2FF" />
             </linearGradient>
           ) : null}
         </defs>
