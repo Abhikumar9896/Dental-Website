@@ -290,20 +290,22 @@ export default function HeroBanner() {
         ))}
       </div>
 
-      <div className="absolute left-0 top-[766px] flex h-[48px] w-[1440px] items-center overflow-hidden bg-[#F9F4F1] shadow-sm z-20">
-        <div className="flex w-max animate-marquee">
-          {[0, 1].map((blockIndex) => (
-            <div key={blockIndex} className="flex shrink-0 items-center gap-10 px-5">
+      <div className="absolute left-0 top-[774px] flex h-[40px] w-[1440px] items-center overflow-hidden bg-gradient-to-r from-[#0A5BA8] via-[#08549E] to-[#0A5BA8] shadow-xl z-20 border-y border-white/10">
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {[0, 1, 2].map((blockIndex) => (
+            <div key={blockIndex} className="flex shrink-0 items-center gap-12 px-6">
               {[
                 'Dental Technology',
-                'Experienced Dental Professionals',
-                'Sterilized & Safe Environment',
-                'Personalized Treatment Plans',
+                'Experienced Professionals',
+                'Sterilized Environment',
+                'Personalized Plans',
                 'Advanced Dental Care',
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span className="inline-block size-2 rounded-full bg-[#F48422]" />
-                  <span className="font-[family-name:var(--font-poppins)] text-[15px] font-medium text-black">
+                <div key={i} className="flex items-center gap-3">
+                  <svg className="w-[18px] h-[18px] text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 10h-5V5h-4v5H5v4h5v5h4v-5h5v-4z" />
+                  </svg>
+                  <span className="font-[family-name:var(--font-poppins)] text-[13px] font-semibold tracking-widest text-white uppercase">
                     {item}
                   </span>
                 </div>

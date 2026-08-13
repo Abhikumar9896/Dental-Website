@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AppointmentCta from '../components/AppointmentCta'
 import HeroBanner from '../components/home/HeroBanner'
 import WhyChooseUs from '../components/home/WhyChooseUs'
@@ -16,12 +16,20 @@ const H = 6940 + 600 // Increased height to accommodate the new section
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [scale, setScale] = useState(1)
+
+  useEffect(() => {
+    const handleResize = () => setScale(window.innerWidth / 1440)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
-    <div className="w-full overflow-x-auto bg-white">
+    <div className="w-full overflow-hidden bg-white" style={{ height: H * scale }}>
       <div
-        className="relative mx-auto shrink-0 bg-white"
-        style={{ width: W, height: H, minWidth: W }}
+        className="relative mx-auto shrink-0 origin-top bg-white"
+        style={{ width: W, height: H, transform: `scale(${scale})` }}
       >
         <HeroBanner />
         
