@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const IMG = '/images/home'
 
 const PILL_SHADOW =
-  '0px 2px 9.8px 0px rgba(95,160,139,0.34), 4px 0px 6.8px 0px rgba(95,160,139,0.01), inset 1px 1px 11.6px 0px rgba(95,160,139,0.06)'
+  '0px 2px 9.8px 0px rgba(22, 91, 167,0.34), 4px 0px 6.8px 0px rgba(22, 91, 167,0.01), inset 1px 1px 11.6px 0px rgba(22, 91, 167,0.06)'
 
 function ExperienceBadge({ mirror = false }: { mirror?: boolean }) {
   return (
@@ -35,7 +35,6 @@ function DoctorPhoto({
   imgSrc,
   badgeLeft = false,
   width = 399,
-  flipShape = false,
 }: {
   alt: string
   imgSrc?: string
@@ -131,7 +130,7 @@ export default function DoctorCard({
           <h2 className="w-[577px] font-[family-name:var(--font-fraunces)] text-[48px] font-normal leading-[45px] text-[#28231F]">
             {topHeading}
           </h2>
-          <div className="h-[3px] w-10 bg-[#F48422]" />
+          <div className="h-[3px] w-10 bg-[#C187A4]" />
         </div>
       ) : null}
       <div className="flex flex-col" style={{ gap: 8 }}>
