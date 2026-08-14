@@ -17,7 +17,7 @@ export default function PageHero({ tagline, title, description, children }: Page
         style={{ gap: 40, zIndex: 20 }}
       >
         <div className="flex w-[634px] flex-col" style={{ gap: 8 }}>
-          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.04em] text-[#F48422]">
+          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.04em] text-[#C187A4]">
             {tagline}
           </p>
           <h1 className="w-[634px] font-[family-name:var(--font-fraunces)] text-[54px] font-semibold leading-none text-[#28231F]">

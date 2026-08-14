@@ -14,7 +14,7 @@ const reviews = [
   {
     initial: 'R',
     name: 'Rishabh Mudgal',
-    accent: '#F48422',
+    accent: '#C187A4',
     x: 0,
     text: 'One of the best dentist in sec 22 noida.I would like to thank Dr Abhinav for the treatment',
   },
@@ -52,7 +52,7 @@ export default function ReviewsSection() {
         </div>
         <Link
           to="/about"
-          className="ml-[55px] inline-flex h-[47px] w-[200px] items-center justify-center rounded-2xl bg-[#F48422]"
+          className="ml-[55px] inline-flex h-[47px] w-[200px] items-center justify-center rounded-2xl bg-[#C187A4]"
           style={{ padding: '11px 16px', gap: 10 }}
         >
           <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">
@@ -74,7 +74,7 @@ export default function ReviewsSection() {
             />
             <div className="flex h-[147px] w-[591px] items-start rounded-r-xl border border-[rgba(0,0,0,0.04)] bg-[#F9F4F1] px-[23px] py-[21px] shadow-[0px_4px_16px_rgba(0,0,0,0.04)]">
               <div className="flex w-full items-start" style={{ gap: 28 }}>
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[36px] bg-[#F48422]">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[36px] bg-[#C187A4]">
                   <span className="font-[family-name:var(--font-fraunces)] text-[32px] font-semibold leading-none text-white">
                     {review.initial}
                   </span>

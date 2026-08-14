@@ -82,20 +82,20 @@ export default function Services() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <a
             href="#catalogue"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
+            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </a>
         </PageHero>
 
         <div id="catalogue" className="absolute left-[80px] top-[700px] w-[1280px]">
-          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
             01- CARE CATALOGUE
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
@@ -112,7 +112,7 @@ export default function Services() {
                   onClick={() => setActive(cat)}
                   className={`rounded-full px-5 py-2.5 font-[family-name:var(--font-poppins)] text-base font-medium tracking-[0.03em] transition-colors ${
                     isActive
-                      ? 'bg-[#F48422] text-white'
+                      ? 'bg-[#C187A4] text-white'
                       : 'border border-[#FEDECA] bg-white text-[#404040]'
                   }`}
                 >
@@ -148,7 +148,7 @@ export default function Services() {
 
                 <Link
                   to="/contact"
-                  className="mt-auto flex h-9 w-[131px] shrink-0 items-center justify-center self-end rounded-full bg-[#F48422]"
+                  className="mt-auto flex h-9 w-[131px] shrink-0 items-center justify-center self-end rounded-full bg-[#C187A4]"
                   style={{ padding: '6px 15px', gap: 10 }}
                 >
                   <span className="font-[family-name:var(--font-poppins)] text-sm font-medium text-white">
@@ -162,7 +162,7 @@ export default function Services() {
 
           <button
             type="button"
-            className="mt-8 ml-auto block font-[family-name:var(--font-poppins)] text-base font-semibold uppercase tracking-[0.04em] text-[#F48422]"
+            className="mt-8 ml-auto block font-[family-name:var(--font-poppins)] text-base font-semibold uppercase tracking-[0.04em] text-[#C187A4]"
           >
             SHOW MORE
           </button>

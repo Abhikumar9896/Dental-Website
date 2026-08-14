@@ -31,7 +31,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           </p>
           <Link
             to="/"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#F48422] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#C187A4] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Go back home
           </Link>

@@ -19,14 +19,14 @@ export default function Contact() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
         </PageHero>
 
         <div className="absolute left-[80px] top-[720px] w-[1280px]">
-          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
             CONTACT INFORMATION
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
@@ -35,13 +35,13 @@ export default function Contact() {
 
           <div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="flex flex-col items-start gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f2f8ff]">
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#5FA08B"
+                  stroke="#165ba7"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -59,13 +59,13 @@ export default function Contact() {
               </p>
             </div>
             <div className="flex flex-col items-start gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f2f8ff]">
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#5FA08B"
+                  stroke="#165ba7"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -82,13 +82,13 @@ export default function Contact() {
               </p>
             </div>
             <div className="flex flex-col items-start gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f2f8ff]">
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#5FA08B"
+                  stroke="#165ba7"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -106,13 +106,13 @@ export default function Contact() {
               </p>
             </div>
             <div className="flex flex-col items-start gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2FFFB]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f2f8ff]">
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#5FA08B"
+                  stroke="#165ba7"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"

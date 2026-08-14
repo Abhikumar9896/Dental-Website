@@ -6,7 +6,7 @@ const W = 1440
 const H = 2480
 
 const PILL_SHADOW =
-  '0px 2px 9.8px 0px rgba(95,160,139,0.34), 4px 0px 6.8px 0px rgba(95,160,139,0.01), inset 1px 1px 11.6px 0px rgba(95,160,139,0.06)'
+  '0px 2px 9.8px 0px rgba(22, 91, 167,0.34), 4px 0px 6.8px 0px rgba(22, 91, 167,0.01), inset 1px 1px 11.6px 0px rgba(22, 91, 167,0.06)'
 
 const pills = [
   '18 Yrs Experience',
@@ -33,7 +33,7 @@ const specialisations = [
   },
 ] as const
 
-const CARD_SHADOW = '0px 24.3px 24.3px 0px rgba(95, 160, 139, 0.71)'
+const CARD_SHADOW = '0px 24.3px 24.3px 0px rgba(22, 91, 167, 0.71)'
 
 export default function DoctorProfile() {
   return (
@@ -51,23 +51,23 @@ export default function DoctorProfile() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#F48422] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <Link
             to="/services"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
+            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </Link>
         </PageHero>
 
         <div
-          className="absolute left-[83px] top-[700px] flex h-[430px] w-[1273px] overflow-hidden rounded-[24px] bg-[#F2FFFB]"
-          style={{ border: '1px solid rgba(95, 160, 139, 0.76)' }}
+          className="absolute left-[83px] top-[700px] flex h-[430px] w-[1273px] overflow-hidden rounded-[24px] bg-[#f2f8ff]"
+          style={{ border: '1px solid rgba(22, 91, 167, 0.76)' }}
         >
-          <div className="relative flex h-full w-[540px] shrink-0 flex-col justify-end bg-[#5FA08B] px-12 pb-14">
+          <div className="relative flex h-full w-[540px] shrink-0 flex-col justify-end bg-[#165ba7] px-12 pb-14">
             <h2 className="font-[family-name:var(--font-fraunces)] text-[32px] font-semibold leading-none text-white">
               Dr. Deepika Singhal
             </h2>
@@ -105,7 +105,7 @@ export default function DoctorProfile() {
 
             <Link
               to="/contact"
-              className="flex h-12 w-[616px] items-center justify-center rounded-2xl bg-[#F48422]"
+              className="flex h-12 w-[616px] items-center justify-center rounded-2xl bg-[#C187A4]"
             >
               <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">
                 Book an appointment
@@ -120,7 +120,7 @@ export default function DoctorProfile() {
             style={{ gap: 15 }}
           >
             <div className="flex flex-col" style={{ gap: 8 }}>
-              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 02-FOCUS AREAS
               </p>
               <h2 className="font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
@@ -132,7 +132,7 @@ export default function DoctorProfile() {
               {specialisations.map((card) => (
                 <div
                   key={card.n}
-                  className="box-border flex h-[208px] w-[397px] shrink-0 flex-col rounded-[24px] border border-[#4F8E7A] bg-[#5FA08B]"
+                  className="box-border flex h-[208px] w-[397px] shrink-0 flex-col rounded-[24px] border border-[#10437b] bg-[#165ba7]"
                   style={{
                     padding: '28px 48px',
                     gap: 10,
@@ -155,7 +155,7 @@ export default function DoctorProfile() {
         </div>
 
         <div className="absolute left-[100px] top-[1620px] w-[1239px]">
-          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
             03-AWARDS
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">

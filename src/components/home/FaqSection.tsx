@@ -22,7 +22,7 @@ export default function FaqSection({
       <div className="flex h-[449px] w-[1202px]" style={{ gap: 135 }}>
         <div className="flex h-full w-[322px] shrink-0 flex-col justify-between">
           <div
-            className="inline-flex w-fit rounded-[18px] bg-[#F2FFFB] px-7 py-[15px]"
+            className="inline-flex w-fit rounded-[18px] bg-[#f2f8ff] px-7 py-[15px]"
             style={{
               boxShadow:
                 '0px 4px 6.2px 0px rgba(105,163,145,0.39), 4px 0px 66.8px 0px rgba(255,255,255,0.25)',

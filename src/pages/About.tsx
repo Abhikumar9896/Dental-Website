@@ -54,13 +54,13 @@ export default function About() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#F48422] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#C187A4] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <Link
             to="/services"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#F48422] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#F48422]"
+            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </Link>
@@ -77,7 +77,7 @@ export default function About() {
                 <span className="absolute left-0 top-1/2 h-[72px] w-px -translate-y-1/2 bg-[rgba(40,35,31,0.12)]" />
               )}
               <div className="flex items-center" style={{ gap: 8 }}>
-                <span className="font-[family-name:var(--font-fraunces)] text-[48px] font-semibold leading-none text-[#F48422]">
+                <span className="font-[family-name:var(--font-fraunces)] text-[48px] font-semibold leading-none text-[#C187A4]">
                   {stat.value}
                 </span>
                 {'star' in stat && stat.star ? (
@@ -101,7 +101,7 @@ export default function About() {
 
         <div className="absolute left-0 top-[797px] h-[739px] w-[1440px] bg-[#F9F4F1]">
           <div className="absolute left-[80px] top-[80px] w-[560px]">
-            <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+            <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
               02- OUR STORY
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-[1.1] text-[#28231F]">
@@ -111,7 +111,7 @@ export default function About() {
             <ul className="mt-10 flex flex-col" style={{ gap: 22 }}>
               {storyPoints.map((point) => (
                 <li key={point} className="flex items-start" style={{ gap: 14 }}>
-                  <span className="mt-2 size-2 shrink-0 rounded-full bg-[#F48422]" />
+                  <span className="mt-2 size-2 shrink-0 rounded-full bg-[#C187A4]" />
                   <p className="font-[family-name:var(--font-poppins)] text-base leading-relaxed tracking-[0.02em] text-[#767676]">
                     {point}
                   </p>
@@ -141,7 +141,7 @@ export default function About() {
             style={{ gap: 36 }}
           >
             <div className="flex flex-col" style={{ gap: 8 }}>
-              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 03-VISION & MISSION
               </p>
               <h2 className="font-[family-name:var(--font-fraunces)] text-[36px] font-semibold leading-none text-[#28231F]">
@@ -153,7 +153,7 @@ export default function About() {
               {visionCards.map((card) => (
                 <div
                   key={card.label}
-                  className="box-border flex h-[232px] w-[560px] shrink-0 flex-col rounded-[40px] bg-[#5FA08B]"
+                  className="box-border flex h-[232px] w-[560px] shrink-0 flex-col rounded-[40px] bg-[#165ba7]"
                   style={{ padding: '28px 48px', gap: 10 }}
                 >
                   <p className="font-[family-name:var(--font-poppins)] text-xl font-medium leading-none tracking-[0.04em] text-white">
@@ -177,7 +177,7 @@ export default function About() {
             style={{ gap: 36 }}
           >
             <div className="flex flex-col" style={{ gap: 8 }}>
-              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#F48422]">
+              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 04-GOOD TO KNOW
               </p>
               <h2 className="font-[family-name:var(--font-fraunces)] text-[36px] font-semibold leading-none text-[#28231F]">
@@ -188,7 +188,7 @@ export default function About() {
             <div className="flex w-full items-center justify-between">
               {goodToKnow.map((item) => (
                 <div key={item} className="flex items-center" style={{ gap: 10 }}>
-                  <span className="size-2.5 shrink-0 rounded-full bg-[#F48422]" />
+                  <span className="size-2.5 shrink-0 rounded-full bg-[#C187A4]" />
                   <p className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-base font-normal tracking-[0.02em] text-[#28231F]">
                     {item}
                   </p>

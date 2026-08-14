@@ -16,7 +16,7 @@ export default function HeroToothCollage({ className = '' }: HeroToothCollagePro
       />
       <div
         className="absolute left-[1080px] top-[320px] h-[220px] w-[220px] rounded-full opacity-50 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #F8C9A0 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #eed9e4 0%, transparent 70%)' }}
       />
 
       <img

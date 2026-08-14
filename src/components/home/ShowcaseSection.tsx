@@ -141,7 +141,7 @@ export default function ShowcaseSection() {
         />
 
         <div
-          className="absolute left-[205px] top-[72px] z-30 flex h-[34px] w-[34px] items-center justify-center rounded-full font-[family-name:var(--font-fraunces)] text-[10px] leading-none text-[#F48422]"
+          className="absolute left-[205px] top-[72px] z-30 flex h-[34px] w-[34px] items-center justify-center rounded-full font-[family-name:var(--font-fraunces)] text-[10px] leading-none text-[#C187A4]"
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.92)',
             border: '0.8px solid rgba(15, 63, 43, 0.051)',
