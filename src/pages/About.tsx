@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
+import { Eye, Sparkles } from 'lucide-react'
 import AppointmentCta from '../components/AppointmentCta'
 import PageHero from '../components/ui/PageHero'
 
 const IMG = '/images/about'
-const W = 1440
-const H = 2743
 
 const stats = [
   { value: '5.0', label: 'CLINIC RATING', star: true },
@@ -14,22 +13,9 @@ const stats = [
 ] as const
 
 const storyPoints = [
-  'Dental Esthetique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
-  'Our clinic offers multi-speciality treatment under one roof, so patients get continuity of care from the first consultation through every follow-up.',
-  'We build trust through clear communication, transparent pricing, and treatment plans shaped around real patient goals, not one-size-fits-all protocols.',
-] as const
-
-const visionCards = [
-  {
-    label: 'VISION',
-    title: "The clinic you'll never outgrow.",
-    body: 'To become the most trusted destination for comprehensive dental care by delivering exceptional clinical outcomes, innovative treatments, and a patient-first experience.',
-  },
-  {
-    label: 'MISSION',
-    title: 'Precision care, explained simply.',
-    body: 'To provide ethical, evidence-based, and personalized dental care using advanced technology while ensuring every patient feels informed, comfortable, and confident throughout their treatment journey.',
-  },
+  'Dental Esthétique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
+  'Our clinic offers preventive, restorative, cosmetic, and advanced dental treatments tailored to the unique needs of every patient. We believe that exceptional dentistry goes beyond procedures it involves educating patients, understanding their concerns, and delivering care in a comfortable and welcoming environment.',
+  'Every treatment is planned with precision, transparency, and a long term focus on oral health.',
 ] as const
 
 const goodToKnow = [
@@ -41,142 +27,183 @@ const goodToKnow = [
 
 export default function About() {
   return (
-    <div className="w-full overflow-x-auto bg-white">
-      <div
-        className="relative mx-auto shrink-0 overflow-hidden bg-white"
-        style={{ width: W, height: H, minWidth: W }}
-      >
-        <PageHero
-          tagline="About Dental Esthétique"
-          title="Your Trusted Partner in Complete Dental Care"
-          description="Dental Esthétique is committed to delivering exceptional dental care through advanced technology, evidence based treatments, and a patient first approach. From routine dental check ups to complex smile transformations, our goal is to ensure every patient receives personalized care in a safe, comfortable, and modern environment."
-          taglineColor="text-[#C187A4]"
-          titleColor="text-[#28231F]"
-          titleFont="font-[family-name:var(--font-fraunces)]"
-        >
-          <Link
-            to="/contact"
-            className="inline-flex h-[44px] items-center justify-center rounded-full bg-[#C187A4] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white shadow-sm hover:opacity-90 transition-opacity"
+    <div className="w-full bg-white font-[family-name:var(--font-poppins)] overflow-x-hidden">
+      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white overflow-hidden pb-32">
+        
+        {/* Hero Section */}
+        <div className="relative w-full h-[800px]">
+          <PageHero
+            tagline="About Dental Esthétique"
+            title="Your Trusted Partner in Complete Dental Care"
+            description="Dental Esthétique is committed to delivering exceptional dental care through advanced technology, evidence based treatments, and a patient first approach. From routine dental check ups to complex smile transformations, our goal is to ensure every patient receives personalized care in a safe, comfortable, and modern environment."
+            taglineColor="text-[#C187A4]"
+            titleColor="text-[#28231F]"
+            titleFont="font-[family-name:var(--font-fraunces)]"
           >
-            Book an appointment
-          </Link>
-          <Link
-            to="/services"
-            className="inline-flex h-[44px] items-center justify-center rounded-full border-[1.5px] border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-[#C187A4] hover:bg-[#C187A4]/5 transition-colors"
-          >
-            See treatments
-          </Link>
-        </PageHero>
-
-        <div className="absolute left-[80px] top-[700px] flex h-[72px] w-[1280px] items-center justify-between rounded-[47px] bg-white px-[124px] shadow-[0_8px_32px_rgba(22,91,167,0.08)]">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center justify-center"
-              style={{ gap: 4 }}
+            <Link
+              to="/contact"
+              className="inline-flex h-[44px] items-center justify-center rounded-full bg-[#C187A4] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white shadow-sm hover:opacity-90 transition-opacity"
             >
-              <div className="flex items-center" style={{ gap: 8 }}>
-                <span className="font-[family-name:var(--font-poppins)] text-[32px] font-semibold leading-none text-[#165ba7]">
-                  {stat.value}
-                </span>
-                {'star' in stat && stat.star ? (
-                  <img
-                    src={`${IMG}/star.svg`}
-                    alt=""
-                    className="h-6 w-6"
-                    style={{
-                      // CSS filter for #165ba7
-                      filter:
-                        'brightness(0) saturate(100%) invert(30%) sepia(82%) saturate(1900%) hue-rotate(192deg) brightness(92%) contrast(92%)',
-                    }}
-                  />
-                ) : null}
+              Book an appointment
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex h-[44px] items-center justify-center rounded-full border-[1.5px] border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-[#C187A4] hover:bg-[#C187A4]/5 transition-colors"
+            >
+              See treatments
+            </Link>
+          </PageHero>
+
+          {/* Stats Bar */}
+          <div className="absolute left-1/2 bottom-[28px] -translate-x-1/2 flex h-[72px] w-[1280px] items-center justify-between rounded-[47px] bg-white px-[124px] shadow-[0_8px_32px_rgba(22,91,167,0.08)] z-30">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center gap-1"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="font-[family-name:var(--font-poppins)] text-[32px] font-semibold leading-none text-[#165ba7]">
+                    {stat.value}
+                  </span>
+                  {'star' in stat && stat.star && (
+                    <img
+                      src={`${IMG}/star.svg`}
+                      alt=""
+                      className="h-6 w-6"
+                      style={{
+                        filter:
+                          'brightness(0) saturate(100%) invert(30%) sepia(82%) saturate(1900%) hue-rotate(192deg) brightness(92%) contrast(92%)',
+                      }}
+                    />
+                  )}
+                </div>
+                <p className="font-[family-name:var(--font-poppins)] text-[10px] font-medium tracking-[0.14em] text-[#28231F]">
+                  {stat.label}
+                </p>
               </div>
-              <p className="font-[family-name:var(--font-poppins)] text-[10px] font-medium tracking-[0.14em] text-[#28231F]">
-                {stat.label}
+            ))}
+          </div>
+        </div>
+
+        {/* 02- OUR STORY */}
+        <div className="mt-32 w-full flex justify-center bg-white z-10">
+          <div className="flex w-[1280px] items-center justify-between gap-16">
+            
+            {/* Left: Text */}
+            <div className="w-[638px] flex flex-col">
+              <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
+                02- OUR STORY
               </p>
+              <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-[1.1] text-[#28231F]">
+                Creating Beautiful Smiles Through Excellence in Dentistry
+              </h2>
+
+              <ul className="mt-10 flex flex-col gap-6">
+                {storyPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-4">
+                    <span className="mt-2 size-2 shrink-0 rounded-full bg-[#C187A4]" />
+                    <p className="font-[family-name:var(--font-poppins)] text-base leading-relaxed tracking-[0.02em] text-[#767676]">
+                      {point}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
 
-        <div className="absolute left-0 top-[800px] h-[739px] w-[1440px] bg-[#F9F4F1]">
-          <div className="absolute left-[80px] top-[80px] w-[560px]">
-            <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
-              02- OUR STORY
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-[1.1] text-[#28231F]">
-              A Clinic Built Around Real Trust
-            </h2>
+            {/* Right: Image */}
+            <div
+              className="h-[540px] w-[540px] overflow-hidden rounded-[48px] relative shrink-0"
+              style={{
+                boxShadow: '0 0 0 3px rgba(193,135,164,0.4)', // Pink border instead of orange
+              }}
+            >
+              <img
+                src={`${IMG}/clinic-exterior.png`}
+                alt="Dental Esthetique clinic exterior"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+              
+              {/* Specialist Led Care Badge */}
+              <div className="absolute left-[30px] bottom-[30px] bg-white rounded-xl px-6 py-4 shadow-lg flex flex-col">
+                <span className="font-[family-name:var(--font-poppins)] text-[24px] font-bold text-[#28231F] leading-none mb-1">100%</span>
+                <span className="font-[family-name:var(--font-poppins)] text-[11px] font-medium text-[#767676] tracking-widest uppercase">SPECIALIST LED CARE</span>
+              </div>
+            </div>
 
-            <ul className="mt-10 flex flex-col" style={{ gap: 22 }}>
-              {storyPoints.map((point) => (
-                <li key={point} className="flex items-start" style={{ gap: 14 }}>
-                  <span className="mt-2 size-2 shrink-0 rounded-full bg-[#C187A4]" />
-                  <p className="font-[family-name:var(--font-poppins)] text-base leading-relaxed tracking-[0.02em] text-[#767676]">
-                    {point}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div
-            className="absolute left-[760px] top-[80px] h-[420px] w-[560px] overflow-hidden rounded-[32px]"
-            style={{
-              boxShadow: '0 0 0 1px rgba(244,132,34,0.35), 0 16px 48px rgba(244,132,34,0.22)',
-            }}
-          >
-            <img
-              src={`${IMG}/clinic-exterior.png`}
-              alt="Dental Esthetique clinic exterior"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
           </div>
         </div>
 
-        <div className="absolute left-0 top-[1539px] h-[435px] w-[1440px] bg-[#F9F4F1]">
-          <div
-            className="absolute left-[80px] top-[48px] flex w-[1280px] flex-col"
-            style={{ gap: 36 }}
-          >
-            <div className="flex flex-col" style={{ gap: 8 }}>
+        {/* 03-VISION & MISSION */}
+        <div className="mt-36 w-full flex justify-center bg-white z-10">
+          <div className="flex w-[1280px] items-center justify-between gap-10">
+            
+            {/* Left: Text */}
+            <div className="w-[480px] flex flex-col">
               <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 03-VISION & MISSION
               </p>
-              <h2 className="font-[family-name:var(--font-poppins)] text-[36px] font-semibold leading-none text-[#28231F]">
+              <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[36px] font-semibold leading-[1.2] text-[#28231F]">
                 What we're working toward
               </h2>
+              <p className="mt-4 font-[family-name:var(--font-poppins)] text-[15px] leading-relaxed tracking-[0.02em] text-[#767676]">
+                Transforming lives through ethical dentistry, advanced treatments, compassionate care, and lasting patient relationships every day.
+              </p>
             </div>
 
-            <div className="flex w-full" style={{ gap: 40 }}>
-              {visionCards.map((card) => (
-                <div
-                  key={card.label}
-                  className="box-border flex h-[232px] w-[560px] shrink-0 flex-col rounded-[40px] bg-[#165ba7]"
-                  style={{ padding: '28px 48px', gap: 10 }}
-                >
-                  <p className="font-[family-name:var(--font-poppins)] text-xl font-medium leading-none tracking-[0.04em] text-white">
-                    {card.label}
-                  </p>
-                  <p className="font-[family-name:var(--font-poppins)] text-[22px] font-semibold leading-tight text-white">
-                    {card.title}
-                  </p>
-                  <p className="font-[family-name:var(--font-poppins)] text-base font-normal leading-[1.5] tracking-[0.03em] text-[#E1E1E1]">
-                    {card.body}
-                  </p>
-                </div>
-              ))}
+            {/* Right: Overlapping Circles */}
+            <div className="relative flex items-center h-[350px] w-[678px] shrink-0">
+              
+              {/* Mission Circle (Left) */}
+              <div className="absolute left-0 w-[349px] h-[349px] rounded-full bg-white shadow-[0_4px_25px_rgba(0,0,0,0.07)] flex flex-col items-center justify-center text-center px-10 z-10 border border-gray-50">
+                <Sparkles className="w-6 h-6 mb-3 text-[#165ba7]" strokeWidth={1.5} />
+                <h3 className="font-[family-name:var(--font-poppins)] text-[14px] font-bold text-[#28231F] mb-3 tracking-widest uppercase">Our Mission</h3>
+                <p className="font-[family-name:var(--font-poppins)] text-[12px] leading-[1.6] text-[#767676]">
+                  To provide ethical, evidence based, and personalized dental care using advanced technology while ensuring every patient feels informed and comfortable throughout their treatment journey.
+                </p>
+              </div>
+
+              {/* Connecting Pink Line */}
+              <div className="absolute left-[330px] top-1/2 w-[30px] h-[3px] bg-[#C187A4] z-20 -translate-y-1/2"></div>
+
+              {/* Vision Circle (Right) */}
+              <div className="absolute right-0 w-[349px] h-[349px] rounded-full bg-[#165ba7] shadow-lg flex flex-col items-center justify-center text-center px-10 z-10">
+                <Eye className="w-6 h-6 mb-3 text-white" strokeWidth={1.5} />
+                <h3 className="font-[family-name:var(--font-poppins)] text-[14px] font-bold text-white mb-3 tracking-widest uppercase">Our Vision</h3>
+                <p className="font-[family-name:var(--font-poppins)] text-[12px] leading-[1.6] text-white/90">
+                  To become the most trusted destination for comprehensive dental care by delivering exceptional clinical outcomes, innovative treatments, and a patient first experience.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <div className="absolute left-0 top-[1974px] h-[220px] w-[1440px] bg-[#F9F4F1]">
-          <div
-            className="absolute left-[80px] top-[40px] flex w-[1280px] flex-col"
-            style={{ gap: 36 }}
-          >
-            <div className="flex flex-col" style={{ gap: 8 }}>
+        {/* Commitment Banner */}
+        <div className="mt-36 w-full flex justify-center z-10">
+          <div className="w-[1280px] h-[400px] relative overflow-hidden flex flex-col items-center justify-center text-center px-[220px] rounded-tl-[9px] rounded-tr-[200px] rounded-br-[4px] rounded-bl-[200px] shadow-lg">
+            {/* Background Image */}
+            <img src="/images/home/bgblue.png" alt="Background Texture" className="absolute inset-0 w-full h-full object-cover z-0" />
+            
+            {/* Content overlay */}
+            <div className="relative z-10 flex flex-col items-center text-white">
+              <h2 className="font-[family-name:var(--font-fraunces)] text-[44px] font-semibold mb-6">
+                Our Commitment to Every Patient
+              </h2>
+              <p className="font-[family-name:var(--font-poppins)] text-[16px] leading-[1.8] font-normal text-white/90 text-center mb-10">
+                At Dental ESTHÉTIQUE, every patient is treated with respect, empathy, and honesty. We are committed to providing transparent consultations, personalized treatment plans, and a comfortable experience using modern techniques and advanced technology. Our goal is not only to treat dental concerns but to build long term relationships based on trust and exceptional care.
+              </p>
+              <p className="font-[family-name:var(--font-fraunces)] text-[24px] font-medium tracking-wide">
+                - Dental Esthétique
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 04-GOOD TO KNOW */}
+        <div className="mt-32 w-full bg-[#F9F4F1] py-20 flex justify-center z-10">
+          <div className="flex w-[1280px] flex-col gap-10">
+            <div className="flex flex-col gap-2">
               <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 04-GOOD TO KNOW
               </p>
@@ -187,9 +214,9 @@ export default function About() {
 
             <div className="flex w-full items-center justify-between">
               {goodToKnow.map((item) => (
-                <div key={item} className="flex items-center" style={{ gap: 10 }}>
-                  <span className="size-2.5 shrink-0 rounded-full bg-[#C187A4]" />
-                  <p className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-base font-normal tracking-[0.02em] text-[#28231F]">
+                <div key={item} className="flex items-center gap-3">
+                  <span className="size-2.5 shrink-0 rounded-full bg-[#165ba7]" />
+                  <p className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-base font-medium tracking-[0.02em] text-[#28231F]">
                     {item}
                   </p>
                 </div>
@@ -198,7 +225,11 @@ export default function About() {
           </div>
         </div>
 
-        <AppointmentCta top={2243} />
+        {/* Appointment CTA */}
+        <div className="relative w-full h-[448px] mt-24 mb-10 z-10">
+          <AppointmentCta top={0} />
+        </div>
+
       </div>
     </div>
   )

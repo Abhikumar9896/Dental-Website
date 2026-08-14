@@ -7,17 +7,17 @@ export default function BookAppointment() {
           Book Your Appointment
         </h2>
         <div className="w-full h-[1px] bg-gray-200/60 mb-10"></div>
-        
+
         <div className="flex items-center justify-between">
           <img src="/images/home/img-booking.avif" alt="Booking" className="w-[280px] h-auto object-contain" />
-          
+
           <div className="flex flex-col gap-5 w-[320px]">
-            <input 
-              type="email" 
-              placeholder="Your email address *" 
-              className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors" 
+            <input
+              type="email"
+              placeholder="Your email address *"
+              className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors"
             />
-            
+
             <div className="relative">
               <select className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-[#333] font-medium outline-none appearance-none focus:border-[#165ba7] transition-colors bg-white cursor-pointer">
                 <option>Select Your Dentist</option>
@@ -30,10 +30,10 @@ export default function BookAppointment() {
             </div>
 
             <div className="relative">
-              <input 
-                type="text" 
-                placeholder="Appointment date *" 
-                className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-2 [&::-webkit-calendar-picker-indicator]:w-8 [&::-webkit-calendar-picker-indicator]:h-full z-10 bg-transparent" 
+              <input
+                type="text"
+                placeholder="Appointment date *"
+                className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-2 [&::-webkit-calendar-picker-indicator]:w-8 [&::-webkit-calendar-picker-indicator]:h-full z-10 bg-transparent"
                 onFocus={(e) => e.target.type = 'date'}
                 onBlur={(e) => { if (!e.target.value) e.target.type = 'text' }}
               />
@@ -41,7 +41,7 @@ export default function BookAppointment() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               </div>
             </div>
-            
+
             <textarea
               placeholder="Description (Optional)"
               className="w-full h-[80px] border border-gray-200/80 rounded-md px-4 py-3 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors resize-none"
@@ -65,14 +65,14 @@ export default function BookAppointment() {
           <span className="absolute -right-4 bottom-0 text-5xl font-[family-name:var(--font-poppins)] italic font-bold text-white leading-none">”</span>
         </div>
         <div className="w-[100px] h-[2px] bg-[#D86C97] mt-10 mb-8"></div>
-        
+
         {/* Signature style text */}
         <div className="mt-4 opacity-95">
           <style>
             {`@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');`}
           </style>
-          <span 
-            className="text-white text-[36px] block -rotate-2 tracking-wide italic font-[family-name:var(--font-poppins)]" 
+          <span
+            className="text-white text-[36px] block -rotate-2 tracking-wide italic font-[family-name:var(--font-poppins)]"
             style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.1)" }}
           >
             Dr. Deepika Singhal

@@ -10,7 +10,7 @@ export default function WhyChooseUs() {
 
       {/* Floating Card 1 */}
       <div
-        className="absolute left-[34px] top-[345px] flex h-[133px] w-[161px] flex-col justify-center gap-[10px] rounded-lg bg-gradient-to-br from-[#F2F8FF] to-[#E0EFFB] p-[25px] shadow-[0_15px_40px_rgba(0,0,0,0.08)] border-2 border-[#C187A4]"
+        className="absolute left-[34px] top-[345px] flex h-[133px] w-[161px] flex-col justify-center gap-[10px] rounded-lg bg-gradient-to-br from-[#F2F8FF] to-[#E0EFFB] p-[25px] shadow-[0_15px_40px_rgba(0,0,0,0.08)] border-[1px] border-[#165ba7]"
       >
         <span className="font-[family-name:var(--font-poppins)] text-[34px] font-semibold leading-none text-[#165ba7]">
           58+
@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
 
       {/* Floating Card 2 */}
       <div
-        className="absolute left-[364px] top-[301px] flex h-[178px] w-[226px] flex-col justify-center gap-[10px] rounded-lg bg-gradient-to-br from-[#F2F8FF] to-[#E0EFFB] p-[25px] shadow-[0_15px_40px_rgba(0,0,0,0.08)] border-2 border-[#C187A4]"
+        className="absolute left-[364px] top-[301px] flex h-[178px] w-[226px] flex-col justify-center gap-[10px] rounded-lg bg-gradient-to-br from-[#F2F8FF] to-[#E0EFFB] p-[25px] shadow-[0_15px_40px_rgba(0,0,0,0.08)] border-[1px] border-[#165ba7]"
       >
         <span className="font-[family-name:var(--font-poppins)] text-[34px] font-semibold leading-none text-[#165ba7]">
           50K+

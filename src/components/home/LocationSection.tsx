@@ -2,7 +2,17 @@ import { Clock, ChevronRight } from 'lucide-react';
 
 export default function LocationSection() {
   return (
-    <div className="absolute left-0 top-[6831px] w-full flex justify-center pb-16">
+    <div className="absolute left-0 top-[6831px] w-full flex flex-col items-center pb-16 font-[family-name:var(--font-poppins)]">
+      {/* Header */}
+      <div className="mb-12 flex flex-col items-center text-center max-w-[800px]">
+        <h2 className="text-[52px] tracking-tight">
+          <span className="text-[#C187A4] font-normal">Contact</span> <span className="text-[#165ba7] font-bold">Dental Esthétique</span>
+        </h2>
+        <p className="mt-4 text-[15px] leading-relaxed text-[#555] font-medium px-4">
+          Globally incubate standards compliant channels before scalable benefits. Quickly disseminate superior deliverables whereas web-enabled applications.
+        </p>
+      </div>
+
       <div className="relative w-[1320px] h-[640px]">
         {/* Map Embed */}
         <div className="absolute left-0 top-0 w-[950px] h-[640px] shadow-sm bg-gray-50 relative overflow-hidden">
@@ -44,7 +54,7 @@ export default function LocationSection() {
         <div className="absolute right-0 top-[60px] w-[380px] h-auto min-h-[440px] bg-[#135CB2] flex flex-col pt-8 pb-8 px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-[family-name:var(--font-poppins)]">
           <h2 className="text-[26px] font-semibold mb-1.5 tracking-wide text-white drop-shadow-sm">Working Hours</h2>
           <p className="text-[12px] font-medium text-white mb-5 leading-relaxed drop-shadow-sm">
-            Check out DentiCare's Office hours to plan your visit.
+            Check out Dental Esthétique's Office hours to plan your visit.
           </p>
 
           {/* Schedule */}

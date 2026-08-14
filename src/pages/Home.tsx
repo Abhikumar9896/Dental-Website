@@ -14,7 +14,7 @@ import LocationSection from '../components/home/LocationSection'
 import WhatsAppFloat from '../components/ui/WhatsAppFloat'
 
 const W = 1440
-const H = 9200
+const H = 9400
 
 export default function Home() {
   return (
