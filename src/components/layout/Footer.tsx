@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <div className="w-full bg-[#43403E] flex justify-center">
+    <div className="w-full bg-[#0a2540] flex justify-center">
       <div className="relative h-[467px] w-[1440px] shrink-0">
         <div className="absolute left-[67px] top-[161px] flex" style={{ gap: 193 }}>
           <div className="flex w-[271px] flex-col" style={{ gap: 20 }}>
