@@ -15,7 +15,7 @@ export default function ShowcaseSection() {
         className="absolute left-1/2 top-[264px] z-[2] flex w-[749px] -translate-x-1/2 flex-col items-center"
         style={{ gap: 28 }}
       >
-        <div className="relative h-[81px] w-[179px] overflow-hidden rounded-[21px] bg-[#EBF4FF] shadow-[0px_8px_24px_rgba(0,0,0,0.08)]">
+        <div className="relative h-[81px] w-[179px] overflow-hidden rounded-xl bg-[#EBF4FF] shadow-[0px_8px_24px_rgba(0,0,0,0.08)]">
           <img
             src={`${IMG}/logo.svg`}
             alt=""
@@ -32,7 +32,7 @@ export default function ShowcaseSection() {
         </h2>
       </div>
 
-      <div className="absolute left-[206px] top-[60px] z-[3] h-[240px] w-[251px] overflow-hidden rounded-[20px] bg-[#F4F9FF] shadow-[0px_12px_32px_rgba(0,0,0,0.12)]">
+      <div className="absolute left-[206px] top-[60px] z-[3] h-[240px] w-[251px] overflow-hidden rounded-xl bg-[#F4F9FF] shadow-[0px_12px_32px_rgba(0,0,0,0.12)]">
         <div className="absolute left-4 top-6 z-10 flex w-[220px] flex-col" style={{ gap: 7 }}>
           <div
             className="flex h-[31px] w-fit items-center whitespace-nowrap rounded-lg border border-[rgba(0,0,0,0.06)] bg-white"
@@ -70,7 +70,7 @@ export default function ShowcaseSection() {
       />
 
       <div
-        className="absolute left-[968px] top-[93px] z-[3] flex h-[207px] w-[280px] flex-col rounded-[20px] shadow-[0px_12px_32px_rgba(0,0,0,0.1)]"
+        className="absolute left-[968px] top-[93px] z-[3] flex h-[207px] w-[280px] flex-col rounded-xl shadow-[0px_12px_32px_rgba(0,0,0,0.1)]"
         style={{
           backgroundColor: 'rgba(251, 252, 252, 0.98)',
           paddingTop: 32,
@@ -105,7 +105,7 @@ export default function ShowcaseSection() {
       />
 
       <div
-        className="absolute left-[1215px] top-[393px] z-[3] flex h-[56px] w-[174px] items-center justify-center rounded-[30px] bg-white"
+        className="absolute left-[1215px] top-[393px] z-[3] flex h-[56px] w-[174px] items-center justify-center rounded-md bg-white"
         style={{ padding: '13px 10px', gap: 10 }}
       >
         <span className="font-[family-name:var(--font-fraunces)] text-2xl font-normal leading-none text-[#28231F]">
@@ -113,7 +113,7 @@ export default function ShowcaseSection() {
         </span>
       </div>
       <div
-        className="absolute left-[1134px] top-[461px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-[30px] bg-[#A3C9E2]"
+        className="absolute left-[1134px] top-[461px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-md bg-[#A3C9E2]"
         style={{ padding: '13px 10px', gap: 10 }}
       >
         <span className="font-[family-name:var(--font-fraunces)] text-2xl font-normal leading-none text-[#28231F]">
@@ -122,7 +122,7 @@ export default function ShowcaseSection() {
       </div>
 
       <div
-        className="absolute left-[57px] top-[494px] z-[3] h-[166px] w-[325px] overflow-hidden rounded-[24px] bg-white"
+        className="absolute left-[57px] top-[494px] z-[3] h-[166px] w-[325px] overflow-hidden rounded-xl bg-white"
         style={{
           boxShadow: '0px 4px 6px -4px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1)',
         }}
@@ -155,11 +155,11 @@ export default function ShowcaseSection() {
       <img
         src={`${IMG}/clinic-row-60cc89.png`}
         alt=""
-        className="absolute left-[420px] top-[668px] z-[3] h-[146px] w-[268px] rounded-[24px] border border-white object-cover"
+        className="absolute left-[420px] top-[668px] z-[3] h-[146px] w-[268px] rounded-xl border border-white object-cover"
         loading="lazy"
       />
 
-      <div className="absolute left-[903px] top-[563px] z-[3] h-[242px] w-[278px] overflow-hidden rounded-[24px] bg-white shadow-[0px_12px_32px_rgba(0,0,0,0.1)]">
+      <div className="absolute left-[903px] top-[563px] z-[3] h-[242px] w-[278px] overflow-hidden rounded-xl bg-white shadow-[0px_12px_32px_rgba(0,0,0,0.1)]">
         <p className="absolute left-8 top-[27px] z-10 font-[family-name:var(--font-fraunces)] text-2xl leading-none text-[#28231F]">
           Smile Designing
         </p>
@@ -181,7 +181,7 @@ export default function ShowcaseSection() {
         <img
           src={`${IMG}/smile-designing.png`}
           alt=""
-          className="absolute left-[25px] top-[93px] z-[1] h-[127px] w-[228px] rounded-[24px] object-cover"
+          className="absolute left-[25px] top-[93px] z-[1] h-[127px] w-[228px] rounded-xl object-cover"
           loading="lazy"
         />
       </div>

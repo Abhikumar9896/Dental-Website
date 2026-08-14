@@ -52,7 +52,7 @@ export default function ReviewsSection() {
         </div>
         <Link
           to="/about"
-          className="ml-[55px] inline-flex h-[47px] w-[200px] items-center justify-center rounded-2xl bg-[#C187A4]"
+          className="ml-[55px] inline-flex h-[47px] w-[200px] items-center justify-center rounded-md bg-[#C187A4]"
           style={{ padding: '11px 16px', gap: 10 }}
         >
           <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">

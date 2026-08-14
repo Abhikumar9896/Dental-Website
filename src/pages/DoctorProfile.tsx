@@ -51,20 +51,20 @@ export default function DoctorProfile() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-md bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <Link
             to="/services"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
+            className="inline-flex h-12 items-center justify-center rounded-md border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </Link>
         </PageHero>
 
         <div
-          className="absolute left-[83px] top-[700px] flex h-[430px] w-[1273px] overflow-hidden rounded-[24px] bg-[#f2f8ff]"
+          className="absolute left-[83px] top-[700px] flex h-[430px] w-[1273px] overflow-hidden rounded-xl bg-[#f2f8ff]"
           style={{ border: '1px solid rgba(22, 91, 167, 0.76)' }}
         >
           <div className="relative flex h-full w-[540px] shrink-0 flex-col justify-end bg-[#165ba7] px-12 pb-14">
@@ -90,7 +90,7 @@ export default function DoctorProfile() {
               {pills.map((label) => (
                 <div
                   key={label}
-                  className="box-border flex h-[55px] items-center justify-center rounded-[35px] bg-white"
+                  className="box-border flex h-[55px] items-center justify-center rounded-xl bg-white"
                   style={{
                     padding: '8px 36px',
                     boxShadow: PILL_SHADOW,
@@ -105,7 +105,7 @@ export default function DoctorProfile() {
 
             <Link
               to="/contact"
-              className="flex h-12 w-[616px] items-center justify-center rounded-2xl bg-[#C187A4]"
+              className="flex h-12 w-[616px] items-center justify-center rounded-md bg-[#C187A4]"
             >
               <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">
                 Book an appointment
@@ -132,7 +132,7 @@ export default function DoctorProfile() {
               {specialisations.map((card) => (
                 <div
                   key={card.n}
-                  className="box-border flex h-[208px] w-[397px] shrink-0 flex-col rounded-[24px] border border-[#10437b] bg-[#165ba7]"
+                  className="box-border flex h-[208px] w-[397px] shrink-0 flex-col rounded-xl border border-[#10437b] bg-[#165ba7]"
                   style={{
                     padding: '28px 48px',
                     gap: 10,

@@ -82,13 +82,13 @@ export default function Services() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <a
             href="#catalogue"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
+            className="inline-flex h-12 items-center justify-center rounded-xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </a>
@@ -126,10 +126,10 @@ export default function Services() {
             {visible.map((item) => (
               <div
                 key={item.n + item.title}
-                className="box-border flex h-[396px] w-full flex-col rounded-[20px] border border-[#FEDECA] bg-[#6CA895]"
+                className="box-border flex h-[396px] w-full flex-col rounded-xl border border-[#FEDECA] bg-[#6CA895]"
                 style={{ padding: '8px 16px 16px', gap: 10 }}
               >
-                <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-[16px]">
+                <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded-lg">
                   <img src={item.image} alt="" className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
                   <div className="absolute left-5 top-5 flex flex-col" style={{ gap: 4 }}>

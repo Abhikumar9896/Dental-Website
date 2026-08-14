@@ -15,11 +15,11 @@ export default function BookAppointment() {
             <input 
               type="email" 
               placeholder="Your email address *" 
-              className="w-full h-[52px] border border-gray-200/80 rounded-[4px] px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors" 
+              className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors" 
             />
             
             <div className="relative">
-              <select className="w-full h-[52px] border border-gray-200/80 rounded-[4px] px-4 font-[family-name:var(--font-poppins)] text-[14px] text-[#333] font-medium outline-none appearance-none focus:border-[#165ba7] transition-colors bg-white cursor-pointer">
+              <select className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-[#333] font-medium outline-none appearance-none focus:border-[#165ba7] transition-colors bg-white cursor-pointer">
                 <option>Select Your Dentist</option>
                 <option>Dr. Deepika Singhal</option>
                 <option>Dr. Abhinav Jain</option>
@@ -33,7 +33,7 @@ export default function BookAppointment() {
               <input 
                 type="text" 
                 placeholder="Appointment date *" 
-                className="w-full h-[52px] border border-gray-200/80 rounded-[4px] px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-2 [&::-webkit-calendar-picker-indicator]:w-8 [&::-webkit-calendar-picker-indicator]:h-full z-10 bg-transparent" 
+                className="w-full h-[52px] border border-gray-200/80 rounded-md px-4 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-2 [&::-webkit-calendar-picker-indicator]:w-8 [&::-webkit-calendar-picker-indicator]:h-full z-10 bg-transparent" 
                 onFocus={(e) => e.target.type = 'date'}
                 onBlur={(e) => { if (!e.target.value) e.target.type = 'text' }}
               />
@@ -44,10 +44,10 @@ export default function BookAppointment() {
             
             <textarea
               placeholder="Description (Optional)"
-              className="w-full h-[80px] border border-gray-200/80 rounded-[4px] px-4 py-3 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors resize-none"
+              className="w-full h-[80px] border border-gray-200/80 rounded-md px-4 py-3 font-[family-name:var(--font-poppins)] text-[14px] text-gray-500 outline-none focus:border-[#165ba7] transition-colors resize-none"
             ></textarea>
 
-            <button className="w-full h-[52px] bg-[#B07399] hover:bg-[#9a6485] transition-colors rounded-[4px] text-white font-[family-name:var(--font-poppins)] text-[14px] font-semibold tracking-wide mt-1">
+            <button className="w-full h-[52px] bg-[#B07399] hover:bg-[#9a6485] transition-colors rounded-md text-white font-[family-name:var(--font-poppins)] text-[14px] font-semibold tracking-wide mt-1">
               Book Your Dentist
             </button>
           </div>

@@ -54,13 +54,13 @@ export default function About() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#C187A4] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 items-center justify-center rounded-xl bg-[#C187A4] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <Link
             to="/services"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
+            className="inline-flex h-12 items-center justify-center rounded-xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </Link>

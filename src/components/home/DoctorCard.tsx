@@ -67,7 +67,7 @@ function DoctorPhoto({
 function StatPill({ value, label }: { value: string; label: string }) {
   return (
     <div
-      className="flex h-[55px] shrink-0 flex-col items-center justify-center rounded-[35px] border border-[rgba(0,0,0,0.06)] bg-white px-9 py-2"
+      className="flex h-[55px] shrink-0 flex-col items-center justify-center rounded-xl border border-[rgba(0,0,0,0.06)] bg-white px-9 py-2"
       style={{ boxShadow: PILL_SHADOW }}
     >
       <span className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-base font-medium tracking-[0.04em] text-[#212529]">

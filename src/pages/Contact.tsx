@@ -19,7 +19,7 @@ export default function Contact() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>

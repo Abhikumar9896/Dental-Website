@@ -26,7 +26,7 @@ export default function NotFound() {
             </p>
             <Link
               to="/"
-              className="inline-flex h-12 w-[200px] items-center justify-center rounded-2xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+              className="inline-flex h-12 w-[200px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
             >
               Go Home
             </Link>

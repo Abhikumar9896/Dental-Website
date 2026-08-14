@@ -8,7 +8,7 @@ type AppointmentCtaProps = {
 export default function AppointmentCta({ top, className = '' }: AppointmentCtaProps) {
   return (
     <div
-      className={`absolute left-[60px] h-[448px] w-[1320px] overflow-hidden rounded-[20px] bg-[#165ba7] ${className}`}
+      className={`absolute left-[60px] h-[448px] w-[1320px] overflow-hidden rounded-xl bg-[#165ba7] ${className}`}
       style={{ top }}
     >
       <div className="absolute left-[81px] top-[60px] flex w-[381px] flex-col" style={{ gap: 60 }}>
@@ -42,7 +42,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
           </div>
           <button
             type="submit"
-            className="flex h-12 w-full items-center justify-center rounded-xl bg-[#C187A4]"
+            className="flex h-12 w-full items-center justify-center rounded-md bg-[#C187A4]"
           >
             <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">
               Schedule Appointment
@@ -91,7 +91,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
       </div>
 
       <div
-        className="absolute left-[1119px] top-[295px] z-[3] flex h-[56px] w-[174px] items-center justify-center rounded-[30px] bg-white"
+        className="absolute left-[1119px] top-[295px] z-[3] flex h-[56px] w-[174px] items-center justify-center rounded-xl bg-white"
         style={{ padding: '13px 10px 10px', gap: 10 }}
       >
         <span className="font-[family-name:var(--font-fraunces)] text-2xl font-normal leading-none text-[#28231F]">
@@ -100,7 +100,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
       </div>
 
       <div
-        className="absolute left-[1028px] top-[359px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-[30px] bg-[#b3d4f6]"
+        className="absolute left-[1028px] top-[359px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-xl bg-[#b3d4f6]"
         style={{ padding: '13px 10px 10px', gap: 10 }}
       >
         <span className="font-[family-name:var(--font-fraunces)] text-2xl font-normal leading-none text-[#28231F]">
