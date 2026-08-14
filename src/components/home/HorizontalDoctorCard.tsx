@@ -28,6 +28,7 @@ export default function HorizontalDoctorCard({
       ) : (
         <div className="absolute top-[20px] left-[20px] w-[24px] h-[24px] border-[2px] border-[#C187A4] z-10"></div>
       )}
+
       <img 
         src={imgSrc || '/images/home/doctor.png'} 
         alt={name} 
@@ -52,25 +53,35 @@ export default function HorizontalDoctorCard({
     </div>
   )
 
-  const bgColor = 'bg-[#FAFAFA]'
+  const bgColor = 'bg-[#F4F4F4]'
 
   const contentSection = (
-    <div className={`flex flex-col p-[40px] flex-grow justify-center ${bgColor}`}>
+    <div className={`flex flex-col p-[28px] flex-grow justify-center ${bgColor}`}>
       <h3 className="font-[family-name:var(--font-poppins)] text-[32px] font-semibold text-[#165ba7]">
         {name}
       </h3>
-      <p className="font-[family-name:var(--font-poppins)] text-[16px] font-medium text-[#333] mt-2">
-        {role}
-      </p>
+      <div className="mt-2 flex items-center gap-3">
+        <p className="font-[family-name:var(--font-poppins)] text-[16px] font-medium text-[#333]">
+          {role}
+        </p>
+        <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-[#A66689]/10 px-2 py-0.5">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#A66689" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="font-[family-name:var(--font-poppins)] text-[10px] font-medium text-[#A66689]">
+            18+ Years of Excellence
+          </span>
+        </span>
+      </div>
       
-      <div className="w-[50px] h-[2px] bg-[#C187A4] mt-5 mb-5"></div>
+      <div className="w-[50px] h-[2px] bg-[#C187A4] mt-3 mb-3"></div>
 
-      <p className="font-[family-name:var(--font-poppins)] text-[15px] leading-[1.7] text-gray-500 mb-6 max-w-[700px]">
+      <p className="font-[family-name:var(--font-poppins)] text-[15px] leading-[1.6] text-gray-500 mb-4 max-w-[700px]">
         {description}
       </p>
 
       {bulletPoints && bulletPoints.length > 0 && (
-        <ul className="mb-8 space-y-2">
+        <ul className="mb-5 space-y-1.5">
           {bulletPoints.map((point, idx) => (
             <li key={idx} className="flex items-start gap-2.5 font-[family-name:var(--font-poppins)] text-[14px] text-gray-600">
               <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${colorScheme === 'blue' ? 'bg-[#165ba7]' : 'bg-[#C187A4]'}`}></span>
@@ -94,7 +105,7 @@ export default function HorizontalDoctorCard({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-[#C187A4] hover:text-[#a86a8a] font-[family-name:var(--font-poppins)] text-[13px] font-bold cursor-pointer group/btn transition-colors mt-6">
+        <div className="flex items-center gap-2 text-[#C187A4] hover:text-[#a86a8a] font-[family-name:var(--font-poppins)] text-[13px] font-bold cursor-pointer group/btn transition-colors mt-4">
           Book Appointment
           <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -105,7 +116,7 @@ export default function HorizontalDoctorCard({
   )
 
   return (
-    <div className={`flex w-[1250px] shadow-sm hover:shadow-lg transition-shadow duration-300 ${className}`}>
+    <div className={`flex w-[1250px] overflow-hidden rounded-[18px] shadow-sm hover:shadow-lg transition-shadow duration-300 ${className}`}>
       {imagePosition === 'left' ? (
         <>
           {imageSection}

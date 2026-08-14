@@ -6,21 +6,32 @@ interface PageHeroProps {
   title: string
   description?: string
   children?: ReactNode
+  taglineColor?: string
+  titleColor?: string
+  titleFont?: string
 }
 
-export default function PageHero({ tagline, title, description, children }: PageHeroProps) {
+export default function PageHero({ 
+  tagline, 
+  title, 
+  description, 
+  children,
+  taglineColor = "text-[#C187A4]",
+  titleColor = "text-[#28231F]",
+  titleFont = "font-[family-name:var(--font-poppins)]"
+}: PageHeroProps) {
   return (
-    <div className="absolute left-0 top-0 h-[649px] w-[1440px] overflow-visible bg-[#F9F4F1]">
+    <div className="absolute left-0 top-0 h-[800px] w-[1440px] overflow-visible bg-[#F9F4F1]">
       <HeroToothCollage />
       <div
-        className="absolute left-[80px] top-[197px] flex w-[634px] flex-col"
+        className="absolute left-[80px] top-[200px] flex w-[634px] flex-col"
         style={{ gap: 40, zIndex: 20 }}
       >
         <div className="flex w-[634px] flex-col" style={{ gap: 8 }}>
-          <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.04em] text-[#C187A4]">
+          <p className={`font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.04em] ${taglineColor}`}>
             {tagline}
           </p>
-          <h1 className="w-[634px] font-[family-name:var(--font-fraunces)] text-[54px] font-semibold leading-none text-[#28231F]">
+          <h1 className={`w-[634px] ${titleFont} text-[54px] font-semibold leading-tight ${titleColor}`}>
             {title}
           </h1>
           {description && (

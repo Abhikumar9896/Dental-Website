@@ -82,13 +82,13 @@ export default function Services() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-poppins)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <a
             href="#catalogue"
-            className="inline-flex h-12 items-center justify-center rounded-xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
+            className="inline-flex h-12 items-center justify-center rounded-xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-poppins)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </a>
@@ -98,7 +98,7 @@ export default function Services() {
           <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
             01- CARE CATALOGUE
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
+          <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-none text-[#28231F]">
             58 Treatments
           </h2>
 
@@ -133,10 +133,10 @@ export default function Services() {
                   <img src={item.image} alt="" className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
                   <div className="absolute left-5 top-5 flex flex-col" style={{ gap: 4 }}>
-                    <span className="font-[family-name:var(--font-fraunces)] text-sm font-normal leading-none text-white">
+                    <span className="font-[family-name:var(--font-poppins)] text-sm font-normal leading-none text-white">
                       {item.n}
                     </span>
-                    <h3 className="max-w-[223px] font-[family-name:var(--font-fraunces)] text-[22px] font-semibold leading-tight text-white">
+                    <h3 className="max-w-[223px] font-[family-name:var(--font-poppins)] text-[22px] font-semibold leading-tight text-white">
                       {item.title}
                     </h3>
                   </div>

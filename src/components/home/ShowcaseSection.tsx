@@ -4,7 +4,7 @@ const IMG = '/images/home'
 
 export default function ShowcaseSection() {
   return (
-    <div className="absolute left-0 top-[3416px] h-[840px] w-[1440px] overflow-hidden">
+    <div className="absolute left-0 top-[3395px] h-[840px] w-[1440px] overflow-hidden">
       <img
         src={`${IMG}/bgblue.png`}
         alt=""

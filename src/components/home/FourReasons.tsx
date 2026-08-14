@@ -24,7 +24,7 @@ const reasons = [
 export default function FourReasons() {
   return (
     <div
-      className="absolute left-[114px] top-[2916px] flex w-[1120px] flex-col"
+      className="absolute left-[114px] top-[2934px] flex w-[1120px] flex-col"
       style={{ gap: 55 }}
     >
       <div className="flex w-[638px] flex-col" style={{ gap: 15 }}>

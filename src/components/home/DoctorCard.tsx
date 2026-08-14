@@ -127,7 +127,7 @@ export default function DoctorCard({
     <div className="flex w-[577px] flex-col" style={{ gap: topHeading ? 27 : 36 }}>
       {topHeading ? (
         <div className="flex flex-col" style={{ gap: 12 }}>
-          <h2 className="w-[577px] font-[family-name:var(--font-fraunces)] text-[48px] font-normal leading-[45px] text-[#28231F]">
+          <h2 className="w-[577px] font-[family-name:var(--font-poppins)] text-[48px] font-normal leading-[45px] text-[#28231F]">
             {topHeading}
           </h2>
           <div className="h-[3px] w-10 bg-[#C187A4]" />

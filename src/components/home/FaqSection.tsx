@@ -16,7 +16,7 @@ export default function FaqSection({
 }) {
   return (
     <div
-      className="absolute left-[60px] top-[4905px] box-border flex h-[529px] w-[1320px] rounded-xl bg-[#F9F4F1]"
+      className="absolute left-[60px] top-[4884px] box-border flex h-[529px] w-[1320px] rounded-xl bg-[#F9F4F1]"
       style={{ padding: '40px 59px 40px 60px' }}
     >
       <div className="flex h-[449px] w-[1202px]" style={{ gap: 135 }}>

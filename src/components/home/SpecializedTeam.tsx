@@ -1,6 +1,6 @@
 export default function SpecializedTeam() {
   return (
-    <div className="absolute left-0 top-[2200px] flex w-full items-start px-[120px] pt-[30px] h-[600px] overflow-hidden">
+    <div className="absolute left-0 top-[2233px] flex w-full items-start px-[120px] pt-[30px] h-[600px] overflow-hidden">
       {/* Full Background Image */}
       <img
         src="/images/home/specialized-team-doctor.png"
@@ -42,7 +42,7 @@ export default function SpecializedTeam() {
         <div className="mt-10 flex flex-col items-center gap-4 w-full pl-[30px]">
           <div className="w-[150px] h-[1px] bg-[#C187A4]"></div>
           {/* Using a placeholder signature image or stylish text */}
-          <span className="font-script text-[40px] text-[#28231F] py-1 opacity-80" style={{ fontFamily: 'Brush Script MT, cursive' }}>
+          <span className="text-[40px] text-[#28231F] py-1 opacity-80 italic font-[family-name:var(--font-poppins)]">
             Dental Esthetique
           </span>
           <div className="w-[150px] h-[1px] bg-[#C187A4]"></div>

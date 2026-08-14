@@ -1,6 +1,6 @@
 export default function BookAppointment() {
   return (
-    <div className="absolute left-[60px] top-[880px] w-[1320px] h-[640px] z-30">
+    <div className="absolute left-[60px] top-[894px] w-[1320px] h-[640px] z-30">
       {/* White box */}
       <div className="absolute right-0 top-0 w-[1000px] h-[640px] bg-white shadow-[0_15px_50px_rgba(0,0,0,0.06)] flex flex-col pt-[50px] pb-12 pl-[300px] pr-[70px] rounded-sm">
         <h2 className="text-[32px] font-medium text-[#165ba7] mb-6 font-[family-name:var(--font-poppins)]">
@@ -58,11 +58,11 @@ export default function BookAppointment() {
       <div className="absolute left-0 top-[100px] w-[560px] h-[440px] bg-[#0A5BA8] flex flex-col justify-center items-center px-[80px] text-center shadow-lg">
         <div className="w-[100px] h-[2px] bg-[#D86C97] mb-10"></div>
         <div className="relative w-full">
-          <span className="absolute -left-6 -top-4 text-5xl font-[family-name:var(--font-fraunces)] italic font-bold text-white leading-none">“</span>
+          <span className="absolute -left-6 -top-4 text-5xl font-[family-name:var(--font-poppins)] italic font-bold text-white leading-none">“</span>
           <p className="text-white font-[family-name:var(--font-poppins)] text-[22px] leading-[1.6] font-light">
             At Dental ESTHETIQUE, we are committed to providing you and your family with the highest quality of compassionate dental care.
           </p>
-          <span className="absolute -right-4 bottom-0 text-5xl font-[family-name:var(--font-fraunces)] italic font-bold text-white leading-none">”</span>
+          <span className="absolute -right-4 bottom-0 text-5xl font-[family-name:var(--font-poppins)] italic font-bold text-white leading-none">”</span>
         </div>
         <div className="w-[100px] h-[2px] bg-[#D86C97] mt-10 mb-8"></div>
         
@@ -72,8 +72,8 @@ export default function BookAppointment() {
             {`@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');`}
           </style>
           <span 
-            className="text-white text-[36px] block -rotate-2 tracking-wide" 
-            style={{ fontFamily: "'Great Vibes', cursive", textShadow: "1px 1px 2px rgba(0,0,0,0.1)" }}
+            className="text-white text-[36px] block -rotate-2 tracking-wide italic font-[family-name:var(--font-poppins)]" 
+            style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.1)" }}
           >
             Dr. Deepika Singhal
           </span>

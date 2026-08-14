@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="flex w-[271px] flex-col" style={{ gap: 20 }}>
             <div className="flex items-center" style={{ gap: 12 }}>
               <img src="/images/home/logo-footer.svg" alt="" width={47} height={53} />
-              <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
+              <span className="font-[family-name:var(--font-poppins)] text-xl font-bold text-[#CCCCCC]">
                 Dental Esthetique
               </span>
             </div>
@@ -20,7 +20,7 @@ export default function Footer() {
 
           <div className="flex" style={{ gap: 60 }}>
             <div className="flex w-[158px] flex-col" style={{ gap: 20 }}>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-bold text-[#CCCCCC]">
                 Quick links
               </p>
               <div
@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex w-[158px] flex-col" style={{ gap: 20 }}>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-bold text-[#CCCCCC]">
                 Treatments
               </p>
               <div
@@ -47,7 +47,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex w-[188px] flex-col" style={{ gap: 20 }}>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-bold text-[#CCCCCC]">
                 Contact
               </p>
               <div
@@ -60,7 +60,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex w-[158px] flex-col" style={{ gap: 20 }}>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-bold text-[#CCCCCC]">
                 Book
               </p>
               <div
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="absolute left-[124px] top-[381px] h-px w-[1168px] bg-white/15" />
-        <p className="absolute left-[442px] top-[411px] w-[458px] text-center font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#CCCCCC]">
+        <p className="absolute left-[442px] top-[411px] w-[458px] text-center font-[family-name:var(--font-poppins)] text-xl font-bold text-[#CCCCCC]">
           © 2026 Dental Esthetique. All rights reserved.
         </p>
       </div>

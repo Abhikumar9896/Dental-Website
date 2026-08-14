@@ -19,7 +19,7 @@ export default function Contact() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-poppins)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
@@ -29,7 +29,7 @@ export default function Contact() {
           <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
             CONTACT INFORMATION
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
+          <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-none text-[#28231F]">
             Visit Our Clinic
           </h2>
 
@@ -51,7 +51,7 @@ export default function Contact() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-semibold text-[#28231F]">
                 Address
               </p>
               <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
@@ -74,7 +74,7 @@ export default function Contact() {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </div>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-semibold text-[#28231F]">
                 Phone
               </p>
               <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
@@ -98,7 +98,7 @@ export default function Contact() {
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
               </div>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-semibold text-[#28231F]">
                 Email
               </p>
               <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">
@@ -122,7 +122,7 @@ export default function Contact() {
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
               </div>
-              <p className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+              <p className="font-[family-name:var(--font-poppins)] text-xl font-semibold text-[#28231F]">
                 Hours
               </p>
               <p className="font-[family-name:var(--font-poppins)] text-base text-[#767676]">

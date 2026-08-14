@@ -12,7 +12,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 -ml-16">
             <img src="/images/home/logo.svg" alt="Dental Esthetique" className="h-[45px] w-[42px]" />
-            <span className="font-[family-name:var(--font-fraunces)] text-[28px] font-bold text-[#1E73BE]">
+            <span className="font-[family-name:var(--font-poppins)] text-[28px] font-bold text-[#1E73BE]">
               Dental<span className="text-[#D35B8F]">Esthetique</span>
             </span>
           </Link>

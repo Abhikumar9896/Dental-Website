@@ -14,11 +14,11 @@ export default function KeyTreatments() {
               '0px 4px 6.2px 0px rgba(10,91,168,0.15), 4px 0px 66.8px 0px rgba(255,255,255,0.25)',
           }}
         >
-          <span className="whitespace-nowrap font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#28231F]">
+          <span className="whitespace-nowrap font-[family-name:var(--font-poppins)] text-xl font-semibold text-[#28231F]">
             Key Treatments
           </span>
         </div>
-        <h2 className="h-[118px] w-[686px] font-[family-name:var(--font-fraunces)] text-[48px] font-normal leading-none text-[#28231F]">
+        <h2 className="h-[118px] w-[686px] font-[family-name:var(--font-poppins)] text-[48px] font-normal leading-none text-[#28231F]">
           Most requested treatments for every smile need.
         </h2>
       </div>
@@ -82,11 +82,11 @@ export default function KeyTreatments() {
               className="flex h-[31px] w-[118px] items-center rounded-lg border border-[rgba(0,0,0,0.06)] bg-white"
               style={{ padding: '7px 10px' }}
             >
-              <span className="font-[family-name:var(--font-fraunces)] text-base text-[#28231F]">
+              <span className="font-[family-name:var(--font-poppins)] text-base text-[#28231F]">
                 Top Popular
               </span>
             </div>
-            <p className="font-[family-name:var(--font-fraunces)] text-[32px] leading-none text-[#28231F]">
+            <p className="font-[family-name:var(--font-poppins)] text-[32px] leading-none text-[#28231F]">
               Gum Surgeries
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function KeyTreatments() {
           fill="#fff"
         >
           <div className="absolute left-7 top-7 z-10 flex w-[501px] flex-col" style={{ gap: 60 }}>
-            <h3 className="w-[340px] font-[family-name:var(--font-fraunces)] text-[32px] leading-8 text-[#28231F]">
+            <h3 className="w-[340px] font-[family-name:var(--font-poppins)] text-[32px] leading-8 text-[#28231F]">
               Implant Supported Dentures
             </h3>
             <p className="font-[family-name:var(--font-poppins)] text-xl text-[#696969]">
@@ -144,7 +144,7 @@ export default function KeyTreatments() {
             className="absolute left-7 top-[29px] z-10 flex w-[501px] flex-col"
             style={{ gap: 60 }}
           >
-            <h3 className="w-[340px] font-[family-name:var(--font-fraunces)] text-[32px] leading-8 text-white">
+            <h3 className="w-[340px] font-[family-name:var(--font-poppins)] text-[32px] leading-8 text-white">
               Full Mouth Rehabilitation
             </h3>
             <p className="font-[family-name:var(--font-poppins)] text-xl text-white">

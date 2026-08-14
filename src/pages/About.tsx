@@ -4,12 +4,12 @@ import PageHero from '../components/ui/PageHero'
 
 const IMG = '/images/about'
 const W = 1440
-const H = 2740
+const H = 2743
 
 const stats = [
   { value: '5.0', label: 'CLINIC RATING', star: true },
   { value: '311+', label: 'PATIENT STORIES' },
-  { value: '58', label: 'TREATMENTS' },
+  { value: '58+', label: 'TREATMENTS' },
   { value: '2', label: 'SPECIALITIES' },
 ] as const
 
@@ -47,37 +47,36 @@ export default function About() {
         style={{ width: W, height: H, minWidth: W }}
       >
         <PageHero
-          tagline="About Dental Esthetique"
-          title="Care built on trust, not just treatments."
-          description="Committed to creating healthier, brighter smiles through expert dental care,
-                advanced technology, and specialised treatments."
+          tagline="About Dental Esthétique"
+          title="Your Trusted Partner in Complete Dental Care"
+          description="Dental Esthétique is committed to delivering exceptional dental care through advanced technology, evidence based treatments, and a patient first approach. From routine dental check ups to complex smile transformations, our goal is to ensure every patient receives personalized care in a safe, comfortable, and modern environment."
+          taglineColor="text-[#C187A4]"
+          titleColor="text-[#28231F]"
+          titleFont="font-[family-name:var(--font-fraunces)]"
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-xl bg-[#C187A4] px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-[44px] items-center justify-center rounded-full bg-[#C187A4] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-white shadow-sm hover:opacity-90 transition-opacity"
           >
             Book an appointment
           </Link>
           <Link
             to="/services"
-            className="inline-flex h-12 items-center justify-center rounded-xl border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
+            className="inline-flex h-[44px] items-center justify-center rounded-full border-[1.5px] border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-[#C187A4] hover:bg-[#C187A4]/5 transition-colors"
           >
             See treatments
           </Link>
         </PageHero>
 
-        <div className="absolute left-0 top-[649px] flex h-[148px] w-[1440px] items-center bg-white">
-          {stats.map((stat, i) => (
+        <div className="absolute left-[80px] top-[700px] flex h-[72px] w-[1280px] items-center justify-between rounded-[47px] bg-white px-[124px] shadow-[0_8px_32px_rgba(22,91,167,0.08)]">
+          {stats.map((stat) => (
             <div
               key={stat.label}
-              className="relative flex h-full flex-1 flex-col items-center justify-center"
-              style={{ gap: 10 }}
+              className="flex flex-col items-center justify-center"
+              style={{ gap: 4 }}
             >
-              {i > 0 && (
-                <span className="absolute left-0 top-1/2 h-[72px] w-px -translate-y-1/2 bg-[rgba(40,35,31,0.12)]" />
-              )}
               <div className="flex items-center" style={{ gap: 8 }}>
-                <span className="font-[family-name:var(--font-fraunces)] text-[48px] font-semibold leading-none text-[#C187A4]">
+                <span className="font-[family-name:var(--font-poppins)] text-[32px] font-semibold leading-none text-[#165ba7]">
                   {stat.value}
                 </span>
                 {'star' in stat && stat.star ? (
@@ -86,25 +85,26 @@ export default function About() {
                     alt=""
                     className="h-6 w-6"
                     style={{
+                      // CSS filter for #165ba7
                       filter:
-                        'brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(1482%) hue-rotate(352deg) brightness(99%) contrast(93%)',
+                        'brightness(0) saturate(100%) invert(30%) sepia(82%) saturate(1900%) hue-rotate(192deg) brightness(92%) contrast(92%)',
                     }}
                   />
                 ) : null}
               </div>
-              <p className="font-[family-name:var(--font-poppins)] text-xs font-medium tracking-[0.14em] text-[#28231F]">
+              <p className="font-[family-name:var(--font-poppins)] text-[10px] font-medium tracking-[0.14em] text-[#28231F]">
                 {stat.label}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="absolute left-0 top-[797px] h-[739px] w-[1440px] bg-[#F9F4F1]">
+        <div className="absolute left-0 top-[800px] h-[739px] w-[1440px] bg-[#F9F4F1]">
           <div className="absolute left-[80px] top-[80px] w-[560px]">
             <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
               02- OUR STORY
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-[1.1] text-[#28231F]">
+            <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-[1.1] text-[#28231F]">
               A Clinic Built Around Real Trust
             </h2>
 
@@ -135,7 +135,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="absolute left-0 top-[1536px] h-[435px] w-[1440px] bg-[#F9F4F1]">
+        <div className="absolute left-0 top-[1539px] h-[435px] w-[1440px] bg-[#F9F4F1]">
           <div
             className="absolute left-[80px] top-[48px] flex w-[1280px] flex-col"
             style={{ gap: 36 }}
@@ -144,7 +144,7 @@ export default function About() {
               <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 03-VISION & MISSION
               </p>
-              <h2 className="font-[family-name:var(--font-fraunces)] text-[36px] font-semibold leading-none text-[#28231F]">
+              <h2 className="font-[family-name:var(--font-poppins)] text-[36px] font-semibold leading-none text-[#28231F]">
                 What we're working toward
               </h2>
             </div>
@@ -159,7 +159,7 @@ export default function About() {
                   <p className="font-[family-name:var(--font-poppins)] text-xl font-medium leading-none tracking-[0.04em] text-white">
                     {card.label}
                   </p>
-                  <p className="font-[family-name:var(--font-fraunces)] text-[22px] font-semibold leading-tight text-white">
+                  <p className="font-[family-name:var(--font-poppins)] text-[22px] font-semibold leading-tight text-white">
                     {card.title}
                   </p>
                   <p className="font-[family-name:var(--font-poppins)] text-base font-normal leading-[1.5] tracking-[0.03em] text-[#E1E1E1]">
@@ -171,7 +171,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="absolute left-0 top-[1971px] h-[220px] w-[1440px] bg-[#F9F4F1]">
+        <div className="absolute left-0 top-[1974px] h-[220px] w-[1440px] bg-[#F9F4F1]">
           <div
             className="absolute left-[80px] top-[40px] flex w-[1280px] flex-col"
             style={{ gap: 36 }}
@@ -180,7 +180,7 @@ export default function About() {
               <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 04-GOOD TO KNOW
               </p>
-              <h2 className="font-[family-name:var(--font-fraunces)] text-[36px] font-semibold leading-none text-[#28231F]">
+              <h2 className="font-[family-name:var(--font-poppins)] text-[36px] font-semibold leading-none text-[#28231F]">
                 Certifications and clinic standards
               </h2>
             </div>
@@ -198,7 +198,7 @@ export default function About() {
           </div>
         </div>
 
-        <AppointmentCta top={2240} />
+        <AppointmentCta top={2243} />
       </div>
     </div>
   )

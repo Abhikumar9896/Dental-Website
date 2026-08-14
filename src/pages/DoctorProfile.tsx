@@ -51,13 +51,13 @@ export default function DoctorProfile() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-12 w-[246px] items-center justify-center rounded-md bg-[#C187A4] font-[family-name:var(--font-fraunces)] text-xl font-bold text-white"
+            className="inline-flex h-12 w-[246px] items-center justify-center rounded-md bg-[#C187A4] font-[family-name:var(--font-poppins)] text-xl font-bold text-white"
           >
             Book an appointment
           </Link>
           <Link
             to="/services"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-fraunces)] text-xl font-bold text-[#C187A4]"
+            className="inline-flex h-12 items-center justify-center rounded-md border border-[#C187A4] bg-transparent px-8 font-[family-name:var(--font-poppins)] text-xl font-bold text-[#C187A4]"
           >
             See treatments
           </Link>
@@ -68,7 +68,7 @@ export default function DoctorProfile() {
           style={{ border: '1px solid rgba(22, 91, 167, 0.76)' }}
         >
           <div className="relative flex h-full w-[540px] shrink-0 flex-col justify-end bg-[#165ba7] px-12 pb-14">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-[32px] font-semibold leading-none text-white">
+            <h2 className="font-[family-name:var(--font-poppins)] text-[32px] font-semibold leading-none text-white">
               Dr. Deepika Singhal
             </h2>
             <p className="mt-3 font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.14em] text-white">
@@ -107,7 +107,7 @@ export default function DoctorProfile() {
               to="/contact"
               className="flex h-12 w-[616px] items-center justify-center rounded-md bg-[#C187A4]"
             >
-              <span className="font-[family-name:var(--font-fraunces)] text-xl font-bold leading-none text-white">
+              <span className="font-[family-name:var(--font-poppins)] text-xl font-bold leading-none text-white">
                 Book an appointment
               </span>
             </Link>
@@ -123,7 +123,7 @@ export default function DoctorProfile() {
               <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
                 02-FOCUS AREAS
               </p>
-              <h2 className="font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
+              <h2 className="font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-none text-[#28231F]">
                 Fields of Specialisation
               </h2>
             </div>
@@ -139,10 +139,10 @@ export default function DoctorProfile() {
                     boxShadow: CARD_SHADOW,
                   }}
                 >
-                  <p className="font-[family-name:var(--font-fraunces)] text-base font-normal leading-none text-white/55">
+                  <p className="font-[family-name:var(--font-poppins)] text-base font-normal leading-none text-white/55">
                     {card.n}
                   </p>
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-2xl font-normal leading-none text-white">
+                  <h3 className="font-[family-name:var(--font-poppins)] text-2xl font-normal leading-none text-white">
                     {card.title}
                   </h3>
                   <p className="font-[family-name:var(--font-poppins)] text-base font-normal leading-[1.4] tracking-[0.02em] text-white/90">
@@ -158,7 +158,7 @@ export default function DoctorProfile() {
           <p className="font-[family-name:var(--font-poppins)] text-sm font-medium tracking-[0.06em] text-[#C187A4]">
             03-AWARDS
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-[40px] font-semibold leading-none text-[#28231F]">
+          <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[40px] font-semibold leading-none text-[#28231F]">
             Awards
           </h2>
         </div>
