@@ -23,15 +23,13 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
-          <h2 className="font-[family-name:var(--font-poppins)] text-3xl font-semibold text-[#28231F]">
+          <h2 className="font-poppins text-3xl font-semibold text-[#28231F]">
             Something went wrong
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-lg text-[#767676]">
-            Please try again later.
-          </p>
+          <p className="font-poppins text-lg text-[#767676]">Please try again later.</p>
           <Link
             to="/"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-[#C187A4] px-8 font-[family-name:var(--font-poppins)] text-xl font-bold text-white"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-[#C187A4] px-8 font-poppins text-xl font-bold text-white"
           >
             Go back home
           </Link>

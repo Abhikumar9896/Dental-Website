@@ -18,15 +18,11 @@ export default function NotFound() {
             className="absolute left-1/2 top-[250px] z-[2] flex w-[600px] -translate-x-1/2 flex-col items-center text-center"
             style={{ gap: 24 }}
           >
-            <h1 className="font-[family-name:var(--font-poppins)] text-[96px] font-bold text-[#C187A4]">
-              404
-            </h1>
-            <p className="font-[family-name:var(--font-poppins)] text-xl text-[#767676]">
-              Page not found
-            </p>
+            <h1 className="font-poppins text-[96px] font-bold text-[#C187A4]">404</h1>
+            <p className="font-poppins text-xl text-[#767676]">Page not found</p>
             <Link
               to="/"
-              className="inline-flex h-12 w-[200px] items-center justify-center rounded-xl bg-[#C187A4] font-[family-name:var(--font-poppins)] text-xl font-bold text-white"
+              className="inline-flex h-12 w-[200px] items-center justify-center rounded-xl bg-[#C187A4] font-poppins text-xl font-bold text-white"
             >
               Go Home
             </Link>

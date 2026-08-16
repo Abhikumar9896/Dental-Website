@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import HeroButton from '../ui/HeroButton'
 
 const IMG = '/images/home'
 
@@ -20,38 +21,31 @@ export default function HeroBanner() {
       topLabelColor: 'text-[#A66689]',
       heading: (
         <>
-          Transforming Smiles<br />
-          with Advanced<br />
+          Transforming Smiles
+          <br />
+          with Advanced
+          <br />
           Dental Care.
         </>
       ),
       headingColor: 'text-[#0A5BA8]',
       content: (
         <>
-          <p className="font-[family-name:var(--font-poppins)] text-[16px] font-normal leading-[1.7] text-[#4A5568] max-w-[550px] mb-4">
-            At Dental Esthetique, we combine advanced technology, experienced
-            dental professionals, and personalized care to deliver healthy,
-            confident smiles for patients of all ages.
+          <p className="font-poppins text-[16px] font-normal leading-[1.7] text-[#4A5568] max-w-[550px] mb-4">
+            At Dental Esthetique, we combine advanced technology, experienced dental professionals,
+            and personalized care to deliver healthy, confident smiles for patients of all ages.
           </p>
           <div className="flex items-center gap-4">
-            <Link
-              to="/contact"
-              className="group flex h-[54px] items-center justify-center gap-2 rounded-md bg-[#A66689] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-medium text-white transition-all hover:bg-[#8F5675]"
-            >
-              Book an Appointment
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <Link
+            <HeroButton to="/contact" text="Book an Appointment" />
+            <HeroButton
               to="/services"
-              className="flex h-[54px] items-center justify-center rounded-md border-2 border-[#0A5BA8] bg-white/50 px-8 font-[family-name:var(--font-poppins)] text-[15px] font-semibold text-[#0A5BA8] transition-all hover:bg-[#0A5BA8] hover:text-white backdrop-blur-sm"
-            >
-              See treatments
-            </Link>
+              text="See treatments"
+              variant="outline"
+              className="!border-[#0A5BA8] !text-[#0A5BA8] hover:!bg-[#0A5BA8]/5"
+            />
           </div>
         </>
-      )
+      ),
     },
     {
       image: `/images/about/hero2.png`,
@@ -59,7 +53,8 @@ export default function HeroBanner() {
       topLabelColor: 'text-[#A0557A]',
       heading: (
         <>
-          Committed To<br />
+          Committed To
+          <br />
           Excellence
         </>
       ),
@@ -69,53 +64,57 @@ export default function HeroBanner() {
           <div className="flex gap-4 max-w-[750px] mb-6">
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                {/* Tooth Whitening Icon */}
-                <img 
-                  src="https://img.icons8.com/ios/100/08549E/tooth.png" 
-                  alt="Tooth" 
-                  className="w-[38px] h-[38px] object-contain" 
+                <img
+                  src="https://img.icons8.com/ios/100/08549E/tooth.png"
+                  alt="Tooth"
+                  className="w-[38px] h-[38px] object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-[#08549E] font-[family-name:var(--font-poppins)] font-semibold text-[18px] mb-1">Whitening</h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#3B4657] text-[14px] leading-relaxed">
-                  Completely iterate covalent<br />
-                  strategic theme areas via<br />
+                <h3 className="text-[#08549E] font-poppins font-semibold text-[18px] mb-1">
+                  Whitening
+                </h3>
+                <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
+                  Completely iterate covalent
+                  <br />
+                  strategic theme areas via
+                  <br />
                   accurate e-markets.
                 </p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                {/* Tooth Implant Icon */}
-                <img 
-                  src="https://img.icons8.com/ios/100/08549E/dental-crown.png" 
-                  alt="Prosthesis" 
-                  className="w-[38px] h-[38px] object-contain" 
-                  onError={(e) => { e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/false-teeth.png' }}
+                <img
+                  src="https://img.icons8.com/ios/100/08549E/dental-crown.png"
+                  alt="Prosthesis"
+                  className="w-[38px] h-[38px] object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/false-teeth.png'
+                  }}
                 />
               </div>
               <div>
-                <h3 className="text-[#08549E] font-[family-name:var(--font-poppins)] font-semibold text-[18px] mb-1">Prosthesis</h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#3B4657] text-[14px] leading-relaxed">
-                  Holistically foster superior<br />
-                  methodologies without market-<br />
+                <h3 className="text-[#08549E] font-poppins font-semibold text-[18px] mb-1">
+                  Prosthesis
+                </h3>
+                <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
+                  Holistically foster superior
+                  <br />
+                  methodologies without market-
+                  <br />
                   driven best practices.
                 </p>
               </div>
             </div>
           </div>
-          <Link
+          <HeroButton
             to="/services"
-            className="group flex w-max h-[54px] items-center justify-center gap-2 rounded-md bg-[#A0557A] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-medium text-white transition-all hover:bg-[#8F4765]"
-          >
-            View Our Services
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+            text="View Our Services"
+            className="!bg-[#A0557A] hover:!bg-[#8F4765]"
+          />
         </>
-      )
+      ),
     },
     {
       image: `/images/home/hero3.png`,
@@ -123,7 +122,8 @@ export default function HeroBanner() {
       topLabelColor: 'text-[#A0557A]',
       heading: (
         <>
-          Let Us Brighten<br />
+          Let Us Brighten
+          <br />
           Your Smile
         </>
       ),
@@ -133,53 +133,57 @@ export default function HeroBanner() {
           <div className="flex gap-4 max-w-[750px] mb-6">
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                {/* Implants Icon */}
-                <img 
-                  src="https://img.icons8.com/ios/100/08549E/dental-implant.png" 
-                  alt="Implants" 
-                  className="w-[38px] h-[38px] object-contain" 
+                <img
+                  src="https://img.icons8.com/ios/100/08549E/dental-implant.png"
+                  alt="Implants"
+                  className="w-[38px] h-[38px] object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-[#08549E] font-[family-name:var(--font-poppins)] font-semibold text-[18px] mb-1">Implants</h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#3B4657] text-[14px] leading-relaxed">
-                  Dramatically maintain clicks and<br />
-                  mortar solutions without<br />
+                <h3 className="text-[#08549E] font-poppins font-semibold text-[18px] mb-1">
+                  Implants
+                </h3>
+                <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
+                  Dramatically maintain clicks and
+                  <br />
+                  mortar solutions without
+                  <br />
                   functional solutions.
                 </p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                {/* Alignment Icon */}
-                <img 
-                  src="https://img.icons8.com/ios/100/08549E/tooth-with-braces.png" 
-                  alt="Alignment" 
-                  className="w-[38px] h-[38px] object-contain" 
-                  onError={(e) => { e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/clipboard.png' }}
+                <img
+                  src="https://img.icons8.com/ios/100/08549E/tooth-with-braces.png"
+                  alt="Alignment"
+                  className="w-[38px] h-[38px] object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/clipboard.png'
+                  }}
                 />
               </div>
               <div>
-                <h3 className="text-[#08549E] font-[family-name:var(--font-poppins)] font-semibold text-[18px] mb-1">Alignment</h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#3B4657] text-[14px] leading-relaxed">
-                  Dynamically innovate resource<br />
-                  leveling service for state of the<br />
+                <h3 className="text-[#08549E] font-poppins font-semibold text-[18px] mb-1">
+                  Alignment
+                </h3>
+                <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
+                  Dynamically innovate resource
+                  <br />
+                  leveling service for state of the
+                  <br />
                   art customer.
                 </p>
               </div>
             </div>
           </div>
-          <Link
+          <HeroButton
             to="/services"
-            className="group flex w-max h-[54px] items-center justify-center gap-2 rounded-md bg-[#A0557A] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-medium text-white transition-all hover:bg-[#8F4765]"
-          >
-            Dental Solutions
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+            text="Dental Solutions"
+            className="!bg-[#A0557A] hover:!bg-[#8F4765]"
+          />
         </>
-      )
+      ),
     },
     {
       image: `${IMG}/hero-bg-5ed7fb.png`,
@@ -197,55 +201,61 @@ export default function HeroBanner() {
           <div className="flex gap-4 max-w-[750px] mb-6">
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                {/* Full Protection Icon */}
-                <img 
-                  src="https://img.icons8.com/ios/100/08549E/tooth-protection.png" 
-                  alt="Full Protection" 
-                  className="w-[38px] h-[38px] object-contain" 
-                  onError={(e) => { e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/shield.png' }}
+                <img
+                  src="https://img.icons8.com/ios/100/08549E/tooth-protection.png"
+                  alt="Full Protection"
+                  className="w-[38px] h-[38px] object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/shield.png'
+                  }}
                 />
               </div>
               <div>
-                <h3 className="text-[#08549E] font-[family-name:var(--font-poppins)] font-semibold text-[18px] mb-1">Full Protection</h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#3B4657] text-[14px] leading-relaxed">
-                  Competently parallel task<br />
-                  researched data and process<br />
+                <h3 className="text-[#08549E] font-poppins font-semibold text-[18px] mb-1">
+                  Full Protection
+                </h3>
+                <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
+                  Competently parallel task
+                  <br />
+                  researched data and process
+                  <br />
                   improvements.
                 </p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                {/* Complete Service Icon */}
-                <img 
-                  src="https://img.icons8.com/ios/100/08549E/dentist-chair.png" 
-                  alt="Complete Service" 
-                  className="w-[38px] h-[38px] object-contain" 
-                  onError={(e) => { e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/hospital-bed.png' }}
+                <img
+                  src="https://img.icons8.com/ios/100/08549E/dentist-chair.png"
+                  alt="Complete Service"
+                  className="w-[38px] h-[38px] object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/hospital-bed.png'
+                  }}
                 />
               </div>
               <div>
-                <h3 className="text-[#08549E] font-[family-name:var(--font-poppins)] font-semibold text-[18px] mb-1">Complete Service</h3>
-                <p className="font-[family-name:var(--font-poppins)] text-[#3B4657] text-[14px] leading-relaxed">
-                  Collaboratively expedite quality<br />
-                  products via client focused<br />
+                <h3 className="text-[#08549E] font-poppins font-semibold text-[18px] mb-1">
+                  Complete Service
+                </h3>
+                <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
+                  Collaboratively expedite quality
+                  <br />
+                  products via client focused
+                  <br />
                   results.
                 </p>
               </div>
             </div>
           </div>
-          <Link
-            to="/process"
-            className="group flex w-max h-[54px] items-center justify-center gap-2 rounded-md bg-[#A0557A] px-8 font-[family-name:var(--font-poppins)] text-[15px] font-medium text-white transition-all hover:bg-[#8F4765]"
-          >
-            DentiCare Process
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+          <HeroButton
+            to="/contact"
+            text="Book an Appointment"
+            className="!bg-[#A0557A] hover:!bg-[#8F4765]"
+          />
         </>
-      )
-    }
+      ),
+    },
   ]
 
   return (
@@ -262,29 +272,72 @@ export default function HeroBanner() {
               src={slide.image}
               alt=""
               className={`absolute left-0 top-0 h-[778px] w-[1440px] object-cover ${
-                index === 1 ? 'scale-[1.15] object-[center_top] origin-top' : 
-                index === 0 ? 'object-top' : ''
+                index === 1 ? 'object-[center_top]' : index === 0 ? 'object-top' : ''
               }`}
             />
-            <div 
+            <div
               className={`absolute left-0 top-0 h-[778px] w-[1440px] bg-gradient-to-r ${
                 index === 1 ? 'from-white/60 via-white/20' : 'from-white/90 via-white/50'
-              } to-transparent`} 
+              } to-transparent`}
             />
-            
-            <div className="absolute left-[4%] top-[58%] flex w-[700px] -translate-y-1/2 flex-col items-start text-left gap-4">
-              <span className={`font-[family-name:var(--font-poppins)] text-[20px] font-medium ${slide.topLabelColor} tracking-wide transition-all duration-700 delay-100 ${currentSlide === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                {slide.topLabel}
-              </span>
 
-              <div className="flex flex-col gap-4">
-                <h1 className={`font-[family-name:var(--font-poppins)] text-[56px] font-bold leading-[1.1] ${slide.headingColor} tracking-tight transition-all duration-700 delay-200 ${currentSlide === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                  {slide.heading}
-                </h1>
-                <div className={`transition-all duration-700 delay-300 ${currentSlide === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                  {slide.content}
-                </div>
-              </div>
+            <div className="absolute left-[4%] top-[58%] flex w-[700px] -translate-y-1/2 flex-col items-start text-left gap-4">
+              <AnimatePresence initial={false}>
+                {currentSlide === index && (
+                  <motion.div
+                    className="flex flex-col gap-4 w-full"
+                    initial="hidden"
+                    animate="show"
+                    exit="hidden"
+                    variants={{
+                      hidden: {},
+                      show: { transition: { staggerChildren: 0.14, delayChildren: 0.15 } },
+                    }}
+                  >
+                    <motion.span
+                      variants={{
+                        hidden: { opacity: 0, y: 28, scale: 0.9 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                          transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                        },
+                      }}
+                      className={`font-poppins bg-[#C187A4]/10 text-[13px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full w-max ${slide.topLabelColor}`}
+                    >
+                      {slide.topLabel}
+                    </motion.span>
+
+                    <motion.h1
+                      variants={{
+                        hidden: { opacity: 0, y: 44 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                        },
+                      }}
+                      className={`font-poppins text-[56px] font-bold leading-[1.1] ${slide.headingColor} tracking-tight`}
+                    >
+                      {slide.heading}
+                    </motion.h1>
+
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 36 },
+                        show: {
+                          opacity: 1,
+                          y: 0,
+                          transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                        },
+                      }}
+                    >
+                      {slide.content}
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         ))}
@@ -302,10 +355,14 @@ export default function HeroBanner() {
                 'Advanced Dental Care',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <svg className="w-[18px] h-[18px] text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <svg
+                    className="w-[18px] h-[18px] text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
                     <path d="M19 10h-5V5h-4v5H5v4h5v5h4v-5h5v-4z" />
                   </svg>
-                  <span className="font-[family-name:var(--font-poppins)] text-[13px] font-semibold tracking-widest text-white uppercase">
+                  <span className="font-poppins text-[13px] font-semibold tracking-widest text-white uppercase">
                     {item}
                   </span>
                 </div>

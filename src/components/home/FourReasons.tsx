@@ -1,3 +1,5 @@
+import { Stagger, StaggerItem } from '../ui/Reveal'
+
 const reasons = [
   {
     num: '01',
@@ -23,46 +25,49 @@ const reasons = [
 
 export default function FourReasons() {
   return (
-    <div
-      className="absolute left-[114px] top-[2934px] flex w-[1120px] flex-col"
-      style={{ gap: 55 }}
-    >
-      <div className="flex w-[638px] flex-col" style={{ gap: 15 }}>
-        <h2 className="font-[family-name:var(--font-fraunces)] text-[48px] font-semibold leading-none text-[#28231F]">
-          Four reasons patients stay
-        </h2>
-        <p className="h-[60px] font-[family-name:var(--font-poppins)] text-xl font-normal leading-none tracking-[0.04em] text-[rgba(40,35,31,0.7)]">
-          Two specialities, one standard of care. Here&apos;s what that actually means day to day.
-        </p>
-      </div>
+    <div className="absolute left-[78px] top-[2934px] flex w-[1280px] flex-col" style={{ gap: 55 }}>
+      <Stagger className="flex w-[638px] flex-col gap-[15px]" gap={0.15}>
+        <StaggerItem>
+          <h2 className="font-fraunces text-[48px] font-semibold leading-none text-[#28231F]">
+            Four reasons patients stay
+          </h2>
+        </StaggerItem>
+        <StaggerItem>
+          <p className="h-[60px] font-poppins text-xl font-normal leading-none tracking-[0.04em] text-[rgba(40,35,31,0.7)]">
+            Two specialities, one standard of care. Here&apos;s what that actually means day to day.
+          </p>
+        </StaggerItem>
+      </Stagger>
 
-      <div className="flex w-full items-start" style={{ gap: 80 }}>
+      <Stagger className="flex w-full items-start gap-[133px]" gap={0.12}>
         {reasons.map((r) => (
-          <div key={r.num} className="flex w-[220px] flex-col items-center" style={{ gap: 40 }}>
-            <div className="relative flex h-[97px] w-[177px] items-start justify-center overflow-hidden">
-              <span
-                className="font-[family-name:var(--font-fraunces)] text-[128px] font-semibold leading-none"
-                style={{
-                  background: 'linear-gradient(180deg, #A66689 0%, rgba(166,102,137,0.25) 85%)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                }}
-              >
-                {r.num}
-              </span>
+          <StaggerItem key={r.num} className="flex w-[220px] flex-col items-center">
+            <div className="flex w-[220px] flex-col items-center" style={{ gap: 40 }}>
+              <div className="relative flex h-[97px] w-[177px] items-start justify-center overflow-hidden">
+                <span
+                  className="font-fraunces text-[128px] font-semibold leading-none"
+                  style={{
+                    background: 'linear-gradient(180deg, #A66689 0%, rgba(166,102,137,0.25) 85%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                  }}
+                >
+                  {r.num}
+                </span>
+              </div>
+              <div className="flex w-full flex-col items-center" style={{ gap: 4 }}>
+                <p className="text-center font-poppins text-xl font-medium leading-none text-[#242221]">
+                  {r.title}
+                </p>
+                <p className="w-[236px] text-center font-poppins text-sm font-normal leading-none tracking-[0.04em] text-[rgba(42,42,42,0.7)]">
+                  {r.desc}
+                </p>
+              </div>
             </div>
-            <div className="flex w-full flex-col items-center" style={{ gap: 4 }}>
-              <p className="text-center font-[family-name:var(--font-poppins)] text-xl font-medium leading-none text-[#242221]">
-                {r.title}
-              </p>
-              <p className="w-[236px] text-center font-[family-name:var(--font-poppins)] text-sm font-normal leading-none tracking-[0.04em] text-[rgba(42,42,42,0.7)]">
-                {r.desc}
-              </p>
-            </div>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
     </div>
   )
 }

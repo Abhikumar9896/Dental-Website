@@ -6,7 +6,7 @@
   --font-poppins: 'Poppins', sans-serif;
   --font-gabriela: 'Gabriela', serif;
 
-  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee: marquee 120s linear infinite;
 
   @keyframes marquee {
     0% {
@@ -16,6 +16,14 @@
       transform: translateX(-50%);
     }
   }
+}
+
+@utility font-poppins {
+  font-family: var(--font-poppins);
+}
+
+@utility font-fraunces {
+  font-family: var(--font-fraunces);
 }
 
 html {
