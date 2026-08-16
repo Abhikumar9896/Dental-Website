@@ -25,7 +25,7 @@ export default function GallerySection() {
       >
         <StaggerItem className="box-border h-[608px] w-[429px] shrink-0 overflow-hidden rounded-md border-2 border-gray-300">
           <img
-            src={`${IMG}/gallery-1-1b2b07.png`}
+            src={`${IMG}/gallery-1-1b2b07.webp`}
             alt=""
             className="h-full w-full object-cover"
             loading="lazy"
@@ -36,7 +36,7 @@ export default function GallerySection() {
           <div className="flex w-[631px] shrink-0 flex-col" style={{ gap: 12 }}>
             <StaggerItem className="box-border h-[314px] w-[631px] shrink-0 overflow-hidden rounded-md border-2 border-gray-300">
               <img
-                src={`${IMG}/gallery-2-1cd89a.png`}
+                src={`${IMG}/gallery-2-1cd89a.webp`}
                 alt=""
                 className="h-full w-full object-cover"
                 loading="lazy"
@@ -46,7 +46,7 @@ export default function GallerySection() {
             <div className="flex h-[273px] w-[631px] shrink-0" style={{ gap: 12 }}>
               <StaggerItem className="box-border h-[273px] w-[309px] shrink-0 overflow-hidden rounded-md border-2 border-gray-300">
                 <img
-                  src={`${IMG}/gallery-3-717ab4.png`}
+                  src={`${IMG}/gallery-3-717ab4.webp`}
                   alt=""
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -54,7 +54,7 @@ export default function GallerySection() {
               </StaggerItem>
               <StaggerItem className="box-border h-[273px] w-[310px] shrink-0 overflow-hidden rounded-md border-2 border-gray-300">
                 <img
-                  src={`${IMG}/gallery-4-57e024.png`}
+                  src={`${IMG}/gallery-4-57e024.webp`}
                   alt=""
                   className="h-full w-full object-cover"
                   loading="lazy"

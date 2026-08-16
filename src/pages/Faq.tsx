@@ -65,7 +65,7 @@ export default function Faq() {
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
           height="h-[max(100vh,800px)]"
-          backgroundImage="/images/about/faqsec.png"
+          backgroundImage="/images/about/faqsec.webp"
           bgPosition="object-cover object-right"
           hideCollage={true}
         >

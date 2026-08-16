@@ -20,7 +20,7 @@ export default function HeroToothCollage({ className = '' }: HeroToothCollagePro
       />
 
       <img
-        src={`${IMG}/hero-tooth.png?v=7`}
+        src={`${IMG}/hero-tooth.webp?v=7`}
         alt=""
         className="absolute"
         loading="lazy"
@@ -33,7 +33,7 @@ export default function HeroToothCollage({ className = '' }: HeroToothCollagePro
         }}
       />
       <img
-        src={`${IMG}/hero-smile.png?v=7`}
+        src={`${IMG}/hero-smile.webp?v=7`}
         alt=""
         className="absolute"
         loading="lazy"

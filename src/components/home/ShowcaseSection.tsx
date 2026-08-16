@@ -7,7 +7,7 @@ export default function ShowcaseSection() {
   return (
     <div className="absolute left-0 top-[3395px] h-[840px] w-[1440px] overflow-hidden">
       <img
-        src={`${IMG}/bgblue.png`}
+        src={`${IMG}/bgblue.webp`}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
       />
@@ -53,7 +53,7 @@ export default function ShowcaseSection() {
             <p className="font-fraunces text-[32px] leading-none text-[#2B231F]">Gum Surgeries</p>
           </div>
           <img
-            src={`${IMG}/teeth.png`}
+            src={`${IMG}/teeth.webp`}
             alt=""
             className="pointer-events-none absolute z-[1] max-w-none object-contain"
             loading="lazy"
@@ -71,7 +71,7 @@ export default function ShowcaseSection() {
 
       <Float amplitude={8} duration={4} delay={0.5}>
         <img
-          src={`${IMG}/avatar-circle-45d0fa.png`}
+          src={`${IMG}/avatar-circle-45d0fa.webp`}
           alt=""
           className="absolute left-[63px] top-[175px] z-20 h-[98px] w-[98px] rounded-full object-cover shadow-[0px_8px_20px_rgba(0,0,0,0.14)]"
           loading="lazy"
@@ -101,7 +101,7 @@ export default function ShowcaseSection() {
 
       <Float amplitude={14} duration={6} delay={0.7}>
         <img
-          src={`${IMG}/tooth-float-51da36.png`}
+          src={`${IMG}/tooth-float-51da36.webp`}
           alt=""
           className="pointer-events-none absolute z-20 max-w-none object-contain drop-shadow-[0px_14px_28px_rgba(0,0,0,0.18)]"
           style={{
@@ -171,7 +171,7 @@ export default function ShowcaseSection() {
 
       <Float amplitude={8} duration={4.5} delay={0.1}>
         <img
-          src={`${IMG}/clinic-row-60cc89.png`}
+          src={`${IMG}/clinic-row-60cc89.webp`}
           alt=""
           className="absolute left-[420px] top-[668px] z-[3] h-[146px] w-[268px] rounded-xl border border-white object-cover"
           loading="lazy"
@@ -199,7 +199,7 @@ export default function ShowcaseSection() {
           </div>
 
           <img
-            src={`${IMG}/smile-designing.png`}
+            src={`${IMG}/smile-designing.webp`}
             alt=""
             className="absolute left-[25px] top-[93px] z-[1] h-[127px] w-[228px] rounded-xl object-cover"
             loading="lazy"

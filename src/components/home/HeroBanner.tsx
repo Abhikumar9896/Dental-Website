@@ -16,7 +16,7 @@ export default function HeroBanner() {
 
   const slides = [
     {
-      image: `/images/home/hero1.png`,
+      image: `/images/home/hero1.webp`,
       topLabel: 'Advanced Dental Care',
       topLabelColor: 'text-[#A66689]',
       heading: (
@@ -48,7 +48,7 @@ export default function HeroBanner() {
       ),
     },
     {
-      image: `/images/about/hero2.png`,
+      image: `/images/about/hero2.webp`,
       topLabel: 'Care For Your Smile',
       topLabelColor: 'text-[#A0557A]',
       heading: (
@@ -65,7 +65,7 @@ export default function HeroBanner() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <img
-                  src="https://img.icons8.com/ios/100/08549E/tooth.png"
+                  src="https://img.icons8.com/ios/100/08549E/tooth.webp"
                   alt="Tooth"
                   className="w-[38px] h-[38px] object-contain"
                 />
@@ -86,11 +86,11 @@ export default function HeroBanner() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <img
-                  src="https://img.icons8.com/ios/100/08549E/dental-crown.png"
+                  src="https://img.icons8.com/ios/100/08549E/dental-crown.webp"
                   alt="Prosthesis"
                   className="w-[38px] h-[38px] object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/false-teeth.png'
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/false-teeth.webp'
                   }}
                 />
               </div>
@@ -117,7 +117,7 @@ export default function HeroBanner() {
       ),
     },
     {
-      image: `/images/home/hero3.png`,
+      image: `/images/home/hero3.webp`,
       topLabel: 'Care For Lifetime',
       topLabelColor: 'text-[#A0557A]',
       heading: (
@@ -134,7 +134,7 @@ export default function HeroBanner() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <img
-                  src="https://img.icons8.com/ios/100/08549E/dental-implant.png"
+                  src="https://img.icons8.com/ios/100/08549E/dental-implant.webp"
                   alt="Implants"
                   className="w-[38px] h-[38px] object-contain"
                 />
@@ -155,11 +155,11 @@ export default function HeroBanner() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <img
-                  src="https://img.icons8.com/ios/100/08549E/tooth-with-braces.png"
+                  src="https://img.icons8.com/ios/100/08549E/tooth-with-braces.webp"
                   alt="Alignment"
                   className="w-[38px] h-[38px] object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/clipboard.png'
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/clipboard.webp'
                   }}
                 />
               </div>
@@ -186,7 +186,7 @@ export default function HeroBanner() {
       ),
     },
     {
-      image: `${IMG}/hero-bg-5ed7fb.png`,
+      image: `${IMG}/hero-bg-5ed7fb.webp`,
       topLabel: 'Committed To Excellence',
       topLabelColor: 'text-[#A0557A]',
       heading: (
@@ -202,11 +202,11 @@ export default function HeroBanner() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <img
-                  src="https://img.icons8.com/ios/100/08549E/tooth-protection.png"
+                  src="https://img.icons8.com/ios/100/08549E/tooth-protection.webp"
                   alt="Full Protection"
                   className="w-[38px] h-[38px] object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/shield.png'
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/shield.webp'
                   }}
                 />
               </div>
@@ -226,11 +226,11 @@ export default function HeroBanner() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
                 <img
-                  src="https://img.icons8.com/ios/100/08549E/dentist-chair.png"
+                  src="https://img.icons8.com/ios/100/08549E/dentist-chair.webp"
                   alt="Complete Service"
                   className="w-[38px] h-[38px] object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/hospital-bed.png'
+                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/hospital-bed.webp'
                   }}
                 />
               </div>
@@ -271,6 +271,8 @@ export default function HeroBanner() {
             <img
               src={slide.image}
               alt=""
+              fetchPriority="high"
+              decoding="async"
               className={`absolute left-0 top-0 h-[778px] w-[1440px] object-cover ${
                 index === 1 ? 'object-[center_top]' : index === 0 ? 'object-top' : ''
               }`}

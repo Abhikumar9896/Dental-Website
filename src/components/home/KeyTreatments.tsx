@@ -91,7 +91,7 @@ export default function KeyTreatments() {
 
             <div className="pointer-events-none absolute left-1/2 top-[118px] z-[1] flex h-[230px] w-[280px] -translate-x-1/2 items-center justify-center">
               <img
-                src={`${IMG}/teeth.png`}
+                src={`${IMG}/teeth.webp`}
                 alt=""
                 className="object-contain"
                 style={{
@@ -140,7 +140,7 @@ export default function KeyTreatments() {
             arrowHeight={46}
             radius={20}
             bordered
-            imageSrc={`${IMG}/bgblue.png`}
+            imageSrc={`${IMG}/bgblue.webp`}
           >
             <div
               className="absolute left-7 top-[29px] z-10 flex w-[501px] flex-col"

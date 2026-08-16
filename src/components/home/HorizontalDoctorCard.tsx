@@ -28,7 +28,7 @@ export default function HorizontalDoctorCard({
   const imageSection = (
     <div className="relative w-[500px] min-h-[320px] bg-[#f4f4f4] overflow-hidden shrink-0 group">
       <img
-        src={imgSrc || '/images/home/doctor.png'}
+        src={imgSrc || '/images/home/doctor.webp'}
         alt={name}
         className={`absolute inset-0 w-full h-full object-cover ${imgObjectPosition} ${imgClassName} transition-transform duration-700 group-hover:scale-105`}
       />

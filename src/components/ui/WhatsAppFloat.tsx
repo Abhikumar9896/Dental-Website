@@ -10,7 +10,7 @@ export default function WhatsAppFloat() {
       style={{ filter: 'drop-shadow(0px 4px 24.5px rgba(50, 217, 81, 1))' }}
       aria-label="WhatsApp"
     >
-      <img src={`${IMG}/whatsapp-345821.png`} alt="WhatsApp" width={52} height={55} />
+      <img src={`${IMG}/whatsapp-345821.webp`} alt="WhatsApp" width={52} height={55} />
     </a>
   )
 }

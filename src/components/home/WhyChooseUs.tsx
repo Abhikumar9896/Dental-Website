@@ -5,7 +5,7 @@ export default function WhyChooseUs() {
     <div className="absolute left-[78px] top-[1534px] h-[539px] w-[1280px]">
       <Reveal x={-60} y={0} duration={0.8}>
         <img
-          src="/images/home/clinic-row-60cc89.png"
+          src="/images/home/clinic-row-60cc89.webp"
           alt="Clinic"
           className="absolute left-[60px] top-[60px] h-[342px] w-[456px] rounded-lg object-cover shadow-lg"
         />

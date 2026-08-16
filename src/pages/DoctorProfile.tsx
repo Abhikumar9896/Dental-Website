@@ -26,7 +26,7 @@ const DOCTORS_DATA = {
     name: 'Dr. Deepika Singhal',
     pronoun: 'Her',
     tabTitle: 'Endodontist, Cosmetic Dentist',
-    image: '/images/home/57dc078b4b52d3c3a7d118abc184bcd908bb21d9.png',
+    image: '/images/home/57dc078b4b52d3c3a7d118abc184bcd908bb21d9.webp',
     imageClass: 'w-full h-full object-cover object-top scale-[1.05]',
     pill: 'Endodontist & Cosmetic Dentist',
     desc1:
@@ -65,7 +65,7 @@ const DOCTORS_DATA = {
     quote:
       '"Her relentless pursuit of clinical excellence, commitment to innovation, and patient centric philosophy have established Dr. Deepika Singhal as a trusted name in advanced endodontics and esthetic dentistry, delivering exceptional care with precision, compassion, and lasting results."',
     award: {
-      image: '/images/home/awards.png',
+      image: '/images/home/awards.webp',
       pill: 'A RECOGNITION OF CLINICAL EXCELLENCE',
       title: 'Best Endodontist in North India',
       desc: "Dr. Deepika Singhal was honoured with this recognition at the India's Pride Healthcare Awards 2018-19, reflecting her expertise and commitment to exceptional endodontic care.",
@@ -79,7 +79,7 @@ const DOCTORS_DATA = {
     name: 'Dr. Abhinav Jain',
     pronoun: 'His',
     tabTitle: 'Orthodontist, Implantologist',
-    image: '/images/about/75524db1b2dcef952c107879077fccb06763426e-removebg-preview.png',
+    image: '/images/about/75524db1b2dcef952c107879077fccb06763426e-removebg-preview.webp',
     imageClass: 'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
     pill: 'Orthodontist & Implantologist',
     desc1:
@@ -118,7 +118,7 @@ const DOCTORS_DATA = {
     quote:
       '"His unwavering dedication to creating perfectly aligned smiles and restoring full dental function has made Dr. Abhinav Jain a highly sought-after specialist in orthodontics and implantology, delivering transformative and confident results."',
     award: {
-      image: '/images/home/awards.png',
+      image: '/images/home/awards.webp',
       pill: 'EXCELLENCE IN ORTHODONTICS',
       title: 'Top Orthodontist in Delhi NCR',
       desc: 'Dr. Abhinav Jain was recognized for his outstanding contributions to digital orthodontics and patient care at the National Dental Excellence Awards, highlighting his commitment to creating beautiful, functional smiles.',
@@ -145,7 +145,7 @@ export default function DoctorProfile() {
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
           height="h-[max(100vh,800px)]"
-          backgroundImage="/images/about/docprofile.png"
+          backgroundImage="/images/about/docprofile.webp"
           hideCollage={true}
         >
           <HeroButton to="/contact" text="Book an appointment" />
@@ -307,7 +307,7 @@ export default function DoctorProfile() {
             className="flex items-center justify-center w-[1280px] h-[252px] px-24 bg-cover bg-center bg-no-repeat"
             style={{
               borderRadius: '9px 200px 4px 200px',
-              backgroundImage: 'url(/images/home/bgblue.png)',
+              backgroundImage: 'url(/images/home/bgblue.webp)',
               backgroundColor: '#165ba7',
             }}
           >

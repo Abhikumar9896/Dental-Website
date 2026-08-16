@@ -67,7 +67,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
       </div>
 
       <img
-        src={`${IMG}/cta-blob.png`}
+        src={`${IMG}/cta-blob.webp`}
         alt=""
         className="pointer-events-none absolute left-[897px] top-10 z-[1] h-[367px] w-[353px]"
         loading="lazy"

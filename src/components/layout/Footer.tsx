@@ -87,7 +87,7 @@ export default function Footer() {
             </div>
             <div className="relative mt-2 flex w-[340px] h-[190px] flex-col items-center justify-center">
               <img
-                src="/images/home/footer-awards-new.png"
+                src="/images/home/footer-awards-new.webp"
                 alt="Awards Wreath"
                 className="absolute inset-0 h-[210px] w-[380px] -left-[10px] -top-[18px] object-contain max-w-none"
               />

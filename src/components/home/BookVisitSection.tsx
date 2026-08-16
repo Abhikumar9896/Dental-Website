@@ -4,7 +4,7 @@ export default function BookVisitSection() {
   return (
     <section
       className="absolute left-0 top-[5751px] flex h-[600px] w-full items-center overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/home/footer.png')" }}
+      style={{ backgroundImage: "url('/images/home/footer.webp')" }}
     >
       <div className="relative h-full w-[58%] shrink-0"></div>
 

@@ -4,7 +4,7 @@ export default function SpecializedTeam() {
   return (
     <div className="absolute left-0 top-[2113px] flex w-full items-start px-[120px] pt-[30px] h-[600px] overflow-hidden">
       <img
-        src="/images/home/specialized-team-doctor.png"
+        src="/images/home/specialized-team-doctor.webp"
         alt="Specialized Team"
         className="absolute inset-0 w-full h-full object-cover object-center z-0"
       />

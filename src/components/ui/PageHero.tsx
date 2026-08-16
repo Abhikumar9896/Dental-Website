@@ -40,6 +40,8 @@ export default function PageHero({
           <img
             src={backgroundImage}
             alt=""
+            fetchPriority="high"
+            decoding="async"
             className={`absolute inset-0 w-full h-full z-0 ${bgPosition}`}
           />
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/95 via-white/70 to-transparent z-0" />

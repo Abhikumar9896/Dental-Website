@@ -30,7 +30,7 @@ export default function About() {
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
           height="h-[max(100vh,800px)]"
-          backgroundImage="/images/about/abouthero.png"
+          backgroundImage="/images/about/abouthero.webp"
           hideCollage={true}
         >
           <HeroButton to="/contact" text="Book an appointment" />
@@ -65,7 +65,7 @@ export default function About() {
                 style={{ boxShadow: '0 0 0 3px rgba(193,135,164,0.4)' }}
               >
                 <img
-                  src={`${IMG}/clinic-exterior.png`}
+                  src={`${IMG}/clinic-exterior.webp`}
                   alt="Dental Esthetique clinic exterior"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -145,7 +145,7 @@ export default function About() {
         <Reveal y={40} duration={0.8} className="mt-24 w-full flex justify-center z-10 mb-4">
           <div className="w-[1280px] h-[340px] relative overflow-hidden flex flex-col items-center justify-center text-center px-[160px] rounded-tl-[9px] rounded-tr-[200px] rounded-br-[4px] rounded-bl-[200px] shadow-lg">
             <img
-              src="/images/home/bgblue.png"
+              src="/images/home/bgblue.webp"
               alt=""
               className="absolute inset-0 w-full h-full object-cover z-0"
             />

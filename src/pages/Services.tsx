@@ -28,7 +28,7 @@ export default function Services() {
           titleColor="text-[#28231F]"
           titleFont="font-fraunces !text-[62px] !leading-[1.06] tracking-[0.01em]"
           height="h-[max(100vh,800px)]"
-          backgroundImage="/images/about/treatment hero.png"
+          backgroundImage="/images/about/treatment hero.webp"
           hideCollage={true}
         >
           <HeroButton to="/contact" text="Book an appointment" />
@@ -99,7 +99,7 @@ export default function Services() {
                   {isExpanded && (
                     <div className="mt-8 flex gap-[74px]">
                       <img
-                        src={`/treatment/${item.title}.png`}
+                        src={`/treatment/${item.title}.webp`}
                         className="w-[300px] h-[160px] object-cover rounded-[16px] shrink-0"
                         alt={item.title}
                       />
