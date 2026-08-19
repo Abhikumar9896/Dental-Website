@@ -71,7 +71,13 @@ export default function BookAppointment() {
                 required
                 value={formData.date}
                 onChange={(e) => updateField('date', e.target.value)}
-                className="relative w-full h-[46px] border border-gray-200/80 rounded-md px-4 font-poppins text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer z-10 bg-transparent"
+                onClick={(e) => {
+                  const input = e.currentTarget
+                  if (input.type === 'datetime-local' && 'showPicker' in input) {
+                    input.showPicker()
+                  }
+                }}
+                className="relative w-full h-[46px] border border-gray-200/80 rounded-md px-4 font-poppins text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
                 onFocus={(e) => (e.target.type = 'datetime-local')}
                 onBlur={(e) => {
                   if (!e.target.value) e.target.type = 'text'

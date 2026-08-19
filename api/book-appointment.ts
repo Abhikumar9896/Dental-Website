@@ -107,7 +107,10 @@ function brandAttachment() {
  * Doctor / clinic notification only.
  * Patient fills the website form → this mail goes to MAIL_TO (doctors).
  */
-function buildDoctorNotificationHtml(data: Required<AppointmentPayload>): string {
+function buildDoctorNotificationHtml(
+  data: Required<AppointmentPayload>,
+  clinicEmail: string,
+): string {
   const descriptionBlock = data.description
     ? detailRow('Notes / Description', data.description, true)
     : ''
@@ -208,7 +211,7 @@ function buildDoctorNotificationHtml(data: Required<AppointmentPayload>): string
               </p>
               <p style="margin:6px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#d6e6f5;">
                 55, Vindhyachal Marg, Block B, Sector 22, Noida<br />
-                +91 98188 62265 · info@dentalesthetique.com
+                +91 98188 62265 · ${escapeHtml(clinicEmail)}
               </p>
             </td>
           </tr>
@@ -288,7 +291,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       replyTo: email,
       subject: `New Appointment Booked — ${name} (${treatment})`,
       text: textBody,
-      html: buildDoctorNotificationHtml(payload),
+      html: buildDoctorNotificationHtml(payload, mailTo),
       attachments: brandAttachment(),
     })
 

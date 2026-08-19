@@ -78,7 +78,7 @@ export default function Header() {
                     <span className="font-semibold">Mon-Sat:</span> 10 AM - 2 PM & 5 PM - 8 PM
                   </span>
                   <span className="font-poppins text-[12.5px] text-gray-500 leading-none tracking-tight">
-                    <span className="font-semibold text-[#28231F]">Sun:</span> 10:30 AM - 2 PM
+                    <span className="font-semibold text-[#28231F]">Sun:</span> 10:00 AM - 2 PM
                   </span>
                 </div>
               </div>
