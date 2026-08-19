@@ -91,7 +91,7 @@ function detailRow(label: string, value: string, isLast = false): string {
 }
 
 function brandAttachment() {
-  // Buffer content only — do not set `encoding` (that would double-encode and break the PNG).
+  // Buffer content only - do not set `encoding` (that would double-encode and break the PNG).
   return [
     {
       filename: 'dental-esthetique-logo.png',
@@ -207,7 +207,7 @@ function buildDoctorNotificationHtml(
           <tr>
             <td style="padding:20px 32px;background:#0A5BA8;">
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#ffffff;">
-                Dental Esthetique — Doctor Notification
+                Dental Esthetique - Doctor Notification
               </p>
               <p style="margin:6px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#d6e6f5;">
                 55, Vindhyachal Marg, Block B, Sector 22, Noida<br />
@@ -269,7 +269,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const payload = { name, phone, email, date, treatment, description }
 
   const textBody = [
-    'CLINIC ALERT — New appointment booked on the website',
+    'CLINIC ALERT - New appointment booked on the website',
     '',
     `Patient Name: ${name}`,
     `Phone: ${phone}`,
@@ -284,12 +284,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     .join('\n')
 
   try {
-    // Only doctors/clinic receive this — not a patient-facing email
+    // Only doctors/clinic receive this - not a patient-facing email
     await transporter.sendMail({
       from,
       to: mailTo,
       replyTo: email,
-      subject: `New Appointment Booked — ${name} (${treatment})`,
+      subject: `New Appointment Booked - ${name} (${treatment})`,
       text: textBody,
       html: buildDoctorNotificationHtml(payload, mailTo),
       attachments: brandAttachment(),

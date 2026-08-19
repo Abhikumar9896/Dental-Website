@@ -74,7 +74,7 @@ export default function LocationSection() {
           </motion.div>
         </Reveal>
 
-        <div className="absolute right-0 top-[60px] w-[380px] h-auto min-h-[440px] bg-[#135CB2] flex flex-col pt-8 pb-8 px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins">
+        <div className="absolute right-0 top-[60px] w-[380px] h-auto min-h-[340px] bg-[#135CB2] flex flex-col pt-8 pb-8 px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins">
           <h2 className="text-[26px] font-semibold mb-1.5 tracking-wide text-white drop-shadow-sm">
             Working Hours
           </h2>
@@ -84,12 +84,8 @@ export default function LocationSection() {
 
           <div className="flex flex-col mb-5">
             {[
-              { day: 'Monday', time: '8AM to 9PM', showBook: true },
-              { day: 'Tuesday', time: '8AM to 9PM', showBook: true },
-              { day: 'Wednesday', time: '9AM to 6:30PM', showBook: true },
-              { day: 'Thursday', time: '8AM to 9PM', showBook: true },
-              { day: 'Friday', time: '8AM to 9PM', showBook: true },
-              { day: 'Sat-Sun', time: 'Closed', showBook: false },
+              { day: 'Mon-Sat', time: '10 AM to 2 PM & 5 PM to 8 PM', showBook: true },
+              { day: 'Sunday', time: '10 AM to 2 PM', showBook: true },
             ].map((item, index) => (
               <div
                 key={index}
@@ -100,7 +96,13 @@ export default function LocationSection() {
                 {item.showBook ? (
                   <Link
                     to={BOOK_APPOINTMENT_TO}
-                    className="flex items-center gap-1 bg-white text-[#C187A4] px-2.5 py-1 rounded-[3px] text-[10px] font-semibold hover:bg-gray-50 transition-colors"
+                    onClick={(e) => {
+                      if (window.location.pathname === '/') {
+                        e.preventDefault()
+                        document.getElementById('book-appointment')?.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }}
+                    className="flex shrink-0 items-center gap-1 bg-white text-[#C187A4] px-2.5 py-1 rounded-[3px] text-[10px] font-semibold hover:bg-gray-50 transition-colors ml-2"
                   >
                     Book <Clock size={10} strokeWidth={2.5} />
                   </Link>
@@ -115,6 +117,12 @@ export default function LocationSection() {
             <h3 className="text-[18px] font-semibold tracking-wide">Need Flexible Time?</h3>
             <Link
               to={BOOK_APPOINTMENT_TO}
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault()
+                  document.getElementById('book-appointment')?.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
               className="flex h-[36px] w-max items-center justify-center gap-1.5 rounded bg-white px-4 font-poppins text-[11px] font-semibold text-[#C187A4] hover:bg-gray-50 transition-colors group shadow-sm"
             >
               Suggest Checkup Time

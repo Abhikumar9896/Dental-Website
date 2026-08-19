@@ -24,7 +24,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'SINGLE SITTING RCT',
     category: 'Single Sitting RCT',
     content:
-      'Single Sitting Root Canal Treatment completes the entire root canal procedure in one comfortable visit. Using advanced techniques and precise instrumentation, we remove infection, clean the canals, and seal the tooth the same day — saving your natural tooth with minimal appointments and maximum comfort.',
+      'Single Sitting Root Canal Treatment completes the entire root canal procedure in one comfortable visit. Using advanced techniques and precise instrumentation, we remove infection, clean the canals, and seal the tooth the same day - saving your natural tooth with minimal appointments and maximum comfort.',
   },
   {
     title: 'RE-RCT',
@@ -210,7 +210,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'DENTAL JEWELLERY',
     category: 'Dental Jewellery',
     content:
-      'Dental jewellery adds a subtle, stylish sparkle to your smile with tiny crystal or gemstone designs bonded safely to the tooth surface. The procedure is quick, painless, and non-invasive — no drilling required. You can choose from elegant designs that enhance your look while remaining easy to remove whenever you wish.',
+      'Dental jewellery adds a subtle, stylish sparkle to your smile with tiny crystal or gemstone designs bonded safely to the tooth surface. The procedure is quick, painless, and non-invasive - no drilling required. You can choose from elegant designs that enhance your look while remaining easy to remove whenever you wish.',
   },
 
   // 11. SURGICAL REMOVAL OF CYST AND WISDOM TEETH

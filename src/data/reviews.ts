@@ -11,7 +11,7 @@ export const googleReviews = [
     time: '4 months ago',
     rating: 5,
     image: '/images/reviws-users/gaurav.webp',
-    text: 'I had an excellent experience at this dental clinic. The doctor is truly outstanding—highly skilled, patient, and very reassuring throughout the entire process. I had all my wisdom teeth removed on the same day, which initially sounded...',
+    text: 'I had an excellent experience at this dental clinic. The doctor is truly outstanding-highly skilled, patient, and very reassuring throughout the entire process. I had all my wisdom teeth removed on the same day, which initially sounded...',
   },
   {
     name: 'Annapurna Gohil',

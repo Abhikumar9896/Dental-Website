@@ -35,12 +35,12 @@ Always run `npm run build` before pushing. It runs TypeScript check first, then 
 
 ## Deploying to Vercel
 
-1. Push the repo to GitHub and import it on [vercel.com](https://vercel.com). Vite is auto-detected — no `vercel.json` needed. The `api/` folder deploys as serverless functions automatically.
+1. Push the repo to GitHub and import it on [vercel.com](https://vercel.com). Vite is auto-detected - no `vercel.json` needed. The `api/` folder deploys as serverless functions automatically.
 2. Add the SMTP environment variables in Vercel (Project → Settings → Environment Variables). Copy them from `.env.example`:
    - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `MAIL_TO`
 3. Deploy. The form on the home page will now email appointment requests to `MAIL_TO`.
 
-To test locally, run `vercel dev` (installs Vercel CLI) — it serves the Vite build and the API function together. The form lives at `/#book-appointment`.
+To test locally, run `vercel dev` (installs Vercel CLI) - it serves the Vite build and the API function together. The form lives at `/#book-appointment`.
 
 ## Folder Structure
 
@@ -175,7 +175,7 @@ Every page is a fixed 1440px wide. On smaller screens, the page scrolls horizont
 
 The appointment form on the home page (`BookAppointment.tsx`) submits to a Vercel serverless
 function at `api/book-appointment.ts`, which sends the request to the clinic inbox using Nodemailer
-over SMTP. It's still a static site on Vercel — the `api/` folder is deployed as serverless
+over SMTP. It's still a static site on Vercel - the `api/` folder is deployed as serverless
 functions, no separate server needed.
 
 ### FAQ Section Has No Answers
