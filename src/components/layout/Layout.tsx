@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
+import WhatsAppFloat from './../ui/WhatsAppFloat'
+import { scrollToId } from '../../utils/scroll'
 
 function scrollToHash(hash: string) {
   const id = hash.replace(/^#/, '')
@@ -11,12 +13,7 @@ function scrollToHash(hash: string) {
   const maxAttempts = 40
 
   const tryScroll = () => {
-    const element = document.getElementById(id)
-    if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 100
-      window.scrollTo({ top: y, behavior: 'smooth' })
-      return
-    }
+    if (scrollToId(id)) return
     attempts += 1
     if (attempts < maxAttempts) {
       setTimeout(tryScroll, 50)
@@ -44,6 +41,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }

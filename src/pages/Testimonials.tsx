@@ -6,30 +6,37 @@ import SectionHeading from '../components/ui/SectionHeading'
 import GoogleIcon from '../components/ui/GoogleIcon'
 import ReviewCard from '../components/ui/ReviewCard'
 
+const VIDEO_BASE = '/images/testimonails/optimized'
+
 const videoFiles = [
-  'WhatsApp Video 2026-08-12 at 15.50.04.mp4',
-  'WhatsApp Video 2026-08-12 at 15.50.10.mp4',
-  'WhatsApp Video 2026-08-12 at 15.50.18.mp4',
-  'WhatsApp Video 2026-08-12 at 15.50.28.mp4',
-  'WhatsApp Video 2026-08-12 at 15.50.36.mp4',
-  'WhatsApp Video 2026-08-12 at 15.50.44.mp4',
-  'WhatsApp Video 2026-08-12 at 15.50.50.mp4',
-  'WhatsApp Video 2026-08-12 at 15.51.00.mp4',
+  'video-01',
+  'video-02',
+  'video-03',
+  'video-04',
+  'video-05',
+  'video-06',
+  'video-07',
+  'video-08',
 ]
 
 function VideoCard({
-  src,
+  id,
   isActive = true,
+  shouldLoad = false,
   onCardClick,
   blurAmount = 'none',
 }: {
-  src: string
+  id: string
   isActive?: boolean
+  /** Only attach src when nearby — stops live from downloading every video on page load */
+  shouldLoad?: boolean
   onCardClick?: () => void
   blurAmount?: string
 }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const poster = `${VIDEO_BASE}/${id}.webp`
+  const src = `${VIDEO_BASE}/${id}.mp4`
 
   useEffect(() => {
     if (!isActive && isPlaying) {
@@ -38,18 +45,33 @@ function VideoCard({
     }
   }, [isActive, isPlaying])
 
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+    if (shouldLoad && el.dataset.loaded !== '1') {
+      el.src = src
+      el.dataset.loaded = '1'
+      el.load()
+    }
+  }, [shouldLoad, src])
+
   const handleInteraction = () => {
     if (!isActive) {
       onCardClick?.()
       return
     }
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause()
-      } else {
-        videoRef.current.play()
-      }
-      setIsPlaying(!isPlaying)
+    const el = videoRef.current
+    if (!el) return
+    if (!el.src) {
+      el.src = src
+      el.dataset.loaded = '1'
+      el.load()
+    }
+    if (isPlaying) {
+      el.pause()
+      setIsPlaying(false)
+    } else {
+      void el.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false))
     }
   }
 
@@ -60,11 +82,13 @@ function VideoCard({
     >
       <video
         ref={videoRef}
-        src={`/images/testimonails/${src}`}
+        poster={poster}
+        preload="none"
         className={`w-full h-full object-cover transition-opacity duration-500 ${isActive ? 'opacity-90 group-hover:opacity-100' : 'opacity-70'}`}
         style={{ filter: blurAmount, transition: 'filter 0.5s ease' }}
         loop
         playsInline
+        muted={!isPlaying}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
 
@@ -83,6 +107,24 @@ function VideoCard({
 
 function CoverflowCarousel({ videos }: { videos: string[] }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [inView, setInView] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = rootRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const handleNext = () => setActiveIndex((prev) => (prev + 1) % videos.length)
   const handlePrev = () => setActiveIndex((prev) => (prev - 1 + videos.length) % videos.length)
@@ -95,8 +137,11 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
   }
 
   return (
-    <div className="relative w-full max-w-[1200px] mx-auto h-[460px] sm:h-[520px] md:h-[590px] lg:h-[640px] flex items-center justify-center overflow-visible pt-4 pb-0">
-      {videos.map((src, index) => {
+    <div
+      ref={rootRef}
+      className="relative w-full max-w-[1200px] mx-auto h-[460px] sm:h-[520px] md:h-[590px] lg:h-[640px] flex items-center justify-center overflow-visible pt-4 pb-0"
+    >
+      {videos.map((id, index) => {
         const offset = getOffset(index)
         const absOffset = Math.abs(offset)
 
@@ -129,13 +174,14 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
 
         return (
           <div
-            key={index}
+            key={id}
             className="absolute transition-all duration-700 ease-out w-[240px] sm:w-[280px] md:w-[320px] lg:w-[340px]"
             style={{ transform, zIndex, opacity, height: 'auto' }}
           >
             <VideoCard
-              src={src}
+              id={id}
               isActive={offset === 0}
+              shouldLoad={inView && absOffset === 0}
               onCardClick={() => setActiveIndex(index)}
               blurAmount={filter}
             />
@@ -144,7 +190,9 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
       })}
 
       <button
+        type="button"
         onClick={handlePrev}
+        aria-label="Previous video"
         className="absolute left-4 md:left-12 z-50 p-3 md:p-4 bg-white/80 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:bg-white hover:scale-110 transition-all border border-gray-100"
       >
         <svg
@@ -162,7 +210,9 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
         </svg>
       </button>
       <button
+        type="button"
         onClick={handleNext}
+        aria-label="Next video"
         className="absolute right-4 md:right-12 z-50 p-3 md:p-4 bg-white/80 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:bg-white hover:scale-110 transition-all border border-gray-100"
       >
         <svg
@@ -181,10 +231,10 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
 export default function Testimonials() {
   return (
     <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden">
-      <div className="relative mx-auto flex w-[1440px] flex-col items-center pb-0">
+      <div className="relative mx-auto flex w-[1440px] flex-col items-center pb-0 h-canvas">
         <TestimonialHeroSection />
 
-        <div id="reviews" className="relative mt-8 flex w-[1200px] flex-col z-10">
+        <div id="reviews" className="relative mt-8 flex w-[1200px] flex-col z-10 h-tst-in">
           <Reveal
             y={30}
             duration={0.7}
@@ -208,7 +258,7 @@ export default function Testimonials() {
               <div className="hidden md:block w-[1px] h-[50px] bg-gray-200" />
 
               <div className="flex items-center gap-5">
-                <h2 className="font-poppins text-[52px] font-bold text-[#111827] leading-none tracking-tight">
+                <h2 className="font-poppins text-[52px] font-bold text-[#111827] leading-none tracking-tight h-tst-rate">
                   4.8
                 </h2>
                 <div className="flex flex-col gap-1.5">
@@ -297,7 +347,7 @@ export default function Testimonials() {
                   <span className="text-[#165ba7]">Walk of Life</span>
                 </>
               }
-              titleClassName="font-poppins text-[48px] font-semibold leading-[1.1] max-w-[800px]"
+              titleClassName="font-poppins text-[48px] font-semibold leading-[1.1] max-w-[800px] h-tst-sechead"
               description="Learn why patients across Noida trust Dental Esthétique for safe, comfortable, and long-lasting dental care. Read their genuine stories and see how our personalized treatments have transformed their smiles and restored their confidence."
               className="mb-16 relative z-10 px-4"
             />

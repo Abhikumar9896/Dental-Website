@@ -11,18 +11,15 @@ import GallerySection from '../components/home/GallerySection'
 import BookVisitSection from '../components/home/BookVisitSection'
 import ServicesGridSection from '../components/home/ServicesGridSection'
 import LocationSection from '../components/home/LocationSection'
-import WhatsAppFloat from '../components/ui/WhatsAppFloat'
-import { homeDoctors } from '../data/doctors'
 
-const W = 1440
-const H = 9250
+import { homeDoctors } from '../data/doctors'
 
 export default function Home() {
   return (
-    <div className="relative overflow-x-hidden bg-white" style={{ width: W, height: H }}>
+    <div className="relative overflow-x-hidden bg-white mx-auto w-full lg:w-[1440px] h-auto lg:h-[9250px] h-canvas">
       <HeroBanner />
 
-      <div className="absolute left-0 top-[786px] w-full h-[740px] bg-[#F5F7FA] z-10" />
+      <div className="hidden lg:block absolute left-0 top-[786px] w-full h-[740px] bg-[#F5F7FA] z-10 h-band" />
 
       <BookAppointment />
 
@@ -30,14 +27,14 @@ export default function Home() {
 
       <SpecializedTeam />
 
-      <div className="absolute w-full" style={{ top: 1890 }}>
-        <div className="absolute left-0 w-full top-[863px] flex flex-col items-center gap-[40px] z-30">
+      <div className="relative w-full lg:absolute lg:top-[1890px] h-doc-stack">
+        <div className="relative flex w-full flex-col items-center gap-4 px-4 py-5 lg:absolute lg:left-0 lg:top-[863px] lg:gap-[40px] lg:px-0 lg:py-0 z-30 bg-white h-doc-cards">
           {homeDoctors.map((doctor) => (
             <HorizontalDoctorCard key={doctor.name} {...doctor} />
           ))}
         </div>
 
-        <div className="relative" style={{ top: -385 }}>
+        <div className="relative lg:top-[-385px] h-rest">
           <KeyTreatments />
           <FourReasons />
           <ShowcaseSection />
@@ -48,8 +45,6 @@ export default function Home() {
           <LocationSection />
         </div>
       </div>
-
-      <WhatsAppFloat />
     </div>
   )
 }

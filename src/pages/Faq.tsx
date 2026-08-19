@@ -56,15 +56,15 @@ export default function Faq() {
 
   return (
     <div className="w-full bg-white font-poppins overflow-x-hidden">
-      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-16">
+      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-16 h-canvas">
         <PageHero
           tagline="FAQs"
           title="Frequently Asked Questions"
           description="Answers to common questions about treatments, booking, and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthétique."
-          taglineColor="text-[#C187A4]"
+          taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
-          height="h-[max(100vh,800px)]"
+          height="lg:h-[max(100vh,800px)]"
           backgroundImage="/images/about/faqsec.webp"
           bgPosition="object-cover object-right"
           hideCollage={true}
@@ -72,12 +72,12 @@ export default function Faq() {
           <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
         </PageHero>
 
-        <div className="relative mt-24 flex flex-col w-[1210px] items-center">
+        <div className="relative mt-24 flex flex-col w-[1210px] items-center h-faq-list">
           <SectionHeading
             pill="GENERAL FAQS"
             title="Get clear answers to your questions"
             align="center"
-            titleClassName="text-[42px] font-bold"
+            titleClassName="text-[42px] font-bold h-faq-sechead"
             description="Everything you need to know about our dental treatments, booking process, and what to expect during your visit."
             className="mb-6"
           />
@@ -91,8 +91,8 @@ export default function Faq() {
                   y={20}
                   className={`overflow-hidden rounded-[20px] border-[1.5px] transition-all duration-300 ${
                     isOpen
-                      ? 'border-[#C187A4] bg-white shadow-[0_8px_30px_rgba(193,135,164,0.12)]'
-                      : 'border-[#F0F0F0] bg-[#FAFAFA] hover:border-[#C187A4]/40 hover:bg-white hover:shadow-sm'
+                      ? 'border-[#D35B8F] bg-white shadow-[0_8px_30px_rgba(193,135,164,0.12)]'
+                      : 'border-[#F0F0F0] bg-[#FAFAFA] hover:border-[#D35B8F]/40 hover:bg-white hover:shadow-sm'
                   }`}
                 >
                   <button
@@ -101,12 +101,12 @@ export default function Faq() {
                     className="flex w-full items-center justify-between gap-6 px-8 py-7 text-left"
                   >
                     <span
-                      className={`font-fraunces text-[22px] leading-snug transition-colors duration-300 ${isOpen ? 'text-[#C187A4]' : 'text-[#28231F]'}`}
+                      className={`font-fraunces text-[22px] leading-snug transition-colors duration-300 h-faq-q ${isOpen ? 'text-[#D35B8F]' : 'text-[#28231F]'}`}
                     >
                       {faq.q}
                     </span>
                     <div
-                      className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#C187A4] text-white' : 'bg-[#F2E8EB] text-[#C187A4]'}`}
+                      className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#D35B8F] text-white' : 'bg-[#F2E8EB] text-[#D35B8F]'}`}
                     >
                       <svg
                         width="14"
@@ -132,7 +132,7 @@ export default function Faq() {
                   >
                     <div className="overflow-hidden">
                       <div className="px-8 pb-8 pt-1">
-                        <p className="font-poppins text-[16px] font-normal leading-[1.8] text-[#767676] max-w-[1000px]">
+                        <p className="font-poppins text-[16px] font-normal leading-[1.8] text-[#767676] max-w-[1000px] h-faq-a">
                           {faq.a}
                         </p>
                       </div>

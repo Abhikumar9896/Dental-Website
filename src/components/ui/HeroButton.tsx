@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { To } from 'react-router-dom'
+import { scrollToId } from '../../utils/scroll'
 
 interface HeroButtonProps {
   to?: To
@@ -22,10 +23,10 @@ export default function HeroButton({
   const isOutline = variant === 'outline'
 
   const baseClasses =
-    'group flex h-[48px] w-max items-center justify-center gap-2 rounded-md px-6 font-poppins text-[14px] transition-all'
+    'group flex h-[36px] md:h-[38px] lg:h-[48px] w-max items-center justify-center gap-1.5 md:gap-2 rounded-md px-3.5 md:px-4 lg:px-6 font-poppins text-[11px] md:text-[12px] lg:text-[14px] transition-all'
   const solidClasses = 'bg-[#A66689] font-medium text-white hover:bg-[#8F5675] shadow-sm'
   const outlineClasses =
-    'border-[1.5px] border-[#C187A4] bg-transparent font-semibold text-[#C187A4] hover:bg-[#C187A4]/5'
+    'border-[1.5px] border-[#D35B8F] bg-transparent font-semibold text-[#D35B8F] hover:bg-[#D35B8F]/5'
 
   const combinedClasses = `${baseClasses} ${isOutline ? outlineClasses : solidClasses} ${className}`
 
@@ -47,8 +48,20 @@ export default function HeroButton({
   )
 
   if (href) {
+    const isHash = href.startsWith('#')
     return (
-      <a href={href} className={combinedClasses}>
+      <a
+        href={href}
+        className={combinedClasses}
+        onClick={
+          isHash
+            ? (e) => {
+                e.preventDefault()
+                scrollToId(href)
+              }
+            : undefined
+        }
+      >
         {content}
       </a>
     )

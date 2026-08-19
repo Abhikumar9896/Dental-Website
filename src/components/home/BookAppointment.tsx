@@ -10,33 +10,33 @@ export default function BookAppointment() {
   const { formData, updateField, setTreatment, status, errorMessage, submit } = useAppointmentForm()
 
   const inputBaseClass =
-    'w-full h-[46px] border border-gray-200/80 rounded-md px-4 font-poppins text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors'
+    'w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors'
 
   return (
     <div
       id="book-appointment"
-      className="absolute left-[60px] top-[866px] w-[1320px] h-[640px] z-30 scroll-mt-[120px]"
+      className="relative left-0 top-0 w-full h-auto lg:absolute lg:left-[60px] lg:top-[866px] lg:w-[1320px] lg:h-[640px] z-30 scroll-mt-[120px] h-book"
     >
       <motion.div
         initial={{ opacity: 0, x: 120 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.9, ease: EASE }}
-        className="absolute right-0 top-0 w-[1000px] h-[640px] bg-white shadow-[0_15px_50px_rgba(0,0,0,0.06)] flex flex-col pt-[50px] pb-12 pl-[300px] pr-[70px] rounded-sm"
+        className="relative lg:absolute right-0 top-0 w-full lg:w-[1000px] h-auto lg:h-[640px] bg-white shadow-[0_15px_50px_rgba(0,0,0,0.06)] flex flex-col pt-8 lg:pt-[50px] pb-8 lg:pb-12 px-5 lg:pl-[300px] lg:pr-[70px] rounded-[20px] h-book-form"
       >
-        <h2 className="text-[32px] font-medium text-[#165ba7] mb-6 font-poppins">
+        <h2 className="text-[24px] lg:text-[32px] font-medium text-[#165ba7] mb-4 lg:mb-6 font-poppins">
           Book Your Appointment
         </h2>
-        <div className="w-full h-[1px] bg-gray-200/60 mb-8"></div>
+        <div className="w-full h-[1px] bg-gray-200/60 mb-6 lg:mb-8"></div>
 
         <div className="relative w-full flex-1">
           <img
             src="/images/home/img-booking.avif"
             alt="Booking"
-            className="absolute left-0 top-0 w-[280px] h-auto object-contain"
+            className="absolute left-0 top-0 w-[280px] h-auto object-contain h-book-img"
           />
 
-          <form onSubmit={submit} className="absolute right-0 top-0 flex flex-col gap-3 w-[320px]">
+          <form onSubmit={submit} className="relative lg:absolute right-0 top-0 flex flex-col gap-3 w-full lg:w-[320px] h-book-form-f">
             <input
               type="text"
               placeholder="Full Name *"
@@ -77,7 +77,7 @@ export default function BookAppointment() {
                     input.showPicker()
                   }
                 }}
-                className="relative w-full h-[46px] border border-gray-200/80 rounded-md px-4 font-poppins text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
+                className="relative w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
                 onFocus={(e) => (e.target.type = 'datetime-local')}
                 onBlur={(e) => {
                   if (!e.target.value) e.target.type = 'text'
@@ -174,7 +174,7 @@ export default function BookAppointment() {
                   placeholder="Description (Optional)"
                   value={formData.description}
                   onChange={(e) => updateField('description', e.target.value)}
-                  className="w-full h-[66px] border border-gray-200/80 rounded-md px-4 py-3 font-poppins text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors resize-none mt-0.5"
+                  className="w-full h-[54px] lg:h-[66px] border border-gray-200/80 rounded-md px-3 lg:px-4 py-2 lg:py-3 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors resize-none mt-0.5"
                 ></textarea>
               </motion.div>
             )}
@@ -200,7 +200,7 @@ export default function BookAppointment() {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="group flex w-full h-[52px] items-center justify-center gap-2 rounded-md bg-[#A66689] hover:bg-[#8F5675] transition-colors shadow-sm text-white font-poppins text-[15px] font-medium mt-1 shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group flex w-full h-[46px] lg:h-[52px] items-center justify-center gap-2 rounded-md bg-[#A66689] hover:bg-[#8F5675] transition-colors shadow-sm text-white font-poppins text-[14px] lg:text-[15px] font-medium mt-0 lg:mt-1 shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? (
                   <>
@@ -246,31 +246,23 @@ export default function BookAppointment() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
-        className="absolute left-0 top-[100px] w-[560px] h-[440px] bg-[#0A5BA8] flex flex-col justify-center items-center px-[80px] text-center shadow-lg"
+        className="relative lg:absolute left-0 top-0 lg:top-[100px] w-full lg:w-[560px] h-auto lg:h-[440px] bg-[#0A5BA8] flex flex-col justify-center items-center px-6 lg:px-[80px] py-10 lg:py-0 text-center shadow-lg rounded-[20px] h-book-quote"
       >
-        <div className="w-[100px] h-[2px] bg-[#D86C97] mb-10"></div>
-        <div className="relative w-full">
-          <span className="absolute -left-6 -top-4 text-5xl font-poppins italic font-bold text-white leading-none">
-            “
+        <div className="w-[20px] lg:w-[80px] h-[2px] bg-[#D35B8F] mb-2 lg:mb-12"></div>
+        <p className="font-poppins font-light text-white text-[10px] lg:text-[24px] leading-relaxed relative">
+          <span className="absolute -top-[8px] lg:-top-[30px] -left-[8px] lg:-left-[40px] font-fraunces text-[#FFFFFF] text-[18px] lg:text-[60px] font-bold opacity-80 leading-none">
+            "
           </span>
-          <p className="text-white font-poppins text-[22px] leading-[1.6] font-light">
-            At Dental ESTHETIQUE, we are committed to providing you and your family with the highest
-            quality of compassionate dental care.
-          </p>
-          <span className="absolute -right-4 bottom-0 text-5xl font-poppins italic font-bold text-white leading-none">
-            ”
+          At Dental ESTHETIQUE, we are committed to providing you and your family with the highest
+          quality of compassionate dental care.
+          <span className="absolute -bottom-[10px] lg:-bottom-[50px] -right-[4px] font-fraunces text-[#FFFFFF] text-[18px] lg:text-[60px] font-bold opacity-80 leading-none">
+            "
           </span>
-        </div>
-        <div className="w-[100px] h-[2px] bg-[#D86C97] mt-10 mb-8"></div>
-
-        <div className="mt-4 opacity-95">
-          <span
-            className="text-white text-[36px] block -rotate-2 tracking-wide italic font-poppins"
-            style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}
-          >
-            Dr. Deepika Singhal
-          </span>
-        </div>
+        </p>
+        <div className="w-[20px] lg:w-[80px] h-[2px] bg-[#D35B8F] mt-2 lg:mt-12 mb-2 lg:mb-8"></div>
+        <span className="font-poppins text-white text-[13px] lg:text-[32px] font-medium italic tracking-wide">
+          Dr. Deepika Singhal
+        </span>
       </motion.div>
     </div>
   )

@@ -89,7 +89,7 @@ const backgroundBoxes = [
 
 export default function TestimonialHeroSection() {
   return (
-    <div className="w-full bg-[#FAF8F9] pt-8 pb-16 px-4 relative flex flex-col items-center overflow-hidden">
+    <div className="w-full bg-[#FAF8F9] pt-6 pb-12 px-4 relative flex flex-col items-center overflow-hidden">
       <div className="relative w-full max-w-[1440px] mx-auto h-[420px] mb-0 hidden lg:block">
         {backgroundBoxes.map((box) => (
           <div
@@ -109,6 +109,8 @@ export default function TestimonialHeroSection() {
               <img
                 src={p.src}
                 alt="Patient"
+                loading="lazy"
+                decoding="async"
                 style={{ objectPosition: p.objectPosition }}
                 className="w-full h-full object-cover shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
               />
@@ -120,19 +122,19 @@ export default function TestimonialHeroSection() {
       <Reveal
         y={30}
         duration={0.8}
-        className="flex flex-col items-center text-center relative z-10 max-w-[800px] mx-auto -mt-8"
+        className="flex flex-col items-center text-center relative z-10 max-w-[800px] mx-auto mt-4 lg:-mt-8"
       >
-        <span className="bg-[#C187A4]/10 text-[#C187A4] font-semibold text-[13px] px-4 py-1.5 rounded-full mb-6">
+        <span className="bg-[#D35B8F]/10 text-[#D35B8F] font-semibold text-[12px] lg:text-[13px] px-4 py-1.5 rounded-full mb-4 lg:mb-6">
           Patient Testimonials
         </span>
 
-        <h1 className="font-poppins text-[44px] md:text-[52px] font-bold leading-[1.1] tracking-tight mb-3">
+        <h1 className="font-poppins text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] tracking-tight mb-3">
           <span className="text-[#111827]">Trusted by hundreds of patients</span>
           <br />
           <span className="text-[#9CA3AF]">across Noida & beyond</span>
         </h1>
 
-        <p className="text-[#6B7280] text-[15px] md:text-[17px] leading-relaxed max-w-[500px] mb-6">
+        <p className="text-[#6B7280] text-[14px] md:text-[15px] lg:text-[17px] leading-relaxed max-w-[500px] mb-5 lg:mb-6">
           Learn why patients trust Dental Esthétique for safe, comfortable, and long-lasting dental
           care.
         </p>

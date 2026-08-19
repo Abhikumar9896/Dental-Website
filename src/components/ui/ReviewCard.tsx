@@ -22,6 +22,10 @@ export default function ReviewCard({ review }: { review: (typeof googleReviews)[
           <img
             src={review.image}
             alt={review.name}
+            width={44}
+            height={44}
+            loading="lazy"
+            decoding="async"
             className="h-11 w-11 rounded-full object-cover shadow-sm"
           />
         ) : (

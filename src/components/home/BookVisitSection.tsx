@@ -10,16 +10,16 @@ export default function BookVisitSection() {
 
   return (
     <section
-      className="absolute left-0 top-[5751px] flex h-[600px] w-full items-center bg-cover bg-center bg-no-repeat"
+      className="relative left-0 top-0 flex h-auto w-full items-center bg-cover bg-center bg-no-repeat py-0 lg:absolute lg:top-[5751px] lg:h-[600px] lg:py-0 h-bv"
       style={{ backgroundImage: "url('/images/home/footer.webp')" }}
     >
-      <div className="relative h-full w-[58%] shrink-0"></div>
+      <div className="relative h-full w-[58%] shrink-0 h-bv-sp"></div>
 
-      <Reveal x={80} blur className="flex w-[42%] flex-col pl-12 pr-16 pt-6 pb-6 relative z-10">
+      <Reveal x={80} blur className="flex w-full lg:w-[42%] flex-col px-5 lg:pl-12 lg:pr-16 pt-6 pb-6 relative z-10 h-bv-c">
         <Stagger className="flex flex-col" gap={0.15}>
           <StaggerItem>
             <div className="flex flex-col mb-3">
-              <span className="font-poppins text-3xl font-medium text-[#C187A4] mb-1">
+              <span className="font-poppins text-3xl font-medium text-[#D35B8F] mb-1">
                 Book Your Visit At
               </span>
               <h2 className="font-poppins text-5xl font-bold text-[#165ba7] leading-tight">
@@ -36,11 +36,11 @@ export default function BookVisitSection() {
           </StaggerItem>
 
           <StaggerItem y={24}>
-            <form className="flex flex-col gap-3 w-[90%] ml-4" onSubmit={submit}>
-              <div className="grid grid-cols-2 gap-3 w-full">
+            <form className="flex flex-col gap-3 w-full lg:w-[90%] lg:ml-4 h-bv-form" onSubmit={submit}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                 <div className="flex flex-col gap-1">
                   <label className="font-poppins text-sm font-semibold text-[#333]">
-                    Full Name <span className="text-[#C187A4]">*</span>
+                    Full Name <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
                     type="text"
@@ -53,7 +53,7 @@ export default function BookVisitSection() {
 
                 <div className="flex flex-col gap-1">
                   <label className="font-poppins text-sm font-semibold text-[#333]">
-                    Phone Number <span className="text-[#C187A4]">*</span>
+                    Phone Number <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -66,7 +66,7 @@ export default function BookVisitSection() {
 
                 <div className="flex flex-col gap-1 col-span-2">
                   <label className="font-poppins text-sm font-semibold text-[#333]">
-                    Email Address <span className="text-[#C187A4]">*</span>
+                    Email Address <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
                     type="email"
@@ -79,28 +79,61 @@ export default function BookVisitSection() {
 
                 <div className="flex flex-col gap-1 col-span-2">
                   <label className="font-poppins text-sm font-semibold text-[#333]">
-                    Preferred Date & Time <span className="text-[#C187A4]">*</span>
+                    Preferred Date & Time <span className="text-[#D35B8F]">*</span>
                   </label>
-                  <div className="relative">
+                  <div className="relative h-bv-date">
                     <input
                       type="text"
                       placeholder="dd-mm-year --:--"
                       required
                       value={formData.date}
                       onChange={(e) => updateField('date', e.target.value)}
-                      className="h-[42px] w-full rounded-md border border-gray-200 px-4 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm text-gray-500 z-10 relative bg-transparent cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-2 [&::-webkit-calendar-picker-indicator]:w-6 [&::-webkit-calendar-picker-indicator]:h-full"
-                      onFocus={(e) => (e.target.type = 'datetime-local')}
+                      onClick={(e) => {
+                        const input = e.currentTarget
+                        if (input.type !== 'datetime-local') {
+                          input.type = 'datetime-local'
+                        }
+                        if ('showPicker' in input) {
+                          try {
+                            ;(input as HTMLInputElement & { showPicker: () => void }).showPicker()
+                          } catch {
+                            /* ignore if browser blocks showPicker */
+                          }
+                        }
+                      }}
+                      onFocus={(e) => {
+                        e.target.type = 'datetime-local'
+                      }}
                       onBlur={(e) => {
                         if (!e.target.value) e.target.type = 'text'
                       }}
+                      className="h-[42px] w-full rounded-md border border-gray-200 px-4 pr-11 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm text-gray-500 cursor-pointer [&::-webkit-calendar-picker-indicator]:hidden"
                     />
+                    <div className="pointer-events-none absolute right-3 top-1/2 z-[1] -translate-y-1/2 text-gray-400">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden
+                      >
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col gap-1 w-full">
                 <label className="font-poppins text-sm font-semibold text-[#333]">
-                  Treatment Required <span className="text-[#C187A4]">*</span>
+                  Treatment Required <span className="text-[#D35B8F]">*</span>
                 </label>
                 <div className="relative">
                   <div
@@ -173,7 +206,7 @@ export default function BookVisitSection() {
                   className="flex flex-col gap-1 w-full"
                 >
                   <label className="font-poppins text-sm font-semibold text-[#333]">
-                    Description <span className="text-[#C187A4]">*</span>
+                    Description <span className="text-[#D35B8F]">*</span>
                   </label>
                   <textarea
                     placeholder="Please describe your requirement"
@@ -204,11 +237,11 @@ export default function BookVisitSection() {
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="group flex h-[48px] items-center justify-center gap-2 rounded-md bg-[#165ba7] px-6 text-white font-poppins font-medium text-[15px] hover:bg-[#10437b] transition-colors shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="group inline-flex h-[40px] lg:h-[48px] w-auto items-center justify-center gap-1.5 rounded-md bg-[#165ba7] px-4 lg:px-6 text-white font-poppins font-medium text-[13px] lg:text-[15px] hover:bg-[#10437b] transition-colors shadow-sm disabled:opacity-70 disabled:cursor-not-allowed h-bv-btn"
                   >
                     {status === 'submitting' ? (
                       <>
-                        <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <svg className="w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none">
                           <circle
                             className="opacity-25"
                             cx="12"
@@ -229,7 +262,7 @@ export default function BookVisitSection() {
                       <>
                         Confirm Appointment
                         <svg
-                          className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                          className="w-3.5 h-3.5 lg:w-4 lg:h-4 transition-transform group-hover:translate-x-1"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"

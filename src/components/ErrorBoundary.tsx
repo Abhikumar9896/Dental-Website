@@ -29,7 +29,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           <p className="font-poppins text-lg text-[#767676]">Please try again later.</p>
           <Link
             to="/"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-[#C187A4] px-8 font-poppins text-xl font-bold text-white"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-[#D35B8F] px-8 font-poppins text-xl font-bold text-white"
           >
             Go back home
           </Link>

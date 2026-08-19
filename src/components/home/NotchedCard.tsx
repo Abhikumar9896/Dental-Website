@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 const IMG = '/images/home'
@@ -50,18 +50,27 @@ function notchedPath(
   ].join(' ')
 }
 
-function ArrowBtn({ className = '', height = 46 }: { className?: string; height?: number }) {
+function ArrowBtn({
+  className = '',
+  height = 46,
+  width = 54,
+}: {
+  className?: string
+  height?: number
+  width?: number
+}) {
   return (
     <Link
       to="/services"
-      className={`flex w-[54px] shrink-0 items-center justify-center rounded-[10px] bg-[#0A5BA8] ${className}`}
+      className={`flex shrink-0 items-center justify-center rounded-[10px] bg-[#0A5BA8] ${className}`}
       style={{
+        width,
         height,
-        padding: height === 39 ? '7px 15px' : '11px 15px',
+        padding: height <= 39 ? '7px 12px' : '11px 15px',
       }}
       aria-label="View treatment"
     >
-      <img src={`${IMG}/arrow-up.svg`} alt="" width={24} height={24} />
+      <img src={`${IMG}/arrow-up.svg`} alt="" width={height <= 36 ? 18 : 24} height={height <= 36 ? 18 : 24} />
     </Link>
   )
 }
@@ -99,10 +108,36 @@ export function NotchedCard({
   const patternId = `notch-img-${width}-${height}-${cut}`
   const gradId = gradientId || `notch-grad-${width}-${height}`
 
+  const mobileBg: CSSProperties =
+    imageSrc != null
+      ? {
+          backgroundImage: `url(${imageSrc})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }
+      : {
+          background:
+            fill === 'gum-gradient'
+              ? 'linear-gradient(135deg, #F2F8FF 1%, #C6E2FF 100%)'
+              : fill || '#fff',
+          border: bordered ? '1px solid rgba(0,0,0,0.22)' : undefined,
+        }
+
   return (
-    <div className={`absolute ${className}`} style={{ width, height }}>
+    <div
+      className={`relative w-full h-auto overflow-hidden rounded-[20px] lg:absolute lg:overflow-visible lg:rounded-none h-treat-notch ${className}`}
+      style={
+        {
+          '--notch-w': `${width}px`,
+          '--notch-h': `${height}px`,
+        } as CSSProperties
+      }
+    >
+      {/* Mobile surface — sizes to content; desktop uses SVG notch */}
+      <div className="absolute inset-0 lg:hidden rounded-[20px]" style={mobileBg} />
+
       <svg
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 hidden lg:block"
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
@@ -140,10 +175,16 @@ export function NotchedCard({
           strokeLinejoin="round"
         />
       </svg>
-      {children}
+
+      <div className="relative z-10 p-5 pb-14 lg:p-0 h-treat-notch-body">{children}</div>
+
+      <ArrowBtn className="flex lg:hidden absolute right-3 bottom-3 z-30" height={36} width={40} />
+
       <ArrowBtn
         className={
-          cut === 'top-right' ? 'absolute right-0 top-0 z-30' : 'absolute bottom-0 right-0 z-30'
+          cut === 'top-right'
+            ? 'hidden lg:flex absolute right-0 top-0 z-30'
+            : 'hidden lg:flex absolute bottom-0 right-0 z-30'
         }
         height={arrowHeight}
       />

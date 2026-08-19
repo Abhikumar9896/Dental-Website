@@ -144,15 +144,15 @@ export default function DoctorProfile() {
 
   return (
     <div className="w-full bg-white font-poppins overflow-x-hidden">
-      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-8">
+      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-8 h-canvas">
         <PageHero
           tagline="Doctor Profile"
           title="Meet the Experts Behind Every Smile."
           description="Meet our experienced dental professionals, dedicated to delivering advanced, patient-focused care. Discover their qualifications, expertise, and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthétique today for trusted dental care and confidence."
-          taglineColor="text-[#C187A4]"
+          taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
-          height="h-[max(100vh,800px)]"
+          height="lg:h-[max(100vh,800px)]"
           backgroundImage="/images/about/docprofile.webp"
           hideCollage={true}
         >
@@ -160,7 +160,7 @@ export default function DoctorProfile() {
           <HeroButton to="/services#catalogue" text="See treatments" variant="outline" />
         </PageHero>
 
-        <div id={activeTab} className="relative z-30 mt-16 flex flex-col w-[1210px] gap-6 scroll-mt-32">
+        <div id={activeTab} className="relative z-30 mt-16 flex flex-col w-[1210px] gap-6 scroll-mt-32 h-dp-tabs">
           <Reveal y={20} duration={0.6} className="flex gap-4">
             {(Object.keys(DOCTORS_DATA) as DoctorId[]).map((id) => {
               const doctor = DOCTORS_DATA[id]
@@ -186,15 +186,15 @@ export default function DoctorProfile() {
             })}
           </Reveal>
 
-          <div className="flex w-full overflow-visible items-center mt-10">
+          <div className="flex w-full overflow-visible items-center mt-10 h-dp-intro">
             <Reveal
               key={activeTab}
               x={-40}
               y={0}
               duration={0.7}
-              className="relative w-[368px] h-[368px] shrink-0 rounded-full bg-[#F2E8EB] ml-4"
+              className="relative w-[368px] h-[368px] shrink-0 rounded-full bg-[#F2E8EB] ml-4 h-dp-photo"
             >
-              <div className="absolute inset-0 rounded-full border-2 border-[#C187A4] scale-[1.03]" />
+              <div className="absolute inset-0 rounded-full border-2 border-[#D35B8F] scale-[1.03]" />
               <div className="absolute inset-0 rounded-full overflow-hidden">
                 <img
                   key={activeDoctor.id}
@@ -212,13 +212,13 @@ export default function DoctorProfile() {
               x={40}
               y={0}
               duration={0.7}
-              className="flex flex-col flex-1 pl-[90px]"
+              className="flex flex-col flex-1 pl-[90px] h-dp-info"
             >
               <div className="h-[28px] flex items-center">
                 <SectionPill variant="solid">{activeDoctor.pill}</SectionPill>
               </div>
               <div className="mt-5 h-[45px] flex items-center">
-                <h2 className="font-fraunces text-[36px] font-bold text-[#28231F] leading-tight">
+                <h2 className="font-fraunces text-[36px] font-bold text-[#28231F] leading-tight h-dp-name">
                   {activeDoctor.name}
                 </h2>
               </div>
@@ -228,13 +228,13 @@ export default function DoctorProfile() {
                 </p>
               </div>
               <div className="mt-5 h-[65px]">
-                <p className="border-l-[1.5px] border-[#D1D1D1] pl-4 font-poppins text-[13px] leading-[1.6] text-[#767676] italic w-[518px]">
+                <p className="border-l-[1.5px] border-[#D1D1D1] pl-4 font-poppins text-[13px] leading-[1.6] text-[#767676] italic w-[518px] h-dp-d2">
                   {activeDoctor.desc2}
                 </p>
               </div>
 
               <div
-                className="mt-8 bg-[#F0F0F0] rounded-[18px] px-5 py-2 flex flex-col justify-center w-[452px] h-[62px] shrink-0"
+                className="mt-8 bg-[#F0F0F0] rounded-[18px] px-5 py-2 flex flex-col justify-center w-[452px] h-[62px] shrink-0 h-dp-sched"
                 style={{ boxShadow: '5px 2px 10.1px 0px rgba(0,0,0,0.13)' }}
               >
                 <div className="font-poppins text-[12px] text-[#28231F] flex gap-1">
@@ -259,7 +259,7 @@ export default function DoctorProfile() {
           </Reveal>
 
           <div className="relative flex flex-col w-full pb-8">
-            <div className="absolute top-[27px] bottom-[27px] left-1/2 w-[1.5px] bg-[#241F1B]/10 -translate-x-1/2 z-0" />
+            <div className="absolute top-[27px] bottom-[27px] left-1/2 w-[1.5px] bg-[#241F1B]/10 -translate-x-1/2 z-0 h-tl-line" />
 
             {activeDoctor.about.map((item, index) => {
               const isLeft = index % 2 === 0
@@ -269,10 +269,10 @@ export default function DoctorProfile() {
                   y={30}
                   delay={Math.min(index * 0.08, 0.3)}
                   duration={0.6}
-                  className={`relative flex w-full justify-between items-start ${index !== 0 ? 'mt-16' : ''}`}
+                  className={`relative flex w-full justify-between items-start h-tl-row ${index !== 0 ? 'mt-16' : ''}`}
                 >
                   <div
-                    className={`w-1/2 pr-12 flex flex-col items-end text-right ${isLeft ? '' : 'opacity-0 invisible'}`}
+                    className={`w-1/2 pr-12 flex flex-col items-end text-right h-tl-l ${isLeft ? '' : 'opacity-0 invisible'}`}
                   >
                     {isLeft && (
                       <>
@@ -286,12 +286,12 @@ export default function DoctorProfile() {
                     )}
                   </div>
 
-                  <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center w-[54px] h-[54px] rounded-full bg-[#C187A4] text-white font-poppins font-semibold text-[18px] z-10 ring-[12px] ring-white">
+                  <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center w-[54px] h-[54px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[18px] z-10 ring-[12px] ring-white h-tl-dot">
                     {item.n}
                   </div>
 
                   <div
-                    className={`w-1/2 pl-12 flex flex-col items-start text-left pt-1 ${!isLeft ? '' : 'opacity-0 invisible'}`}
+                    className={`w-1/2 pl-12 flex flex-col items-start text-left pt-1 h-tl-r ${!isLeft ? '' : 'opacity-0 invisible'}`}
                   >
                     {!isLeft && (
                       <>
@@ -312,7 +312,7 @@ export default function DoctorProfile() {
 
         <Reveal y={40} duration={0.7} className="w-full flex justify-center mt-8 mb-4">
           <div
-            className="flex items-center justify-center w-[1280px] h-[252px] px-24 bg-cover bg-center bg-no-repeat"
+            className="flex items-center justify-center w-[1280px] h-[252px] px-24 bg-cover bg-center bg-no-repeat h-dp-quote"
             style={{
               borderRadius: '9px 200px 4px 200px',
               backgroundImage: 'url(/images/home/bgblue.webp)',
@@ -326,7 +326,7 @@ export default function DoctorProfile() {
         </Reveal>
 
         <div id="specialisations" className="mt-12 w-full flex justify-center scroll-mt-8">
-          <div className="flex w-[1280px] bg-[#F9F4F1] rounded-[26px] py-14 flex-col items-center gap-10">
+          <div className="flex w-[1280px] bg-[#F9F4F1] rounded-[26px] py-14 flex-col items-center gap-10 h-dp-spec">
             <Reveal y={24} duration={0.7} className="flex w-[1239px] flex-col gap-2">
               <SectionPill>FOCUS AREAS</SectionPill>
               <h2 className="font-fraunces text-[36px] font-bold leading-none text-[#28231F]">
@@ -334,21 +334,21 @@ export default function DoctorProfile() {
               </h2>
             </Reveal>
 
-            <Stagger className="flex w-[1239px] flex-col mt-4" gap={0.1}>
+            <Stagger className="flex w-[1239px] flex-col mt-4 h-dp-spec-in" gap={0.1}>
               {activeDoctor.specialisations.map((card, index) => {
-                const rowClasses = `group flex items-center justify-between w-full py-8 border-b border-[#28231F]/10 hover:border-[#C187A4] transition-colors duration-300 ${card.link ? 'cursor-pointer' : 'cursor-default'} ${index === 0 ? 'border-t' : ''}`
+                const rowClasses = `group flex items-center justify-between w-full py-8 border-b border-[#28231F]/10 hover:border-[#D35B8F] transition-colors duration-300 h-dp-spec-row ${card.link ? 'cursor-pointer' : 'cursor-default'} ${index === 0 ? 'border-t' : ''}`
                 const rowContent = (
                   <>
                     <div className="flex items-center gap-12">
-                      <span className="font-poppins text-[16px] font-medium text-[#C187A4]">
+                      <span className="font-poppins text-[16px] font-medium text-[#D35B8F]">
                         {card.n}
                       </span>
-                      <h3 className="font-fraunces text-[32px] text-[#28231F] group-hover:text-[#C187A4] transition-colors duration-300">
+                      <h3 className="font-fraunces text-[32px] text-[#28231F] group-hover:text-[#D35B8F] transition-colors duration-300">
                         {card.title}
                       </h3>
                     </div>
 
-                    <div className="w-10 h-10 rounded-full border border-[#28231F]/10 flex items-center justify-center group-hover:bg-[#C187A4] group-hover:border-[#C187A4] transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full border border-[#28231F]/10 flex items-center justify-center group-hover:bg-[#D35B8F] group-hover:border-[#D35B8F] transition-all duration-300">
                       <svg
                         width="14"
                         height="14"
@@ -394,17 +394,17 @@ export default function DoctorProfile() {
                 </h2>
               </Reveal>
 
-              <div className="flex w-full items-center justify-between">
+              <div className="flex w-full items-center justify-between h-dp-award">
                 <Reveal x={-40} y={0} duration={0.7}>
                   <img
                     key={activeDoctor.id + 'award'}
                     src={activeDoctor.award.image}
-                    className="w-[480px] h-auto shrink-0"
+                    className="w-[480px] h-auto shrink-0 h-dp-award-img"
                     alt="Award"
                   />
                 </Reveal>
 
-                <div className="w-[1px] h-[266px] bg-[#D5EAE3] shrink-0 mx-12" />
+                <div className="w-[1px] h-[266px] bg-[#D5EAE3] shrink-0 mx-12 h-dp-award-line" />
 
                 <Reveal
                   x={40}

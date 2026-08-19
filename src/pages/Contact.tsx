@@ -9,10 +9,13 @@ export default function Contact() {
   return (
     <div className="w-full overflow-x-auto bg-white">
       <div
-        className="relative mx-auto shrink-0 overflow-hidden bg-[#F9F4F1]"
+        className="relative mx-auto shrink-0 overflow-hidden bg-[#F9F4F1] h-canvas"
         style={{ width: W, height: H, minWidth: W }}
       >
         <PageHero
+          height="lg:h-[max(100vh,800px)]"
+          backgroundImage="/images/about/contact hero.webp"
+          hideCollage={true}
           tagline="Contact Us"
           title="Get in Touch"
           description="Have questions or want to book an appointment? We'd love to hear from you."
@@ -20,8 +23,8 @@ export default function Contact() {
           <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
         </PageHero>
 
-        <div className="absolute left-[80px] top-[720px] w-[1280px]">
-          <p className="font-poppins text-sm font-medium tracking-[0.06em] text-[#C187A4]">
+        <div className="absolute left-[80px] top-[720px] w-[1280px] h-contact-info">
+          <p className="font-poppins text-sm font-medium tracking-[0.06em] text-[#D35B8F]">
             CONTACT INFORMATION
           </p>
           <h2 className="mt-3 font-poppins text-[40px] font-semibold leading-none text-[#28231F]">

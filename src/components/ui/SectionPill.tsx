@@ -6,8 +6,8 @@ type PillSize = 'sm' | 'md' | 'lg'
 
 const colorMap: Record<PillColor, Record<PillVariant, string>> = {
   pink: {
-    light: 'bg-[#C187A4]/10 text-[#C187A4]',
-    solid: 'bg-[#C187A4] text-white',
+    light: 'bg-[#D35B8F]/10 text-[#D35B8F]',
+    solid: 'bg-[#D35B8F] text-white',
   },
   blue: {
     light: 'bg-[#165ba7]/10 text-[#165ba7]',

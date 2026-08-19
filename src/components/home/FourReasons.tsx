@@ -25,27 +25,30 @@ const reasons = [
 
 export default function FourReasons() {
   return (
-    <div className="absolute left-[78px] top-[2934px] flex w-[1280px] flex-col" style={{ gap: 55 }}>
-      <Stagger className="flex w-[638px] flex-col gap-[15px]" gap={0.15}>
+    <div className="relative left-0 top-0 flex w-full flex-col px-5 py-10 lg:absolute lg:left-[78px] lg:top-[2934px] lg:w-[1280px] lg:px-0 lg:py-0 gap-8 lg:gap-10 h-reasons">
+      <Stagger className="flex w-full lg:w-[638px] flex-col gap-2.5 lg:gap-[15px] h-reasons-t" gap={0.15}>
         <StaggerItem>
-          <h2 className="font-fraunces text-[48px] font-semibold leading-none text-[#28231F]">
+          <h2 className="font-fraunces text-[28px] lg:text-[48px] font-semibold leading-tight lg:leading-none text-[#28231F]">
             Four reasons patients stay
           </h2>
         </StaggerItem>
         <StaggerItem>
-          <p className="h-[60px] font-poppins text-xl font-normal leading-none tracking-[0.04em] text-[rgba(40,35,31,0.7)]">
+          <p className="h-auto lg:h-[60px] font-poppins text-[14px] lg:text-xl font-normal leading-relaxed lg:leading-none tracking-[0.04em] text-[rgba(40,35,31,0.7)] max-w-[34rem]">
             Two specialities, one standard of care. Here&apos;s what that actually means day to day.
           </p>
         </StaggerItem>
       </Stagger>
 
-      <Stagger className="flex w-full items-start gap-[133px]" gap={0.12}>
+      <Stagger
+        className="grid grid-cols-2 lg:flex w-full items-start gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:gap-[133px] h-reasons-row"
+        gap={0.12}
+      >
         {reasons.map((r) => (
-          <StaggerItem key={r.num} className="flex w-[220px] flex-col items-center">
-            <div className="flex w-[220px] flex-col items-center" style={{ gap: 40 }}>
-              <div className="relative flex h-[97px] w-[177px] items-start justify-center overflow-hidden">
+          <StaggerItem key={r.num} className="flex w-full lg:w-[220px] flex-col items-start lg:items-center h-reasons-i">
+            <div className="flex w-full lg:w-[220px] flex-col items-start lg:items-center gap-3 lg:gap-10">
+              <div className="relative flex h-[52px] lg:h-[97px] w-[100px] lg:w-[177px] items-start justify-start lg:justify-center overflow-hidden">
                 <span
-                  className="font-fraunces text-[128px] font-semibold leading-none"
+                  className="font-fraunces text-[52px] lg:text-[128px] font-semibold leading-none h-reasons-num"
                   style={{
                     background: 'linear-gradient(180deg, #A66689 0%, rgba(166,102,137,0.25) 85%)',
                     WebkitBackgroundClip: 'text',
@@ -56,11 +59,11 @@ export default function FourReasons() {
                   {r.num}
                 </span>
               </div>
-              <div className="flex w-full flex-col items-center" style={{ gap: 4 }}>
-                <p className="text-center font-poppins text-xl font-medium leading-none text-[#242221]">
+              <div className="flex w-full flex-col items-start lg:items-center gap-1.5 lg:gap-1">
+                <p className="text-left lg:text-center font-poppins text-[15px] lg:text-xl font-medium leading-snug lg:leading-none text-[#242221]">
                   {r.title}
                 </p>
-                <p className="w-[236px] text-center font-poppins text-sm font-normal leading-none tracking-[0.04em] text-[rgba(42,42,42,0.7)]">
+                <p className="w-full lg:w-[236px] text-left lg:text-center font-poppins text-[12.5px] lg:text-sm font-normal leading-relaxed lg:leading-none tracking-[0.02em] lg:tracking-[0.04em] text-[rgba(42,42,42,0.7)]">
                   {r.desc}
                 </p>
               </div>

@@ -40,7 +40,7 @@ function HeroImageCollage({ images }: { images: string[] }) {
       `}</style>
 
       <div
-        className="absolute right-[20px] top-[120px] w-[640px] h-[680px] overflow-hidden flex gap-4 marquee-container justify-center"
+        className="absolute right-[20px] top-[120px] w-[640px] h-[680px] overflow-hidden flex gap-4 marquee-container justify-center h-gal-col"
         style={{
           maskImage:
             'linear-gradient(to bottom, transparent 0px, black 120px, black calc(100% - 120px), transparent 100%)',
@@ -105,21 +105,21 @@ const patientImages = [
 export default function Gallery() {
   return (
     <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden min-h-screen">
-      <div className="relative w-full h-[800px] bg-white flex justify-center overflow-hidden shrink-0">
-        <div className="relative w-[1440px] h-full z-10">
+      <div className="relative w-full h-auto min-h-0 lg:h-[800px] bg-white flex justify-center overflow-hidden shrink-0 h-gal-hero-wrap">
+        <div className="relative w-full lg:w-[1440px] h-full z-10 h-gal-hero-in">
           <Stagger
-            className="absolute left-[80px] top-1/2 -translate-y-[35%] flex w-[634px] flex-col z-20"
+            className="relative lg:absolute left-0 lg:left-[80px] top-auto lg:top-1/2 lg:-translate-y-[35%] flex w-full lg:w-[634px] flex-col z-20 px-5 pt-[88px] pb-8 lg:px-0 lg:pt-0 lg:pb-0 h-gal-hero"
             gap={0.15}
           >
             <StaggerItem y={30}>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3 lg:gap-4">
                 <div>
                   <SectionPill size="lg">Transformation</SectionPill>
                 </div>
-                <h1 className="w-[634px] font-fraunces text-[62px] font-semibold leading-[1.06] tracking-[0.01em] text-[#28231F]">
+                <h1 className="w-full lg:w-[634px] font-fraunces text-[32px] md:text-[48px] lg:text-[62px] font-semibold leading-[1.1] lg:leading-[1.06] tracking-[0.01em] text-[#28231F] h-gal-hero-h">
                   Our Smile Gallery
                 </h1>
-                <p className="mt-2 w-[493px] font-poppins text-[16px] font-normal leading-[1.7] text-[#767676]">
+                <p className="mt-1 lg:mt-2 w-full lg:w-[493px] font-poppins text-[14px] lg:text-[16px] font-normal leading-[1.6] lg:leading-[1.7] text-[#767676]">
                   See the life-changing results of our world-class dental treatments. From subtle
                   enhancements to complete smile makeovers, every transformation is planned with
                   precision, executed with care, and finished to perfection. Browse our gallery to
@@ -128,8 +128,8 @@ export default function Gallery() {
                 </p>
               </div>
             </StaggerItem>
-            <StaggerItem y={30} className="mt-6">
-              <div className="flex w-[493px] items-center gap-6">
+            <StaggerItem y={30} className="mt-4 lg:mt-6">
+              <div className="flex w-full lg:w-[493px] items-center gap-4 lg:gap-6 h-gal-stats">
                 <div className="flex flex-col">
                   <div className="flex items-center gap-2">
                     <p className="font-poppins text-[26px] font-bold leading-none text-[#165ba7]">
@@ -186,7 +186,7 @@ export default function Gallery() {
             pillColor="blue"
             align="center"
             title="Before & After Treatments"
-            titleClassName="font-poppins text-[42px] font-semibold"
+            titleClassName="font-poppins text-[42px] font-semibold h-gal-sechead"
             description="Explore the remarkable difference our care makes for your smile."
             className="mb-16"
           />
@@ -221,7 +221,7 @@ export default function Gallery() {
             pill="Happy Faces"
             align="center"
             title="Our Patient Family"
-            titleClassName="font-poppins text-[42px] font-semibold"
+            titleClassName="font-poppins text-[42px] font-semibold h-gal-sechead"
             description="Join thousands of happy patients across Noida who trust Dental Esthétique with their smiles. We believe every successful treatment is a life changed, and our greatest reward is seeing our patients leave with renewed confidence."
             descriptionClassName="max-w-[800px] text-[16px]"
             className="mb-16"
@@ -275,7 +275,7 @@ export default function Gallery() {
 
             <StaggerItem
               y={24}
-              className="relative overflow-hidden rounded-2xl bg-[#C187A4] p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1"
+              className="relative overflow-hidden rounded-2xl bg-[#D35B8F] p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1"
             >
               <h3 className="text-white font-poppins text-5xl font-semibold mb-2">500+</h3>
               <p className="text-white/90 text-sm font-poppins uppercase tracking-wider font-semibold">
