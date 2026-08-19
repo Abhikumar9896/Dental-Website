@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { BadgeCheck, Star, Award } from 'lucide-react'
-import HeroButton from '../components/ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import SectionPill from '../components/ui/SectionPill'
 import SectionHeading from '../components/ui/SectionHeading'
 import Reveal, { Stagger, StaggerItem, CountUp } from '../components/ui/Reveal'
@@ -171,7 +171,7 @@ export default function Gallery() {
             </StaggerItem>
 
             <StaggerItem y={30} className="mt-12">
-              <HeroButton to="/contact" text="Book an appointment" />
+              <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
             </StaggerItem>
           </Stagger>
 
@@ -266,7 +266,7 @@ export default function Gallery() {
                 </svg>
               </div>
               <h3 className="text-white font-poppins text-2xl font-semibold mb-2">
-                Your Smile Next!
+                Your Smile Is Next!
               </h3>
               <p className="text-white/80 text-sm mb-6">
                 Join thousands of our confident patients.

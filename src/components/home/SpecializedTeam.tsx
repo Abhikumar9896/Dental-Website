@@ -32,7 +32,7 @@ export default function SpecializedTeam() {
             </span>
             <p className="font-poppins text-[18px] leading-[1.8] text-[#444] italic pt-4">
               We are a team of dentists, hygienists and receptionists who work together to ensure
-              that you receive the best treatment that you require at a very time that suits you.
+              that you receive the treatment you need at a time that suits you.
               <span className="font-fraunces text-[45px] text-[#C187A4]/30 font-bold leading-[0] select-none ml-2 relative top-[15px]">
                 ”
               </span>

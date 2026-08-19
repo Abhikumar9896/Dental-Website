@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
 import { Clock, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Reveal from '../ui/Reveal'
+import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
 
 export default function LocationSection() {
   return (
@@ -11,8 +13,7 @@ export default function LocationSection() {
           <span className="text-[#165ba7] font-bold">Dental Esthétique</span>
         </h2>
         <p className="mt-4 text-[15px] leading-relaxed text-[#555] font-medium px-4">
-          Globally incubate standards compliant channels before scalable benefits. Quickly
-          disseminate superior deliverables whereas web-enabled applications.
+          Visit us in Sector 22, Noida, or get in touch to plan your appointment.
         </p>
       </div>
 
@@ -78,7 +79,7 @@ export default function LocationSection() {
             Working Hours
           </h2>
           <p className="text-[12px] font-medium text-white mb-5 leading-relaxed drop-shadow-sm">
-            Check out Dental Esthétique's Office hours to plan your visit.
+            Check out Dental Esthétique's office hours to plan your visit.
           </p>
 
           <div className="flex flex-col mb-5">
@@ -97,9 +98,12 @@ export default function LocationSection() {
                 <span className="w-[85px] font-semibold text-white drop-shadow-sm">{item.day}</span>
                 <span className="flex-1 text-white/95 font-medium drop-shadow-sm">{item.time}</span>
                 {item.showBook ? (
-                  <button className="flex items-center gap-1 bg-white text-[#C187A4] px-2.5 py-1 rounded-[3px] text-[10px] font-semibold hover:bg-gray-50 transition-colors">
+                  <Link
+                    to={BOOK_APPOINTMENT_TO}
+                    className="flex items-center gap-1 bg-white text-[#C187A4] px-2.5 py-1 rounded-[3px] text-[10px] font-semibold hover:bg-gray-50 transition-colors"
+                  >
                     Book <Clock size={10} strokeWidth={2.5} />
-                  </button>
+                  </Link>
                 ) : (
                   <div className="w-[58px]"></div>
                 )}
@@ -109,13 +113,16 @@ export default function LocationSection() {
 
           <div className="flex flex-col gap-2 mt-auto">
             <h3 className="text-[18px] font-semibold tracking-wide">Need Flexible Time?</h3>
-            <button className="flex h-[36px] w-max items-center justify-center gap-1.5 rounded bg-white px-4 font-poppins text-[11px] font-semibold text-[#C187A4] hover:bg-gray-50 transition-colors group shadow-sm">
+            <Link
+              to={BOOK_APPOINTMENT_TO}
+              className="flex h-[36px] w-max items-center justify-center gap-1.5 rounded bg-white px-4 font-poppins text-[11px] font-semibold text-[#C187A4] hover:bg-gray-50 transition-colors group shadow-sm"
+            >
               Suggest Checkup Time
               <ChevronRight
                 size={12}
                 className="text-[#C187A4]/70 group-hover:translate-x-1 transition-transform"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

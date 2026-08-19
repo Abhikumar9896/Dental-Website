@@ -3,8 +3,8 @@ import { Stagger, StaggerItem } from '../ui/Reveal'
 const reasons = [
   {
     num: '01',
-    title: 'Same day slots',
-    desc: 'Book appointments with ease, including same day care for urgent dental needs.',
+    title: 'Same-day slots',
+    desc: 'Book appointments with ease, including same-day care for urgent dental needs.',
   },
   {
     num: '02',
@@ -18,7 +18,7 @@ const reasons = [
   },
   {
     num: '04',
-    title: 'Specialist led',
+    title: 'Specialist-led',
     desc: 'Every treatment is led by a specialist from the first visit, not a general practitioner.',
   },
 ] as const

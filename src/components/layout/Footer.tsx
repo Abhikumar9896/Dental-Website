@@ -62,7 +62,7 @@ export default function Footer() {
                 Our Dental Team
               </Link>
               <Link to="/services" className="hover:text-[#165ba7] transition-colors">
-                Pricing & Pricelist
+                Pricing & Price List
               </Link>
               <Link to="/services" className="hover:text-[#165ba7] transition-colors">
                 Solutions
@@ -213,8 +213,8 @@ export default function Footer() {
             <Link to="/gallery" className="hover:text-white/80 transition-colors">
               GALLERY
             </Link>
-            <Link to="/faq" className="hover:text-white/80 transition-colors">
-              FAQ
+            <Link to="/faqs" className="hover:text-white/80 transition-colors">
+              FAQs
             </Link>
           </div>
         </div>

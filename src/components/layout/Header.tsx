@@ -47,12 +47,12 @@ export default function Header() {
                     <path d="M11 5h6" />
                   </svg>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-poppins text-[14px] font-bold leading-none text-[#28231F]">
+                <div className="flex flex-col justify-center gap-1">
+                  <span className="font-poppins text-[14.5px] font-semibold leading-none text-[#28231F] tracking-wide">
                     +91 98188 62265
                   </span>
-                  <span className="mt-1 font-poppins text-[11px] text-gray-500">
-                    24/7 Emergency Phone
+                  <span className="font-poppins text-[14.5px] font-semibold leading-none text-[#28231F] tracking-wide">
+                    0120 4266 344
                   </span>
                 </div>
               </div>
@@ -73,13 +73,12 @@ export default function Header() {
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
                 </div>
-                <div className="flex flex-col justify-center">
-                  <span className="font-poppins text-[12px] text-[#28231F]">
-                    <span className="font-bold">Monday-Saturday:</span> 10:00 AM to 2:00 PM & 5:00
-                    PM to 8:00 PM
+                <div className="flex flex-col justify-center gap-1.5">
+                  <span className="font-poppins text-[12.5px] text-[#28231F] leading-none tracking-tight">
+                    <span className="font-semibold">Mon-Sat:</span> 10 AM - 2 PM & 5 PM - 8 PM
                   </span>
-                  <span className="mt-0.5 font-poppins text-[11.5px] text-gray-500">
-                    <span className="font-bold">Sunday:</span> 10:00 AM to 2:00 PM
+                  <span className="font-poppins text-[12.5px] text-gray-500 leading-none tracking-tight">
+                    <span className="font-semibold text-[#28231F]">Sun:</span> 10:30 AM - 2 PM
                   </span>
                 </div>
               </div>
@@ -121,10 +120,10 @@ export default function Header() {
                 GALLERY
               </Link>
               <Link
-                to="/faq"
-                className={`font-poppins text-[13px] font-semibold tracking-wide ${pathname === '/faq' ? 'text-[#1E73BE]' : 'text-[#333] hover:text-[#1E73BE]'}`}
+                to="/faqs"
+                className={`font-poppins text-[13px] font-semibold tracking-wide ${pathname === '/faqs' ? 'text-[#1E73BE]' : 'text-[#333] hover:text-[#1E73BE]'}`}
               >
-                FAQ
+                FAQs
               </Link>
             </nav>
 
@@ -172,9 +171,8 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed left-0 top-0 z-[200] w-full bg-white shadow-md transition-transform duration-300 ${
-          isSticky ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`fixed left-0 top-0 z-[200] w-full bg-white shadow-md transition-transform duration-300 ${isSticky ? 'translate-y-0' : '-translate-y-full'
+          }`}
       >
         <div className="mx-auto flex h-[76px] w-[1200px] items-center justify-between">
           <Link to="/" className="flex items-center gap-2 -ml-16">
@@ -220,10 +218,10 @@ export default function Header() {
               GALLERY
             </Link>
             <Link
-              to="/faq"
-              className={`font-poppins text-[13px] font-semibold tracking-wide ${pathname === '/faq' ? 'text-[#1E73BE]' : 'text-[#333] hover:text-[#1E73BE]'}`}
+              to="/faqs"
+              className={`font-poppins text-[13px] font-semibold tracking-wide ${pathname === '/faqs' ? 'text-[#1E73BE]' : 'text-[#333] hover:text-[#1E73BE]'}`}
             >
-              FAQ
+              FAQs
             </Link>
           </nav>
 

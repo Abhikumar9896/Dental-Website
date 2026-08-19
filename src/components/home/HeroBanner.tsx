@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import HeroButton from '../ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
 
 const IMG = '/images/home'
 
@@ -36,9 +36,9 @@ export default function HeroBanner() {
             and personalized care to deliver healthy, confident smiles for patients of all ages.
           </p>
           <div className="flex items-center gap-4">
-            <HeroButton to="/contact" text="Book an Appointment" />
+            <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an Appointment" />
             <HeroButton
-              to="/services"
+              to="/services#catalogue"
               text="See treatments"
               variant="outline"
               className="!border-[#0A5BA8] !text-[#0A5BA8] hover:!bg-[#0A5BA8]/5"
@@ -75,11 +75,11 @@ export default function HeroBanner() {
                   Whitening
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
-                  Completely iterate covalent
+                  Professional whitening that
                   <br />
-                  strategic theme areas via
+                  safely brightens your smile
                   <br />
-                  accurate e-markets.
+                  in a single visit.
                 </p>
               </div>
             </div>
@@ -99,17 +99,17 @@ export default function HeroBanner() {
                   Prosthesis
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
-                  Holistically foster superior
+                  Custom prosthetic solutions for
                   <br />
-                  methodologies without market-
+                  comfortable chewing and a
                   <br />
-                  driven best practices.
+                  natural-looking smile.
                 </p>
               </div>
             </div>
           </div>
           <HeroButton
-            to="/services"
+            to="/services#catalogue"
             text="View Our Services"
             className="!bg-[#A0557A] hover:!bg-[#8F4765]"
           />
@@ -144,11 +144,11 @@ export default function HeroBanner() {
                   Implants
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
-                  Dramatically maintain clicks and
+                  Durable dental implants that
                   <br />
-                  mortar solutions without
+                  restore missing teeth with
                   <br />
-                  functional solutions.
+                  lasting stability.
                 </p>
               </div>
             </div>
@@ -168,17 +168,17 @@ export default function HeroBanner() {
                   Alignment
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
-                  Dynamically innovate resource
+                  Clear aligners and braces that
                   <br />
-                  leveling service for state of the
+                  straighten teeth with comfort
                   <br />
-                  art customer.
+                  and precision.
                 </p>
               </div>
             </div>
           </div>
           <HeroButton
-            to="/services"
+            to="/services#catalogue"
             text="Dental Solutions"
             className="!bg-[#A0557A] hover:!bg-[#8F4765]"
           />
@@ -215,11 +215,11 @@ export default function HeroBanner() {
                   Full Protection
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
-                  Competently parallel task
+                  Preventive care and protection
                   <br />
-                  researched data and process
+                  that keep your smile healthy
                   <br />
-                  improvements.
+                  for the long term.
                 </p>
               </div>
             </div>
@@ -239,17 +239,17 @@ export default function HeroBanner() {
                   Complete Service
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[14px] leading-relaxed">
-                  Collaboratively expedite quality
+                  Full-service dentistry tailored
                   <br />
-                  products via client focused
+                  to your needs in one
                   <br />
-                  results.
+                  comfortable visit.
                 </p>
               </div>
             </div>
           </div>
           <HeroButton
-            to="/contact"
+            to={BOOK_APPOINTMENT_TO}
             text="Book an Appointment"
             className="!bg-[#A0557A] hover:!bg-[#8F4765]"
           />

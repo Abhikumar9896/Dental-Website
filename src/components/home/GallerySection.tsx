@@ -14,7 +14,7 @@ export default function GallerySection() {
         </StaggerItem>
         <StaggerItem>
           <p className="font-poppins text-xl font-normal leading-[1.2] tracking-[0.04em] text-[rgba(40,35,31,0.7)]">
-            A look inside the clinic : real spaces, real equipment, real care.
+            A look inside the clinic: real spaces, real equipment, real care.
           </p>
         </StaggerItem>
       </Stagger>

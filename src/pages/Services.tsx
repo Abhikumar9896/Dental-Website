@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import HeroButton from '../components/ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import PageHero from '../components/ui/PageHero'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem } from '../components/ui/Reveal'
@@ -31,7 +31,7 @@ export default function Services() {
           backgroundImage="/images/about/treatment hero.webp"
           hideCollage={true}
         >
-          <HeroButton to="/contact" text="Book an appointment" />
+          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
           <HeroButton href="#catalogue" text="See treatments" variant="outline" />
         </PageHero>
 
@@ -99,7 +99,7 @@ export default function Services() {
                   {isExpanded && (
                     <div className="mt-8 flex gap-[74px]">
                       <img
-                        src={`/treatment/${item.title}.webp`}
+                        src={`/treatment/${encodeURIComponent(item.title)}.webp`}
                         className="w-[300px] h-[160px] object-cover rounded-[16px] shrink-0"
                         alt={item.title}
                       />
@@ -107,7 +107,7 @@ export default function Services() {
                         <p className="font-poppins text-[20px] text-[#28231F] leading-[1.6] max-w-[667px]">
                           {item.content}
                         </p>
-                        <HeroButton to="/contact" text="Enquiry" className="mt-6 !h-[44px]" />
+                        <HeroButton to={BOOK_APPOINTMENT_TO} text="Enquiry" className="mt-6 !h-[44px]" />
                       </div>
                     </div>
                   )}

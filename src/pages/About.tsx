@@ -1,5 +1,5 @@
 import PageHero from '../components/ui/PageHero'
-import HeroButton from '../components/ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem, Float } from '../components/ui/Reveal'
 
@@ -7,15 +7,15 @@ const IMG = '/images/about'
 
 const storyPoints = [
   'Dental Esthétique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
-  'Our clinic offers preventive, restorative, cosmetic, and advanced dental treatments tailored to the unique needs of every patient. We believe that exceptional dentistry goes beyond procedures it involves educating patients, understanding their concerns, and delivering care in a comfortable and welcoming environment.',
-  'Every treatment is planned with precision, transparency, and a long term focus on oral health.',
+  'Our clinic offers preventive, restorative, cosmetic, and advanced dental treatments tailored to the unique needs of every patient. We believe that exceptional dentistry goes beyond procedures; it involves educating patients, understanding their concerns, and delivering care in a comfortable and welcoming environment.',
+  'Every treatment is planned with precision, transparency, and a long-term focus on oral health.',
 ] as const
 
 const goodToKnow = [
   'Registered specialist dentists',
-  'In house diagnostic imaging',
+  'In-house diagnostic imaging',
   'Digital payments incl. Paytm',
-  'Sterilisation first protocols',
+  'Sterilisation-first protocols',
 ] as const
 
 export default function About() {
@@ -25,7 +25,7 @@ export default function About() {
         <PageHero
           tagline="About Dental Esthétique"
           title="Your Trusted Partner in Complete Dental Care"
-          description="Dental Esthétique is committed to delivering exceptional dental care through advanced technology, evidence based treatments, and a deeply patient first approach. From routine dental check ups to complex cosmetic smile transformations, our expert team is here to guide you every step of the way. Our ultimate goal is to ensure every patient receives highly personalized care within a safe, extraordinarily comfortable, and state of the art modern environment."
+          description="Dental Esthétique is committed to delivering exceptional dental care through advanced technology, evidence-based treatments, and a deeply patient-first approach. From routine dental check-ups to complex cosmetic smile transformations, our expert team is here to guide you every step of the way. Our ultimate goal is to ensure every patient receives highly personalized care within a safe, extraordinarily comfortable, and state-of-the-art environment."
           taglineColor="text-[#C187A4]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -33,8 +33,8 @@ export default function About() {
           backgroundImage="/images/about/abouthero.webp"
           hideCollage={true}
         >
-          <HeroButton to="/contact" text="Book an appointment" />
-          <HeroButton to="/services" text="See treatments" variant="outline" />
+          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
+          <HeroButton to="/services#catalogue" text="See treatments" variant="outline" />
         </PageHero>
 
         <div className="mt-16 w-full flex justify-center bg-white z-10">
@@ -77,7 +77,7 @@ export default function About() {
                       100%
                     </span>
                     <span className="font-poppins text-[11px] font-medium text-[#767676] tracking-widest uppercase">
-                      SPECIALIST LED CARE
+                      SPECIALIST-LED CARE
                     </span>
                   </div>
                 </Float>
@@ -113,7 +113,7 @@ export default function About() {
                     <span className="w-8 h-[1px] bg-[#C187A4]" /> Our Mission
                   </h3>
                   <p className="font-fraunces text-[28px] leading-[1.4] text-[#28231F] group-hover:text-[#165ba7] transition-colors duration-500">
-                    To provide ethical, evidence based, and personalized dental care using advanced
+                    To provide ethical, evidence-based, and personalized dental care using advanced
                     technology while ensuring every patient feels informed and comfortable.
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export default function About() {
                   </h3>
                   <p className="font-fraunces text-[28px] leading-[1.4] text-[#28231F] group-hover:text-[#C187A4] transition-colors duration-500">
                     To become the most trusted destination for comprehensive dental care by
-                    delivering exceptional clinical outcomes and a patient first experience.
+                    delivering exceptional clinical outcomes and a patient-first experience.
                   </p>
                 </div>
               </Reveal>
@@ -157,7 +157,7 @@ export default function About() {
                 At Dental ESTHÉTIQUE, every patient is treated with respect, empathy, and honesty.
                 We are committed to providing transparent consultations, personalized treatment
                 plans, and a comfortable experience using modern techniques and advanced technology.
-                Our goal is not only to treat dental concerns but to build long term relationships
+                Our goal is not only to treat dental concerns but to build long-term relationships
                 based on trust and exceptional care.
               </p>
               <p className="font-fraunces text-[22px] font-medium tracking-wide">

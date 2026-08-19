@@ -1,5 +1,6 @@
 export const homeDoctors = [
   {
+    id: 'ds',
     name: 'Dr. Deepika Singhal',
     role: 'Endodontist & Cosmetic Dentist',
     description:
@@ -9,12 +10,14 @@ export const homeDoctors = [
     imagePosition: 'left',
     imgClassName: '!top-[-40px] !h-[calc(100%+40px)]',
     bulletPoints: [
-      'Microscopic & Endodontics Expert',
-      'Single Sitting RCT Specialist',
-      'Member, Indian Dental Association',
+      'B.D.S., M.D.S. (Endodontist)',
+      '18+ Years of Clinical Experience',
+      'Former: ESIC Dental College & Hospital, Rohini',
+      'Microscopic & Single Sitting RCT Expert',
     ],
   },
   {
+    id: 'aj',
     name: 'Dr. Abhinav Jain',
     role: 'Orthodontist & Implantologist',
     description:
@@ -24,10 +27,11 @@ export const homeDoctors = [
     imagePosition: 'right',
     imgObjectPosition: 'object-[center_30%]',
     bulletPoints: [
-      'Member, Indian Dental Association',
+      'B.D.S., M.D.S.',
+      '18+ Years of Clinical Experience',
+      'Former: Consultant Apollo Clinic & Hedgewar Hospital',
       'Member, European Orthodontic Society (London)',
-      'Certified Implantologist (Korea)',
-      'Certified Aligner Practitioner (Germany)',
+      'Certified Implantologist & Aligner Practitioner',
     ],
   },
 ] as const

@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom'
+import type { To } from 'react-router-dom'
 
 interface HeroButtonProps {
-  to?: string
+  to?: To
   href?: string
   text?: string
   className?: string
   variant?: 'solid' | 'outline'
 }
 
+/** Home page Book Your Appointment form */
+export const BOOK_APPOINTMENT_TO: To = { pathname: '/', hash: 'book-appointment' }
+
 export default function HeroButton({
-  to,
+  to = BOOK_APPOINTMENT_TO,
   href,
   text = 'Book an Appointment',
   className = '',
@@ -51,7 +55,7 @@ export default function HeroButton({
   }
 
   return (
-    <Link to={to || '/'} className={combinedClasses}>
+    <Link to={to} className={combinedClasses}>
       {content}
     </Link>
   )

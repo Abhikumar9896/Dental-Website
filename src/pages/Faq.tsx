@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import HeroButton from '../components/ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import PageHero from '../components/ui/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
 import { Stagger, StaggerItem } from '../components/ui/Reveal'
@@ -58,7 +58,7 @@ export default function Faq() {
     <div className="w-full bg-white font-poppins overflow-x-hidden">
       <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-16">
         <PageHero
-          tagline="FAQ"
+          tagline="FAQs"
           title="Frequently Asked Questions"
           description="Answers to common questions about treatments, booking, and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthétique."
           taglineColor="text-[#C187A4]"
@@ -69,7 +69,7 @@ export default function Faq() {
           bgPosition="object-cover object-right"
           hideCollage={true}
         >
-          <HeroButton to="/contact" text="Book an appointment" />
+          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
         </PageHero>
 
         <div className="relative mt-24 flex flex-col w-[1210px] items-center">

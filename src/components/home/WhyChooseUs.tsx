@@ -1,8 +1,42 @@
 import Reveal, { Float, Stagger, StaggerItem, CountUp } from '../ui/Reveal'
+import { Users, Cpu, HeartHandshake, ShieldCheck, MessageSquare, Smile } from 'lucide-react'
+
+const highlights = [
+  {
+    title: 'Experienced Dental Professionals',
+    description: 'Skilled specialists delivering advanced, personalized treatment.',
+    icon: Users,
+  },
+  {
+    title: 'Modern Technology',
+    description: 'Precise, comfortable care powered by advanced equipment.',
+    icon: Cpu,
+  },
+  {
+    title: 'Personalized Care',
+    description: 'Treatment plans tailored to your unique dental needs.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Sterilized Environment',
+    description: 'Strict sterilisation protocols for your safety and peace of mind.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Transparent Consultation',
+    description: 'Clear explanations of options, steps, and costs before treatment.',
+    icon: MessageSquare,
+  },
+  {
+    title: 'Comfortable Procedures',
+    description: 'Gentle techniques focused on a calm, pain-free experience.',
+    icon: Smile,
+  },
+] as const
 
 export default function WhyChooseUs() {
   return (
-    <div className="absolute left-[78px] top-[1534px] h-[539px] w-[1280px]">
+    <div className="absolute left-[78px] top-[1534px] h-[560px] w-[1280px]">
       <Reveal x={-60} y={0} duration={0.8}>
         <img
           src="/images/home/clinic-row-60cc89.webp"
@@ -33,85 +67,49 @@ export default function WhyChooseUs() {
             Patients Treated
           </span>
           <p className="font-poppins text-[11px] leading-relaxed text-gray-400 mt-2">
-            Committed to restoring smiles everyday with advanced care.
+            Committed to restoring smiles every day with advanced care.
           </p>
         </div>
       </Float>
 
-      <div className="absolute left-[660px] top-[90px] flex w-[600px] flex-col gap-10">
-        <Stagger gap={0.15}>
+      <div className="absolute left-[660px] top-[40px] flex w-[620px] flex-col gap-6">
+        <Stagger gap={0.12}>
           <StaggerItem>
-            <h2 className="font-poppins text-[36px] font-semibold leading-[1.2] text-[#333] whitespace-nowrap">
+            <h2 className="font-poppins text-[36px] font-bold leading-[1.2] text-[#333] whitespace-nowrap">
               Why Choose <span className="text-[#165ba7]">Dental ESTHETIQUE?</span>
             </h2>
           </StaggerItem>
           <StaggerItem>
-            <p className="font-poppins text-[16px] leading-relaxed text-[#333] font-medium">
+            <p className="font-poppins text-[15px] leading-[1.6] text-gray-600 font-medium">
               Advanced dental care combining expertise, innovation, and compassion for healthier,
               brighter, confident smiles every day.
             </p>
           </StaggerItem>
+          <StaggerItem>
+            <p className="font-poppins text-[13px] font-semibold tracking-[0.14em] uppercase text-[#B07399] mt-2">
+              Key Highlights
+            </p>
+          </StaggerItem>
         </Stagger>
 
-        <Stagger gap={0.18}>
-          <StaggerItem>
-            <div className="flex items-start gap-5">
-              <div className="mt-1 flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#B07399]/10 text-[#B07399]">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
+        <Stagger className="grid grid-cols-2 gap-x-6 gap-y-8" gap={0.08}>
+          {highlights.map(({ title, description, icon: Icon }) => (
+            <StaggerItem key={title}>
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[#B07399]/10 text-[#B07399]">
+                  <Icon size={22} strokeWidth={1.75} />
+                </div>
+                <div className="flex flex-col gap-1 min-w-0">
+                  <h3 className="font-poppins text-[16px] font-semibold text-[#333] leading-snug">
+                    {title}
+                  </h3>
+                  <p className="font-poppins text-[13px] leading-relaxed text-gray-500">
+                    {description}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="font-poppins text-[20px] font-semibold text-[#333]">
-                  Experienced Dental Professionals
-                </h3>
-                <p className="font-poppins text-[14px] leading-relaxed text-gray-500">
-                  Experienced dentists delivering advanced, personalized treatments for healthy,
-                  confident smiles every day.
-                </p>
-              </div>
-            </div>
-          </StaggerItem>
-
-          <StaggerItem>
-            <div className="flex items-start gap-5">
-              <div className="mt-1 flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#B07399]/10 text-[#B07399]">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="font-poppins text-[20px] font-semibold text-[#333]">
-                  Modern Technology
-                </h3>
-                <p className="font-poppins text-[14px] leading-relaxed text-gray-500">
-                  Advanced equipment delivering precise, comfortable dental care for every patient.
-                </p>
-              </div>
-            </div>
-          </StaggerItem>
+            </StaggerItem>
+          ))}
         </Stagger>
       </div>
     </div>

@@ -54,7 +54,7 @@ export default function KeyTreatments() {
               style={{ padding: '12px 23px' }}
             >
               <span className="whitespace-nowrap font-poppins text-xl text-[#28231F]">
-                Oral Surgery
+                Smile Designing
               </span>
             </div>
             <div
@@ -79,14 +79,14 @@ export default function KeyTreatments() {
             fill="gum-gradient"
             gradientId="gum-card-grad"
           >
-            <div className="absolute left-7 top-10 z-20 flex w-[220px] flex-col" style={{ gap: 7 }}>
+            <div className="absolute left-7 top-10 z-20 flex w-full flex-col" style={{ gap: 7 }}>
               <div
-                className="flex h-[31px] w-[118px] items-center rounded-lg border border-[rgba(0,0,0,0.06)] bg-white"
+                className="flex h-[31px] w-fit items-center rounded-lg border border-[rgba(0,0,0,0.06)] bg-white"
                 style={{ padding: '7px 10px' }}
               >
-                <span className="font-poppins text-base text-[#28231F]">Top Popular</span>
+                <span className="font-poppins text-base text-[#28231F] whitespace-nowrap">Most Popular</span>
               </div>
-              <p className="font-poppins text-[32px] leading-none text-[#28231F]">Gum Surgeries</p>
+              <p className="font-poppins text-[32px] leading-none text-[#28231F] whitespace-nowrap">Clear Aligners</p>
             </div>
 
             <div className="pointer-events-none absolute left-1/2 top-[118px] z-[1] flex h-[230px] w-[280px] -translate-x-1/2 items-center justify-center">
@@ -103,8 +103,7 @@ export default function KeyTreatments() {
             </div>
 
             <p className="absolute left-7 top-[366px] z-20 h-[86px] w-[220px] font-poppins text-sm font-light leading-[17.06px] text-[#28231F]">
-              Advanced gum surgery to treat infection, reshape gum tissue, and restore healthier,
-              stronger smiles with lasting comfort and confidence.
+              Straighten your teeth discreetly with comfortable, custom-made invisible aligners for a perfectly aligned and confident smile.
             </p>
           </NotchedCard>
         </Reveal>

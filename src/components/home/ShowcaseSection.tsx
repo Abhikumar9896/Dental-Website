@@ -47,10 +47,10 @@ export default function ShowcaseSection() {
               style={{ padding: '7px 10px' }}
             >
               <span className="font-fraunces text-base leading-none text-[#28231F]">
-                Top Popular
+                Most Popular
               </span>
             </div>
-            <p className="font-fraunces text-[32px] leading-none text-[#2B231F]">Gum Surgeries</p>
+            <p className="font-fraunces text-[32px] leading-none text-[#2B231F] whitespace-nowrap">Clear Aligners</p>
           </div>
           <img
             src={`${IMG}/teeth.webp`}
@@ -117,11 +117,11 @@ export default function ShowcaseSection() {
 
       <Float amplitude={8} duration={4.5} delay={0.2}>
         <div
-          className="absolute left-[1215px] top-[393px] z-[3] flex h-[56px] w-[174px] items-center justify-center rounded-md bg-white"
-          style={{ padding: '13px 10px', gap: 10 }}
+          className="absolute left-[1215px] top-[393px] z-[3] flex h-[56px] w-fit items-center justify-center rounded-md bg-white"
+          style={{ padding: '13px 20px', gap: 10 }}
         >
-          <span className="font-fraunces text-2xl font-normal leading-none text-[#28231F]">
-            Oral Surgery
+          <span className="font-fraunces text-2xl font-normal leading-none text-[#28231F] whitespace-nowrap">
+            Dental Implants
           </span>
         </div>
       </Float>
@@ -144,7 +144,7 @@ export default function ShowcaseSection() {
           }}
         >
           <p className="absolute left-7 top-7 z-20 font-fraunces text-[32px] font-normal leading-none text-[#28231F]">
-            PatientLoyalty
+            Patient Loyalty
           </p>
           <p className="absolute left-7 top-[88px] z-20 w-[170px] font-fraunces text-xl font-normal leading-[25px] text-[#606060]">
             return for continued care

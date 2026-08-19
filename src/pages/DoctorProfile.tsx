@@ -1,28 +1,21 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import PageHero from '../components/ui/PageHero'
-import HeroButton from '../components/ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem } from '../components/ui/Reveal'
-
-interface Specialisation {
-  n: string
-  title: string
-  link?: string
-}
-
-const specialisations: Specialisation[] = [
-  { n: '01', title: 'Single Sitting Painless RCT', link: '/services#catalogue' },
-  { n: '02', title: 'Microscopic Root Canal (RCT)', link: '/services#catalogue' },
-  { n: '03', title: 'Re-RCT Treatment', link: '/services#catalogue' },
-  { n: '04', title: 'Smile Designing' },
-  { n: '05', title: 'Re-RCT Treatment', link: '/services#catalogue' },
-]
 
 const DOCTORS_DATA = {
   ds: {
     id: 'ds',
     initials: 'DS',
+    specialisations: [
+      { n: '01', title: 'Single Sitting Painless Root Canal Treatment (RCT)', link: '/services#catalogue' },
+      { n: '02', title: 'Microscopic Root Canal Treatment (RCT)', link: '/services#catalogue' },
+      { n: '03', title: 'Re-RCT Treatment', link: '/services#catalogue' },
+      { n: '04', title: 'Smile Designing' },
+      { n: '05', title: 'Cosmetic Treatments' },
+    ],
     name: 'Dr. Deepika Singhal',
     pronoun: 'Her',
     tabTitle: 'Endodontist, Cosmetic Dentist',
@@ -30,45 +23,40 @@ const DOCTORS_DATA = {
     imageClass: 'w-full h-full object-cover object-top scale-[1.05]',
     pill: 'Endodontist & Cosmetic Dentist',
     desc1:
-      'A distinguished Endodontist and Cosmetic Dentist with over 18 years of clinical excellence, renowned for delivering world class dental care through precision, innovation, and uncompromising clinical standards.',
+      'A distinguished Endodontist and Cosmetic Dentist with over 18 years of clinical excellence, renowned for delivering world-class dental care through precision, innovation, and uncompromising clinical standards.',
     desc2:
-      'MDS in Conservative Dentistry & Endodontics, BDS. Eighteen years of clinical experience, focused on root canal therapy and complex restorative cases, supported by 16 documented patient stories at this clinic.',
-    scheduleLine1: '· 10:00am to 2:00pm & 5:00pm to 8:00pm',
-    scheduleLine2: '· 10:00am to 2:00pm',
+      'MDS in Conservative Dentistry & Endodontics, BDS. Eighteen years of clinical experience, focused on root canal therapy and complex restorative cases, supported by a track record of over 15,000 successfully treated patients.',
+    scheduleLine1: '· 10 AM - 2 PM and 5 PM - 8 PM',
+    scheduleLine2: '· 10 AM - 2 PM',
     about: [
       {
         n: '1',
-        title: 'Overview',
-        body: 'Recognized as one of the leading specialists in the Delhi NCR region, she has earned the trust of patients seeking advanced endodontic treatment and comprehensive smile rehabilitation.',
+        title: 'Overview & Experience',
+        body: 'With over 18 years of clinical excellence, Dr. Singhal has gained extensive experience managing complex restorative cases at reputed institutions like ESIC Dental Hospital, establishing herself as a leading specialist in Delhi NCR.',
       },
       {
         n: '2',
-        title: 'Career & Affiliations',
-        body: 'Over the course of her distinguished career, Dr. Singhal has been associated with reputed healthcare institutions, including her former role at ESIC Dental College & Hospital, Rohini. There, she gained extensive experience in managing a wide spectrum of complex endodontic and restorative cases. This invaluable clinical exposure has further strengthened her expertise in delivering advanced, evidence based dental care across diverse patient populations.',
+        title: 'Clinical Focus',
+        body: 'Specializes in Microscopic Endodontics, Single-Visit RCT, and Comprehensive Smile Designing. Her minimally invasive approach focuses on preserving natural dentition with aesthetically pleasing and functionally superior results.',
       },
       {
         n: '3',
-        title: 'Clinical Focus',
-        body: 'With a special focus on Microscopic Endodontics, Endodontic Surgery, RE-R.C.T. & Single Sitting R.C.T., and Cosmetic/Aesthetic Dentistry, Dr. Singhal is committed to preserving natural dentition while creating smiles that are both aesthetically pleasing and functionally superior. Her treatment philosophy combines minimally invasive techniques with meticulous attention to detail, ensuring predictable outcomes and an exceptional patient experience.',
+        title: 'Advanced Technology',
+        body: 'An early adopter of cutting-edge technology, she routinely incorporates Dental Operating Microscopes, advanced magnification systems, and laser-assisted dentistry for unparalleled precision and patient comfort.',
       },
       {
         n: '4',
-        title: 'Philosophy of Care',
-        body: 'Widely respected for her calm demeanor, diagnostic acumen, and commitment to excellence, Dr. Singhal believes that exceptional dentistry is achieved through the seamless integration of scientific evidence, artistic vision, and compassionate care. Every treatment is tailored to the unique needs of the individual, reflecting her unwavering dedication to quality, ethics, and long term oral health.',
-      },
-      {
-        n: '5',
-        title: 'Academic Contributions',
-        body: 'Beyond clinical practice, Dr. Singhal is deeply committed to academics and professional advancement. She has authored numerous scientific publications in reputed national and international journals and remains actively engaged in continuing education to stay at the forefront of contemporary endodontics and esthetic dentistry.',
+        title: 'Philosophy & Academics',
+        body: 'Known for her calm demeanor and diagnostic acumen, she integrates scientific evidence with compassionate care. Deeply committed to academics, she has authored numerous scientific publications in national and international journals.',
       },
     ],
     quote:
-      '"Her relentless pursuit of clinical excellence, commitment to innovation, and patient centric philosophy have established Dr. Deepika Singhal as a trusted name in advanced endodontics and esthetic dentistry, delivering exceptional care with precision, compassion, and lasting results."',
+      '"Her relentless pursuit of clinical excellence, commitment to innovation, and patient-centric philosophy have established Dr. Deepika Singhal as a trusted name in advanced endodontics and esthetic dentistry, delivering exceptional care with precision, compassion, and lasting results."',
     award: {
       image: '/images/home/awards.webp',
       pill: 'A RECOGNITION OF CLINICAL EXCELLENCE',
       title: 'Best Endodontist in North India',
-      desc: "Dr. Deepika Singhal was honoured with this recognition at the India's Pride Healthcare Awards 2018-19, reflecting her expertise and commitment to exceptional endodontic care.",
+      desc: "Dr. Deepika Singhal was honoured with this recognition at India's Pride Healthcare Awards 2018-19, reflecting her expertise and commitment to exceptional endodontic care.",
       buttonText: 'See Treatments',
       buttonLink: '/services',
     },
@@ -76,6 +64,13 @@ const DOCTORS_DATA = {
   aj: {
     id: 'aj',
     initials: 'AJ',
+    specialisations: [
+      { n: '01', title: 'Full Mouth Rehabilitation', link: '/services#catalogue' },
+      { n: '02', title: 'Full Mouth Implants', link: '/services#catalogue' },
+      { n: '03', title: 'Single/Multiple Tooth Replacements With Implants', link: '/services#catalogue' },
+      { n: '04', title: 'Aligners' },
+      { n: '05', title: 'Braces' },
+    ],
     name: 'Dr. Abhinav Jain',
     pronoun: 'His',
     tabTitle: 'Orthodontist, Implantologist',
@@ -83,36 +78,31 @@ const DOCTORS_DATA = {
     imageClass: 'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
     pill: 'Orthodontist & Implantologist',
     desc1:
-      'A highly skilled Orthodontist and Implantologist dedicated to creating beautiful, straight smiles and restoring missing teeth with state-of-the-art dental implants.',
+      'A distinguished Orthodontist, Implantologist, and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence, dedicated to restoring oral health and aesthetics.',
     desc2:
-      'MDS in Orthodontics and Dentofacial Orthopedics. Fifteen years of expertise in clear aligners, traditional braces, and full-mouth implant rehabilitation.',
-    scheduleLine1: '· 10:00am to 2:00pm & 4:30pm to 7:30pm',
-    scheduleLine2: '· Closed',
+      'B.D.S., M.D.S. (Orthodontist & Implantologist). Eighteen years of expertise in clear aligners, traditional braces, and full-mouth implant rehabilitation, supported by 15,000+ happy patients.',
+    scheduleLine1: '· 10 AM - 2 PM and 5 PM - 8 PM',
+    scheduleLine2: '· 10 AM - 2 PM',
     about: [
       {
         n: '1',
-        title: 'Overview',
-        body: 'Renowned for his expertise in modern orthodontics and implantology, Dr. Jain specializes in invisible aligners, complex bite corrections, and full-mouth rehabilitations.',
+        title: 'Overview & Experience',
+        body: 'A distinguished Orthodontist, Implantologist, and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence. He has managed complex cases at respected institutions like Apollo Hospital, Gurugram.',
       },
       {
         n: '2',
-        title: 'Career & Affiliations',
-        body: 'With over 15 years of dedicated practice, he has formerly served as a Consultant at Apollo Clinic, Gurgaon, and Hedgewar Hospital, Delhi. He is a proud Member of the Indian Dental Association and the European Orthodontic Society (London). Furthermore, he holds international credentials as a Certified Implantologist from Korea and a Certified Aligner Practitioner from Germany.',
+        title: 'Orthodontic Expertise',
+        body: 'Provides customized solutions for all ages, with extensive expertise in metal, ceramic, and lingual braces, as well as Invisalign® clear aligners, ensuring optimal functional correction and harmonious smiles.',
       },
       {
         n: '3',
-        title: 'Clinical Focus',
-        body: 'Focusing extensively on clear aligner therapy and image-guided implant placements, Dr. Jain is at the forefront of integrating technology with patient care. He meticulously plans every case digitally to ensure precise movements and optimal surgical outcomes with minimal discomfort.',
+        title: 'Full Mouth Rehabilitation',
+        body: 'Specializes in comprehensive treatment for severely worn dentition and complex restorative needs. Integrates orthodontics, implant dentistry, and digital smile planning to restore function, aesthetics, and long-term oral health.',
       },
       {
         n: '4',
-        title: 'Philosophy of Care',
-        body: 'Dr. Jain believes that a confident smile is the foundation of self-esteem. He takes a patient-centric approach, taking the time to listen to concerns and fully explain treatment options, empowering patients to make informed decisions about their orthodontic and restorative journey.',
-      },
-      {
-        n: '5',
-        title: 'Academic Contributions',
-        body: 'A passionate educator, Dr. Jain frequently conducts workshops on advanced implantology and aligner mechanics for fellow practitioners. He has presented his clinical cases at various national conferences and remains dedicated to mentoring the next generation of dental professionals.',
+        title: 'Implantology & Philosophy',
+        body: 'Proficient in single-tooth and full-mouth implant rehabilitation using digital diagnostics. Known for his ethical, patient-first philosophy and commitment to continuous professional development.',
       },
     ],
     quote:
@@ -131,7 +121,25 @@ const DOCTORS_DATA = {
 type DoctorId = keyof typeof DOCTORS_DATA
 
 export default function DoctorProfile() {
-  const [activeTab, setActiveTab] = useState<DoctorId>('ds')
+  const location = useLocation()
+  
+  const getInitialTab = (): DoctorId => {
+    const hash = location.hash.replace('#', '') as DoctorId
+    if (Object.keys(DOCTORS_DATA).includes(hash)) {
+      return hash
+    }
+    return 'ds'
+  }
+
+  const [activeTab, setActiveTab] = useState<DoctorId>(getInitialTab())
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '') as DoctorId
+    if (Object.keys(DOCTORS_DATA).includes(hash)) {
+      setActiveTab(hash)
+    }
+  }, [location.hash])
+
   const activeDoctor = DOCTORS_DATA[activeTab]
 
   return (
@@ -140,7 +148,7 @@ export default function DoctorProfile() {
         <PageHero
           tagline="Doctor Profile"
           title="Meet the Experts Behind Every Smile."
-          description="Meet our experienced dental professionals, dedicated to delivering advanced, patient focused care. Discover their qualifications, expertise, and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthétique today for trusted dental care and confidence."
+          description="Meet our experienced dental professionals, dedicated to delivering advanced, patient-focused care. Discover their qualifications, expertise, and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthétique today for trusted dental care and confidence."
           taglineColor="text-[#C187A4]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -148,11 +156,11 @@ export default function DoctorProfile() {
           backgroundImage="/images/about/docprofile.webp"
           hideCollage={true}
         >
-          <HeroButton to="/contact" text="Book an appointment" />
-          <HeroButton href="#specialisations" text="See treatments" variant="outline" />
+          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
+          <HeroButton to="/services#catalogue" text="See treatments" variant="outline" />
         </PageHero>
 
-        <div className="relative z-30 mt-16 flex flex-col w-[1210px] gap-6">
+        <div id={activeTab} className="relative z-30 mt-16 flex flex-col w-[1210px] gap-6 scroll-mt-32">
           <Reveal y={20} duration={0.6} className="flex gap-4">
             {(Object.keys(DOCTORS_DATA) as DoctorId[]).map((id) => {
               const doctor = DOCTORS_DATA[id]
@@ -327,7 +335,7 @@ export default function DoctorProfile() {
             </Reveal>
 
             <Stagger className="flex w-[1239px] flex-col mt-4" gap={0.1}>
-              {specialisations.map((card, index) => {
+              {activeDoctor.specialisations.map((card, index) => {
                 const rowClasses = `group flex items-center justify-between w-full py-8 border-b border-[#28231F]/10 hover:border-[#C187A4] transition-colors duration-300 ${card.link ? 'cursor-pointer' : 'cursor-default'} ${index === 0 ? 'border-t' : ''}`
                 const rowContent = (
                   <>

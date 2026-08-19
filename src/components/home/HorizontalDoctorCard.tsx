@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 export default function HorizontalDoctorCard({
+  id,
   name,
   role,
   description,
@@ -14,6 +17,7 @@ export default function HorizontalDoctorCard({
   bulletPoints = [],
   className = '',
 }: {
+  id?: string
   name: string
   role: string
   description: string
@@ -36,7 +40,10 @@ export default function HorizontalDoctorCard({
       <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
 
       <div className="absolute bottom-[20px] left-[20px] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 z-20">
-        <button className="flex items-center gap-1.5 bg-gradient-to-r from-[#B07399] to-[#91587a] text-white px-5 py-2.5 rounded-sm font-poppins text-[14px] font-medium shadow-lg hover:shadow-xl transition-shadow">
+        <Link 
+          to={`/doctors${id ? `#${id}` : ''}`}
+          className="flex items-center gap-1.5 bg-gradient-to-r from-[#B07399] to-[#91587a] text-white px-5 py-2.5 rounded-sm font-poppins text-[14px] font-medium shadow-lg hover:shadow-xl transition-shadow"
+        >
           Read More
           <svg
             className="w-4 h-4"
@@ -47,7 +54,7 @@ export default function HorizontalDoctorCard({
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
-        </button>
+        </Link>
       </div>
 
       <div className="absolute bottom-0 right-0 bg-[#333] text-white px-3 py-1 text-[12px] font-poppins opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
@@ -107,7 +114,10 @@ export default function HorizontalDoctorCard({
       )}
 
       <div className="mt-auto flex flex-col items-start">
-        <div className="flex items-center gap-2 text-[#C187A4] hover:text-[#a86a8a] font-poppins text-[13px] font-bold cursor-pointer group/btn transition-colors mt-4">
+        <Link
+          to={BOOK_APPOINTMENT_TO}
+          className="flex items-center gap-2 text-[#C187A4] hover:text-[#a86a8a] font-poppins text-[13px] font-bold cursor-pointer group/btn transition-colors mt-4"
+        >
           Book Appointment
           <svg
             className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform"
@@ -118,7 +128,7 @@ export default function HorizontalDoctorCard({
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
-        </div>
+        </Link>
       </div>
     </div>
   )

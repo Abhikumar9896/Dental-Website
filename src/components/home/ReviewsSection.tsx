@@ -11,21 +11,21 @@ const reviews = [
     name: 'Sushil Gupta',
     accent: '#165ba7',
     x: 87,
-    text: 'Got my crown refixed and it was a very good experience the doctor knew what they were doing and I hardly felt any pain during the procedure.',
+    text: 'Got my crown refixed and it was a very good experience. The doctor knew what they were doing and I hardly felt any pain during the procedure.',
   },
   {
     initial: 'R',
     name: 'Rishabh Mudgal',
     accent: '#C187A4',
     x: 0,
-    text: 'One of the best dentist in sec 22 noida.I would like to thank Dr Abhinav for the treatment',
+    text: 'One of the best dentists in Sec 22, Noida. I would like to thank Dr. Abhinav for the treatment.',
   },
   {
     initial: 'A',
     name: 'Amar Aggarwal',
     accent: '#165ba7',
     x: 87,
-    text: 'Dental esthetique, Dr Deepika and Dr Abhinav made sure my wisdom tooth extraction and root canal went smoothly.',
+    text: 'Dental Esthetique, Dr. Deepika and Dr. Abhinav made sure my wisdom tooth extraction and root canal went smoothly.',
   },
 ] as const
 
@@ -46,7 +46,7 @@ export default function ReviewsSection() {
               />
               <div className="relative z-10 flex flex-col pl-[55px]" style={{ gap: 15 }}>
                 <h2 className="w-[287px] font-fraunces text-[36px] font-semibold leading-none text-[#28231F]">
-                  What our customers says
+                  What our customers say
                 </h2>
                 <p className="w-[343px] font-poppins text-xl font-normal leading-[1.2] tracking-[0.04em] text-[rgba(43,35,31,0.7)]">
                   Real feedback from real patients, gathered from verified Google reviews across
@@ -57,8 +57,8 @@ export default function ReviewsSection() {
           </StaggerItem>
           <StaggerItem>
             <Link
-              to="/about"
-              className="ml-[55px] inline-flex h-[47px] w-auto px-6 items-center justify-center rounded-md bg-[#C187A4]"
+              to="/testimonials"
+              className="ml-[55px] mt-8 inline-flex h-[47px] w-auto px-6 items-center justify-center rounded-md bg-[#C187A4]"
               style={{ gap: 10 }}
             >
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white">

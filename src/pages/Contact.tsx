@@ -1,4 +1,4 @@
-import HeroButton from '../components/ui/HeroButton'
+import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import PageHero from '../components/ui/PageHero'
 import AppointmentCta from '../components/AppointmentCta'
 
@@ -17,7 +17,7 @@ export default function Contact() {
           title="Get in Touch"
           description="Have questions or want to book an appointment? We'd love to hear from you."
         >
-          <HeroButton to="/contact" text="Book an appointment" />
+          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
         </PageHero>
 
         <div className="absolute left-[80px] top-[720px] w-[1280px]">
