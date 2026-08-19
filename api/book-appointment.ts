@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import nodemailer from 'nodemailer'
-import { BRAND_LOGO_BASE64 } from './brand-logo-base64'
+import { BRAND_LOGO_BASE64 } from './_brand-logo-base64.js'
 
 type AppointmentPayload = {
   name?: string
