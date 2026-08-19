@@ -74,7 +74,7 @@ export default function LocationSection() {
           </motion.div>
         </Reveal>
 
-        <div className="absolute right-0 top-[60px] w-[380px] h-auto min-h-[340px] bg-[#135CB2] flex flex-col pt-8 pb-8 px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins">
+        <div className="absolute right-0 top-[60px] w-[380px] h-auto min-h-[440px] bg-[#135CB2] flex flex-col pt-8 pb-8 px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins">
           <h2 className="text-[26px] font-semibold mb-1.5 tracking-wide text-white drop-shadow-sm">
             Working Hours
           </h2>
@@ -84,8 +84,13 @@ export default function LocationSection() {
 
           <div className="flex flex-col mb-5">
             {[
-              { day: 'Mon-Sat', time: '10 AM to 2 PM & 5 PM to 8 PM', showBook: true },
-              { day: 'Sunday', time: '10 AM to 2 PM', showBook: true },
+              { day: 'Monday', time: '10 AM - 2 PM, 5 - 8 PM', showBook: true },
+              { day: 'Tuesday', time: '10 AM - 2 PM, 5 - 8 PM', showBook: true },
+              { day: 'Wednesday', time: '10 AM - 2 PM, 5 - 8 PM', showBook: true },
+              { day: 'Thursday', time: '10 AM - 2 PM, 5 - 8 PM', showBook: true },
+              { day: 'Friday', time: '10 AM - 2 PM, 5 - 8 PM', showBook: true },
+              { day: 'Saturday', time: '10 AM - 2 PM, 5 - 8 PM', showBook: true },
+              { day: 'Sunday', time: '10 AM - 2 PM', showBook: true },
             ].map((item, index) => (
               <div
                 key={index}

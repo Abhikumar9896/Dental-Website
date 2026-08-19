@@ -15,7 +15,7 @@ export default function BookAppointment() {
   return (
     <div
       id="book-appointment"
-      className="absolute left-[60px] top-[866px] w-[1320px] h-[640px] z-30"
+      className="absolute left-[60px] top-[866px] w-[1320px] h-[640px] z-30 scroll-mt-[120px]"
     >
       <motion.div
         initial={{ opacity: 0, x: 120 }}
