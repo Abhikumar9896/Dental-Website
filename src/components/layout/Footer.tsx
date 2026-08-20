@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import AppointmentCta from '../AppointmentCta'
 import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
 import { scrollToId } from '../../utils/scroll'
+import { handlePhoneClick } from '../../utils/contactActions'
 
 const quickLinks = [
   { to: BOOK_APPOINTMENT_TO, label: 'Book Appointment', hash: true },
@@ -24,17 +25,18 @@ export default function Footer() {
 
       <div className="w-full bg-[#F3F4F6] flex justify-center pt-10 pb-10 lg:py-[80px] h-ft-main">
         <div className="w-full max-w-[1400px] lg:w-[1400px] flex flex-col lg:flex-row justify-between gap-8 lg:gap-0 px-5 sm:px-6 lg:px-10 box-border h-ft-cols">
-          {/* Brand + contact */}
+
           <div className="w-full lg:w-[320px] flex flex-col h-ft-brand">
             <div className="flex items-end text-[20px] lg:text-[26px] font-bold tracking-tight leading-none gap-[6px]">
               <img
                 src="/images/home/logo.svg"
-                alt="Logo"
+                alt=""
+                aria-hidden="true"
                 className="h-[32px] lg:h-[42px] w-auto mb-[-2px]"
               />
               <div>
                 <span className="text-[#165ba7]">Dental</span>
-                <span className="text-[#D35B8F] font-medium ml-1">Esthetique</span>
+                <span className="text-[#A63A68] font-medium ml-1">Esthetique</span>
               </div>
             </div>
             <div className="mt-2.5 mb-4 h-[2px] w-[40px] bg-[#D35B8F] ml-[38px] lg:ml-[48px]" />
@@ -45,11 +47,11 @@ export default function Footer() {
               <div className="flex items-start gap-2.5 text-[#165ba7] font-semibold text-[12.5px] lg:text-[14px]">
                 <Phone size={16} className="shrink-0 mt-0.5" />
                 <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
-                  <a href="tel:+919818862265" className="hover:underline">
+                  <a href="tel:+919818862265" className="hover:underline" onClick={(e) => handlePhoneClick(e, '+91 98188 62265')}>
                     +91 98188 62265
                   </a>
                   <span className="text-[#D35B8F] font-normal">|</span>
-                  <a href="tel:01204266344" className="hover:underline">
+                  <a href="tel:01204266344" className="hover:underline" onClick={(e) => handlePhoneClick(e, '0120 4266 344')}>
                     0120 4266 344
                   </a>
                 </div>
@@ -88,7 +90,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links — 2 cols on mobile */}
+
           <div className="w-full lg:w-[160px] flex flex-col h-ft-links">
             <h3 className="text-[#165ba7] text-[18px] lg:text-[22px] font-bold tracking-tight leading-none">
               Quick Links
@@ -113,7 +115,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Awards */}
+
           <div className="w-full lg:w-[340px] flex flex-col h-ft-c3">
             <div className="pl-0 lg:pl-14">
               <h3 className="text-[#165ba7] text-[18px] lg:text-[22px] font-bold tracking-tight leading-none">
@@ -125,6 +127,8 @@ export default function Footer() {
               <img
                 src="/images/home/footer-awards-new.webp"
                 alt="Awards Wreath"
+                loading="lazy"
+                decoding="async"
                 className="pointer-events-none absolute left-1/2 top-1/2 h-[160px] w-[260px] -translate-x-1/2 -translate-y-1/2 object-contain lg:left-auto lg:top-auto lg:h-[210px] lg:w-[380px] lg:translate-x-0 lg:translate-y-0 lg:-left-[10px] lg:-top-[18px] h-ft-c3-img"
               />
               <div className="relative z-10 flex flex-col items-center text-center px-3 py-4 lg:pb-8 lg:pr-8">
@@ -144,7 +148,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social */}
+
           <div className="w-full lg:w-[280px] flex flex-col h-ft-social">
             <h3 className="text-[#165ba7] text-[18px] lg:text-[22px] font-bold tracking-tight leading-none">
               Social Networks
@@ -207,7 +211,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
+
       <div className="w-full bg-[#165ba7] flex justify-center py-3 lg:py-4 h-ft-bar">
         <div className="w-full max-w-[1400px] lg:w-[1400px] flex items-center justify-center px-5 sm:px-6 lg:px-10 box-border text-white h-ft-bottom">
           <p className="text-[12px] lg:text-[14px] font-medium text-center">

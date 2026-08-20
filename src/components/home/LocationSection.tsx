@@ -23,7 +23,7 @@ export default function LocationSection() {
           x={0}
           y={0}
           duration={0.9}
-          className="relative lg:absolute left-0 top-0 w-full lg:w-[950px] h-[240px] sm:h-[280px] lg:h-[640px] shadow-sm bg-gray-50 overflow-hidden rounded-xl lg:rounded-none h-loc-map"
+          className="relative lg:absolute left-0 top-0 w-full lg:w-[950px] h-[240px] sm:h-[280px] lg:h-[640px] shadow-sm bg-gray-50 overflow-hidden rounded-2xl h-loc-map"
         >
           <iframe
             src="https://maps.google.com/maps?q=Dental%20Esthetique,%2055,%20Vindhyachal%20Marg,%20Block%20B,%20Sector%2022,%20Noida&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -69,6 +69,8 @@ export default function LocationSection() {
                 <img
                   src="/images/home/logo.svg"
                   alt="Dental Esthetique Pin"
+                  loading="lazy"
+                  decoding="async"
                   className="w-[85%] h-[85%] object-contain"
                 />
               </div>
@@ -77,7 +79,7 @@ export default function LocationSection() {
           </motion.div>
         </Reveal>
 
-        <div className="relative lg:absolute right-0 top-0 lg:top-[60px] w-full lg:w-[380px] h-auto min-h-0 lg:min-h-[440px] bg-[#135CB2] flex flex-col pt-5 pb-5 px-4 lg:pt-8 lg:pb-8 lg:px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins rounded-xl lg:rounded-none h-loc-hours">
+        <div className="relative lg:absolute right-0 top-0 lg:top-[60px] w-full lg:w-[380px] h-auto min-h-0 lg:min-h-[440px] bg-[#135CB2] flex flex-col pt-5 pb-5 px-4 lg:pt-8 lg:pb-8 lg:px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins rounded-2xl h-loc-hours">
           <h2 className="text-[22px] lg:text-[26px] font-semibold mb-1 tracking-wide text-white drop-shadow-sm">
             Working Hours
           </h2>
@@ -114,7 +116,7 @@ export default function LocationSection() {
                         scrollToId('book-appointment')
                       }
                     }}
-                    className="flex shrink-0 items-center gap-1 bg-white text-[#D35B8F] px-2.5 py-1 rounded-[3px] text-[10px] font-semibold hover:bg-gray-50 transition-colors"
+                    className="flex shrink-0 items-center gap-1 bg-white text-[#C1497D] px-2.5 py-1 rounded-md text-[10px] font-semibold hover:bg-gray-50 transition-colors"
                   >
                     Book <Clock size={10} strokeWidth={2.5} />
                   </Link>
@@ -137,7 +139,7 @@ export default function LocationSection() {
                   scrollToId('book-appointment')
                 }
               }}
-              className="flex h-[40px] lg:h-[36px] w-full lg:w-max items-center justify-center gap-1.5 rounded bg-white px-4 font-poppins text-[12px] lg:text-[11px] font-semibold text-[#D35B8F] hover:bg-gray-50 transition-colors group shadow-sm"
+              className="flex h-[40px] lg:h-[36px] w-full lg:w-max items-center justify-center gap-1.5 rounded-lg bg-white px-4 font-poppins text-[12px] lg:text-[11px] font-semibold text-[#C1497D] hover:bg-gray-50 transition-colors group shadow-sm"
             >
               Suggest Checkup Time
               <ChevronRight

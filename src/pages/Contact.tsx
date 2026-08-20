@@ -1,6 +1,7 @@
 import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import PageHero from '../components/ui/PageHero'
 import AppointmentCta from '../components/AppointmentCta'
+import { usePageMeta, SITE_URL } from '../utils/seo'
 
 const contactCards = [
   {
@@ -45,9 +46,16 @@ const contactCards = [
 ] as const
 
 export default function Contact() {
+  usePageMeta({
+    title: 'Contact Us | Dental Esthetique - Book Appointment in Noida',
+    description:
+      'Visit Dental Esthetique at 55, Vindhyachal Marg, Block B, Sector 22, Noida. Call +91 98188 62265 or book your dental appointment online today.',
+    path: '/contact',
+    image: `${SITE_URL}/images/about/clinic-exterior.webp`,
+  })
   return (
     <div className="w-full overflow-x-hidden bg-white h-contact-page">
-      {/* Desktop keeps fixed 1440×1200 canvas; mobile is fluid */}
+
       <div className="relative mx-auto w-full max-w-full lg:w-[1440px] lg:min-w-[1440px] h-auto lg:h-[1200px] overflow-hidden bg-[#F9F4F1] pb-8 lg:pb-0 h-canvas h-contact-canvas">
         <PageHero
           height="lg:h-[max(100vh,800px)]"

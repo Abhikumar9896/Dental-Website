@@ -19,7 +19,7 @@ export const treatmentCategories = [
 export type TreatmentCategory = (typeof treatmentCategories)[number]
 
 export const treatments: { title: string; category: TreatmentCategory; content: string }[] = [
-  // 1. SINGLE SITTING RCT
+
   {
     title: 'SINGLE SITTING RCT',
     category: 'Single Sitting RCT',
@@ -39,7 +39,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Microscopic Root Canal Treatment utilizes state-of-the-art dental microscopes to magnify the intricate structures inside your tooth. This advanced technology allows our endodontists to locate hidden canals and precisely remove infections that the naked eye might miss. The result is a highly thorough cleaning that maximizes the chances of saving your natural tooth permanently.',
   },
 
-  // 2. IMPLANTS
+
   {
     title: 'SINGLE TOOTH IMPLANTS',
     category: 'Implants',
@@ -53,7 +53,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Full mouth implants offer a life-changing solution for patients missing all or most of their teeth. By strategically placing several titanium implants into the jawbone, we can securely anchor a full arch of beautiful, permanent replacement teeth. This comprehensive treatment restores full chewing strength, prevents bone loss, and gives you back your confident smile.',
   },
 
-  // 3. FULL MOUTH RECONSTRUCTION
+
   {
     title: 'FULL MOUTH RECONSTRUCTION',
     category: 'Full Mouth Reconstruction',
@@ -61,7 +61,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Full mouth reconstruction is a personalized, comprehensive approach designed to rebuild severely damaged, worn, or decayed teeth. By combining various restorative treatments like crowns, bridges, and implants, we address both function and aesthetics. This complete makeover restores the structural integrity of your bite and delivers a beautiful, healthy smile.',
   },
 
-  // 4. BRACES
+
   {
     title: 'METAL BRACES',
     category: 'Braces',
@@ -93,7 +93,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       "Invisalign is the world's most advanced clear aligner system. Using proprietary SmartTrack material and 3D computer imaging, Invisalign creates a precise, highly predictable roadmap for your smile transformation. The aligners are comfortable, discreet, and specifically tailored to efficiently correct crowding, spacing, and bite issues without the hassle of metal wires.",
   },
 
-  // 5. DENTURES
+
   {
     title: 'FLEXIBLE DENTURES',
     category: 'Dentures',
@@ -113,7 +113,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Implant-supported dentures combine the affordability of traditional dentures with the unmatched stability of dental implants. Instead of resting on your gums, these dentures securely snap onto strategically placed titanium implants in your jaw. This eliminates slipping and clicking, allowing you to eat your favorite foods and speak without worry.',
   },
 
-  // 6. CROWN AND BRIDGE
+
   {
     title: 'ZIRCONIA',
     category: 'Crown And Bridge',
@@ -157,7 +157,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'E.max (Lithium Disilicate) is a premium all-ceramic material famous for its breathtaking aesthetics and impressive strength. It offers natural translucency that perfectly mimics real tooth enamel, making it the material of choice for highly visible front tooth restorations. E.max is ideal for creating stunning veneers, crowns, and inlays that look entirely natural.',
   },
 
-  // 7. VENEERS
+
   {
     title: 'CERAMIC VENEERS',
     category: 'Veneers',
@@ -171,7 +171,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Composite veneers offer a conservative, cost-effective way to enhance your smile in just a single visit. Using a high-quality, tooth-colored composite resin, our dentists expertly sculpt and shape the material directly onto your teeth. This procedure can quickly fix minor chips, close small gaps, and improve tooth shape with minimal enamel removal.',
   },
 
-  // 8. COSMETIC FILLINGS
+
   {
     title: 'COMPOSITES',
     category: 'Cosmetic Fillings',
@@ -197,7 +197,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       "Dental onlays, often called partial crowns, are used when tooth decay or damage is too extensive for a filling but not severe enough to require a full crown. An onlay covers and rebuilds one or more of the tooth's cusps. Custom-milled from durable ceramics, they restore chewing function and aesthetics while conserving healthy tooth structure.",
   },
 
-  // 9. ZOOM TEETH WHITENING
+
   {
     title: 'ZOOM TEETH WHITENING',
     category: 'Zoom Teeth Whitening',
@@ -205,7 +205,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Philips Zoom Teeth Whitening is a highly effective, professional in-office treatment that can brighten your smile by up to eight shades in just one visit. It uses a specialized LED light-activated gel to safely break down deep stains and discoloration caused by coffee, tea, or aging. The result is a dramatically whiter, brilliant smile in under an hour.',
   },
 
-  // 10. DENTAL JEWELLERY
+
   {
     title: 'DENTAL JEWELLERY',
     category: 'Dental Jewellery',
@@ -213,7 +213,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Dental jewellery adds a subtle, stylish sparkle to your smile with tiny crystal or gemstone designs bonded safely to the tooth surface. The procedure is quick, painless, and non-invasive - no drilling required. You can choose from elegant designs that enhance your look while remaining easy to remove whenever you wish.',
   },
 
-  // 11. SURGICAL REMOVAL OF CYST AND WISDOM TEETH
+
   {
     title: 'SURGICAL REMOVAL OF CYST AND WISDOM TEETH',
     category: 'Surgical Removal of Cyst and Wisdom Teeth',
@@ -221,7 +221,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Our expert surgical procedures safely and comfortably remove problematic wisdom teeth or oral cysts. Whether a tooth is impacted, causing pain, or threatening the alignment of your other teeth, our skilled surgeons use advanced techniques and anesthesia to ensure a smooth, pain-free extraction and promote rapid, healthy healing.',
   },
 
-  // 12. GUMS SURGERIES
+
   {
     title: 'GUMS SURGERIES',
     category: 'Gums Surgeries',
@@ -229,7 +229,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Advanced gum (periodontal) surgeries are designed to treat severe gum disease, restore receded gumlines, or reshape gum tissue for aesthetic purposes. By gently removing deep bacteria, smoothing tooth roots, or grafting healthy tissue, we halt the progression of periodontal disease. These procedures protect your bone and ensure a healthy, stable foundation for your teeth.',
   },
 
-  // 13. BIOPSY OF ORAL LESION
+
   {
     title: 'BIOPSY OF ORAL LESION',
     category: 'Biopsy of Oral Lesion',
@@ -237,7 +237,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'An oral biopsy is a simple, highly diagnostic procedure where a tiny sample of abnormal tissue (a lesion) is gently removed from the mouth. The sample is then sent to a specialized laboratory for microscopic examination. This crucial step helps us accurately diagnose oral conditions early, ensuring you receive the correct, effective treatment promptly.',
   },
 
-  // 14. CHILD DENTISTRY
+
   {
     title: 'FILLINGS',
     category: 'Child Dentistry',

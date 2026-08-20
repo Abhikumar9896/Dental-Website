@@ -68,7 +68,7 @@ export default function ServicesGridSection() {
     <div className="relative left-0 top-0 w-full flex flex-col items-center bg-[#EDEDED] pt-10 pb-10 lg:absolute lg:top-[6351px] lg:pt-16 lg:pb-0 h-svc">
       <div className="mb-6 w-full max-w-full px-5 lg:hidden h-svc-head">
         <h2 className="font-poppins text-[24px] font-semibold text-[#28231F]">Our Services</h2>
-        <p className="mt-1 font-poppins text-[13px] text-[#777] leading-relaxed">
+        <p className="mt-1 font-poppins text-[13px] text-[#6b6b6b] leading-relaxed">
           Comprehensive dental care for every smile need.
         </p>
       </div>

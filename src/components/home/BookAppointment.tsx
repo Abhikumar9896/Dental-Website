@@ -41,6 +41,7 @@ export default function BookAppointment() {
             <input
               type="text"
               placeholder="Full Name *"
+              aria-label="Full Name *"
               required
               value={formData.name}
               onChange={(e) => updateField('name', e.target.value)}
@@ -50,6 +51,7 @@ export default function BookAppointment() {
             <input
               type="tel"
               placeholder="Phone Number *"
+              aria-label="Phone Number *"
               required
               value={formData.phone}
               onChange={(e) => updateField('phone', e.target.value)}
@@ -59,6 +61,7 @@ export default function BookAppointment() {
             <input
               type="email"
               placeholder="Your email address *"
+              aria-label="Your email address *"
               required
               value={formData.email}
               onChange={(e) => updateField('email', e.target.value)}
@@ -69,6 +72,7 @@ export default function BookAppointment() {
               <input
                 type={isDateFocused || formData.date ? 'datetime-local' : 'text'}
                 placeholder="Preferred Date & Time *"
+                aria-label="Preferred Date & Time *"
                 required
                 value={formData.date}
                 onChange={(e) => updateField('date', e.target.value)}
@@ -173,6 +177,7 @@ export default function BookAppointment() {
               >
                 <textarea
                   placeholder="Description (Optional)"
+                  aria-label="Description (Optional)"
                   value={formData.description}
                   onChange={(e) => updateField('description', e.target.value)}
                   className="w-full h-[54px] lg:h-[66px] border border-gray-200/80 rounded-md px-3 lg:px-4 py-2 lg:py-3 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors resize-none mt-0.5"
@@ -201,7 +206,7 @@ export default function BookAppointment() {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="group flex w-full h-[46px] lg:h-[52px] items-center justify-center gap-2 rounded-[10px] bg-[#A66689] hover:bg-[#8F5675] transition-colors shadow-sm text-white font-poppins text-[14px] lg:text-[15px] font-medium mt-0 lg:mt-1 shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group flex w-full h-[46px] lg:h-[52px] items-center justify-center gap-2 rounded-[10px] bg-[#A06083] hover:bg-[#8F5675] transition-colors shadow-sm text-white font-poppins text-[14px] lg:text-[15px] font-medium mt-0 lg:mt-1 shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? (
                   <>

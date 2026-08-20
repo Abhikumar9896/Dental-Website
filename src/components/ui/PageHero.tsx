@@ -11,7 +11,7 @@ interface PageHeroProps {
   taglineBgColor?: string
   titleColor?: string
   titleFont?: string
-  /** Desktop height utilities only — mobile uses content-driven height */
+
   height?: string
   backgroundImage?: string
   bgPosition?: string

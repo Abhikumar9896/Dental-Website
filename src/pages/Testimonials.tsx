@@ -5,38 +5,64 @@ import Reveal from '../components/ui/Reveal'
 import SectionHeading from '../components/ui/SectionHeading'
 import GoogleIcon from '../components/ui/GoogleIcon'
 import ReviewCard from '../components/ui/ReviewCard'
+import { usePageMeta } from '../utils/seo'
 
 const VIDEO_BASE = '/images/testimonails/optimized'
 
-const videoFiles = [
-  'video-01',
-  'video-02',
-  'video-03',
-  'video-04',
-  'video-05',
-  'video-06',
-  'video-07',
-  'video-08',
+type TestimonialVideo = {
+  id: string
+  src: string
+  poster: string
+  fit?: 'cover' | 'contain'
+}
+
+const optimizedVideo = (id: string): TestimonialVideo => ({
+  id,
+  src: `${VIDEO_BASE}/${id}.mp4`,
+  poster: `${VIDEO_BASE}/${id}.webp`,
+})
+
+const gallery2Video = (file: string, fit: TestimonialVideo['fit'] = 'cover'): TestimonialVideo => ({
+  id: file,
+  src: `/gallery2/${file}.MP4`,
+  poster: `/gallery2/${file}.jpg`,
+  fit,
+})
+
+const videoFiles: TestimonialVideo[] = [
+  optimizedVideo('video-01'),
+  optimizedVideo('video-02'),
+  optimizedVideo('video-03'),
+  optimizedVideo('video-04'),
+  gallery2Video('c0789127-e490-4913-bcdf-f6d8db464a7c'),
+  optimizedVideo('video-05'),
+  gallery2Video('dd16c1e1-8cc1-4471-9f84-437d51952328'),
+  optimizedVideo('video-06'),
+  gallery2Video('f74cf82f-a34c-4fd6-9f1f-9e4fbafb0d63'),
+  optimizedVideo('video-07'),
+  gallery2Video('9a49936b-77a4-4d78-aa52-9828095c09f6', 'contain'),
+  optimizedVideo('video-08'),
+  gallery2Video('e22d0978-8093-4ae5-8504-68362823baac', 'contain'),
 ]
 
 function VideoCard({
-  id,
+  video,
   isActive = true,
   shouldLoad = false,
   onCardClick,
   blurAmount = 'none',
 }: {
-  id: string
+  video: TestimonialVideo
   isActive?: boolean
-  /** Only attach src when nearby — stops live from downloading every video on page load */
+
   shouldLoad?: boolean
   onCardClick?: () => void
   blurAmount?: string
 }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const poster = `${VIDEO_BASE}/${id}.webp`
-  const src = `${VIDEO_BASE}/${id}.mp4`
+  const { poster, src } = video
+  const objectFit = video.fit === 'contain' ? 'object-contain bg-black' : 'object-cover'
 
   useEffect(() => {
     if (!isActive && isPlaying) {
@@ -84,7 +110,7 @@ function VideoCard({
         ref={videoRef}
         poster={poster}
         preload="none"
-        className={`w-full h-full object-cover transition-opacity duration-500 ${isActive ? 'opacity-90 group-hover:opacity-100' : 'opacity-70'}`}
+        className={`w-full h-full ${objectFit} transition-opacity duration-500 ${isActive ? 'opacity-90 group-hover:opacity-100' : 'opacity-70'}`}
         style={{ filter: blurAmount, transition: 'filter 0.5s ease' }}
         loop
         playsInline
@@ -105,7 +131,7 @@ function VideoCard({
   )
 }
 
-function CoverflowCarousel({ videos }: { videos: string[] }) {
+function CoverflowCarousel({ videos }: { videos: TestimonialVideo[] }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [inView, setInView] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -139,9 +165,9 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
   return (
     <div
       ref={rootRef}
-      className="relative w-full max-w-[1200px] mx-auto h-[400px] sm:h-[480px] md:h-[560px] lg:h-[640px] flex items-center justify-center overflow-hidden lg:overflow-visible pt-2 lg:pt-4 pb-0 h-tst-cover"
+      className="relative w-full max-w-[1200px] mx-auto h-[400px] sm:h-[480px] md:h-[560px] lg:h-[640px] flex items-center justify-center overflow-hidden lg:overflow-visible pt-2 lg:pt-4 pb-8 h-tst-cover"
     >
-      {videos.map((id, index) => {
+      {videos.map((video, index) => {
         const offset = getOffset(index)
         const absOffset = Math.abs(offset)
 
@@ -174,12 +200,12 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
 
         return (
           <div
-            key={id}
+            key={video.id}
             className="absolute transition-all duration-700 ease-out w-[200px] sm:w-[260px] md:w-[300px] lg:w-[340px] h-tst-vid"
             style={{ transform, zIndex, opacity, height: 'auto' }}
           >
             <VideoCard
-              id={id}
+              video={video}
               isActive={offset === 0}
               shouldLoad={inView && absOffset === 0}
               onCardClick={() => setActiveIndex(index)}
@@ -224,14 +250,34 @@ function CoverflowCarousel({ videos }: { videos: string[] }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
         </svg>
       </button>
+
+      <div className="absolute bottom-1 left-1/2 z-50 flex max-w-[90%] -translate-x-1/2 flex-wrap items-center justify-center gap-1.5">
+        {videos.map((video, index) => (
+          <button
+            key={video.id}
+            type="button"
+            aria-label={`Show video ${index + 1}`}
+            onClick={() => setActiveIndex(index)}
+            className={`h-1.5 rounded-full transition-all ${
+              index === activeIndex ? 'w-6 bg-[#165ba7]' : 'w-1.5 bg-gray-300 hover:bg-gray-400'
+            }`}
+          />
+        ))}
+      </div>
     </div>
   )
 }
 
 export default function Testimonials() {
+  usePageMeta({
+    title: 'Patient Reviews & Testimonials | Dental Esthetique Noida',
+    description:
+      'Read real patient reviews and video testimonials for Dental Esthetique, Noida. See why patients trust us for painless root canals, implants and smile makeovers.',
+    path: '/testimonials',
+  })
   return (
     <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden h-tst-page">
-      {/* Desktop keeps 1440; mobile is fluid via w-full + CSS */}
+
       <div className="relative mx-auto flex w-full max-w-[100%] lg:w-[1440px] flex-col items-center pb-0 h-canvas">
         <TestimonialHeroSection />
 
@@ -346,7 +392,7 @@ export default function Testimonials() {
             </div>
           </Reveal>
 
-          {/* Mobile: normal full-width. Desktop: original w-screen breakout */}
+
           <div
             id="patient-stories"
             className="relative w-full overflow-x-hidden pt-10 pb-12 lg:pt-16 lg:pb-16 flex flex-col items-center lg:w-screen lg:left-1/2 lg:-translate-x-1/2 h-tst-stories"
@@ -361,12 +407,12 @@ export default function Testimonials() {
                 </>
               }
               titleClassName="font-poppins text-[26px] sm:text-[34px] lg:text-[48px] font-semibold leading-[1.15] lg:leading-[1.1] max-w-[800px] h-tst-sechead"
-              description="Learn why patients across Noida trust Dental Esthétique for safe, comfortable, and long-lasting dental care. Read their genuine stories and see how our personalized treatments have transformed their smiles and restored their confidence."
+              description="Learn why patients across Noida trust Dental Esthetique for safe, comfortable, and long-lasting dental care. Read their genuine stories and see how our personalized treatments have transformed their smiles and restored their confidence."
               descriptionClassName="text-[13px] sm:text-[14px] lg:text-[15px] px-1 h-tst-secdesc"
               className="mb-8 lg:mb-16 relative z-10 px-1 lg:px-4 w-full max-w-[800px]"
             />
 
-            {/* No 200vw / translate on mobile — desktop restores via CSS ≥1025 */}
+
             <div className="relative w-full overflow-hidden h-tst-marquee">
               <div className="flex flex-col gap-4 lg:gap-6">
                 <div className="flex w-max animate-marquee [animation-direction:reverse] hover:[animation-play-state:paused] gap-4 lg:gap-6 px-3">
@@ -398,7 +444,7 @@ export default function Testimonials() {
                 align="center"
                 title="Hear From Our Patients"
                 titleClassName="font-poppins text-[24px] sm:text-[32px] lg:text-[42px] font-semibold max-w-[800px] h-tst-vidhead"
-                description="Watch real stories from our patients as they share their experiences at Dental Esthétique and the difference a healthy, confident smile has made in their lives."
+                description="Watch real stories from our patients as they share their experiences at Dental Esthetique and the difference a healthy, confident smile has made in their lives."
                 descriptionClassName="text-[13px] sm:text-[14px] lg:text-[15px] h-tst-viddesc"
                 className="mb-2 lg:mb-4 relative z-10 w-full"
               />

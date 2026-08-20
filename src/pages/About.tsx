@@ -2,11 +2,12 @@ import PageHero from '../components/ui/PageHero'
 import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Float } from '../components/ui/Reveal'
+import { usePageMeta, SITE_URL } from '../utils/seo'
 
 const IMG = '/images/about'
 
 const storyPoints = [
-  'Dental Esthétique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
+  'Dental Esthetique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
   'Our clinic offers preventive, restorative, cosmetic, and advanced dental treatments tailored to the unique needs of every patient. We believe that exceptional dentistry goes beyond procedures; it involves educating patients, understanding their concerns, and delivering care in a comfortable and welcoming environment.',
   'Every treatment is planned with precision, transparency, and a long-term focus on oral health.',
 ] as const
@@ -19,13 +20,20 @@ const clinicStandards = [
 ]
 
 export default function About() {
+  usePageMeta({
+    title: 'About Us | Dental Esthetique - Trusted Dentist in Noida',
+    description:
+      'Learn about Dental Esthetique, a multi-speciality dental clinic in Sector 22, Noida. Specialist-led care, advanced technology and a patient-first approach since day one.',
+    path: '/about',
+    image: `${SITE_URL}/images/about/abouthero.webp`,
+  })
   return (
     <div className="w-full bg-white font-poppins overflow-x-hidden h-about-page">
       <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white overflow-hidden pb-16 h-canvas">
         <PageHero
-          tagline="About Dental Esthétique"
+          tagline="About Dental Esthetique"
           title="Your Trusted Partner in Complete Dental Care"
-          description="Dental Esthétique is committed to delivering exceptional dental care through advanced technology, evidence-based treatments, and a deeply patient-first approach. From routine dental check-ups to complex cosmetic smile transformations, our expert team is here to guide you every step of the way. Our ultimate goal is to ensure every patient receives highly personalized care within a safe, extraordinarily comfortable, and state-of-the-art environment."
+          description="Dental Esthetique is committed to delivering exceptional dental care through advanced technology, evidence-based treatments, and a deeply patient-first approach. From routine dental check-ups to complex cosmetic smile transformations, our expert team is here to guide you every step of the way. Our ultimate goal is to ensure every patient receives highly personalized care within a safe, extraordinarily comfortable, and state-of-the-art environment."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -40,7 +48,7 @@ export default function About() {
 
         <div className="mt-16 w-full flex justify-center bg-white z-10 h-about-story">
           <div className="flex w-[1280px] items-center justify-between gap-16 h-st-row">
-            <Reveal x={-40} y={0} duration={0.8} className="w-[638px] flex flex-col h-st-txt">
+            <Reveal x={-40} y={0} duration={0.8} className="w-[600px] flex flex-col h-st-txt">
               <SectionPill>02 · OUR STORY</SectionPill>
               <h2 className="mt-3 font-poppins text-[40px] font-semibold leading-[1.1] text-[#28231F] h-st-h">
                 Creating Beautiful Smiles Through Excellence in Dentistry
@@ -62,11 +70,11 @@ export default function About() {
 
             <Reveal x={40} y={0} duration={0.8} className="shrink-0 h-st-img">
               <div
-                className="h-[540px] w-[540px] overflow-hidden rounded-[48px] relative shrink-0 h-st-img-frame"
+                className="h-[540px] w-[600px] overflow-hidden rounded-[48px] relative shrink-0 h-st-img-frame"
                 style={{ boxShadow: '0 0 0 3px rgba(193,135,164,0.4)' }}
               >
                 <img
-                  src={`${IMG}/clinic-exterior.webp`}
+                  src={`${IMG}/about-story.jpg`}
                   alt="Dental Esthetique clinic exterior"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -155,14 +163,14 @@ export default function About() {
                 Our Commitment to Every Patient
               </h2>
               <p className="font-poppins text-[15px] leading-[1.7] font-normal text-white/90 text-center mb-7 max-w-[900px] h-about-banner-p">
-                At Dental ESTHÉTIQUE, every patient is treated with respect, empathy, and honesty.
+                At Dental Esthetique, every patient is treated with respect, empathy, and honesty.
                 We are committed to providing transparent consultations, personalized treatment
                 plans, and a comfortable experience using modern techniques and advanced technology.
                 Our goal is not only to treat dental concerns but to build long-term relationships
                 based on trust and exceptional care.
               </p>
               <p className="font-fraunces text-[22px] font-medium tracking-wide h-about-banner-brand">
-                Dental Esthétique
+                Dental Esthetique
               </p>
             </div>
           </div>

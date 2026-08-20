@@ -3,6 +3,8 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import WhatsAppFloat from './../ui/WhatsAppFloat'
+import ToastManager from '../ui/ToastManager'
+import { StructuredData } from '../ui/StructuredData'
 import { scrollToId } from '../../utils/scroll'
 
 function scrollToHash(hash: string) {
@@ -36,12 +38,14 @@ export default function Layout() {
 
   return (
     <div className="relative flex min-h-screen flex-col">
+      <StructuredData />
       <Header />
       <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
       <WhatsAppFloat />
+      <ToastManager />
     </div>
   )
 }

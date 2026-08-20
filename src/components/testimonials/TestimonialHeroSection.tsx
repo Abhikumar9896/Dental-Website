@@ -119,7 +119,7 @@ export default function TestimonialHeroSection() {
         ))}
       </div>
 
-      {/* Mobile / tablet only — desktop collage unchanged */}
+
       <div className="lg:hidden w-full max-w-[720px] mx-auto mb-5 overflow-hidden h-tst-strip">
         <div className="flex gap-2.5 overflow-x-auto pb-1 px-0.5 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {patients.slice(0, 10).map((p) => (
@@ -156,7 +156,7 @@ export default function TestimonialHeroSection() {
         </h1>
 
         <p className="text-[#6B7280] text-[14px] md:text-[15px] lg:text-[17px] leading-relaxed max-w-[500px] mb-5 lg:mb-6 h-tst-hero-p">
-          Learn why patients trust Dental Esthétique for safe, comfortable, and long-lasting dental
+          Learn why patients trust Dental Esthetique for safe, comfortable, and long-lasting dental
           care.
         </p>
 

@@ -34,7 +34,7 @@ function ViewAllReviewsLink({ className = '' }: { className?: string }) {
   return (
     <Link
       to="/testimonials"
-      className={`inline-flex h-[44px] lg:h-[47px] w-auto px-5 lg:px-6 items-center justify-center rounded-md bg-[#D35B8F] ${className}`}
+      className={`inline-flex h-[44px] lg:h-[47px] w-auto px-5 lg:px-6 items-center justify-center rounded-md bg-[#C1497D] ${className}`}
       style={{ gap: 10 }}
     >
       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white">
@@ -57,6 +57,8 @@ export default function ReviewsSection() {
               <img
                 src={`${IMG}/quotes.svg`}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="pointer-events-none absolute left-[-90px] top-[-60px] z-0 h-[167px] w-[163px] h-rev-quotes"
               />
               <div className="relative z-10 flex flex-col pl-0 lg:pl-[55px] h-rev-in" style={{ gap: 15 }}>
@@ -71,7 +73,7 @@ export default function ReviewsSection() {
             </div>
           </StaggerItem>
           <StaggerItem>
-            {/* Desktop only */}
+
             <div className="hidden lg:block h-rev-btn-d">
               <ViewAllReviewsLink className="ml-[55px] mt-8" />
             </div>
@@ -126,7 +128,7 @@ export default function ReviewsSection() {
         ))}
       </Stagger>
 
-      {/* Mobile only — after reviews */}
+
       <div className="flex w-full justify-start lg:hidden h-rev-btn-m">
         <ViewAllReviewsLink />
       </div>

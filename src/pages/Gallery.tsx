@@ -4,6 +4,7 @@ import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import SectionPill from '../components/ui/SectionPill'
 import SectionHeading from '../components/ui/SectionHeading'
 import Reveal, { Stagger, StaggerItem, CountUp } from '../components/ui/Reveal'
+import { usePageMeta, SITE_URL } from '../utils/seo'
 
 function HeroImageCollage({ images }: { images: string[] }) {
   const col1Base = images.slice(0, 6)
@@ -78,9 +79,18 @@ const treatmentImages = [
 ]
 
 const patientImages = [
+  '/images/gallery/doctor-patient-2.webp',
+  '/images/gallery/clinic-machine-1.webp',
+  '/images/gallery/clinic-machine-10.webp',
+  '/images/gallery/gallery-1.jpg',
+  '/images/gallery/gallery-2.jpg',
+  '/images/gallery/clinic-machine-2.jpg',
+  '/images/gallery/clinic-machine-3.webp',
+  '/images/gallery/clinic-machine-5.webp',
+  '/images/gallery/clinic-machine-9.webp',
+  '/images/gallery/doctor-patient-1.webp',
+  '/images/gallery/doctor-patient-11.webp',
   '/images/patient/unnamed (10).webp',
-  '/images/patient/unnamed (11).webp',
-  '/images/patient/unnamed (12).webp',
   '/images/patient/unnamed (13).webp',
   '/images/patient/unnamed (14).webp',
   '/images/patient/unnamed (15).webp',
@@ -95,7 +105,6 @@ const patientImages = [
   '/images/patient/unnamed (3).webp',
   '/images/patient/unnamed (4).webp',
   '/images/patient/unnamed (5).webp',
-  '/images/patient/unnamed (6).webp',
   '/images/patient/unnamed (7).webp',
   '/images/patient/unnamed (8).webp',
   '/images/patient/unnamed (9).webp',
@@ -103,11 +112,18 @@ const patientImages = [
 ]
 
 export default function Gallery() {
+  usePageMeta({
+    title: 'Smile Gallery | Dental Esthetique - Real Patient Results in Noida',
+    description:
+      'Browse real patient smile transformations and clinic photos from Dental Esthetique, Noida - root canals, implants, smile designing, veneers and more.',
+    path: '/gallery',
+    image: `${SITE_URL}/images/gallery/image.webp`,
+  })
   return (
     <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden min-h-screen h-gal-page">
       <div className="relative w-full h-auto min-h-0 lg:h-[800px] bg-white flex justify-center overflow-hidden shrink-0 h-gal-hero-wrap">
         <div className="relative w-full lg:w-[1440px] h-full z-10 h-gal-hero-in">
-          {/* Mobile / tablet photo strip — desktop collage unchanged */}
+
           <div className="lg:hidden w-full overflow-hidden pt-[76px] px-4 h-gal-strip">
             <div className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
               {patientImages.slice(0, 12).map((src, i) => (
@@ -189,7 +205,7 @@ export default function Gallery() {
             </StaggerItem>
           </Stagger>
 
-          {/* Desktop-only scrolling collage */}
+
           <div className="hidden lg:block">
             <HeroImageCollage images={patientImages} />
           </div>
@@ -240,7 +256,7 @@ export default function Gallery() {
             align="center"
             title="Our Patient Family"
             titleClassName="font-poppins text-[26px] sm:text-[34px] lg:text-[42px] font-semibold h-gal-sechead"
-            description="Join thousands of happy patients across Noida who trust Dental Esthétique with their smiles. We believe every successful treatment is a life changed, and our greatest reward is seeing our patients leave with renewed confidence."
+            description="Join thousands of happy patients across Noida who trust Dental Esthetique with their smiles. We believe every successful treatment is a life changed, and our greatest reward is seeing our patients leave with renewed confidence."
             descriptionClassName="max-w-[800px] text-[13px] sm:text-[14px] lg:text-[16px] h-gal-secdesc"
             className="mb-8 sm:mb-12 lg:mb-16"
           />

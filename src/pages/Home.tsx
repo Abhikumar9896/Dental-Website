@@ -13,8 +13,15 @@ import ServicesGridSection from '../components/home/ServicesGridSection'
 import LocationSection from '../components/home/LocationSection'
 
 import { homeDoctors } from '../data/doctors'
+import { usePageMeta } from '../utils/seo'
 
 export default function Home() {
+  usePageMeta({
+    title: 'Dental Esthetique - Best Dentist in Noida | Advanced Dental Care',
+    description:
+      'Multi-speciality dental clinic in Sector 22 Noida. Painless root canal, dental implants, smile designing, teeth whitening & braces by expert dentists. Book an appointment today.',
+    path: '/',
+  })
   return (
     <div className="relative overflow-x-hidden bg-white mx-auto w-full lg:w-[1440px] h-auto lg:h-[9150px] h-canvas">
       <HeroBanner />

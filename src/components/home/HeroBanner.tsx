@@ -26,6 +26,7 @@ export default function HeroBanner() {
   const slides = [
     {
       image: `/images/home/hero1.webp`,
+      mobileImage: '/images/home/mobile/hero1.webp',
       topLabel: 'Advanced Dental Care',
       topLabelColor: 'text-[#A66689]',
       heading: (
@@ -58,6 +59,7 @@ export default function HeroBanner() {
     },
     {
       image: `/images/about/hero2.webp`,
+      mobileImage: '/images/about/mobile/hero2.webp',
       topLabel: 'Care For Your Smile',
       topLabelColor: 'text-[#A0557A]',
       heading: (
@@ -112,6 +114,7 @@ export default function HeroBanner() {
     },
     {
       image: `/images/home/hero3.webp`,
+      mobileImage: '/images/home/mobile/hero3.webp',
       topLabel: 'Care For a Lifetime',
       topLabelColor: 'text-[#A0557A]',
       heading: (
@@ -231,6 +234,8 @@ export default function HeroBanner() {
           >
             <img
               src={slide.image}
+              srcSet={slide.mobileImage ? `${slide.mobileImage} 480w, ${slide.image} 1280w` : undefined}
+              sizes="100vw"
               alt=""
               fetchPriority="high"
               decoding="async"

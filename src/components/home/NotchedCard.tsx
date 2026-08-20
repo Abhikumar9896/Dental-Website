@@ -133,7 +133,7 @@ export function NotchedCard({
         } as CSSProperties
       }
     >
-      {/* Mobile surface — sizes to content; desktop uses SVG notch */}
+
       <div className="absolute inset-0 lg:hidden rounded-[20px]" style={mobileBg} />
 
       <svg

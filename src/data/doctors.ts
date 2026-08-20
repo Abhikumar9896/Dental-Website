@@ -8,7 +8,7 @@ export const homeDoctors = [
     imgSrc: '/images/home/e0a9924195fe49bd12e71ddc6eb19b13ace633e8.webp',
     colorScheme: 'blue',
     imagePosition: 'left',
-    // Skip black bar at top of source; desktop keeps original nudge
+
     imgObjectPosition: 'object-[center_18%] lg:object-center',
     imgClassName: 'lg:!top-[-40px] lg:!h-[calc(100%+40px)]',
     bulletPoints: [
@@ -27,7 +27,7 @@ export const homeDoctors = [
     imgSrc: '/images/home/75524db1b2dcef952c107879077fccb06763426e.webp',
     colorScheme: 'pink',
     imagePosition: 'right',
-    // Not object-top — photo has wall above head; frame the face
+
     imgObjectPosition: 'object-[center_28%] lg:object-[center_30%]',
     bulletPoints: [
       'B.D.S., M.D.S.',

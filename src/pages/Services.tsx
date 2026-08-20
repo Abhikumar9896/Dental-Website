@@ -4,8 +4,16 @@ import PageHero from '../components/ui/PageHero'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem } from '../components/ui/Reveal'
 import { treatmentCategories, treatments } from '../data/treatments'
+import { usePageMeta, SITE_URL } from '../utils/seo'
 
 export default function Services() {
+  usePageMeta({
+    title: 'Dental Treatments in Noida | Root Canal, Implants, Smile Design',
+    description:
+      'Explore our complete range of dental treatments in Noida - single sitting RCT, dental implants, braces, veneers, dentures, teeth whitening and more at Dental Esthetique.',
+    path: '/services',
+    image: `${SITE_URL}/images/about/treatment%20hero.webp`,
+  })
   const [active, setActive] = useState<(typeof treatmentCategories)[number]>('All')
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
   const [showAll, setShowAll] = useState(false)
@@ -23,7 +31,7 @@ export default function Services() {
         <PageHero
           tagline="Treatments"
           title="Smile Solutions for Everyone"
-          description="At Dental Esthétique, we provide a full spectrum of world-class dental treatments under one roof, tailored specifically to your unique needs. From essential preventive care and painless root canals to advanced dental implants and complete smile makeovers, our dedicated specialists utilize cutting-edge technology to ensure flawless, long-lasting results."
+          description="At Dental Esthetique, we provide a full spectrum of world-class dental treatments under one roof, tailored specifically to your unique needs. From essential preventive care and painless root canals to advanced dental implants and complete smile makeovers, our dedicated specialists utilize cutting-edge technology to ensure flawless, long-lasting results."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces lg:!text-[62px] !leading-[1.06] tracking-[0.01em]"
@@ -62,11 +70,10 @@ export default function Services() {
                       setShowAll(false)
                       setExpandedItem(null)
                     }}
-                    className={`flex items-center justify-center h-[36px] lg:h-[40px] rounded-[18px] px-3.5 lg:px-5 font-poppins text-[12px] lg:text-[13px] font-medium transition-colors whitespace-nowrap ${
-                      isActive
+                    className={`flex items-center justify-center h-[36px] lg:h-[40px] rounded-[18px] px-3.5 lg:px-5 font-poppins text-[12px] lg:text-[13px] font-medium transition-colors whitespace-nowrap ${isActive
                         ? 'bg-[#D35B8F] text-white border border-[#D35B8F]'
                         : 'border border-[#D35B8F] bg-white text-[#404040] hover:bg-[#D35B8F]/5'
-                    }`}
+                      }`}
                   >
                     {cat}
                   </button>

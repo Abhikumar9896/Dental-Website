@@ -41,10 +41,11 @@ export default function BookVisitSection() {
             <form className="flex flex-col gap-3 w-full lg:w-[90%] lg:ml-4 h-bv-form" onSubmit={submit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                 <div className="flex flex-col gap-1">
-                  <label className="font-poppins text-sm font-semibold text-[#333]">
+                  <label htmlFor="bv-name" className="font-poppins text-sm font-semibold text-[#333]">
                     Full Name <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
+                    id="bv-name"
                     type="text"
                     required
                     value={formData.name}
@@ -54,10 +55,11 @@ export default function BookVisitSection() {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <label className="font-poppins text-sm font-semibold text-[#333]">
+                  <label htmlFor="bv-phone" className="font-poppins text-sm font-semibold text-[#333]">
                     Phone Number <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
+                    id="bv-phone"
                     type="tel"
                     required
                     value={formData.phone}
@@ -67,10 +69,11 @@ export default function BookVisitSection() {
                 </div>
 
                 <div className="flex flex-col gap-1 col-span-2">
-                  <label className="font-poppins text-sm font-semibold text-[#333]">
+                  <label htmlFor="bv-email" className="font-poppins text-sm font-semibold text-[#333]">
                     Email Address <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
+                    id="bv-email"
                     type="email"
                     required
                     value={formData.email}
@@ -80,11 +83,12 @@ export default function BookVisitSection() {
                 </div>
 
                 <div className="flex flex-col gap-1 col-span-2">
-                  <label className="font-poppins text-sm font-semibold text-[#333]">
+                  <label htmlFor="bv-date" className="font-poppins text-sm font-semibold text-[#333]">
                     Preferred Date & Time <span className="text-[#D35B8F]">*</span>
                   </label>
                   <div className="relative h-bv-date">
                     <input
+                      id="bv-date"
                       type={isDateFocused || formData.date ? 'datetime-local' : 'text'}
                       placeholder="dd-mm-year --:--"
                       required
@@ -96,7 +100,7 @@ export default function BookVisitSection() {
                           try {
                             ;(input as HTMLInputElement & { showPicker: () => void }).showPicker()
                           } catch {
-                            /* ignore if browser blocks showPicker */
+
                           }
                         }
                       }}
@@ -127,11 +131,14 @@ export default function BookVisitSection() {
               </div>
 
               <div className="flex flex-col gap-1 w-full">
-                <label className="font-poppins text-sm font-semibold text-[#333]">
+                <label htmlFor="bv-treatment" className="font-poppins text-sm font-semibold text-[#333]">
                   Treatment Required <span className="text-[#D35B8F]">*</span>
                 </label>
                 <div className="relative">
                   <div
+                    id="bv-treatment"
+                    role="combobox"
+                    aria-expanded={isDropdownOpen}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className={`w-full h-[42px] border ${isDropdownOpen ? 'border-[#165ba7]' : 'border-gray-200'} rounded-md px-4 font-poppins text-[14px] flex items-center justify-between cursor-pointer transition-colors bg-white shadow-sm`}
                   >
@@ -200,10 +207,11 @@ export default function BookVisitSection() {
                   animate={{ opacity: 1, height: 'auto' }}
                   className="flex flex-col gap-1 w-full"
                 >
-                  <label className="font-poppins text-sm font-semibold text-[#333]">
+                  <label htmlFor="bv-desc" className="font-poppins text-sm font-semibold text-[#333]">
                     Description <span className="text-[#D35B8F]">*</span>
                   </label>
                   <textarea
+                    id="bv-desc"
                     placeholder="Please describe your requirement"
                     value={formData.description}
                     onChange={(e) => updateField('description', e.target.value)}

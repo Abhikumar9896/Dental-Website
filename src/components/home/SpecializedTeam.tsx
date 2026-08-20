@@ -5,7 +5,11 @@ export default function SpecializedTeam() {
     <div className="relative left-0 top-0 flex w-full items-center lg:items-start px-5 lg:absolute lg:left-0 lg:top-[2085px] lg:px-[120px] py-10 lg:pt-[30px] lg:pb-0 h-auto lg:h-[600px] overflow-hidden h-team">
       <img
         src="/images/home/specialized-team-doctor.webp"
+        srcSet="/images/home/mobile/specialized-team-doctor.webp 480w, /images/home/specialized-team-doctor.webp 1280w"
+        sizes="100vw"
         alt="Specialized Team"
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-left z-0"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-white from-55% via-white/92 via-78% to-transparent lg:hidden z-10 pointer-events-none" />

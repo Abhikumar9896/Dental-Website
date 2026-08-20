@@ -9,6 +9,8 @@ export default function ShowcaseSection() {
       <img
         src={`${IMG}/bgblue.webp`}
         alt=""
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
@@ -20,7 +22,7 @@ export default function ShowcaseSection() {
         <div
           className="relative lg:absolute left-auto lg:left-1/2 top-0 z-[2] flex w-full lg:w-[749px] lg:-translate-x-1/2 flex-col items-center px-5 lg:px-0 gap-3.5 lg:gap-5 h-shc-headin"
         >
-          {/* Mobile: flex logo. Desktop: absolute-positioned box */}
+
           <div className="relative flex h-auto w-fit flex-col items-center gap-1 rounded-xl bg-[#EBF4FF] px-5 py-3 shadow-[0px_8px_24px_rgba(0,0,0,0.08)] lg:block lg:h-[81px] lg:w-[179px] lg:overflow-hidden lg:px-0 lg:py-0 h-shc-logo">
             <img
               src={`${IMG}/logo.svg`}
@@ -39,7 +41,7 @@ export default function ShowcaseSection() {
         </div>
       </Reveal>
 
-      {/* Clear Aligners — mobile: text-only card; desktop keeps image */}
+
       <Float amplitude={10} duration={5} className="order-2 w-full h-shc-f1">
         <div className="relative mx-4 mb-3 lg:mx-0 lg:mb-0 lg:absolute left-auto lg:left-[206px] top-auto lg:top-[60px] z-[3] flex h-auto lg:h-[240px] w-[calc(100%-32px)] max-w-[400px] lg:w-[251px] flex-col lg:block overflow-hidden rounded-xl bg-[#F4F9FF] shadow-[0px_12px_32px_rgba(0,0,0,0.12)] h-shc-f1-card">
           <div className="relative z-20 flex w-full shrink-0 flex-col gap-2 px-5 py-5 lg:absolute lg:left-4 lg:top-6 lg:z-10 lg:w-[220px] lg:px-0 lg:py-0 lg:gap-[7px] h-shc-f1-txt">
@@ -59,7 +61,7 @@ export default function ShowcaseSection() {
             </p>
           </div>
 
-          {/* Desktop-only image */}
+
           <img
             src={`${IMG}/teeth.webp`}
             alt=""
@@ -86,7 +88,7 @@ export default function ShowcaseSection() {
         />
       </Float>
 
-      {/* Patient rate — compact on mobile */}
+
       <Float amplitude={12} duration={5.5} delay={0.3} className="order-3 w-full h-shc-f3">
         <div
           className="relative mx-4 mb-3 lg:mx-0 lg:mb-0 lg:absolute left-auto lg:left-[968px] top-auto lg:top-[93px] z-[3] flex h-auto lg:h-[207px] w-[calc(100%-32px)] max-w-[400px] lg:w-[280px] flex-col rounded-xl shadow-[0px_12px_32px_rgba(0,0,0,0.1)]"
@@ -112,6 +114,8 @@ export default function ShowcaseSection() {
         <img
           src={`${IMG}/tooth-float-51da36.webp`}
           alt=""
+          loading="lazy"
+          decoding="async"
           className="pointer-events-none absolute z-20 max-w-none object-contain drop-shadow-[0px_14px_28px_rgba(0,0,0,0.18)]"
           style={{
             left: 1151,
@@ -162,6 +166,8 @@ export default function ShowcaseSection() {
           <img
             src={`${IMG}/loyalty-ring.svg?v=6`}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="pointer-events-none absolute left-[223px] top-[51px] z-[1] h-[144px] w-[145px]"
           />
 
@@ -187,7 +193,7 @@ export default function ShowcaseSection() {
         />
       </Float>
 
-      {/* Smile Designing */}
+
       <Float amplitude={11} duration={5} delay={0.5} className="order-4 w-full h-shc-f9">
         <div className="relative mx-4 mb-5 lg:mx-0 lg:mb-0 lg:absolute left-auto lg:left-[903px] top-auto lg:top-[563px] z-[3] h-auto lg:h-[242px] w-[calc(100%-32px)] max-w-[400px] lg:w-[278px] overflow-hidden rounded-xl bg-white shadow-[0px_12px_32px_rgba(0,0,0,0.1)] p-4 lg:p-0">
           <p className="relative lg:absolute left-0 lg:left-8 top-0 lg:top-[27px] z-10 font-fraunces text-[22px] lg:text-2xl leading-none text-[#28231F]">

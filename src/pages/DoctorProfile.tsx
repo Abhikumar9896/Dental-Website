@@ -4,6 +4,7 @@ import PageHero from '../components/ui/PageHero'
 import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem } from '../components/ui/Reveal'
+import { usePageMeta, SITE_URL } from '../utils/seo'
 
 const DOCTORS_DATA = {
   ds: {
@@ -122,6 +123,13 @@ const DOCTORS_DATA = {
 type DoctorId = keyof typeof DOCTORS_DATA
 
 export default function DoctorProfile() {
+  usePageMeta({
+    title: 'Dr. Deepika Singhal | Best Endodontist & Cosmetic Dentist in Noida',
+    description:
+      'Meet Dr. Deepika Singhal - MDS Endodontist with 18+ years of experience at Dental Esthetique Noida. Expert in painless root canal, smile designing and cosmetic dentistry.',
+    path: '/doctors',
+    image: `${SITE_URL}/images/about/docprofile.webp`,
+  })
   const location = useLocation()
 
   const getInitialTab = (): DoctorId => {
@@ -149,7 +157,7 @@ export default function DoctorProfile() {
         <PageHero
           tagline="Doctor Profile"
           title="Meet the Experts Behind Every Smile."
-          description="Meet our experienced dental professionals, dedicated to delivering advanced, patient-focused care. Discover their qualifications, expertise, and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthétique today for trusted dental care and confidence."
+          description="Meet our experienced dental professionals, dedicated to delivering advanced, patient-focused care. Discover their qualifications, expertise, and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthetique today for trusted dental care and confidence."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -204,6 +212,8 @@ export default function DoctorProfile() {
                 <img
                   key={activeDoctor.id}
                   src={activeDoctor.image}
+                  loading="lazy"
+                  decoding="async"
                   className={
                     activeDoctor.imageClass || 'w-full h-full object-cover object-top scale-[1.05]'
                   }
@@ -255,7 +265,7 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        {/* About / timeline */}
+
         <div className="w-full max-w-[1210px] lg:w-[1210px] mt-12 lg:mt-20 flex flex-col px-5 lg:px-0 h-dp-about">
           <Reveal y={24} duration={0.7} className="flex flex-col">
             <SectionPill variant="solid">In {activeDoctor.pronoun} Own Practice</SectionPill>
@@ -277,7 +287,7 @@ export default function DoctorProfile() {
                   duration={0.6}
                   className={`relative flex w-full justify-between items-start h-tl-row ${index !== 0 ? 'mt-8 lg:mt-16' : ''}`}
                 >
-                  {/* Mobile stacked card */}
+
                   <div className="flex lg:hidden w-full gap-3.5 items-start h-tl-mobile">
                     <div className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[15px] shrink-0">
                       {item.n}
@@ -292,7 +302,7 @@ export default function DoctorProfile() {
                     </div>
                   </div>
 
-                  {/* Desktop left */}
+
                   <div
                     className={`hidden lg:flex w-1/2 pr-12 flex-col items-end text-right h-tl-l ${isLeft ? '' : 'opacity-0 invisible'}`}
                   >
@@ -312,7 +322,7 @@ export default function DoctorProfile() {
                     {item.n}
                   </div>
 
-                  {/* Desktop right */}
+
                   <div
                     className={`hidden lg:flex w-1/2 pl-12 flex-col items-start text-left pt-1 h-tl-r ${!isLeft ? '' : 'opacity-0 invisible'}`}
                   >
@@ -422,6 +432,8 @@ export default function DoctorProfile() {
                   <img
                     key={activeDoctor.id + 'award'}
                     src={activeDoctor.award.image}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full max-w-[320px] sm:max-w-[400px] lg:w-[480px] h-auto shrink-0 h-dp-award-img"
                     alt="Award"
                   />

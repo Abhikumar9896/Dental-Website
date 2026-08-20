@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { handlePhoneClick } from '../../utils/contactActions'
 
 export default function Header() {
   const { pathname } = useLocation()
@@ -33,7 +34,8 @@ export default function Header() {
             <Link to="/" className="flex items-center gap-2 -ml-16 h-hdr-logo">
               <img
                 src="/images/home/logo.svg"
-                alt="Dental Esthetique"
+                alt=""
+                aria-hidden="true"
                 className="h-[45px] w-[42px]"
               />
               <span className="font-poppins text-[28px] font-bold text-[#1E73BE]">
@@ -41,7 +43,7 @@ export default function Header() {
               </span>
             </Link>
 
-            <div className="flex items-center gap-10 -mr-16 h-hdr-contacts">
+            <div className="flex items-center gap-10 -mr-20 h-hdr-contacts">
               <div className="flex items-center gap-3">
                 <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full border-2 border-[#1E73BE] text-[#1E73BE]">
                   <svg
@@ -251,7 +253,8 @@ export default function Header() {
           <Link to="/" className="flex items-center gap-2 -ml-16">
             <img
               src="/images/home/logo.svg"
-              alt="Dental Esthetique"
+              alt=""
+              aria-hidden="true"
               className="h-[38px] w-[35px]"
             />
             <span className="font-poppins text-[24px] font-bold text-[#1E73BE]">
@@ -407,6 +410,7 @@ export default function Header() {
               <a
                 href="tel:+919818862265"
                 className="flex h-12 w-full items-center justify-center rounded-md bg-[#1E73BE] font-poppins text-[14px] font-semibold text-white"
+                onClick={(e) => handlePhoneClick(e, '+91 98188 62265')}
               >
                 Call +91 98188 62265
               </a>

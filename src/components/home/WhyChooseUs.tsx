@@ -41,6 +41,8 @@ export default function WhyChooseUs() {
         <img
           src="/images/home/clinic-row-60cc89.webp"
           alt="Clinic"
+          loading="lazy"
+          decoding="async"
           className="relative lg:absolute left-0 lg:left-[60px] top-0 lg:top-[60px] w-full lg:w-[456px] h-auto lg:h-[342px] rounded-xl lg:rounded-lg object-cover shadow-lg h-why-img"
         />
       </Reveal>
@@ -88,7 +90,7 @@ export default function WhyChooseUs() {
         </Stagger>
 
         <div className="flex flex-col gap-3 lg:gap-4 h-why-highlights">
-          <p className="font-poppins text-[11px] lg:text-[13px] font-semibold tracking-[0.14em] uppercase text-[#B07399]">
+          <p className="font-poppins text-[11px] lg:text-[13px] font-semibold tracking-[0.14em] uppercase text-[#9E6187]">
             Key Highlights
           </p>
           <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 lg:gap-y-8 h-why-grid" gap={0.08}>
@@ -102,7 +104,7 @@ export default function WhyChooseUs() {
                     <h3 className="font-poppins text-[13px] lg:text-[16px] font-semibold text-[#333] leading-snug">
                       {title}
                     </h3>
-                    <p className="font-poppins text-[12px] lg:text-[13px] leading-relaxed text-gray-500">
+                    <p className="font-poppins text-[12px] lg:text-[13px] leading-relaxed text-gray-600">
                       {description}
                     </p>
                   </div>

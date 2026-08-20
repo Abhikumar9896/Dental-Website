@@ -1,10 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import HeroToothCollage from '../components/HeroToothCollage'
+import { usePageMeta } from '../utils/seo'
 
 const W = 1440
 const H = 800
 
 export default function NotFound() {
+  usePageMeta({
+    title: '404 Page Not Found | Dental Esthetique',
+    description:
+      'The page you are looking for does not exist. Explore dental treatments, meet our doctors or book an appointment at Dental Esthetique, Noida.',
+    path: useLocation().pathname,
+    robots: 'noindex, follow',
+  })
   return (
     <div className="w-full overflow-x-auto bg-white">
       <div

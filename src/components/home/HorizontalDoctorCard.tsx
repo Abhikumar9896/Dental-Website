@@ -33,7 +33,13 @@ export default function HorizontalDoctorCard({
     <div className="relative w-full lg:w-[500px] h-[220px] sm:h-[240px] lg:min-h-[320px] lg:h-auto bg-[#f4f4f4] overflow-hidden shrink-0 group h-doc-img">
       <img
         src={imgSrc || '/images/home/doctor.webp'}
+        srcSet={imgSrc ? `${imgSrc.replace('/images/home/', '/images/home/mobile/')} 480w, ${imgSrc} 862w` : undefined}
+        sizes="100vw"
         alt={name}
+        loading="lazy"
+        decoding="async"
+        width={500}
+        height={320}
         className={`absolute inset-0 w-full h-full object-cover ${imgObjectPosition} ${imgClassName} transition-transform duration-700 lg:group-hover:scale-105`}
       />
 
@@ -43,9 +49,11 @@ export default function HorizontalDoctorCard({
       <div className="absolute bottom-3 left-3 lg:bottom-[20px] lg:left-[20px] opacity-100 lg:opacity-0 group-hover:opacity-100 transition-all duration-300 lg:translate-y-4 group-hover:translate-y-0 z-20 h-doc-btn">
         <Link
           to={`/doctors${id ? `#${id}` : ''}`}
+          aria-label={`Read more about ${name}`}
           className="flex items-center gap-1.5 bg-gradient-to-r from-[#B07399] to-[#91587a] text-white px-3 py-1.5 lg:px-5 lg:py-2.5 rounded-md lg:rounded-sm font-poppins text-[11px] lg:text-[14px] font-medium shadow-md lg:shadow-lg hover:shadow-xl transition-shadow"
         >
           Read More
+          <span className="sr-only"> about {name}</span>
           <svg
             className="w-3 h-3 lg:w-4 lg:h-4"
             fill="none"
@@ -58,7 +66,7 @@ export default function HorizontalDoctorCard({
         </Link>
       </div>
 
-      {/* Name chip — desktop hover only; mobile shows name in body */}
+
       <div className="hidden lg:block absolute bottom-0 right-0 bg-[#333] text-white px-3 py-1 text-[12px] font-poppins opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
         {name}
       </div>
@@ -85,7 +93,7 @@ export default function HorizontalDoctorCard({
             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span className="font-poppins text-[10px] font-medium text-[#A66689]">
+        <span className="font-poppins text-[10px] font-medium text-[#8F5675]">
           18+ Years of Excellence
         </span>
       </span>
@@ -118,7 +126,7 @@ export default function HorizontalDoctorCard({
       <div className="mt-auto flex flex-col items-start pt-1">
         <Link
           to={BOOK_APPOINTMENT_TO}
-          className="flex items-center gap-1.5 text-[#D35B8F] hover:text-[#a86a8a] font-poppins text-[13px] font-bold cursor-pointer group/btn transition-colors"
+          className="flex items-center gap-1.5 text-[#C1497D] hover:text-[#a86a8a] font-poppins text-[13px] font-bold cursor-pointer group/btn transition-colors"
         >
           Book Appointment
           <svg

@@ -1,4 +1,4 @@
-/** Shared in-page scroll: fixed short duration so every jump feels the same and fast. */
+
 const SCROLL_DURATION_MS = 320
 const DEFAULT_OFFSET = 100
 

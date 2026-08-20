@@ -27,7 +27,7 @@ export default function KeyTreatments() {
       </Reveal>
 
       <div className="relative h-auto lg:h-[507px] w-full lg:w-[1275px] flex flex-col gap-3.5 lg:block h-treat-cards">
-        {/* Stats */}
+
         <Reveal x={-50} y={0} delay={0.1} className="w-full">
           <div className="relative lg:absolute left-0 top-0 lg:top-1 h-auto lg:h-[503px] w-full lg:w-[305px] rounded-xl border border-[rgba(0,0,0,0.22)] bg-white p-5 lg:p-0 flex flex-col gap-4 lg:block h-treat-c1">
             <div className="relative lg:absolute left-0 lg:left-7 top-0 lg:top-7 w-full lg:w-[259px]">
@@ -75,7 +75,7 @@ export default function KeyTreatments() {
           </div>
         </Reveal>
 
-        {/* Clear Aligners */}
+
         <Reveal x={60} y={0} delay={0.2} className="w-full">
           <NotchedCard
             className="lg:left-[325px] lg:top-0 h-treat-c2"
@@ -105,6 +105,8 @@ export default function KeyTreatments() {
               <img
                 src={`${IMG}/teeth.webp`}
                 alt="Clear aligners"
+                loading="lazy"
+                decoding="async"
                 className="object-contain max-h-full w-[140px] h-[110px] lg:w-[256px] lg:h-[211px]"
                 style={{
                   transform: 'scaleY(-1) rotate(148.53deg)',
@@ -119,7 +121,7 @@ export default function KeyTreatments() {
           </NotchedCard>
         </Reveal>
 
-        {/* Implant Supported Dentures */}
+
         <Reveal x={80} y={0} delay={0.3} className="w-full">
           <NotchedCard
             className="lg:left-[650px] lg:top-1 h-treat-c3"
@@ -142,7 +144,7 @@ export default function KeyTreatments() {
           </NotchedCard>
         </Reveal>
 
-        {/* Full Mouth Rehabilitation */}
+
         <Reveal x={80} y={0} delay={0.4} className="w-full">
           <NotchedCard
             className="lg:left-[650px] lg:top-[266px] h-treat-c4"

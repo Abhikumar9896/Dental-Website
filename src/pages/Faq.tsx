@@ -3,6 +3,7 @@ import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
 import PageHero from '../components/ui/PageHero'
 import SectionHeading from '../components/ui/SectionHeading'
 import { Stagger, StaggerItem } from '../components/ui/Reveal'
+import { usePageMeta, SITE_URL } from '../utils/seo'
 
 const faqs = [
   {
@@ -52,6 +53,13 @@ const faqs = [
 ] as const
 
 export default function Faq() {
+  usePageMeta({
+    title: 'Dental FAQs | Dental Esthetique - Dentist in Noida',
+    description:
+      'Answers to common questions about root canals, implants, braces, teeth whitening, bookings, payments and more at Dental Esthetique, Noida.',
+    path: '/faqs',
+    image: `${SITE_URL}/images/about/faqsec.webp`,
+  })
   const [open, setOpen] = useState<number | null>(null)
 
   return (
@@ -60,7 +68,7 @@ export default function Faq() {
         <PageHero
           tagline="FAQs"
           title="Frequently Asked Questions"
-          description="Answers to common questions about treatments, booking, and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthétique."
+          description="Answers to common questions about treatments, booking, and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthetique."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -91,11 +99,10 @@ export default function Faq() {
                 <StaggerItem
                   key={faq.q}
                   y={20}
-                  className={`overflow-hidden rounded-[16px] lg:rounded-[20px] border-[1.5px] transition-all duration-300 h-faq-item ${
-                    isOpen
+                  className={`overflow-hidden rounded-[16px] lg:rounded-[20px] border-[1.5px] transition-all duration-300 h-faq-item ${isOpen
                       ? 'border-[#D35B8F] bg-white shadow-[0_8px_30px_rgba(193,135,164,0.12)]'
                       : 'border-[#F0F0F0] bg-[#FAFAFA] hover:border-[#D35B8F]/40 hover:bg-white hover:shadow-sm'
-                  }`}
+                    }`}
                 >
                   <button
                     type="button"
@@ -128,9 +135,8 @@ export default function Faq() {
                     </div>
                   </button>
                   <div
-                    className={`grid transition-all duration-300 ease-in-out ${
-                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                    }`}
+                    className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <div className="px-4 pb-5 pt-0 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8 lg:pt-1 h-faq-abody">

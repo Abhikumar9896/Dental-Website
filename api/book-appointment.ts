@@ -11,7 +11,7 @@ type AppointmentPayload = {
   description?: string
 }
 
-/** Must match Content-ID; @domain form is required by many clients (Gmail/Outlook). */
+
 const BRAND_CID = 'brandlogo@dentalesthetique'
 
 function escapeHtml(value: string): string {
@@ -40,10 +40,7 @@ function formatDate(date: string): string {
   return `${datePart} at ${timePart}`
 }
 
-/**
- * Same branding as site header:
- * tree logo (CID) + "Dental" blue + "Esthetique" pink.
- */
+
 function brandHeader(): string {
   return `
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
@@ -91,7 +88,7 @@ function detailRow(label: string, value: string, isLast = false): string {
 }
 
 function brandAttachment() {
-  // Buffer content only - do not set `encoding` (that would double-encode and break the PNG).
+
   return [
     {
       filename: 'dental-esthetique-logo.png',
@@ -103,10 +100,7 @@ function brandAttachment() {
   ]
 }
 
-/**
- * Doctor / clinic notification only.
- * Patient fills the website form → this mail goes to MAIL_TO (doctors).
- */
+
 function buildDoctorNotificationHtml(
   data: Required<AppointmentPayload>,
   clinicEmail: string,
@@ -199,7 +193,7 @@ function buildDoctorNotificationHtml(
                 </tr>
               </table>
               <p style="margin:18px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#999;">
-                Tip: Reply to this email to message the patient directly.
+                Tip: Reply to this email to contact the patient directly.
               </p>
             </td>
           </tr>
@@ -248,7 +242,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const smtpHost = process.env.SMTP_HOST
   const smtpUser = process.env.SMTP_USER
   const smtpPass = process.env.SMTP_PASS
-  // Doctors' / clinic inbox
+
   const mailTo = process.env.MAIL_TO
 
   if (!smtpHost || !smtpUser || !smtpPass || !mailTo) {
@@ -285,7 +279,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     .join('\n')
 
   try {
-    // Only doctors/clinic receive this - not a patient-facing email
+
     await transporter.sendMail({
       from,
       to: mailTo,
