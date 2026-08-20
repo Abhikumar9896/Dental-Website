@@ -24,13 +24,13 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'SINGLE SITTING RCT',
     category: 'Single Sitting RCT',
     content:
-      'Single Sitting Root Canal Treatment completes the entire root canal procedure in one comfortable visit. Using advanced techniques and precise instrumentation, we remove infection, clean the canals, and seal the tooth the same day - saving your natural tooth with minimal appointments and maximum comfort.',
+      'Single Sitting Root Canal Treatment completes the entire root canal procedure in one comfortable visit. Using advanced techniques and precise instrumentation, we remove infection, clean the canals and seal the tooth the same day - saving your natural tooth with minimal appointments and maximum comfort.',
   },
   {
     title: 'RE-RCT',
     category: 'Single Sitting RCT',
     content:
-      "A failed root canal doesn't mean you have to lose your tooth. Our advanced Re-Root Canal Treatment (Re-RCT) meticulously removes old filling material, clears out new infections, and thoroughly seals the tooth. This specialized procedure gives your natural tooth a second chance, restoring your long-term oral health and comfort with expert precision.",
+      "A failed root canal doesn't mean you have to lose your tooth. Our advanced Re-Root Canal Treatment (Re-RCT) meticulously removes old filling material, clears out new infections and thoroughly seals the tooth. This specialized procedure gives your natural tooth a second chance, restoring your long-term oral health and comfort with expert precision.",
   },
   {
     title: 'MICROSCOPIC RCT',
@@ -50,7 +50,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'FULL MOUTH IMPLANTS',
     category: 'Implants',
     content:
-      'Full mouth implants offer a life-changing solution for patients missing all or most of their teeth. By strategically placing several titanium implants into the jawbone, we can securely anchor a full arch of beautiful, permanent replacement teeth. This comprehensive treatment restores full chewing strength, prevents bone loss, and gives you back your confident smile.',
+      'Full mouth implants offer a life-changing solution for patients missing all or most of their teeth. By strategically placing several titanium implants into the jawbone, we can securely anchor a full arch of beautiful, permanent replacement teeth. This comprehensive treatment restores full chewing strength, prevents bone loss and gives you back your confident smile.',
   },
 
 
@@ -58,7 +58,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'FULL MOUTH RECONSTRUCTION',
     category: 'Full Mouth Reconstruction',
     content:
-      'Full mouth reconstruction is a personalized, comprehensive approach designed to rebuild severely damaged, worn, or decayed teeth. By combining various restorative treatments like crowns, bridges, and implants, we address both function and aesthetics. This complete makeover restores the structural integrity of your bite and delivers a beautiful, healthy smile.',
+      'Full mouth reconstruction is a personalized, comprehensive approach designed to rebuild severely damaged, worn, or decayed teeth. By combining various restorative treatments like crowns, bridges and implants, we address both function and aesthetics. This complete makeover restores the structural integrity of your bite and delivers a beautiful, healthy smile.',
   },
 
 
@@ -66,7 +66,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'METAL BRACES',
     category: 'Braces',
     content:
-      'Metal braces are a proven, highly effective orthodontic solution for correcting crowding, spacing, and bite issues. Made from durable stainless steel brackets and wires, they gently guide teeth into ideal alignment over time. They are a reliable choice for patients of all ages seeking a strong, cost-effective path to a straighter smile.',
+      'Metal braces are a proven, highly effective orthodontic solution for correcting crowding, spacing and bite issues. Made from durable stainless steel brackets and wires, they gently guide teeth into ideal alignment over time. They are a reliable choice for patients of all ages seeking a strong, cost-effective path to a straighter smile.',
   },
   {
     title: 'CERAMIC BRACES (Esthetics)',
@@ -78,19 +78,19 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'SELF-LIGATING BRACES',
     category: 'Braces',
     content:
-      'Self-ligating braces are a modern orthodontic solution that use specialized brackets with built-in clips to hold the archwire in place, eliminating the need for traditional elastic ties. This innovative design reduces friction and pressure on the teeth, often leading to faster treatment times, fewer clinical visits, and a more comfortable alignment process.',
+      'Self-ligating braces are a modern orthodontic solution that use specialized brackets with built-in clips to hold the archwire in place, eliminating the need for traditional elastic ties. This innovative design reduces friction and pressure on the teeth, often leading to faster treatment times, fewer clinical visits and a more comfortable alignment process.',
   },
   {
     title: 'TEETH ALIGNERS',
     category: 'Braces',
     content:
-      'Clear aligners are a popular, virtually invisible alternative to traditional metal braces. Using a series of custom-made, removable plastic trays, they gently and gradually shift your teeth into perfect alignment. Because they are removable, you can easily brush, floss, and enjoy all your favorite foods throughout your orthodontic treatment.',
+      'Clear aligners are a popular, virtually invisible alternative to traditional metal braces. Using a series of custom-made, removable plastic trays, they gently and gradually shift your teeth into perfect alignment. Because they are removable, you can easily brush, floss and enjoy all your favorite foods throughout your orthodontic treatment.',
   },
   {
     title: 'INVISALIGN',
     category: 'Braces',
     content:
-      "Invisalign is the world's most advanced clear aligner system. Using proprietary SmartTrack material and 3D computer imaging, Invisalign creates a precise, highly predictable roadmap for your smile transformation. The aligners are comfortable, discreet, and specifically tailored to efficiently correct crowding, spacing, and bite issues without the hassle of metal wires.",
+      "Invisalign is the world's most advanced clear aligner system. Using proprietary SmartTrack material and 3D computer imaging, Invisalign creates a precise, highly predictable roadmap for your smile transformation. The aligners are comfortable, discreet and specifically tailored to efficiently correct crowding, spacing and bite issues without the hassle of metal wires.",
   },
 
 
@@ -124,7 +124,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: '3M',
     category: 'Crown And Bridge',
     content:
-      "3M dental materials represent the pinnacle of trusted, high-performance restorative dentistry. We utilize 3M's advanced composite resins, cements, and bonding agents to ensure that your fillings and restorations are durable, long-lasting, and aesthetically pleasing. These world-class materials provide reliable results tailored to your unique clinical needs.",
+      "3M dental materials represent the pinnacle of trusted, high-performance restorative dentistry. We utilize 3M's advanced composite resins, cements and bonding agents to ensure that your fillings and restorations are durable, long-lasting and aesthetically pleasing. These world-class materials provide reliable results tailored to your unique clinical needs.",
   },
   {
     title: 'MONOLITH',
@@ -154,7 +154,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'EMAX',
     category: 'Crown And Bridge',
     content:
-      'E.max (Lithium Disilicate) is a premium all-ceramic material famous for its breathtaking aesthetics and impressive strength. It offers natural translucency that perfectly mimics real tooth enamel, making it the material of choice for highly visible front tooth restorations. E.max is ideal for creating stunning veneers, crowns, and inlays that look entirely natural.',
+      'E.max (Lithium Disilicate) is a premium all-ceramic material famous for its breathtaking aesthetics and impressive strength. It offers natural translucency that perfectly mimics real tooth enamel, making it the material of choice for highly visible front tooth restorations. E.max is ideal for creating stunning veneers, crowns and inlays that look entirely natural.',
   },
 
 
@@ -168,7 +168,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'COMPOSITE VENEERS',
     category: 'Veneers',
     content:
-      'Composite veneers offer a conservative, cost-effective way to enhance your smile in just a single visit. Using a high-quality, tooth-colored composite resin, our dentists expertly sculpt and shape the material directly onto your teeth. This procedure can quickly fix minor chips, close small gaps, and improve tooth shape with minimal enamel removal.',
+      'Composite veneers offer a conservative, cost-effective way to enhance your smile in just a single visit. Using a high-quality, tooth-colored composite resin, our dentists expertly sculpt and shape the material directly onto your teeth. This procedure can quickly fix minor chips, close small gaps and improve tooth shape with minimal enamel removal.',
   },
 
 
@@ -210,7 +210,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'DENTAL JEWELLERY',
     category: 'Dental Jewellery',
     content:
-      'Dental jewellery adds a subtle, stylish sparkle to your smile with tiny crystal or gemstone designs bonded safely to the tooth surface. The procedure is quick, painless, and non-invasive - no drilling required. You can choose from elegant designs that enhance your look while remaining easy to remove whenever you wish.',
+      'Dental jewellery adds a subtle, stylish sparkle to your smile with tiny crystal or gemstone designs bonded safely to the tooth surface. The procedure is quick, painless and non-invasive - no drilling required. You can choose from elegant designs that enhance your look while remaining easy to remove whenever you wish.',
   },
 
 
@@ -248,7 +248,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'ZIRCONIA CROWNS',
     category: 'Child Dentistry',
     content:
-      'Pediatric zirconia crowns are strong, tooth-colored caps used to restore extensively decayed or damaged baby teeth. They look natural, are highly durable, and help preserve space and function until the permanent teeth erupt.',
+      'Pediatric zirconia crowns are strong, tooth-colored caps used to restore extensively decayed or damaged baby teeth. They look natural, are highly durable and help preserve space and function until the permanent teeth erupt.',
   },
   {
     title: 'PULPOTOMY',
@@ -260,7 +260,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'PULPECTOMY',
     category: 'Child Dentistry',
     content:
-      "A pulpectomy is essentially a root canal treatment for a child's primary tooth. When infection extends down into the tooth's roots, the entire nerve tissue must be carefully removed. The canals are then cleaned, sterilized, and filled with an absorbable material. This crucial procedure eliminates severe toothache and saves the tooth to guide the adult teeth in.",
+      "A pulpectomy is essentially a root canal treatment for a child's primary tooth. When infection extends down into the tooth's roots, the entire nerve tissue must be carefully removed. The canals are then cleaned, sterilized and filled with an absorbable material. This crucial procedure eliminates severe toothache and saves the tooth to guide the adult teeth in.",
   },
   {
     title: 'SPACE MAINTAINER',
@@ -272,6 +272,6 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
     title: 'ORTHO APPLIANCES',
     category: 'Child Dentistry',
     content:
-      'Orthodontic appliances encompass a variety of custom-fitted devices, such as retainers, expanders, and habit-breaking appliances. They are expertly designed to guide jaw growth, correct bite discrepancies, or maintain the alignment of teeth after braces. These crucial tools support healthy oral development and ensure a functional, perfectly aligned smile for life.',
+      'Orthodontic appliances encompass a variety of custom-fitted devices, such as retainers, expanders and habit-breaking appliances. They are expertly designed to guide jaw growth, correct bite discrepancies, or maintain the alignment of teeth after braces. These crucial tools support healthy oral development and ensure a functional, perfectly aligned smile for life.',
   },
 ]

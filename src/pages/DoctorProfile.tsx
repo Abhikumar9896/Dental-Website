@@ -24,7 +24,7 @@ const DOCTORS_DATA = {
     imageClass: 'w-full h-full object-cover object-top scale-[1.05]',
     pill: 'Endodontist & Cosmetic Dentist',
     desc1:
-      'A distinguished Endodontist and Cosmetic Dentist with over 18 years of clinical excellence, renowned for delivering world-class dental care through precision, innovation, and uncompromising clinical standards.',
+      'A distinguished Endodontist and Cosmetic Dentist with over 18 years of clinical excellence, renowned for delivering world-class dental care through precision, innovation and uncompromising clinical standards.',
     desc2:
       'MDS in Conservative Dentistry & Endodontics, BDS. Eighteen years of clinical experience, focused on root canal therapy and complex restorative cases, supported by a track record of over 15,000 successfully treated patients.',
     scheduleLine1: '· 10 AM - 2 PM and 5 PM - 8 PM',
@@ -38,12 +38,12 @@ const DOCTORS_DATA = {
       {
         n: '2',
         title: 'Clinical Focus',
-        body: 'Specializes in Microscopic Endodontics, Single-Visit RCT, and Comprehensive Smile Designing. Her minimally invasive approach focuses on preserving natural dentition with aesthetically pleasing and functionally superior results.',
+        body: 'Specializes in Microscopic Endodontics, Single-Visit RCT and Comprehensive Smile Designing. Her minimally invasive approach focuses on preserving natural dentition with aesthetically pleasing and functionally superior results.',
       },
       {
         n: '3',
         title: 'Advanced Technology',
-        body: 'An early adopter of cutting-edge technology, she routinely incorporates Dental Operating Microscopes, advanced magnification systems, and laser-assisted dentistry for unparalleled precision and patient comfort.',
+        body: 'An early adopter of cutting-edge technology, she routinely incorporates Dental Operating Microscopes, advanced magnification systems and laser-assisted dentistry for unparalleled precision and patient comfort.',
       },
       {
         n: '4',
@@ -52,7 +52,7 @@ const DOCTORS_DATA = {
       },
     ],
     quote:
-      '"Her relentless pursuit of clinical excellence, commitment to innovation, and patient-centric philosophy have established Dr. Deepika Singhal as a trusted name in advanced endodontics and esthetic dentistry, delivering exceptional care with precision, compassion, and lasting results."',
+      '"Her relentless pursuit of clinical excellence, commitment to innovation and patient-centric philosophy have established Dr. Deepika Singhal as a trusted name in advanced endodontics and esthetic dentistry, delivering exceptional care with precision, compassion and lasting results."',
     award: {
       image: '/images/home/awards.webp',
       pill: 'A RECOGNITION OF CLINICAL EXCELLENCE',
@@ -80,26 +80,26 @@ const DOCTORS_DATA = {
       'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
     pill: 'Orthodontist & Implantologist',
     desc1:
-      'A distinguished Orthodontist, Implantologist, and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence, dedicated to restoring oral health and aesthetics.',
+      'A distinguished Orthodontist, Implantologist and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence, dedicated to restoring oral health and aesthetics.',
     desc2:
-      'B.D.S., M.D.S. (Orthodontist & Implantologist). Eighteen years of expertise in clear aligners, traditional braces, and full-mouth implant rehabilitation, supported by 15,000+ happy patients.',
+      'B.D.S., M.D.S. (Orthodontist & Implantologist). Eighteen years of expertise in clear aligners, traditional braces and full-mouth implant rehabilitation, supported by 15,000+ happy patients.',
     scheduleLine1: '· 10 AM - 2 PM and 5 PM - 8 PM',
     scheduleLine2: '· 10 AM - 2 PM',
     about: [
       {
         n: '1',
         title: 'Overview & Experience',
-        body: 'A distinguished Orthodontist, Implantologist, and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence. He has managed complex cases at respected institutions like Apollo Hospital, Gurugram.',
+        body: 'A distinguished Orthodontist, Implantologist and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence. He has managed complex cases at respected institutions like Apollo Hospital, Gurugram.',
       },
       {
         n: '2',
         title: 'Orthodontic Expertise',
-        body: 'Provides customized solutions for all ages, with extensive expertise in metal, ceramic, and lingual braces, as well as Invisalign® clear aligners, ensuring optimal functional correction and harmonious smiles.',
+        body: 'Provides customized solutions for all ages, with extensive expertise in metal, ceramic and lingual braces, as well as Invisalign® clear aligners, ensuring optimal functional correction and harmonious smiles.',
       },
       {
         n: '3',
         title: 'Full Mouth Rehabilitation',
-        body: 'Specializes in comprehensive treatment for severely worn dentition and complex restorative needs. Integrates orthodontics, implant dentistry, and digital smile planning to restore function, aesthetics, and long-term oral health.',
+        body: 'Specializes in comprehensive treatment for severely worn dentition and complex restorative needs. Integrates orthodontics, implant dentistry and digital smile planning to restore function, aesthetics and long-term oral health.',
       },
       {
         n: '4',
@@ -157,7 +157,7 @@ export default function DoctorProfile() {
         <PageHero
           tagline="Doctor Profile"
           title="Meet the Experts Behind Every Smile."
-          description="Meet our experienced dental professionals, dedicated to delivering advanced, patient-focused care. Discover their qualifications, expertise, and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthetique today for trusted dental care and confidence."
+          description="Meet our experienced dental professionals, dedicated to delivering advanced, patient-focused care. Discover their qualifications, expertise and compassionate approach, designed to make every visit comfortable and personalized. Explore their experience and book your consultation with Dental Esthetique today for trusted dental care and confidence."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"

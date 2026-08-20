@@ -162,8 +162,8 @@ export default function Gallery() {
                 <p className="mt-1 lg:mt-2 w-full lg:w-[493px] font-poppins text-[13px] sm:text-[14px] lg:text-[16px] font-normal leading-[1.6] lg:leading-[1.7] text-[#767676] h-gal-hero-p">
                   See the life-changing results of our world-class dental treatments. From subtle
                   enhancements to complete smile makeovers, every transformation is planned with
-                  precision, executed with care, and finished to perfection. Browse our gallery to
-                  witness the artistry behind each confident smile, and imagine what yours could
+                  precision, executed with care and finished to perfection. Browse our gallery to
+                  witness the artistry behind each confident smile and imagine what yours could
                   look like.
                 </p>
               </div>

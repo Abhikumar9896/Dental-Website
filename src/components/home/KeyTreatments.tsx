@@ -138,7 +138,7 @@ export default function KeyTreatments() {
                 Implant Supported Dentures
               </h3>
               <p className="font-poppins text-[14px] lg:text-xl text-[#696969] leading-relaxed">
-                Experience enhanced comfort, stability, and chewing with implants
+                Experience enhanced comfort, stability and chewing with implants
               </p>
             </div>
           </NotchedCard>

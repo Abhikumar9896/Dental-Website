@@ -174,7 +174,7 @@ const doctorSchema = {
 const faqItems = [
   {
     q: 'Why should I choose Dental Esthetique for my dental treatment?',
-    a: 'Dental Esthetique combines experienced dental professionals, advanced technology, personalized treatment planning, and a patient-first approach to provide safe, comfortable, and effective dental care.',
+    a: 'Dental Esthetique combines experienced dental professionals, advanced technology, personalized treatment planning and a patient-first approach to provide safe, comfortable and effective dental care.',
   },
   {
     q: 'Do I need to book an appointment before visiting?',
@@ -182,7 +182,7 @@ const faqItems = [
   },
   {
     q: 'What dental treatments do you offer?',
-    a: 'We provide comprehensive dental care, including dental implants, root canal treatment, smile designing, cosmetic dentistry, teeth whitening, braces and aligners, pediatric dentistry, gum treatments, wisdom tooth extraction, and preventive dental care.',
+    a: 'We provide comprehensive dental care, including dental implants, root canal treatment, smile designing, cosmetic dentistry, teeth whitening, braces and aligners, pediatric dentistry, gum treatments, wisdom tooth extraction and preventive dental care.',
   },
   {
     q: 'Do dental treatments hurt?',

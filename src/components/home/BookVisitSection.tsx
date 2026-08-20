@@ -32,7 +32,7 @@ export default function BookVisitSection() {
 
           <StaggerItem>
             <p className="font-poppins text-[#333] text-sm leading-relaxed mb-4 pr-10">
-              Need care soon? Use the form below to request an appointment, and our team will get
+              Need care soon? Use the form below to request an appointment and our team will get
               back to you promptly.
             </p>
           </StaggerItem>

@@ -8,7 +8,7 @@ import { usePageMeta, SITE_URL } from '../utils/seo'
 const faqs = [
   {
     q: 'Why should I choose Dental Esthetique for my dental treatment?',
-    a: 'At Dental Esthetique, we combine experienced dental professionals, advanced technology, personalized treatment planning, and a patient-first approach to provide safe, comfortable, and effective dental care. Our focus is on delivering long-term oral health while ensuring a positive treatment experience.',
+    a: 'At Dental Esthetique, we combine experienced dental professionals, advanced technology, personalized treatment planning and a patient-first approach to provide safe, comfortable and effective dental care. Our focus is on delivering long-term oral health while ensuring a positive treatment experience.',
   },
   {
     q: 'Do I need to book an appointment before visiting?',
@@ -16,11 +16,11 @@ const faqs = [
   },
   {
     q: 'What dental treatments do you offer?',
-    a: 'We provide comprehensive dental care, including dental implants, root canal treatment, smile designing, cosmetic dentistry, teeth whitening, braces and aligners, pediatric dentistry, gum treatments, wisdom tooth extraction, and preventive dental care.',
+    a: 'We provide comprehensive dental care, including dental implants, root canal treatment, smile designing, cosmetic dentistry, teeth whitening, braces and aligners, pediatric dentistry, gum treatments, wisdom tooth extraction and preventive dental care.',
   },
   {
     q: 'Is the clinic equipped with modern dental technology?',
-    a: 'Yes. Our clinic utilizes advanced diagnostic and treatment equipment to provide accurate diagnoses, precise procedures, and a more comfortable patient experience.',
+    a: 'Yes. Our clinic utilizes advanced diagnostic and treatment equipment to provide accurate diagnoses, precise procedures and a more comfortable patient experience.',
   },
   {
     q: 'Do dental treatments hurt?',
@@ -36,15 +36,15 @@ const faqs = [
   },
   {
     q: 'What should I expect during my first visit?',
-    a: 'During your first visit, our team will conduct a comprehensive oral examination, which may include digital X-rays. We will discuss your dental history, address any immediate concerns, and create a personalized treatment plan tailored specifically to your needs.',
+    a: 'During your first visit, our team will conduct a comprehensive oral examination, which may include digital X-rays. We will discuss your dental history, address any immediate concerns and create a personalized treatment plan tailored specifically to your needs.',
   },
   {
     q: 'Do you offer emergency dental care?',
-    a: 'Yes, we provide prompt emergency dental services for severe toothaches, broken or chipped teeth, knocked-out teeth, and other urgent issues. Please call our emergency phone line for immediate assistance.',
+    a: 'Yes, we provide prompt emergency dental services for severe toothaches, broken or chipped teeth, knocked-out teeth and other urgent issues. Please call our emergency phone line for immediate assistance.',
   },
   {
     q: 'How can I pay for my dental treatment?',
-    a: 'We accept various payment methods, including cash, major credit/debit cards, and UPI. We believe in transparent pricing and will always discuss the estimated costs and available payment options with you before beginning any extensive procedure.',
+    a: 'We accept various payment methods, including cash, major credit/debit cards and UPI. We believe in transparent pricing and will always discuss the estimated costs and available payment options with you before beginning any extensive procedure.',
   },
   {
     q: 'Is professional teeth whitening safe for my enamel?',
@@ -68,7 +68,7 @@ export default function Faq() {
         <PageHero
           tagline={<>FAQ<span className="normal-case">s</span></>}
           title="Frequently Asked Questions"
-          description="Answers to common questions about treatments, booking, and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthetique."
+          description="Answers to common questions about treatments, booking and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthetique."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -87,7 +87,7 @@ export default function Faq() {
             title="Get clear answers to your questions"
             align="center"
             titleClassName="text-[26px] sm:text-[32px] lg:text-[42px] font-bold h-faq-sechead"
-            description="Everything you need to know about our dental treatments, booking process, and what to expect during your visit."
+            description="Everything you need to know about our dental treatments, booking process and what to expect during your visit."
             descriptionClassName="text-[13px] sm:text-[14px] lg:text-[15px] px-1 h-faq-secdesc"
             className="mb-4 lg:mb-6"
           />

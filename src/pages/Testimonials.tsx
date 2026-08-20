@@ -406,7 +406,7 @@ export default function Testimonials() {
                 </>
               }
               titleClassName="font-poppins text-[26px] sm:text-[34px] lg:text-[48px] font-semibold leading-[1.15] lg:leading-[1.1] max-w-[800px] h-tst-sechead"
-              description="Learn why patients across Noida trust Dental Esthetique for safe, comfortable, and long-lasting dental care. Read their genuine stories and see how our personalized treatments have transformed their smiles and restored their confidence."
+              description="Learn why patients across Noida trust Dental Esthetique for safe, comfortable and long-lasting dental care. Read their genuine stories and see how our personalized treatments have transformed their smiles and restored their confidence."
               descriptionClassName="text-[13px] sm:text-[14px] lg:text-[15px] px-1 h-tst-secdesc"
               className="mb-8 lg:mb-16 relative z-10 px-1 lg:px-4 w-full max-w-[800px]"
             />

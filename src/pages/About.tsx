@@ -7,9 +7,9 @@ import { usePageMeta, SITE_URL } from '../utils/seo'
 const IMG = '/images/about'
 
 const storyPoints = [
-  'Dental Esthetique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence, and personalized attention.',
-  'Our clinic offers preventive, restorative, cosmetic, and advanced dental treatments tailored to the unique needs of every patient. We believe that exceptional dentistry goes beyond procedures; it involves educating patients, understanding their concerns, and delivering care in a comfortable and welcoming environment.',
-  'Every treatment is planned with precision, transparency, and a long-term focus on oral health.',
+  'Dental Esthetique was established with a vision to provide comprehensive dental care that combines modern technology, clinical excellence and personalized attention.',
+  'Our clinic offers preventive, restorative, cosmetic and advanced dental treatments tailored to the unique needs of every patient. We believe that exceptional dentistry goes beyond procedures; it involves educating patients, understanding their concerns and delivering care in a comfortable and welcoming environment.',
+  'Every treatment is planned with precision, transparency and a long-term focus on oral health.',
 ] as const
 
 const clinicStandards = [
@@ -33,7 +33,7 @@ export default function About() {
         <PageHero
           tagline="About Dental Esthetique"
           title="Your Trusted Partner in Complete Dental Care"
-          description="Dental Esthetique is committed to delivering exceptional dental care through advanced technology, evidence-based treatments, and a deeply patient-first approach. From routine dental check-ups to complex cosmetic smile transformations, our expert team is here to guide you every step of the way. Our ultimate goal is to ensure every patient receives highly personalized care within a safe, extraordinarily comfortable, and state-of-the-art environment."
+          description="Dental Esthetique is committed to delivering exceptional dental care through advanced technology, evidence-based treatments and a deeply patient-first approach. From routine dental check-ups to complex cosmetic smile transformations, our expert team is here to guide you every step of the way. Our ultimate goal is to ensure every patient receives highly personalized care within a safe, extraordinarily comfortable and state-of-the-art environment."
           taglineColor="text-[#D35B8F]"
           titleColor="text-[#28231F]"
           titleFont="font-fraunces"
@@ -104,7 +104,7 @@ export default function About() {
               </h2>
               <p className="mt-5 font-poppins text-[16px] leading-relaxed tracking-[0.02em] text-[#767676] h-vm-lead">
                 Transforming lives through ethical dentistry, advanced treatments, compassionate
-                care, and lasting patient relationships every day.
+                care and lasting patient relationships every day.
               </p>
             </Reveal>
 
@@ -122,7 +122,7 @@ export default function About() {
                     <span className="w-8 h-[1px] bg-[#D35B8F]" /> Our Mission
                   </h3>
                   <p className="font-fraunces text-[28px] leading-[1.4] text-[#28231F] group-hover:text-[#165ba7] transition-colors duration-500 h-vm-body">
-                    To provide ethical, evidence-based, and personalized dental care using advanced
+                    To provide ethical, evidence-based and personalized dental care using advanced
                     technology while ensuring every patient feels informed and comfortable.
                   </p>
                 </div>
@@ -163,9 +163,9 @@ export default function About() {
                 Our Commitment to Every Patient
               </h2>
               <p className="font-poppins text-[15px] leading-[1.7] font-normal text-white/90 text-center mb-7 max-w-[900px] h-about-banner-p">
-                At Dental Esthetique, every patient is treated with respect, empathy, and honesty.
+                At Dental Esthetique, every patient is treated with respect, empathy and honesty.
                 We are committed to providing transparent consultations, personalized treatment
-                plans, and a comfortable experience using modern techniques and advanced technology.
+                plans and a comfortable experience using modern techniques and advanced technology.
                 Our goal is not only to treat dental concerns but to build long-term relationships
                 based on trust and exceptional care.
               </p>
@@ -184,7 +184,7 @@ export default function About() {
                 Uncompromising Quality & Care
               </h2>
               <p className="font-poppins text-[16px] leading-relaxed text-[#767676] mt-4 max-w-[480px] h-gtk-p">
-                Your health and comfort are our absolute priorities. We have built a world-class environment backed by elite specialists, cutting-edge diagnostic technology, and rigid sterilization protocols so you can experience dentistry at its finest.
+                Your health and comfort are our absolute priorities. We have built a world-class environment backed by elite specialists, cutting-edge diagnostic technology and rigid sterilization protocols so you can experience dentistry at its finest.
               </p>
             </Reveal>
 

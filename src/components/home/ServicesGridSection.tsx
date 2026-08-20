@@ -15,7 +15,7 @@ const iconClass = 'h-svc-ico w-[26px] h-[26px] lg:w-[30px] lg:h-[30px] shrink-0 
 const services = [
   {
     title: 'General Dentistry',
-    description: 'Check-ups, cleanings, and everyday dental care for the whole family.',
+    description: 'Check-ups, cleanings and everyday dental care for the whole family.',
     iconColor: '#D35B8F',
     icon: <FaTooth className={iconClass} aria-hidden />,
   },
@@ -51,7 +51,7 @@ const services = [
   },
   {
     title: 'Prosthesis',
-    description: 'Crowns, bridges, and dentures that restore function and aesthetics.',
+    description: 'Crowns, bridges and dentures that restore function and aesthetics.',
     iconColor: '#165ba7',
     icon: <FaCrown className={iconClass} aria-hidden />,
   },

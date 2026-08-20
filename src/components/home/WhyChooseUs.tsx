@@ -24,7 +24,7 @@ const highlights = [
   },
   {
     title: 'Transparent Consultation',
-    description: 'Clear explanations of options, steps, and costs before treatment.',
+    description: 'Clear explanations of options, steps and costs before treatment.',
     icon: MessageSquare,
   },
   {
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
           </StaggerItem>
           <StaggerItem>
             <p className="font-poppins text-[13px] lg:text-[15px] leading-[1.6] text-gray-600 font-medium mt-2 lg:mt-3">
-              Advanced dental care combining expertise, innovation, and compassion for healthier,
+              Advanced dental care combining expertise, innovation and compassion for healthier,
               brighter, confident smiles every day.
             </p>
           </StaggerItem>

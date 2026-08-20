@@ -156,7 +156,7 @@ export default function TestimonialHeroSection() {
         </h1>
 
         <p className="text-[#6B7280] text-[14px] md:text-[15px] lg:text-[17px] leading-relaxed max-w-[500px] mb-5 lg:mb-6 h-tst-hero-p">
-          Learn why patients trust Dental Esthetique for safe, comfortable, and long-lasting dental
+          Learn why patients trust Dental Esthetique for safe, comfortable and long-lasting dental
           care.
         </p>
 
