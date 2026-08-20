@@ -10,8 +10,9 @@ export default function LocationSection() {
     <div className="relative left-0 top-0 w-full flex flex-col items-center pb-10 lg:absolute lg:top-[6781px] lg:pb-16 font-poppins h-loc">
       <div className="mb-6 lg:mb-12 flex flex-col items-center text-center max-w-[800px] px-5">
         <h2 className="text-[26px] lg:text-[52px] tracking-tight h-loc-h">
-          <span className="text-[#D35B8F] font-normal">Contact</span>{' '}
-          <span className="text-[#165ba7] font-bold">Dental Esthetique</span>
+          <span className="text-black font-normal">Contact</span>{' '}
+          <span className="text-[#165ba7] font-bold">Dental</span>{' '}
+          <span className="text-[#D35B8F] font-bold">Esthetique</span>
         </h2>
         <p className="mt-2.5 lg:mt-4 text-[13px] lg:text-[15px] leading-relaxed text-[#555] font-medium max-w-[34rem]">
           Visit us in Sector 22, Noida, or get in touch to plan your appointment.

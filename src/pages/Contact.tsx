@@ -62,7 +62,11 @@ export default function Contact() {
           backgroundImage="/images/about/contact hero.webp"
           hideCollage={true}
           tagline="Contact Us"
-          title="Get in Touch"
+          title={
+            <>
+              <span className="text-black">Contact Dental</span> <span className="text-[#D35B8F]">Esthetique</span>
+            </>
+          }
           description="Have questions or want to book an appointment? We'd love to hear from you."
           className="h-contact-hero"
         >

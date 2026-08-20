@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BadgeCheck, Star, Award } from 'lucide-react'
 import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
@@ -78,40 +79,49 @@ const treatmentImages = [
   '/images/gallery/image copy 3.webp',
 ]
 
-const patientImages = [
-  '/images/gallery/doctor-patient-2.webp',
-  '/images/gallery/clinic-machine-1.webp',
-  '/images/gallery/clinic-machine-10.webp',
-  '/images/gallery/gallery-1.jpg',
-  '/images/gallery/gallery-2.jpg',
-  '/images/gallery/clinic-machine-2.jpg',
-  '/images/gallery/clinic-machine-3.webp',
-  '/images/gallery/clinic-machine-5.webp',
-  '/images/gallery/clinic-machine-9.webp',
-  '/images/gallery/doctor-patient-1.webp',
-  '/images/gallery/doctor-patient-11.webp',
-  '/images/patient/unnamed (10).webp',
-  '/images/patient/unnamed (13).webp',
-  '/images/patient/unnamed (14).webp',
-  '/images/patient/unnamed (15).webp',
-  '/images/patient/unnamed (16).webp',
-  '/images/patient/unnamed (17).webp',
-  '/images/patient/unnamed (18).webp',
-  '/images/patient/unnamed (19).webp',
-  '/images/patient/unnamed (20).webp',
-  '/images/patient/unnamed (21).webp',
-  '/images/patient/unnamed (22).webp',
-  '/images/patient/unnamed (23).webp',
-  '/images/patient/unnamed (3).webp',
-  '/images/patient/unnamed (4).webp',
-  '/images/patient/unnamed (5).webp',
-  '/images/patient/unnamed (7).webp',
-  '/images/patient/unnamed (8).webp',
-  '/images/patient/unnamed (9).webp',
-  '/images/patient/unnamed.webp',
+const galleryImages = [
+  { src: '/images/gallery/doctor-patient-2.webp', category: 'patient' },
+  { src: '/images/gallery/clinic-machine-1.webp', category: 'clinic' },
+  { src: '/images/gallery/clinic-machine-10.webp', category: 'clinic' },
+  { src: '/images/gallery/Clinic machine 4.webp', category: 'clinic' },
+  { src: '/images/gallery/clinic machine 10 (1).webp', category: 'clinic' },
+  { src: '/images/gallery/gallery-1.jpg', category: 'patient' },
+  { src: '/images/gallery/gallery-2.jpg', category: 'patient' },
+  { src: '/images/gallery/clinic-machine-2.jpg', category: 'clinic' },
+  { src: '/images/gallery/clinic-machine-3.webp', category: 'clinic' },
+  { src: '/images/gallery/clinic-machine-5.webp', category: 'clinic' },
+  { src: '/images/gallery/clinic-machine-9.webp', category: 'clinic' },
+  { src: '/images/gallery/doctor-patient-1.webp', category: 'patient' },
+  { src: '/images/gallery/doctor-patient-11.webp', category: 'patient' },
+  { src: '/images/patient/unnamed (10).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (13).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (14).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (15).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (16).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (17).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (18).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (19).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (20).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (21).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (22).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (23).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (3).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (4).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (5).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (7).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (8).webp', category: 'patient' },
+  { src: '/images/patient/unnamed (9).webp', category: 'patient' },
+  { src: '/images/patient/unnamed.webp', category: 'patient' },
 ]
 
+const patientImageUrls = galleryImages.map(img => img.src)
+
 export default function Gallery() {
+  const [filter, setFilter] = useState<'all' | 'patient' | 'clinic'>('all')
+
+  const displayedImages = filter === 'all' 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === filter)
   usePageMeta({
     title: 'Smile Gallery | Dental Esthetique - Real Patient Results in Noida',
     description:
@@ -126,7 +136,7 @@ export default function Gallery() {
 
           <div className="lg:hidden w-full overflow-hidden pt-[76px] px-4 h-gal-strip">
             <div className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
-              {patientImages.slice(0, 12).map((src, i) => (
+              {patientImageUrls.slice(0, 12).map((src, i) => (
                 <div
                   key={`strip-${i}`}
                   className="snap-center shrink-0 w-[72px] h-[96px] sm:w-[88px] sm:h-[118px] rounded-xl overflow-hidden shadow-md border-2 border-white bg-gray-100"
@@ -207,7 +217,7 @@ export default function Gallery() {
 
 
           <div className="hidden lg:block">
-            <HeroImageCollage images={patientImages} />
+            <HeroImageCollage images={patientImageUrls} />
           </div>
         </div>
       </div>
@@ -252,75 +262,101 @@ export default function Gallery() {
 
         <section className="w-full max-w-[1300px] px-4 sm:px-6 mb-8 flex flex-col items-center h-gal-family">
           <SectionHeading
-            pill="Happy Faces"
+            pill="Gallery"
             align="center"
-            title="Our Patient Family"
+            title="Our Clinic & Patients"
             titleClassName="font-poppins text-[26px] sm:text-[34px] lg:text-[42px] font-semibold h-gal-sechead"
-            description="Join thousands of happy patients across Noida who trust Dental Esthetique with their smiles. We believe every successful treatment is a life changed, and our greatest reward is seeing our patients leave with renewed confidence."
+            description="Join thousands of happy patients across Noida who trust Dental Esthetique with their smiles. Take a tour of our modern clinic facilities and see the confident smiles of our patient family."
             descriptionClassName="max-w-[800px] text-[13px] sm:text-[14px] lg:text-[16px] h-gal-secdesc"
-            className="mb-8 sm:mb-12 lg:mb-16"
+            className="mb-6 sm:mb-8 lg:mb-10"
           />
 
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 w-full px-4">
+            <button
+              onClick={() => setFilter('all')}
+              className={`px-5 py-2 rounded-full font-poppins text-[13px] sm:text-[14px] font-medium transition-all ${filter === 'all' ? 'bg-[#165ba7] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}
+            >
+              All Photos
+            </button>
+            <button
+              onClick={() => setFilter('clinic')}
+              className={`px-5 py-2 rounded-full font-poppins text-[13px] sm:text-[14px] font-medium transition-all ${filter === 'clinic' ? 'bg-[#165ba7] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}
+            >
+              Our Clinic
+            </button>
+            <button
+              onClick={() => setFilter('patient')}
+              className={`px-5 py-2 rounded-full font-poppins text-[13px] sm:text-[14px] font-medium transition-all ${filter === 'patient' ? 'bg-[#165ba7] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}
+            >
+              Happy Patients
+            </button>
+          </div>
+
           <Stagger
+            key={filter} // Forces re-animation when filter changes
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3 lg:gap-4 w-full max-w-[1300px] mx-auto h-gal-family-grid"
             gap={0.04}
           >
-            {patientImages.map((src, imgIdx) => (
+            {displayedImages.map((img, imgIdx) => (
               <StaggerItem
                 key={imgIdx}
                 y={24}
                 className="relative group overflow-hidden rounded-xl lg:rounded-2xl bg-gray-100 shadow-[0_4px_10px_rgba(0,0,0,0.05)] cursor-pointer border-[3px] lg:border-[4px] border-white transition-all duration-500 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1 aspect-square"
               >
                 <img
-                  src={src}
-                  alt={`Happy patient ${imgIdx + 1}`}
+                  src={img.src}
+                  alt={`Gallery photo ${imgIdx + 1}`}
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
               </StaggerItem>
             ))}
 
-            <StaggerItem
-              y={24}
-              className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#165ba7] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
-            >
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 rounded-full flex items-center justify-center mb-3 lg:mb-4">
-                <svg
-                  className="w-5 h-5 lg:w-6 lg:h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-white font-poppins text-lg sm:text-xl lg:text-2xl font-semibold mb-1.5 lg:mb-2 leading-tight">
-                Your Smile Is Next!
-              </h3>
-              <p className="text-white/80 text-xs sm:text-sm mb-0 lg:mb-6 px-1">
-                Join thousands of our confident patients.
-              </p>
-            </StaggerItem>
+            {filter !== 'clinic' && (
+              <StaggerItem
+                y={24}
+                className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#165ba7] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
+              >
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 rounded-full flex items-center justify-center mb-3 lg:mb-4">
+                  <svg
+                    className="w-5 h-5 lg:w-6 lg:h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-white font-poppins text-lg sm:text-xl lg:text-2xl font-semibold mb-1.5 lg:mb-2 leading-tight">
+                  Your Smile Is Next!
+                </h3>
+                <p className="text-white/80 text-xs sm:text-sm mb-0 lg:mb-6 px-1">
+                  Join thousands of our confident patients.
+                </p>
+              </StaggerItem>
+            )}
 
-            <StaggerItem
-              y={24}
-              className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#D35B8F] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
-            >
-              <h3 className="text-white font-poppins text-3xl sm:text-4xl lg:text-5xl font-semibold mb-1.5 lg:mb-2">
-                500+
-              </h3>
-              <p className="text-white/90 text-[11px] sm:text-sm font-poppins uppercase tracking-wider font-semibold">
-                Transformations
-              </p>
-              <p className="text-white/70 text-[10px] sm:text-xs mt-1.5 lg:mt-2">
-                completed with excellence.
-              </p>
-            </StaggerItem>
+            {filter !== 'clinic' && (
+              <StaggerItem
+                y={24}
+                className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#D35B8F] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
+              >
+                <h3 className="text-white font-poppins text-3xl sm:text-4xl lg:text-5xl font-semibold mb-1.5 lg:mb-2">
+                  500+
+                </h3>
+                <p className="text-white/90 text-[11px] sm:text-sm font-poppins uppercase tracking-wider font-semibold">
+                  Transformations
+                </p>
+                <p className="text-white/70 text-[10px] sm:text-xs mt-1.5 lg:mt-2">
+                  completed with excellence.
+                </p>
+              </StaggerItem>
+            )}
           </Stagger>
 
           <Reveal y={24} duration={0.6} className="mt-8 lg:mt-10 text-center">

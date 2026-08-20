@@ -3,8 +3,8 @@ import HeroToothCollage from '../HeroToothCollage'
 import { Stagger, StaggerItem } from './Reveal'
 
 interface PageHeroProps {
-  tagline: string
-  title: string
+  tagline: ReactNode
+  title: ReactNode
   description?: string
   children?: ReactNode
   taglineColor?: string

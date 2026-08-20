@@ -66,7 +66,7 @@ export default function Faq() {
     <div className="w-full bg-white font-poppins overflow-x-hidden h-faq-page">
       <div className="relative mx-auto flex w-full max-w-[1440px] lg:w-[1440px] flex-col items-center bg-white pb-10 lg:pb-16 h-canvas">
         <PageHero
-          tagline="FAQs"
+          tagline={<>FAQ<span className="normal-case">s</span></>}
           title="Frequently Asked Questions"
           description="Answers to common questions about treatments, booking, and visiting our clinic. Whether you're a new patient preparing for your first visit or looking for specific details about our advanced dental procedures, we've gathered all the information you need right here to ensure a comfortable and seamless experience at Dental Esthetique."
           taglineColor="text-[#D35B8F]"
@@ -83,7 +83,7 @@ export default function Faq() {
 
         <div className="relative mt-12 lg:mt-24 flex flex-col w-full max-w-[1210px] lg:w-[1210px] items-center px-5 lg:px-0 h-faq-list">
           <SectionHeading
-            pill="GENERAL FAQS"
+            pill={<>GENERAL FAQ<span className="normal-case">s</span></>}
             title="Get clear answers to your questions"
             align="center"
             titleClassName="text-[26px] sm:text-[32px] lg:text-[42px] font-bold h-faq-sechead"
@@ -100,8 +100,8 @@ export default function Faq() {
                   key={faq.q}
                   y={20}
                   className={`overflow-hidden rounded-[16px] lg:rounded-[20px] border-[1.5px] transition-all duration-300 h-faq-item ${isOpen
-                      ? 'border-[#D35B8F] bg-white shadow-[0_8px_30px_rgba(193,135,164,0.12)]'
-                      : 'border-[#F0F0F0] bg-[#FAFAFA] hover:border-[#D35B8F]/40 hover:bg-white hover:shadow-sm'
+                    ? 'border-[#D35B8F] bg-white shadow-[0_8px_30px_rgba(193,135,164,0.12)]'
+                    : 'border-[#F0F0F0] bg-[#FAFAFA] hover:border-[#D35B8F]/40 hover:bg-white hover:shadow-sm'
                     }`}
                 >
                   <button

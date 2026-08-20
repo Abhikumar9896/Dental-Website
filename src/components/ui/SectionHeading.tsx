@@ -12,7 +12,7 @@ export default function SectionHeading({
   titleClassName = '',
   descriptionClassName = '',
 }: {
-  pill: string
+  pill: ReactNode
   title: ReactNode
   description?: ReactNode
   pillColor?: 'pink' | 'blue'

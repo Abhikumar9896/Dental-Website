@@ -278,6 +278,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     .filter(Boolean)
     .join('\n')
 
+  const sheetsWebhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL
+
   try {
 
     await transporter.sendMail({
@@ -289,6 +291,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       html: buildDoctorNotificationHtml(payload, mailTo),
       attachments: brandAttachment(),
     })
+
+    if (sheetsWebhook) {
+      await fetch(sheetsWebhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+    }
 
     return res.status(200).json({ success: true })
   } catch (error) {

@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
         <Stagger className="h-why-intro" gap={0.12}>
           <StaggerItem>
             <h2 className="font-poppins text-[22px] lg:text-[36px] font-bold leading-[1.2] text-[#333] whitespace-normal lg:whitespace-nowrap h-why-h">
-              Why Choose <span className="text-[#165ba7]">Dental ESTHETIQUE?</span>
+              Why Choose <span className="text-[#165ba7]">Dental</span> <span className="text-[#D35B8F]">Esthetique</span> ?
             </h2>
           </StaggerItem>
           <StaggerItem>

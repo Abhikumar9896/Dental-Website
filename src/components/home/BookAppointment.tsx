@@ -26,7 +26,7 @@ export default function BookAppointment() {
         className="relative lg:absolute right-0 top-0 w-full lg:w-[1000px] h-auto lg:h-[640px] bg-white shadow-[0_15px_50px_rgba(0,0,0,0.06)] flex flex-col pt-8 lg:pt-[50px] pb-8 lg:pb-12 px-5 lg:pl-[300px] lg:pr-[70px] rounded-[20px] h-book-form"
       >
         <h2 className="text-[24px] lg:text-[32px] font-medium text-[#165ba7] mb-4 lg:mb-6 font-poppins">
-          Book Your Appointment
+          Book your appointment
         </h2>
         <div className="w-full h-[1px] bg-gray-200/60 mb-6 lg:mb-8"></div>
 
@@ -81,7 +81,7 @@ export default function BookAppointment() {
                   if ('showPicker' in input) {
                     try {
                       input.showPicker()
-                    } catch (err) {}
+                    } catch (err) { }
                   }
                 }}
                 className="relative w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
@@ -229,7 +229,7 @@ export default function BookAppointment() {
                   </>
                 ) : (
                   <>
-                    Book Your Appointment
+                    Book your appointment
                     <svg
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"
                       fill="none"
