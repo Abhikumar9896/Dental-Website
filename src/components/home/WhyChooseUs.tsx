@@ -36,7 +36,7 @@ const highlights = [
 
 export default function WhyChooseUs() {
   return (
-    <div className="relative w-full h-auto lg:absolute lg:left-[78px] lg:top-[1534px] lg:h-[560px] lg:w-[1280px] h-why">
+    <div className="relative w-full h-auto lg:absolute lg:left-[78px] lg:top-[1506px] lg:h-[560px] lg:w-[1280px] h-why">
       <Reveal x={-60} y={0} duration={0.8} className="h-why-img-wrap">
         <img
           src="/images/home/clinic-row-60cc89.webp"

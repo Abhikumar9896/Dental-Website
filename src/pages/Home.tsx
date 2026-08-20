@@ -16,7 +16,7 @@ import { homeDoctors } from '../data/doctors'
 
 export default function Home() {
   return (
-    <div className="relative overflow-x-hidden bg-white mx-auto w-full lg:w-[1440px] h-auto lg:h-[9250px] h-canvas">
+    <div className="relative overflow-x-hidden bg-white mx-auto w-full lg:w-[1440px] h-auto lg:h-[9150px] h-canvas">
       <HeroBanner />
 
       <div className="hidden lg:block absolute left-0 top-[786px] w-full h-[740px] bg-[#F5F7FA] z-10 h-band" />
@@ -27,7 +27,7 @@ export default function Home() {
 
       <SpecializedTeam />
 
-      <div className="relative w-full lg:absolute lg:top-[1890px] h-doc-stack">
+      <div className="relative w-full lg:absolute lg:top-[1862px] h-doc-stack">
         <div className="relative flex w-full flex-col items-center gap-4 px-4 py-5 lg:absolute lg:left-0 lg:top-[863px] lg:gap-[40px] lg:px-0 lg:py-0 z-30 bg-white h-doc-cards">
           {homeDoctors.map((doctor) => (
             <HorizontalDoctorCard key={doctor.name} {...doctor} />

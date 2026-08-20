@@ -55,8 +55,8 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <div className="w-full bg-white font-poppins overflow-x-hidden">
-      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-16 h-canvas">
+    <div className="w-full bg-white font-poppins overflow-x-hidden h-faq-page">
+      <div className="relative mx-auto flex w-full max-w-[1440px] lg:w-[1440px] flex-col items-center bg-white pb-10 lg:pb-16 h-canvas">
         <PageHero
           tagline="FAQs"
           title="Frequently Asked Questions"
@@ -68,28 +68,30 @@ export default function Faq() {
           backgroundImage="/images/about/faqsec.webp"
           bgPosition="object-cover object-right"
           hideCollage={true}
+          className="h-faq-hero"
         >
           <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
         </PageHero>
 
-        <div className="relative mt-24 flex flex-col w-[1210px] items-center h-faq-list">
+        <div className="relative mt-12 lg:mt-24 flex flex-col w-full max-w-[1210px] lg:w-[1210px] items-center px-5 lg:px-0 h-faq-list">
           <SectionHeading
             pill="GENERAL FAQS"
             title="Get clear answers to your questions"
             align="center"
-            titleClassName="text-[42px] font-bold h-faq-sechead"
+            titleClassName="text-[26px] sm:text-[32px] lg:text-[42px] font-bold h-faq-sechead"
             description="Everything you need to know about our dental treatments, booking process, and what to expect during your visit."
-            className="mb-6"
+            descriptionClassName="text-[13px] sm:text-[14px] lg:text-[15px] px-1 h-faq-secdesc"
+            className="mb-4 lg:mb-6"
           />
 
-          <Stagger className="mt-12 flex flex-col gap-5 w-full" gap={0.06}>
+          <Stagger className="mt-8 lg:mt-12 flex flex-col gap-3.5 lg:gap-5 w-full" gap={0.06}>
             {faqs.map((faq, i) => {
               const isOpen = open === i
               return (
                 <StaggerItem
                   key={faq.q}
                   y={20}
-                  className={`overflow-hidden rounded-[20px] border-[1.5px] transition-all duration-300 ${
+                  className={`overflow-hidden rounded-[16px] lg:rounded-[20px] border-[1.5px] transition-all duration-300 h-faq-item ${
                     isOpen
                       ? 'border-[#D35B8F] bg-white shadow-[0_8px_30px_rgba(193,135,164,0.12)]'
                       : 'border-[#F0F0F0] bg-[#FAFAFA] hover:border-[#D35B8F]/40 hover:bg-white hover:shadow-sm'
@@ -98,15 +100,15 @@ export default function Faq() {
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 px-8 py-7 text-left"
+                    className="flex w-full items-start sm:items-center justify-between gap-3 lg:gap-6 px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-7 text-left"
                   >
                     <span
-                      className={`font-fraunces text-[22px] leading-snug transition-colors duration-300 h-faq-q ${isOpen ? 'text-[#D35B8F]' : 'text-[#28231F]'}`}
+                      className={`font-fraunces text-[16px] sm:text-[18px] lg:text-[22px] leading-snug transition-colors duration-300 min-w-0 flex-1 h-faq-q ${isOpen ? 'text-[#D35B8F]' : 'text-[#28231F]'}`}
                     >
                       {faq.q}
                     </span>
                     <div
-                      className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#D35B8F] text-white' : 'bg-[#F2E8EB] text-[#D35B8F]'}`}
+                      className={`relative flex h-8 w-8 lg:h-10 lg:w-10 shrink-0 items-center justify-center rounded-full transition-colors duration-300 mt-0.5 sm:mt-0 ${isOpen ? 'bg-[#D35B8F] text-white' : 'bg-[#F2E8EB] text-[#D35B8F]'}`}
                     >
                       <svg
                         width="14"
@@ -131,8 +133,8 @@ export default function Faq() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="px-8 pb-8 pt-1">
-                        <p className="font-poppins text-[16px] font-normal leading-[1.8] text-[#767676] max-w-[1000px] h-faq-a">
+                      <div className="px-4 pb-5 pt-0 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8 lg:pt-1 h-faq-abody">
+                        <p className="font-poppins text-[14px] sm:text-[15px] lg:text-[16px] font-normal leading-[1.7] lg:leading-[1.8] text-[#767676] max-w-[1000px] h-faq-a">
                           {faq.a}
                         </p>
                       </div>

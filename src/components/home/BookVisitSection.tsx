@@ -6,6 +6,7 @@ import { useAppointmentForm } from '../../hooks/useAppointmentForm'
 
 export default function BookVisitSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isDateFocused, setIsDateFocused] = useState(false)
   const { formData, updateField, setTreatment, status, errorMessage, submit } = useAppointmentForm()
 
   return (
@@ -13,6 +14,7 @@ export default function BookVisitSection() {
       className="relative left-0 top-0 flex h-auto w-full items-center bg-cover bg-center bg-no-repeat py-0 lg:absolute lg:top-[5751px] lg:h-[600px] lg:py-0 h-bv"
       style={{ backgroundImage: "url('/images/home/footer.webp')" }}
     >
+      <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent pointer-events-none z-[5]" />
       <div className="relative h-full w-[58%] shrink-0 h-bv-sp"></div>
 
       <Reveal x={80} blur className="flex w-full lg:w-[42%] flex-col px-5 lg:pl-12 lg:pr-16 pt-6 pb-6 relative z-10 h-bv-c">
@@ -83,16 +85,13 @@ export default function BookVisitSection() {
                   </label>
                   <div className="relative h-bv-date">
                     <input
-                      type="text"
+                      type={isDateFocused || formData.date ? 'datetime-local' : 'text'}
                       placeholder="dd-mm-year --:--"
                       required
                       value={formData.date}
                       onChange={(e) => updateField('date', e.target.value)}
                       onClick={(e) => {
                         const input = e.currentTarget
-                        if (input.type !== 'datetime-local') {
-                          input.type = 'datetime-local'
-                        }
                         if ('showPicker' in input) {
                           try {
                             ;(input as HTMLInputElement & { showPicker: () => void }).showPicker()
@@ -101,12 +100,8 @@ export default function BookVisitSection() {
                           }
                         }
                       }}
-                      onFocus={(e) => {
-                        e.target.type = 'datetime-local'
-                      }}
-                      onBlur={(e) => {
-                        if (!e.target.value) e.target.type = 'text'
-                      }}
+                      onFocus={() => setIsDateFocused(true)}
+                      onBlur={() => setIsDateFocused(false)}
                       className="h-[42px] w-full rounded-md border border-gray-200 px-4 pr-11 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm text-gray-500 cursor-pointer [&::-webkit-calendar-picker-indicator]:hidden"
                     />
                     <div className="pointer-events-none absolute right-3 top-1/2 z-[1] -translate-y-1/2 text-gray-400">
@@ -237,7 +232,7 @@ export default function BookVisitSection() {
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="group inline-flex h-[40px] lg:h-[48px] w-auto items-center justify-center gap-1.5 rounded-md bg-[#165ba7] px-4 lg:px-6 text-white font-poppins font-medium text-[13px] lg:text-[15px] hover:bg-[#10437b] transition-colors shadow-sm disabled:opacity-70 disabled:cursor-not-allowed h-bv-btn"
+                    className="group inline-flex h-[40px] lg:h-[48px] w-auto items-center justify-center gap-1.5 rounded-[10px] bg-[#165ba7] px-4 lg:px-6 text-white font-poppins font-medium text-[13px] lg:text-[15px] hover:bg-[#10437b] transition-colors shadow-sm disabled:opacity-70 disabled:cursor-not-allowed h-bv-btn"
                   >
                     {status === 'submitting' ? (
                       <>

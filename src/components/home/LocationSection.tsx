@@ -9,7 +9,7 @@ const MAPS_URL = 'https://maps.app.goo.gl/mgbFVCZRaDL7CVeQ8'
 
 export default function LocationSection() {
   return (
-    <div className="relative left-0 top-0 w-full flex flex-col items-center pb-10 lg:absolute lg:top-[6831px] lg:pb-16 font-poppins h-loc">
+    <div className="relative left-0 top-0 w-full flex flex-col items-center pb-10 lg:absolute lg:top-[6781px] lg:pb-16 font-poppins h-loc">
       <div className="mb-6 lg:mb-12 flex flex-col items-center text-center max-w-[800px] px-5">
         <h2 className="text-[26px] lg:text-[52px] tracking-tight h-loc-h">
           <span className="text-[#D35B8F] font-normal">Contact</span>{' '}
@@ -40,15 +40,7 @@ export default function LocationSection() {
 
           <div className="absolute inset-0 z-10 hidden lg:block pointer-events-none"></div>
 
-          <a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="absolute left-3 top-3 z-30 inline-flex items-center gap-1.5 rounded-md bg-white px-3 py-2 text-[12px] font-semibold text-[#165ba7] shadow-md hover:bg-gray-50 transition-colors lg:left-4 lg:top-4"
-          >
-            Open in Maps
-            <ExternalLink size={13} strokeWidth={2.5} />
-          </a>
+
 
           <motion.div
             className="absolute left-[calc(50%-35px)] top-[calc(50%-78px)] pointer-events-none z-20 flex flex-col items-center"

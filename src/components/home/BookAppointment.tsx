@@ -7,6 +7,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 export default function BookAppointment() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isDateFocused, setIsDateFocused] = useState(false)
   const { formData, updateField, setTreatment, status, errorMessage, submit } = useAppointmentForm()
 
   const inputBaseClass =
@@ -15,7 +16,7 @@ export default function BookAppointment() {
   return (
     <div
       id="book-appointment"
-      className="relative left-0 top-0 w-full h-auto lg:absolute lg:left-[60px] lg:top-[866px] lg:w-[1320px] lg:h-[640px] z-30 scroll-mt-[120px] h-book"
+      className="relative left-0 top-0 w-full h-auto lg:absolute lg:left-[60px] lg:top-[840px] lg:w-[1320px] lg:h-[640px] z-30 scroll-mt-[120px] h-book"
     >
       <motion.div
         initial={{ opacity: 0, x: 120 }}
@@ -66,22 +67,22 @@ export default function BookAppointment() {
 
             <div className="relative">
               <input
-                type="text"
+                type={isDateFocused || formData.date ? 'datetime-local' : 'text'}
                 placeholder="Preferred Date & Time *"
                 required
                 value={formData.date}
                 onChange={(e) => updateField('date', e.target.value)}
                 onClick={(e) => {
                   const input = e.currentTarget
-                  if (input.type === 'datetime-local' && 'showPicker' in input) {
-                    input.showPicker()
+                  if ('showPicker' in input) {
+                    try {
+                      input.showPicker()
+                    } catch (err) {}
                   }
                 }}
                 className="relative w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
-                onFocus={(e) => (e.target.type = 'datetime-local')}
-                onBlur={(e) => {
-                  if (!e.target.value) e.target.type = 'text'
-                }}
+                onFocus={() => setIsDateFocused(true)}
+                onBlur={() => setIsDateFocused(false)}
               />
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 z-0">
                 <svg
@@ -200,7 +201,7 @@ export default function BookAppointment() {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="group flex w-full h-[46px] lg:h-[52px] items-center justify-center gap-2 rounded-md bg-[#A66689] hover:bg-[#8F5675] transition-colors shadow-sm text-white font-poppins text-[14px] lg:text-[15px] font-medium mt-0 lg:mt-1 shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group flex w-full h-[46px] lg:h-[52px] items-center justify-center gap-2 rounded-[10px] bg-[#A66689] hover:bg-[#8F5675] transition-colors shadow-sm text-white font-poppins text-[14px] lg:text-[15px] font-medium mt-0 lg:mt-1 shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? (
                   <>

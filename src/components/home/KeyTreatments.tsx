@@ -105,7 +105,7 @@ export default function KeyTreatments() {
               <img
                 src={`${IMG}/teeth.webp`}
                 alt="Clear aligners"
-                className="object-contain max-h-full w-[140px] h-[110px] lg:w-[160px] lg:h-[130px]"
+                className="object-contain max-h-full w-[140px] h-[110px] lg:w-[256px] lg:h-[211px]"
                 style={{
                   transform: 'scaleY(-1) rotate(148.53deg)',
                 }}

@@ -1,8 +1,17 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import {
+  FaTeeth,
+  FaCrown,
+  FaShieldHalved,
+  FaWandMagicSparkles,
+  FaUserDoctor,
+} from 'react-icons/fa6'
+import { GiScrew } from 'react-icons/gi'
 import HeroButton, { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
 
 const IMG = '/images/home'
+const heroIco = 'w-[18px] h-[18px] lg:w-[24px] lg:h-[24px] shrink-0 text-[#08549E] opacity-75'
 
 export default function HeroBanner() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -39,7 +48,7 @@ export default function HeroBanner() {
             <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an Appointment" />
             <HeroButton
               to="/services#catalogue"
-              text="See treatments"
+              text="See Treatments"
               variant="outline"
               className="!border-[#0A5BA8] !text-[#0A5BA8] hover:!bg-[#0A5BA8]/5"
             />
@@ -53,7 +62,7 @@ export default function HeroBanner() {
       topLabelColor: 'text-[#A0557A]',
       heading: (
         <>
-          Committed To
+          Committed to
           { ' ' }<br className="hidden lg:block" />
           Excellence
         </>
@@ -62,14 +71,8 @@ export default function HeroBanner() {
       content: (
         <>
           <div className="flex flex-col gap-3 max-w-full lg:max-w-[750px] mb-4 lg:mb-6 h-hero-row md:flex-row md:gap-4">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-1 w-[22px] h-[22px] lg:w-[38px] lg:h-[38px]">
-                <img
-                  src="https://img.icons8.com/ios/100/08549E/tooth.webp"
-                  alt="Tooth"
-                  className="w-[22px] h-[22px] lg:w-[38px] lg:h-[38px] object-contain"
-                />
-              </div>
+            <div className="flex items-start gap-2.5 lg:gap-3">
+              <FaWandMagicSparkles className={`${heroIco} mt-1`} aria-hidden />
               <div>
                 <h3 className="text-[#08549E] font-poppins font-semibold text-[16px] lg:text-[18px] mb-1">
                   Whitening
@@ -83,17 +86,8 @@ export default function HeroBanner() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-1 w-[22px] h-[22px] lg:w-[38px] lg:h-[38px]">
-                <img
-                  src="https://img.icons8.com/ios/100/08549E/dental-crown.webp"
-                  alt="Prosthesis"
-                  className="w-[22px] h-[22px] lg:w-[38px] lg:h-[38px] object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/false-teeth.webp'
-                  }}
-                />
-              </div>
+            <div className="flex items-start gap-2.5 lg:gap-3">
+              <FaCrown className={`${heroIco} mt-1`} aria-hidden />
               <div>
                 <h3 className="text-[#08549E] font-poppins font-semibold text-[16px] lg:text-[18px] mb-1">
                   Prosthesis
@@ -118,7 +112,7 @@ export default function HeroBanner() {
     },
     {
       image: `/images/home/hero3.webp`,
-      topLabel: 'Care For Lifetime',
+      topLabel: 'Care For a Lifetime',
       topLabelColor: 'text-[#A0557A]',
       heading: (
         <>
@@ -131,14 +125,8 @@ export default function HeroBanner() {
       content: (
         <>
           <div className="flex flex-col gap-3 max-w-full lg:max-w-[750px] mb-4 lg:mb-6 h-hero-row md:flex-row md:gap-4">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-1 w-[22px] h-[22px] lg:w-[38px] lg:h-[38px]">
-                <img
-                  src="https://img.icons8.com/ios/100/08549E/dental-implant.webp"
-                  alt="Implants"
-                  className="w-[22px] h-[22px] lg:w-[38px] lg:h-[38px] object-contain"
-                />
-              </div>
+            <div className="flex items-start gap-2.5 lg:gap-3">
+              <GiScrew className={`${heroIco} mt-1`} aria-hidden />
               <div>
                 <h3 className="text-[#08549E] font-poppins font-semibold text-[16px] lg:text-[18px] mb-1">
                   Implants
@@ -152,17 +140,8 @@ export default function HeroBanner() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-1 w-[22px] h-[22px] lg:w-[38px] lg:h-[38px]">
-                <img
-                  src="https://img.icons8.com/ios/100/08549E/tooth-with-braces.webp"
-                  alt="Alignment"
-                  className="w-[22px] h-[22px] lg:w-[38px] lg:h-[38px] object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/clipboard.webp'
-                  }}
-                />
-              </div>
+            <div className="flex items-start gap-2.5 lg:gap-3">
+              <FaTeeth className={`${heroIco} mt-1`} aria-hidden />
               <div>
                 <h3 className="text-[#08549E] font-poppins font-semibold text-[16px] lg:text-[18px] mb-1">
                   Alignment
@@ -187,7 +166,7 @@ export default function HeroBanner() {
     },
     {
       image: `${IMG}/hero-clinic.webp`,
-      topLabel: 'Committed To Excellence',
+      topLabel: 'Committed to Excellence',
       topLabelColor: 'text-[#A0557A]',
       heading: (
         <>
@@ -199,17 +178,8 @@ export default function HeroBanner() {
       content: (
         <>
           <div className="flex flex-col gap-3 max-w-full lg:max-w-[750px] mb-4 lg:mb-6 h-hero-row md:flex-row md:gap-4">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-1 w-[22px] h-[22px] lg:w-[38px] lg:h-[38px]">
-                <img
-                  src="https://img.icons8.com/ios/100/08549E/tooth-protection.webp"
-                  alt="Full Protection"
-                  className="w-[22px] h-[22px] lg:w-[38px] lg:h-[38px] object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/shield.webp'
-                  }}
-                />
-              </div>
+            <div className="flex items-start gap-2.5 lg:gap-3">
+              <FaShieldHalved className={`${heroIco} mt-1`} aria-hidden />
               <div>
                 <h3 className="text-[#08549E] font-poppins font-semibold text-[16px] lg:text-[18px] mb-1">
                   Full Protection
@@ -223,17 +193,8 @@ export default function HeroBanner() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 mt-1 w-[22px] h-[22px] lg:w-[38px] lg:h-[38px]">
-                <img
-                  src="https://img.icons8.com/ios/100/08549E/dentist-chair.webp"
-                  alt="Complete Service"
-                  className="w-[22px] h-[22px] lg:w-[38px] lg:h-[38px] object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://img.icons8.com/ios/100/08549E/hospital-bed.webp'
-                  }}
-                />
-              </div>
+            <div className="flex items-start gap-2.5 lg:gap-3">
+              <FaUserDoctor className={`${heroIco} mt-1`} aria-hidden />
               <div>
                 <h3 className="text-[#08549E] font-poppins font-semibold text-[16px] lg:text-[18px] mb-1">
                   Complete Service

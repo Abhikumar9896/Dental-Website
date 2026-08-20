@@ -1,64 +1,65 @@
 import { Link } from 'react-router-dom'
 import {
-  Monitor,
-  Syringe,
-  ClipboardPlus,
-  AlignVerticalSpaceAround,
-  Sparkles,
-  SmilePlus,
-  Pill,
-  ShieldPlus,
-} from 'lucide-react'
+  FaTooth,
+  FaTeeth,
+  FaTeethOpen,
+  FaCrown,
+  FaShieldHalved,
+  FaWandMagicSparkles,
+} from 'react-icons/fa6'
+import { GiScalpel, GiScrew } from 'react-icons/gi'
 import Reveal, { Stagger, StaggerItem } from '../ui/Reveal'
+
+const iconClass = 'h-svc-ico w-[26px] h-[26px] lg:w-[30px] lg:h-[30px] shrink-0 opacity-90'
 
 const services = [
   {
     title: 'General Dentistry',
     description: 'Check-ups, cleanings, and everyday dental care for the whole family.',
     iconColor: '#D35B8F',
-    icon: <Monitor size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <FaTooth className={iconClass} aria-hidden />,
   },
   {
     title: 'Implants',
     description: 'Permanent tooth replacement with a natural look and feel.',
     iconColor: '#165ba7',
-    icon: <Syringe size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <GiScrew className={iconClass} aria-hidden />,
   },
   {
     title: 'Dental Surgery',
     description: 'Safe extractions and surgical procedures with careful aftercare.',
     iconColor: '#D35B8F',
-    icon: <ClipboardPlus size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <GiScalpel className={iconClass} aria-hidden />,
   },
   {
     title: 'Alignment',
     description: 'Braces and aligners that straighten your smile discreetly.',
     iconColor: '#165ba7',
-    icon: <AlignVerticalSpaceAround size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <FaTeeth className={iconClass} aria-hidden />,
   },
   {
     title: 'Whitening',
     description: 'Professional whitening for a brighter, more confident smile.',
     iconColor: '#165ba7',
-    icon: <Sparkles size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <FaWandMagicSparkles className={iconClass} aria-hidden />,
   },
   {
     title: 'Teeth Braces',
     description: 'Traditional and modern braces for lasting alignment.',
     iconColor: '#D35B8F',
-    icon: <SmilePlus size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <FaTeethOpen className={iconClass} aria-hidden />,
   },
   {
     title: 'Prosthesis',
     description: 'Crowns, bridges, and dentures that restore function and aesthetics.',
     iconColor: '#165ba7',
-    icon: <Pill size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <FaCrown className={iconClass} aria-hidden />,
   },
   {
     title: 'Teeth Protection',
     description: 'Night guards and preventive care to protect your teeth.',
     iconColor: '#D35B8F',
-    icon: <ShieldPlus size={38} strokeWidth={1.5} className="h-svc-ico" />,
+    icon: <FaShieldHalved className={iconClass} aria-hidden />,
   },
 ]
 
@@ -101,7 +102,7 @@ export default function ServicesGridSection() {
       <Reveal y={30} className="mt-8 lg:mt-16 flex justify-center lg:mb-[-27px] px-5">
         <Link
           to="/services"
-          className="inline-flex h-[40px] lg:h-[54px] items-center justify-center rounded-md bg-[#D35B8F] px-4 lg:px-8 font-poppins font-medium text-white hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(193,135,164,0.4)] text-[13px] lg:text-base text-center h-svc-btn"
+          className="inline-flex h-[40px] lg:h-[54px] items-center justify-center rounded-[10px] bg-[#D35B8F] px-4 lg:px-8 font-poppins font-medium text-white hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(193,135,164,0.4)] text-[13px] lg:text-base text-center h-svc-btn"
         >
           View Dental Esthetique Solutions
         </Link>

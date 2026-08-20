@@ -75,7 +75,8 @@ const DOCTORS_DATA = {
     pronoun: 'His',
     tabTitle: 'Orthodontist, Implantologist',
     image: '/images/about/75524db1b2dcef952c107879077fccb06763426e-removebg-preview.webp',
-    imageClass: 'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
+    imageClass:
+      'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
     pill: 'Orthodontist & Implantologist',
     desc1:
       'A distinguished Orthodontist, Implantologist, and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence, dedicated to restoring oral health and aesthetics.',
@@ -122,7 +123,7 @@ type DoctorId = keyof typeof DOCTORS_DATA
 
 export default function DoctorProfile() {
   const location = useLocation()
-  
+
   const getInitialTab = (): DoctorId => {
     const hash = location.hash.replace('#', '') as DoctorId
     if (Object.keys(DOCTORS_DATA).includes(hash)) {
@@ -143,8 +144,8 @@ export default function DoctorProfile() {
   const activeDoctor = DOCTORS_DATA[activeTab]
 
   return (
-    <div className="w-full bg-white font-poppins overflow-x-hidden">
-      <div className="relative mx-auto flex w-[1440px] flex-col items-center bg-white pb-8 h-canvas">
+    <div className="w-full bg-white font-poppins overflow-x-hidden h-dp-page">
+      <div className="relative mx-auto flex w-full max-w-[1440px] lg:w-[1440px] flex-col items-center bg-white pb-8 h-canvas">
         <PageHero
           tagline="Doctor Profile"
           title="Meet the Experts Behind Every Smile."
@@ -155,29 +156,33 @@ export default function DoctorProfile() {
           height="lg:h-[max(100vh,800px)]"
           backgroundImage="/images/about/docprofile.webp"
           hideCollage={true}
+          className="h-dp-hero"
         >
           <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
           <HeroButton to="/services#catalogue" text="See treatments" variant="outline" />
         </PageHero>
 
-        <div id={activeTab} className="relative z-30 mt-16 flex flex-col w-[1210px] gap-6 scroll-mt-32 h-dp-tabs">
-          <Reveal y={20} duration={0.6} className="flex gap-4">
+        <div
+          id={activeTab}
+          className="relative z-30 mt-8 lg:mt-16 flex flex-col w-full max-w-[1210px] lg:w-[1210px] gap-4 lg:gap-6 px-5 lg:px-0 scroll-mt-28 lg:scroll-mt-32 h-dp-tabs"
+        >
+          <Reveal y={20} duration={0.6} className="flex flex-row flex-wrap items-stretch gap-2.5 lg:gap-4 w-full h-dp-tablist">
             {(Object.keys(DOCTORS_DATA) as DoctorId[]).map((id) => {
               const doctor = DOCTORS_DATA[id]
               return (
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
-                  className={`flex items-center gap-3 border-[2px] rounded-full p-1.5 pr-6 transition-all ${activeTab === id ? 'border-[#165ba7] bg-gray-100 shadow-sm' : 'border-transparent bg-gray-100 hover:bg-gray-200 opacity-90'}`}
+                  className={`flex items-center gap-2.5 lg:gap-3 border-[2px] rounded-full p-1.5 pr-3 lg:pr-6 transition-all flex-1 min-w-0 lg:flex-none lg:w-auto ${activeTab === id ? 'border-[#165ba7] bg-gray-100 shadow-sm' : 'border-transparent bg-gray-100 hover:bg-gray-200 opacity-90'}`}
                 >
-                  <div className="bg-[#165ba7] text-white rounded-full w-[38px] h-[38px] flex items-center justify-center text-sm font-bold shrink-0">
+                  <div className="bg-[#165ba7] text-white rounded-full w-[34px] h-[34px] lg:w-[38px] lg:h-[38px] flex items-center justify-center text-sm font-bold shrink-0">
                     {doctor.initials}
                   </div>
-                  <div className="flex flex-col text-left">
-                    <span className="font-poppins text-[#28231F] font-bold text-[13px] leading-tight">
+                  <div className="flex flex-col text-left min-w-0">
+                    <span className="font-poppins text-[#28231F] font-bold text-[12px] lg:text-[13px] leading-tight truncate lg:whitespace-normal">
                       {doctor.name}
                     </span>
-                    <span className="font-poppins text-[9px] text-[#767676] uppercase tracking-[0.05em] mt-0.5 font-medium">
+                    <span className="font-poppins text-[8px] lg:text-[9px] text-[#767676] uppercase tracking-[0.04em] mt-0.5 font-medium leading-snug line-clamp-2 lg:line-clamp-none">
                       {doctor.tabTitle}
                     </span>
                   </div>
@@ -186,13 +191,13 @@ export default function DoctorProfile() {
             })}
           </Reveal>
 
-          <div className="flex w-full overflow-visible items-center mt-10 h-dp-intro">
+          <div className="flex w-full flex-col lg:flex-row overflow-visible items-center mt-6 lg:mt-10 gap-8 lg:gap-0 h-dp-intro">
             <Reveal
               key={activeTab}
               x={-40}
               y={0}
               duration={0.7}
-              className="relative w-[368px] h-[368px] shrink-0 rounded-full bg-[#F2E8EB] ml-4 h-dp-photo"
+              className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] lg:w-[368px] lg:h-[368px] shrink-0 rounded-full bg-[#F2E8EB] ml-0 lg:ml-4 h-dp-photo"
             >
               <div className="absolute inset-0 rounded-full border-2 border-[#D35B8F] scale-[1.03]" />
               <div className="absolute inset-0 rounded-full overflow-hidden">
@@ -212,37 +217,37 @@ export default function DoctorProfile() {
               x={40}
               y={0}
               duration={0.7}
-              className="flex flex-col flex-1 pl-[90px] h-dp-info"
+              className="flex flex-col flex-1 w-full pl-0 lg:pl-[90px] h-dp-info"
             >
-              <div className="h-[28px] flex items-center">
+              <div className="flex items-center">
                 <SectionPill variant="solid">{activeDoctor.pill}</SectionPill>
               </div>
-              <div className="mt-5 h-[45px] flex items-center">
-                <h2 className="font-fraunces text-[36px] font-bold text-[#28231F] leading-tight h-dp-name">
+              <div className="mt-4 lg:mt-5 flex items-center">
+                <h2 className="font-fraunces text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#28231F] leading-tight h-dp-name">
                   {activeDoctor.name}
                 </h2>
               </div>
-              <div className="mt-4 h-[85px]">
-                <p className="font-poppins text-[16px] leading-[1.7] text-[#28231F]/90 font-medium">
+              <div className="mt-3 lg:mt-4">
+                <p className="font-poppins text-[14px] lg:text-[16px] leading-[1.7] text-[#28231F]/90 font-medium">
                   {activeDoctor.desc1}
                 </p>
               </div>
-              <div className="mt-5 h-[65px]">
-                <p className="border-l-[1.5px] border-[#D1D1D1] pl-4 font-poppins text-[13px] leading-[1.6] text-[#767676] italic w-[518px] h-dp-d2">
+              <div className="mt-4 lg:mt-5">
+                <p className="border-l-[1.5px] border-[#D1D1D1] pl-4 font-poppins text-[12.5px] lg:text-[13px] leading-[1.6] text-[#767676] italic w-full max-w-[518px] h-dp-d2">
                   {activeDoctor.desc2}
                 </p>
               </div>
 
               <div
-                className="mt-8 bg-[#F0F0F0] rounded-[18px] px-5 py-2 flex flex-col justify-center w-[452px] h-[62px] shrink-0 h-dp-sched"
+                className="mt-6 lg:mt-8 bg-[#F0F0F0] rounded-[18px] px-4 py-3 lg:px-5 lg:py-2 flex flex-col justify-center w-full max-w-[452px] min-h-[62px] shrink-0 h-dp-sched"
                 style={{ boxShadow: '5px 2px 10.1px 0px rgba(0,0,0,0.13)' }}
               >
-                <div className="font-poppins text-[12px] text-[#28231F] flex gap-1">
-                  <span className="font-bold w-[65px]">MON-SAT</span>
+                <div className="font-poppins text-[12px] text-[#28231F] flex gap-1 flex-wrap">
+                  <span className="font-bold w-[65px] shrink-0">MON-SAT</span>
                   <span className="text-[#28231F]">{activeDoctor.scheduleLine1}</span>
                 </div>
-                <div className="font-poppins text-[12px] text-[#28231F] flex gap-1">
-                  <span className="font-bold w-[65px]">SUN</span>
+                <div className="font-poppins text-[12px] text-[#28231F] flex gap-1 flex-wrap mt-0.5">
+                  <span className="font-bold w-[65px] shrink-0">SUN</span>
                   <span className="text-[#28231F]">{activeDoctor.scheduleLine2}</span>
                 </div>
               </div>
@@ -250,16 +255,17 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        <div className="w-[1210px] mt-20 flex flex-col">
+        {/* About / timeline */}
+        <div className="w-full max-w-[1210px] lg:w-[1210px] mt-12 lg:mt-20 flex flex-col px-5 lg:px-0 h-dp-about">
           <Reveal y={24} duration={0.7} className="flex flex-col">
             <SectionPill variant="solid">In {activeDoctor.pronoun} Own Practice</SectionPill>
-            <h2 className="mt-4 font-fraunces text-[36px] font-bold text-[#28231F] leading-tight mb-12">
+            <h2 className="mt-3 lg:mt-4 font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold text-[#28231F] leading-tight mb-8 lg:mb-12 h-dp-about-h">
               About {activeDoctor.name}
             </h2>
           </Reveal>
 
-          <div className="relative flex flex-col w-full pb-8">
-            <div className="absolute top-[27px] bottom-[27px] left-1/2 w-[1.5px] bg-[#241F1B]/10 -translate-x-1/2 z-0 h-tl-line" />
+          <div className="relative flex flex-col w-full pb-4 lg:pb-8">
+            <div className="absolute top-[27px] bottom-[27px] left-1/2 w-[1.5px] bg-[#241F1B]/10 -translate-x-1/2 z-0 hidden lg:block h-tl-line" />
 
             {activeDoctor.about.map((item, index) => {
               const isLeft = index % 2 === 0
@@ -269,10 +275,26 @@ export default function DoctorProfile() {
                   y={30}
                   delay={Math.min(index * 0.08, 0.3)}
                   duration={0.6}
-                  className={`relative flex w-full justify-between items-start h-tl-row ${index !== 0 ? 'mt-16' : ''}`}
+                  className={`relative flex w-full justify-between items-start h-tl-row ${index !== 0 ? 'mt-8 lg:mt-16' : ''}`}
                 >
+                  {/* Mobile stacked card */}
+                  <div className="flex lg:hidden w-full gap-3.5 items-start h-tl-mobile">
+                    <div className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[15px] shrink-0">
+                      {item.n}
+                    </div>
+                    <div className="flex flex-col min-w-0 flex-1 pt-0.5">
+                      <h3 className="font-poppins text-[16px] font-bold text-[#28231F]">
+                        {item.title}
+                      </h3>
+                      <p className="font-poppins text-[13px] leading-[1.7] text-[#767676] mt-2">
+                        {item.body}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Desktop left */}
                   <div
-                    className={`w-1/2 pr-12 flex flex-col items-end text-right h-tl-l ${isLeft ? '' : 'opacity-0 invisible'}`}
+                    className={`hidden lg:flex w-1/2 pr-12 flex-col items-end text-right h-tl-l ${isLeft ? '' : 'opacity-0 invisible'}`}
                   >
                     {isLeft && (
                       <>
@@ -286,12 +308,13 @@ export default function DoctorProfile() {
                     )}
                   </div>
 
-                  <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center w-[54px] h-[54px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[18px] z-10 ring-[12px] ring-white h-tl-dot">
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-[54px] h-[54px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[18px] z-10 ring-[12px] ring-white h-tl-dot">
                     {item.n}
                   </div>
 
+                  {/* Desktop right */}
                   <div
-                    className={`w-1/2 pl-12 flex flex-col items-start text-left pt-1 h-tl-r ${!isLeft ? '' : 'opacity-0 invisible'}`}
+                    className={`hidden lg:flex w-1/2 pl-12 flex-col items-start text-left pt-1 h-tl-r ${!isLeft ? '' : 'opacity-0 invisible'}`}
                   >
                     {!isLeft && (
                       <>
@@ -310,45 +333,45 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        <Reveal y={40} duration={0.7} className="w-full flex justify-center mt-8 mb-4">
+        <Reveal y={40} duration={0.7} className="w-full flex justify-center mt-6 lg:mt-8 mb-4 px-5 lg:px-0">
           <div
-            className="flex items-center justify-center w-[1280px] h-[252px] px-24 bg-cover bg-center bg-no-repeat h-dp-quote"
+            className="flex items-center justify-center w-full max-w-[1280px] lg:w-[1280px] h-auto min-h-0 lg:h-[252px] px-5 py-10 sm:px-10 lg:px-24 bg-cover bg-center bg-no-repeat rounded-2xl lg:rounded-none h-dp-quote"
             style={{
               borderRadius: '9px 200px 4px 200px',
               backgroundImage: 'url(/images/home/bgblue.webp)',
               backgroundColor: '#165ba7',
             }}
           >
-            <p className="font-poppins text-[20px] leading-[1.6] text-center text-[#F3F3F3] font-medium max-w-[850px]">
+            <p className="font-poppins text-[15px] sm:text-[17px] lg:text-[20px] leading-[1.6] text-center text-[#F3F3F3] font-medium max-w-[850px]">
               {activeDoctor.quote}
             </p>
           </div>
         </Reveal>
 
-        <div id="specialisations" className="mt-12 w-full flex justify-center scroll-mt-8">
-          <div className="flex w-[1280px] bg-[#F9F4F1] rounded-[26px] py-14 flex-col items-center gap-10 h-dp-spec">
-            <Reveal y={24} duration={0.7} className="flex w-[1239px] flex-col gap-2">
+        <div id="specialisations" className="mt-8 lg:mt-12 w-full flex justify-center scroll-mt-8 px-5 lg:px-0">
+          <div className="flex w-full max-w-[1280px] lg:w-[1280px] bg-[#F9F4F1] rounded-[20px] lg:rounded-[26px] py-8 lg:py-14 px-4 sm:px-6 lg:px-0 flex-col items-center gap-6 lg:gap-10 h-dp-spec">
+            <Reveal y={24} duration={0.7} className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col gap-2 px-1 lg:px-0">
               <SectionPill>FOCUS AREAS</SectionPill>
-              <h2 className="font-fraunces text-[36px] font-bold leading-none text-[#28231F]">
+              <h2 className="font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-tight lg:leading-none text-[#28231F]">
                 Fields of Specialisation
               </h2>
             </Reveal>
 
-            <Stagger className="flex w-[1239px] flex-col mt-4 h-dp-spec-in" gap={0.1}>
+            <Stagger className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col mt-2 lg:mt-4 h-dp-spec-in" gap={0.1}>
               {activeDoctor.specialisations.map((card, index) => {
-                const rowClasses = `group flex items-center justify-between w-full py-8 border-b border-[#28231F]/10 hover:border-[#D35B8F] transition-colors duration-300 h-dp-spec-row ${card.link ? 'cursor-pointer' : 'cursor-default'} ${index === 0 ? 'border-t' : ''}`
+                const rowClasses = `group flex items-center justify-between w-full py-5 lg:py-8 gap-3 border-b border-[#28231F]/10 hover:border-[#D35B8F] transition-colors duration-300 h-dp-spec-row ${card.link ? 'cursor-pointer' : 'cursor-default'} ${index === 0 ? 'border-t' : ''}`
                 const rowContent = (
                   <>
-                    <div className="flex items-center gap-12">
-                      <span className="font-poppins text-[16px] font-medium text-[#D35B8F]">
+                    <div className="flex items-start lg:items-center gap-3 lg:gap-12 min-w-0 flex-1">
+                      <span className="font-poppins text-[14px] lg:text-[16px] font-medium text-[#D35B8F] shrink-0 pt-1 lg:pt-0">
                         {card.n}
                       </span>
-                      <h3 className="font-fraunces text-[32px] text-[#28231F] group-hover:text-[#D35B8F] transition-colors duration-300">
+                      <h3 className="font-fraunces text-[18px] sm:text-[22px] lg:text-[32px] text-[#28231F] group-hover:text-[#D35B8F] transition-colors duration-300 leading-snug">
                         {card.title}
                       </h3>
                     </div>
 
-                    <div className="w-10 h-10 rounded-full border border-[#28231F]/10 flex items-center justify-center group-hover:bg-[#D35B8F] group-hover:border-[#D35B8F] transition-all duration-300">
+                    <div className="w-9 h-9 lg:w-10 lg:h-10 shrink-0 rounded-full border border-[#28231F]/10 flex items-center justify-center group-hover:bg-[#D35B8F] group-hover:border-[#D35B8F] transition-all duration-300">
                       <svg
                         width="14"
                         height="14"
@@ -385,51 +408,51 @@ export default function DoctorProfile() {
         </div>
 
         {activeTab === 'ds' && (
-          <div className="mt-12 w-full flex justify-center mb-16">
-            <div className="w-[1239px] flex flex-col gap-10">
-              <Reveal y={24} duration={0.7} className="flex flex-col gap-3 pt-8">
+          <div className="mt-10 lg:mt-12 w-full flex justify-center mb-10 lg:mb-16 px-5 lg:px-0">
+            <div className="w-full max-w-[1239px] lg:w-[1239px] flex flex-col gap-6 lg:gap-10">
+              <Reveal y={24} duration={0.7} className="flex flex-col gap-3 pt-4 lg:pt-8">
                 <SectionPill>RECOGNITION</SectionPill>
-                <h2 className="font-fraunces text-[36px] font-bold leading-none text-[#28231F]">
+                <h2 className="font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-tight lg:leading-none text-[#28231F]">
                   Awards
                 </h2>
               </Reveal>
 
-              <div className="flex w-full items-center justify-between h-dp-award">
-                <Reveal x={-40} y={0} duration={0.7}>
+              <div className="flex w-full flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 h-dp-award">
+                <Reveal x={-40} y={0} duration={0.7} className="w-full lg:w-auto flex justify-center">
                   <img
                     key={activeDoctor.id + 'award'}
                     src={activeDoctor.award.image}
-                    className="w-[480px] h-auto shrink-0 h-dp-award-img"
+                    className="w-full max-w-[320px] sm:max-w-[400px] lg:w-[480px] h-auto shrink-0 h-dp-award-img"
                     alt="Award"
                   />
                 </Reveal>
 
-                <div className="w-[1px] h-[266px] bg-[#D5EAE3] shrink-0 mx-12 h-dp-award-line" />
+                <div className="hidden lg:block w-[1px] h-[266px] bg-[#D5EAE3] shrink-0 mx-12 h-dp-award-line" />
 
                 <Reveal
                   x={40}
                   y={0}
                   duration={0.7}
                   delay={0.15}
-                  className="flex flex-col flex-1 max-w-[616px]"
+                  className="flex flex-col flex-1 w-full max-w-[616px]"
                 >
-                  <div className="h-[36px] flex items-center">
+                  <div className="flex items-center">
                     <SectionPill>{activeDoctor.award.pill}</SectionPill>
                   </div>
-                  <div className="mt-6 flex items-start">
-                    <h3 className="font-fraunces text-[36px] font-bold text-[#28231F] leading-[1.2]">
+                  <div className="mt-4 lg:mt-6 flex items-start">
+                    <h3 className="font-fraunces text-[24px] sm:text-[28px] lg:text-[36px] font-bold text-[#28231F] leading-[1.2]">
                       {activeDoctor.award.title}
                     </h3>
                   </div>
-                  <div className="mt-4">
-                    <p className="font-poppins text-[16px] leading-[1.7] text-[#28231F]/90 font-medium">
+                  <div className="mt-3 lg:mt-4">
+                    <p className="font-poppins text-[14px] lg:text-[16px] leading-[1.7] text-[#28231F]/90 font-medium">
                       {activeDoctor.award.desc}
                     </p>
                   </div>
                   <HeroButton
                     to={activeDoctor.award.buttonLink}
                     text={activeDoctor.award.buttonText}
-                    className="mt-8 !h-[44px]"
+                    className="mt-6 lg:mt-8 !h-[44px]"
                   />
                 </Reveal>
               </div>

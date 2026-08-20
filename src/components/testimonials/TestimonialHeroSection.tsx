@@ -89,7 +89,7 @@ const backgroundBoxes = [
 
 export default function TestimonialHeroSection() {
   return (
-    <div className="w-full bg-[#FAF8F9] pt-6 pb-12 px-4 relative flex flex-col items-center overflow-hidden">
+    <div className="w-full bg-[#FAF8F9] pt-6 pb-12 px-4 relative flex flex-col items-center overflow-hidden h-tst-hero">
       <div className="relative w-full max-w-[1440px] mx-auto h-[420px] mb-0 hidden lg:block">
         {backgroundBoxes.map((box) => (
           <div
@@ -119,22 +119,43 @@ export default function TestimonialHeroSection() {
         ))}
       </div>
 
+      {/* Mobile / tablet only — desktop collage unchanged */}
+      <div className="lg:hidden w-full max-w-[720px] mx-auto mb-5 overflow-hidden h-tst-strip">
+        <div className="flex gap-2.5 overflow-x-auto pb-1 px-0.5 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {patients.slice(0, 10).map((p) => (
+            <div
+              key={`m-${p.id}`}
+              className="snap-center shrink-0 w-[88px] h-[112px] sm:w-[100px] sm:h-[128px] rounded-xl overflow-hidden shadow-md bg-gray-100 border border-white/60"
+            >
+              <img
+                src={p.src}
+                alt="Patient"
+                loading="lazy"
+                decoding="async"
+                style={{ objectPosition: p.objectPosition }}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <Reveal
         y={30}
         duration={0.8}
-        className="flex flex-col items-center text-center relative z-10 max-w-[800px] mx-auto mt-4 lg:-mt-8"
+        className="flex flex-col items-center text-center relative z-10 max-w-[800px] mx-auto mt-4 lg:-mt-8 h-tst-hero-copy"
       >
         <span className="bg-[#D35B8F]/10 text-[#D35B8F] font-semibold text-[12px] lg:text-[13px] px-4 py-1.5 rounded-full mb-4 lg:mb-6">
           Patient Testimonials
         </span>
 
-        <h1 className="font-poppins text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] tracking-tight mb-3">
+        <h1 className="font-poppins text-[28px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] tracking-tight mb-3 h-tst-hero-h">
           <span className="text-[#111827]">Trusted by hundreds of patients</span>
           <br />
           <span className="text-[#9CA3AF]">across Noida & beyond</span>
         </h1>
 
-        <p className="text-[#6B7280] text-[14px] md:text-[15px] lg:text-[17px] leading-relaxed max-w-[500px] mb-5 lg:mb-6">
+        <p className="text-[#6B7280] text-[14px] md:text-[15px] lg:text-[17px] leading-relaxed max-w-[500px] mb-5 lg:mb-6 h-tst-hero-p">
           Learn why patients trust Dental Esthétique for safe, comfortable, and long-lasting dental
           care.
         </p>
@@ -143,13 +164,13 @@ export default function TestimonialHeroSection() {
           href="https://www.google.com/maps/place/Dental+Esthetique/@28.5904931,77.3348886,15z/data=!4m18!1m9!3m8!1s0x390ce5081fc59025:0x8c9bf39b230a1480!2sDental+Esthetique!8m2!3d28.5904931!4d77.3451883!9m1!1b1!16s%2Fg%2F11c1rt420p!3m7!1s0x390ce5081fc59025:0x8c9bf39b230a1480!8m2!3d28.5904931!4d77.3451883!9m1!1b1!16s%2Fg%2F11c1rt420p?hl=en&entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noreferrer"
-          className="bg-black text-white px-6 py-3 rounded-full font-semibold text-[15px] hover:bg-gray-800 transition-colors flex items-center gap-3 shadow-md hover:shadow-xl hover:-translate-y-1 transform duration-300"
+          className="bg-black text-white px-5 py-2.5 lg:px-6 lg:py-3 rounded-full font-semibold text-[13.5px] lg:text-[15px] hover:bg-gray-800 transition-colors inline-flex items-center gap-2.5 lg:gap-3 shadow-md hover:shadow-xl hover:-translate-y-1 transform duration-300 h-tst-hero-btn"
         >
-          <span className="w-5 h-5 bg-white rounded-full flex items-center justify-center p-0.5">
-            <GoogleIcon size={18} />
+          <span className="w-[18px] h-[18px] lg:w-5 lg:h-5 bg-white rounded-full flex items-center justify-center p-0.5 shrink-0">
+            <GoogleIcon size={16} />
           </span>
           Read Patient Stories
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-[18px] h-[18px] lg:w-5 lg:h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

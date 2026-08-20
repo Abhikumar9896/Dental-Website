@@ -62,7 +62,7 @@ function brandHeader(): string {
               </td>
               <td style="vertical-align:middle;">
                 <span style="font-family:Arial,Helvetica,sans-serif;font-size:28px;font-weight:700;line-height:1.2;color:#1E73BE;">
-                  Dental<span style="color:#D35B8F;">Esthetique</span>
+                  Dental <span style="color:#D35B8F;">Esthetique</span>
                 </span>
               </td>
             </tr>
@@ -210,8 +210,9 @@ function buildDoctorNotificationHtml(
                 Dental Esthetique - Doctor Notification
               </p>
               <p style="margin:6px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#d6e6f5;">
-                55, Vindhyachal Marg, Block B, Sector 22, Noida<br />
-                +91 98188 62265 · ${escapeHtml(clinicEmail)}
+                55, Vindhyachal Marg, Block B, Sector 22, Noida, Uttar Pradesh<br />
+                <a href="tel:+919818862265" style="color:#d6e6f5;text-decoration:none;">+91 98188 62265</a> | <a href="tel:01204266344" style="color:#d6e6f5;text-decoration:none;">0120 4266 344</a><br />
+                <a href="mailto:${escapeHtml(clinicEmail)}" style="color:#ffffff;text-decoration:none;">${escapeHtml(clinicEmail)}</a>
               </p>
             </td>
           </tr>

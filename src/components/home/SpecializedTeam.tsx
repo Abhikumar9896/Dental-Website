@@ -2,13 +2,14 @@ import { Stagger, StaggerItem } from '../ui/Reveal'
 
 export default function SpecializedTeam() {
   return (
-    <div className="relative left-0 top-0 flex w-full items-center lg:items-start px-5 lg:absolute lg:left-0 lg:top-[2113px] lg:px-[120px] py-10 lg:pt-[30px] lg:pb-0 h-auto lg:h-[600px] overflow-hidden h-team">
+    <div className="relative left-0 top-0 flex w-full items-center lg:items-start px-5 lg:absolute lg:left-0 lg:top-[2085px] lg:px-[120px] py-10 lg:pt-[30px] lg:pb-0 h-auto lg:h-[600px] overflow-hidden h-team">
       <img
         src="/images/home/specialized-team-doctor.webp"
         alt="Specialized Team"
         className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-left z-0"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-white from-55% via-white/92 via-78% to-transparent lg:hidden z-10 pointer-events-none" />
+      <div className="hidden lg:block absolute inset-0 bg-gradient-to-l from-white/40 via-transparent to-transparent z-10 pointer-events-none" />
 
       <Stagger
         className="flex flex-col w-full max-w-[520px] lg:w-[650px] relative mt-0 lg:mt-[60px] pl-0 lg:pl-[20px] z-20 h-team-txt"

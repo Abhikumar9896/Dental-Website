@@ -28,7 +28,7 @@ export default function FourReasons() {
     <div className="relative left-0 top-0 flex w-full flex-col px-5 py-10 lg:absolute lg:left-[78px] lg:top-[2934px] lg:w-[1280px] lg:px-0 lg:py-0 gap-8 lg:gap-10 h-reasons">
       <Stagger className="flex w-full lg:w-[638px] flex-col gap-2.5 lg:gap-[15px] h-reasons-t" gap={0.15}>
         <StaggerItem>
-          <h2 className="font-fraunces text-[28px] lg:text-[48px] font-semibold leading-tight lg:leading-none text-[#28231F]">
+          <h2 className="font-poppins text-[28px] lg:text-[48px] font-normal leading-tight lg:leading-none text-[#28231F]">
             Four reasons patients stay
           </h2>
         </StaggerItem>

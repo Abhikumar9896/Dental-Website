@@ -34,8 +34,8 @@ export default function About() {
           hideCollage={true}
           className="h-about-hero"
         >
-          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
-          <HeroButton to="/services#catalogue" text="See treatments" variant="outline" />
+          <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an Appointment" />
+          <HeroButton to="/services#catalogue" text="See Treatments" variant="outline" />
         </PageHero>
 
         <div className="mt-16 w-full flex justify-center bg-white z-10 h-about-story">

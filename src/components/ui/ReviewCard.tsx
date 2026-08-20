@@ -3,11 +3,11 @@ import type { googleReviews } from '../../data/reviews'
 
 export default function ReviewCard({ review }: { review: (typeof googleReviews)[number] }) {
   return (
-    <div className="flex h-[380px] w-[340px] flex-none cursor-default flex-col justify-between rounded-[28px] border border-[#E5E7EB] bg-[#F3F4F6] p-6 transition-colors hover:bg-[#E5E7EB]">
-      <div>
+    <div className="flex h-[380px] w-[340px] flex-none cursor-default flex-col justify-between overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F3F4F6] p-6 transition-colors hover:bg-[#E5E7EB] h-tst-rcard">
+      <div className="min-h-0 flex-1 overflow-hidden">
         <div className="mb-4 flex items-start justify-between">
           <svg
-            className="h-8 w-8 text-[#4353FF] opacity-70"
+            className="h-8 w-8 shrink-0 text-[#4353FF] opacity-70"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -15,9 +15,11 @@ export default function ReviewCard({ review }: { review: (typeof googleReviews)[
           </svg>
           <GoogleIcon size={20} />
         </div>
-        <p className="mb-4 text-[14px] font-medium leading-relaxed text-[#374151]">{review.text}</p>
+        <p className="text-[14px] font-medium leading-relaxed text-[#374151] h-tst-rcard-text">
+          {review.text}
+        </p>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="mt-4 flex shrink-0 items-center gap-3 lg:gap-4 h-tst-rcard-foot">
         {review.image ? (
           <img
             src={review.image}
@@ -26,17 +28,17 @@ export default function ReviewCard({ review }: { review: (typeof googleReviews)[
             height={44}
             loading="lazy"
             decoding="async"
-            className="h-11 w-11 rounded-full object-cover shadow-sm"
+            className="h-11 w-11 shrink-0 rounded-full object-cover shadow-sm h-tst-rcard-dp"
           />
         ) : (
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#4353FF] to-[#3b48df] text-white">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#4353FF] to-[#3b48df] text-white h-tst-rcard-dp">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
             </svg>
           </div>
         )}
-        <div className="flex flex-col">
-          <span className="text-[14px] font-semibold leading-tight text-[#111827]">
+        <div className="flex min-w-0 flex-col">
+          <span className="truncate text-[14px] font-semibold leading-tight text-[#111827]">
             {review.name}
           </span>
           <span className="mt-0.5 text-[12px] text-gray-500">{review.time}</span>

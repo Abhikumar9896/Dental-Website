@@ -80,7 +80,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="leading-snug hover:underline text-left"
                 >
-                  55, Vindhyachal Marg, Block B, Sector 22, Noida
+                  55, Vindhyachal Marg, Block B, Sector 22, Noida, Uttar Pradesh
                 </a>
               </div>
               <div className="flex items-start gap-2.5 text-[#165ba7] font-semibold text-[12.5px] lg:text-[14px]">
@@ -216,19 +216,12 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar — extra bottom padding so FAQs isn't cut / covered by WhatsApp */}
-      <div className="w-full bg-[#165ba7] flex justify-center py-5 lg:py-6 h-ft-bar">
-        <div className="w-full max-w-[1400px] lg:w-[1400px] flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0 px-5 sm:px-6 lg:px-10 box-border text-white h-ft-bottom">
-          <p className="text-[12px] lg:text-[14px] font-medium text-center lg:text-left">
+      {/* Bottom bar */}
+      <div className="w-full bg-[#165ba7] flex justify-center py-3 lg:py-4 h-ft-bar">
+        <div className="w-full max-w-[1400px] lg:w-[1400px] flex items-center justify-center px-5 sm:px-6 lg:px-10 box-border text-white h-ft-bottom">
+          <p className="text-[12px] lg:text-[14px] font-medium text-center">
             &copy; 2026 <span className="font-bold">Dental Esthetique</span>. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 lg:gap-6 text-[10px] sm:text-[11px] lg:text-[13px] font-bold tracking-wide h-ft-nav">
-            {bottomLinks.map((link) => (
-              <Link key={link.label} to={link.to} className="hover:text-white/80 transition-colors whitespace-nowrap">
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

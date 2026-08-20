@@ -104,11 +104,25 @@ const patientImages = [
 
 export default function Gallery() {
   return (
-    <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden min-h-screen">
+    <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden min-h-screen h-gal-page">
       <div className="relative w-full h-auto min-h-0 lg:h-[800px] bg-white flex justify-center overflow-hidden shrink-0 h-gal-hero-wrap">
         <div className="relative w-full lg:w-[1440px] h-full z-10 h-gal-hero-in">
+          {/* Mobile / tablet photo strip — desktop collage unchanged */}
+          <div className="lg:hidden w-full overflow-hidden pt-[76px] px-4 h-gal-strip">
+            <div className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
+              {patientImages.slice(0, 12).map((src, i) => (
+                <div
+                  key={`strip-${i}`}
+                  className="snap-center shrink-0 w-[72px] h-[96px] sm:w-[88px] sm:h-[118px] rounded-xl overflow-hidden shadow-md border-2 border-white bg-gray-100"
+                >
+                  <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <Stagger
-            className="relative lg:absolute left-0 lg:left-[80px] top-auto lg:top-1/2 lg:-translate-y-[35%] flex w-full lg:w-[634px] flex-col z-20 px-5 pt-[88px] pb-8 lg:px-0 lg:pt-0 lg:pb-0 h-gal-hero"
+            className="relative lg:absolute left-0 lg:left-[80px] top-auto lg:top-1/2 lg:-translate-y-[35%] flex w-full lg:w-[634px] flex-col z-20 px-5 pt-6 pb-8 lg:px-0 lg:pt-0 lg:pb-0 h-gal-hero"
             gap={0.15}
           >
             <StaggerItem y={30}>
@@ -116,10 +130,10 @@ export default function Gallery() {
                 <div>
                   <SectionPill size="lg">Transformation</SectionPill>
                 </div>
-                <h1 className="w-full lg:w-[634px] font-fraunces text-[32px] md:text-[48px] lg:text-[62px] font-semibold leading-[1.1] lg:leading-[1.06] tracking-[0.01em] text-[#28231F] h-gal-hero-h">
+                <h1 className="w-full lg:w-[634px] font-fraunces text-[28px] sm:text-[36px] md:text-[48px] lg:text-[62px] font-semibold leading-[1.1] lg:leading-[1.06] tracking-[0.01em] text-[#28231F] h-gal-hero-h">
                   Our Smile Gallery
                 </h1>
-                <p className="mt-1 lg:mt-2 w-full lg:w-[493px] font-poppins text-[14px] lg:text-[16px] font-normal leading-[1.6] lg:leading-[1.7] text-[#767676]">
+                <p className="mt-1 lg:mt-2 w-full lg:w-[493px] font-poppins text-[13px] sm:text-[14px] lg:text-[16px] font-normal leading-[1.6] lg:leading-[1.7] text-[#767676] h-gal-hero-p">
                   See the life-changing results of our world-class dental treatments. From subtle
                   enhancements to complete smile makeovers, every transformation is planned with
                   precision, executed with care, and finished to perfection. Browse our gallery to
@@ -129,39 +143,39 @@ export default function Gallery() {
               </div>
             </StaggerItem>
             <StaggerItem y={30} className="mt-4 lg:mt-6">
-              <div className="flex w-full lg:w-[493px] items-center gap-4 lg:gap-6 h-gal-stats">
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <p className="font-poppins text-[26px] font-bold leading-none text-[#165ba7]">
+              <div className="flex w-full lg:w-[493px] items-start sm:items-center gap-3 sm:gap-4 lg:gap-6 h-gal-stats flex-wrap">
+                <div className="flex flex-col min-w-[100px]">
+                  <div className="flex items-center gap-1.5 lg:gap-2">
+                    <p className="font-poppins text-[22px] sm:text-[26px] font-bold leading-none text-[#165ba7]">
                       <CountUp value={500} suffix="+" />
                     </p>
-                    <BadgeCheck className="w-[22px] h-[22px] text-[#165ba7] -mt-1" />
+                    <BadgeCheck className="w-5 h-5 lg:w-[22px] lg:h-[22px] text-[#165ba7] -mt-1" />
                   </div>
-                  <p className="mt-1.5 font-poppins text-[12px] font-medium uppercase tracking-[0.08em] text-[#767676]">
+                  <p className="mt-1.5 font-poppins text-[10px] sm:text-[12px] font-medium uppercase tracking-[0.08em] text-[#767676]">
                     Smiles Transformed
                   </p>
                 </div>
-                <div className="h-[38px] w-px bg-[#E5E7EB]" />
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <p className="font-poppins text-[26px] font-bold leading-none text-[#165ba7]">
+                <div className="hidden sm:block h-[38px] w-px bg-[#E5E7EB] shrink-0" />
+                <div className="flex flex-col min-w-[90px]">
+                  <div className="flex items-center gap-1.5 lg:gap-2">
+                    <p className="font-poppins text-[22px] sm:text-[26px] font-bold leading-none text-[#165ba7]">
                       4.8/5
                     </p>
-                    <Star className="w-5 h-5 text-[#F59E0B] fill-[#F59E0B] -mt-1" />
+                    <Star className="w-4 h-4 lg:w-5 lg:h-5 text-[#F59E0B] fill-[#F59E0B] -mt-1" />
                   </div>
-                  <p className="mt-1.5 font-poppins text-[12px] font-medium uppercase tracking-[0.08em] text-[#767676]">
+                  <p className="mt-1.5 font-poppins text-[10px] sm:text-[12px] font-medium uppercase tracking-[0.08em] text-[#767676]">
                     Google Rating
                   </p>
                 </div>
-                <div className="h-[38px] w-px bg-[#E5E7EB]" />
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-poppins text-[28px] font-bold leading-none text-[#165ba7]">
+                <div className="hidden sm:block h-[38px] w-px bg-[#E5E7EB] shrink-0" />
+                <div className="flex flex-col gap-1 min-w-[90px]">
+                  <div className="flex items-center gap-1.5 lg:gap-2">
+                    <span className="font-poppins text-[22px] sm:text-[28px] font-bold leading-none text-[#165ba7]">
                       <CountUp value={15} suffix="+" />
                     </span>
-                    <Award className="w-[22px] h-[22px] text-[#165ba7] -mt-1" />
+                    <Award className="w-5 h-5 lg:w-[22px] lg:h-[22px] text-[#165ba7] -mt-1" />
                   </div>
-                  <span className="font-poppins text-[10px] font-semibold tracking-widest text-[#767676] uppercase">
+                  <span className="font-poppins text-[9px] sm:text-[10px] font-semibold tracking-widest text-[#767676] uppercase">
                     Years of
                     <br />
                     Excellence
@@ -170,38 +184,42 @@ export default function Gallery() {
               </div>
             </StaggerItem>
 
-            <StaggerItem y={30} className="mt-12">
+            <StaggerItem y={30} className="mt-8 lg:mt-12">
               <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
             </StaggerItem>
           </Stagger>
 
-          <HeroImageCollage images={patientImages} />
+          {/* Desktop-only scrolling collage */}
+          <div className="hidden lg:block">
+            <HeroImageCollage images={patientImages} />
+          </div>
         </div>
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col items-center pt-16 pb-0">
-        <section className="w-full max-w-[1200px] px-6 flex flex-col items-center">
+      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col items-center pt-10 sm:pt-12 lg:pt-16 pb-0 px-0 h-gal-body">
+        <section className="w-full max-w-[1200px] px-4 sm:px-6 flex flex-col items-center h-gal-ba">
           <SectionHeading
             pill="Real Results"
             pillColor="blue"
             align="center"
             title="Before & After Treatments"
-            titleClassName="font-poppins text-[42px] font-semibold h-gal-sechead"
+            titleClassName="font-poppins text-[26px] sm:text-[34px] lg:text-[42px] font-semibold h-gal-sechead"
             description="Explore the remarkable difference our care makes for your smile."
-            className="mb-16"
+            descriptionClassName="text-[13px] sm:text-[14px] lg:text-[15px] h-gal-secdesc"
+            className="mb-8 sm:mb-12 lg:mb-16"
           />
 
           <Stagger
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[1300px]"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 w-full max-w-[1300px] h-gal-ba-grid"
             gap={0.1}
           >
             {treatmentImages.map((src, idx) => (
               <StaggerItem
                 key={idx}
                 y={26}
-                className="relative group overflow-hidden rounded-2xl bg-white shadow-md border border-gray-100 p-2"
+                className="relative group overflow-hidden rounded-xl lg:rounded-2xl bg-white shadow-md border border-gray-100 p-1.5 sm:p-2"
               >
-                <div className="overflow-hidden rounded-xl bg-gray-50">
+                <div className="overflow-hidden rounded-lg lg:rounded-xl bg-gray-50">
                   <img
                     src={src}
                     alt={`Treatment result ${idx + 1}`}
@@ -214,28 +232,28 @@ export default function Gallery() {
           </Stagger>
         </section>
 
-        <div className="w-full max-w-[1200px] h-[1px] bg-gray-200 my-8" />
+        <div className="w-full max-w-[1200px] h-[1px] bg-gray-200 my-8 lg:my-8 mx-4 sm:mx-6" />
 
-        <section className="w-full max-w-[1300px] px-6 mb-8 flex flex-col items-center">
+        <section className="w-full max-w-[1300px] px-4 sm:px-6 mb-8 flex flex-col items-center h-gal-family">
           <SectionHeading
             pill="Happy Faces"
             align="center"
             title="Our Patient Family"
-            titleClassName="font-poppins text-[42px] font-semibold h-gal-sechead"
+            titleClassName="font-poppins text-[26px] sm:text-[34px] lg:text-[42px] font-semibold h-gal-sechead"
             description="Join thousands of happy patients across Noida who trust Dental Esthétique with their smiles. We believe every successful treatment is a life changed, and our greatest reward is seeing our patients leave with renewed confidence."
-            descriptionClassName="max-w-[800px] text-[16px]"
-            className="mb-16"
+            descriptionClassName="max-w-[800px] text-[13px] sm:text-[14px] lg:text-[16px] h-gal-secdesc"
+            className="mb-8 sm:mb-12 lg:mb-16"
           />
 
           <Stagger
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-[1300px] mx-auto"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3 lg:gap-4 w-full max-w-[1300px] mx-auto h-gal-family-grid"
             gap={0.04}
           >
             {patientImages.map((src, imgIdx) => (
               <StaggerItem
                 key={imgIdx}
                 y={24}
-                className="relative group overflow-hidden rounded-2xl bg-gray-100 shadow-[0_4px_10px_rgba(0,0,0,0.05)] cursor-pointer border-[4px] border-white transition-all duration-500 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1 aspect-square"
+                className="relative group overflow-hidden rounded-xl lg:rounded-2xl bg-gray-100 shadow-[0_4px_10px_rgba(0,0,0,0.05)] cursor-pointer border-[3px] lg:border-[4px] border-white transition-all duration-500 hover:shadow-[0_15px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1 aspect-square"
               >
                 <img
                   src={src}
@@ -248,11 +266,11 @@ export default function Gallery() {
 
             <StaggerItem
               y={24}
-              className="relative overflow-hidden rounded-2xl bg-[#165ba7] p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1"
+              className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#165ba7] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
             >
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 rounded-full flex items-center justify-center mb-3 lg:mb-4">
                 <svg
-                  className="w-6 h-6 text-white"
+                  className="w-5 h-5 lg:w-6 lg:h-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
@@ -265,35 +283,39 @@ export default function Gallery() {
                   />
                 </svg>
               </div>
-              <h3 className="text-white font-poppins text-2xl font-semibold mb-2">
+              <h3 className="text-white font-poppins text-lg sm:text-xl lg:text-2xl font-semibold mb-1.5 lg:mb-2 leading-tight">
                 Your Smile Is Next!
               </h3>
-              <p className="text-white/80 text-sm mb-6">
+              <p className="text-white/80 text-xs sm:text-sm mb-0 lg:mb-6 px-1">
                 Join thousands of our confident patients.
               </p>
             </StaggerItem>
 
             <StaggerItem
               y={24}
-              className="relative overflow-hidden rounded-2xl bg-[#D35B8F] p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1"
+              className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#D35B8F] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
             >
-              <h3 className="text-white font-poppins text-5xl font-semibold mb-2">500+</h3>
-              <p className="text-white/90 text-sm font-poppins uppercase tracking-wider font-semibold">
+              <h3 className="text-white font-poppins text-3xl sm:text-4xl lg:text-5xl font-semibold mb-1.5 lg:mb-2">
+                500+
+              </h3>
+              <p className="text-white/90 text-[11px] sm:text-sm font-poppins uppercase tracking-wider font-semibold">
                 Transformations
               </p>
-              <p className="text-white/70 text-xs mt-2">completed with excellence.</p>
+              <p className="text-white/70 text-[10px] sm:text-xs mt-1.5 lg:mt-2">
+                completed with excellence.
+              </p>
             </StaggerItem>
           </Stagger>
 
-          <Reveal y={24} duration={0.6} className="mt-10 text-center">
+          <Reveal y={24} duration={0.6} className="mt-8 lg:mt-10 text-center">
             <Link
               to="/testimonials#patient-stories"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#165ba7] px-8 font-poppins text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(22,91,167,0.3)] transition-all hover:bg-[#114076] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(22,91,167,0.4)]"
+              className="inline-flex h-11 lg:h-12 items-center justify-center gap-2 rounded-full bg-[#165ba7] px-6 lg:px-8 font-poppins text-[14px] lg:text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(22,91,167,0.3)] transition-all hover:bg-[#114076] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(22,91,167,0.4)] h-gal-link"
             >
               Patient Testimonials
               <svg
-                width="20"
-                height="20"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
