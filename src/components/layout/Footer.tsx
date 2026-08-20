@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import AppointmentCta from '../AppointmentCta'
-import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../ui/links'
 import { scrollToId } from '../../utils/scroll'
 import { handlePhoneClick } from '../../utils/contactActions'
 
@@ -25,13 +25,14 @@ export default function Footer() {
 
       <div className="w-full bg-[#F3F4F6] flex justify-center pt-10 pb-10 lg:py-[80px] h-ft-main">
         <div className="w-full max-w-[1400px] lg:w-[1400px] flex flex-col lg:flex-row justify-between gap-8 lg:gap-0 px-5 sm:px-6 lg:px-10 box-border h-ft-cols">
-
           <div className="w-full lg:w-[320px] flex flex-col h-ft-brand">
             <div className="flex items-end text-[20px] lg:text-[26px] font-bold tracking-tight leading-none gap-[6px]">
               <img
                 src="/images/home/logo.svg"
                 alt=""
                 aria-hidden="true"
+                width={32}
+                height={42}
                 className="h-[32px] lg:h-[42px] w-auto mb-[-2px]"
               />
               <div>
@@ -47,11 +48,19 @@ export default function Footer() {
               <div className="flex items-start gap-2.5 text-[#165ba7] font-semibold text-[12.5px] lg:text-[14px]">
                 <Phone size={16} className="shrink-0 mt-0.5" />
                 <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
-                  <a href="tel:+919818862265" className="hover:underline" onClick={(e) => handlePhoneClick(e, '+91 98188 62265')}>
+                  <a
+                    href="tel:+919818862265"
+                    className="hover:underline"
+                    onClick={(e) => handlePhoneClick(e, '+91 98188 62265')}
+                  >
                     +91 98188 62265
                   </a>
                   <span className="text-[#D35B8F] font-normal">|</span>
-                  <a href="tel:01204266344" className="hover:underline" onClick={(e) => handlePhoneClick(e, '0120 4266 344')}>
+                  <a
+                    href="tel:01204266344"
+                    className="hover:underline"
+                    onClick={(e) => handlePhoneClick(e, '0120 4266 344')}
+                  >
                     0120 4266 344
                   </a>
                 </div>
@@ -90,7 +99,6 @@ export default function Footer() {
             </div>
           </div>
 
-
           <div className="w-full lg:w-[160px] flex flex-col h-ft-links">
             <h3 className="text-[#165ba7] text-[18px] lg:text-[22px] font-bold tracking-tight leading-none">
               Quick Links
@@ -114,7 +122,6 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
 
           <div className="w-full lg:w-[340px] flex flex-col h-ft-c3">
             <div className="pl-0 lg:pl-14">
@@ -148,7 +155,6 @@ export default function Footer() {
             </div>
           </div>
 
-
           <div className="w-full lg:w-[280px] flex flex-col h-ft-social">
             <h3 className="text-[#165ba7] text-[18px] lg:text-[22px] font-bold tracking-tight leading-none">
               Social Networks
@@ -166,7 +172,16 @@ export default function Footer() {
                 aria-label="Facebook"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-[#3b5998] text-white hover:opacity-90 transition-opacity"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
@@ -177,7 +192,16 @@ export default function Footer() {
                 aria-label="Google Maps"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-[#EA4335] text-white hover:opacity-90 transition-opacity"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
@@ -200,7 +224,16 @@ export default function Footer() {
                 aria-label="Instagram"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-[#cb2027] text-white hover:opacity-90 transition-opacity"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -210,7 +243,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
 
       <div className="w-full bg-[#165ba7] flex justify-center py-3 lg:py-4 h-ft-bar">
         <div className="w-full max-w-[1400px] lg:w-[1400px] flex items-center justify-center px-5 sm:px-6 lg:px-10 box-border text-white h-ft-bottom">

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import PageHero from '../components/ui/PageHero'
-import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
+import HeroButton from '../components/ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem } from '../components/ui/Reveal'
 import { usePageMeta, SITE_URL } from '../utils/seo'
@@ -11,7 +12,11 @@ const DOCTORS_DATA = {
     id: 'ds',
     initials: 'DS',
     specialisations: [
-      { n: '01', title: 'Single Sitting Painless Root Canal Treatment (RCT)', link: '/services#catalogue' },
+      {
+        n: '01',
+        title: 'Single Sitting Painless Root Canal Treatment (RCT)',
+        link: '/services#catalogue',
+      },
       { n: '02', title: 'Microscopic Root Canal Treatment (RCT)', link: '/services#catalogue' },
       { n: '03', title: 'Re-RCT Treatment', link: '/services#catalogue' },
       { n: '04', title: 'Smile Designing' },
@@ -68,7 +73,11 @@ const DOCTORS_DATA = {
     specialisations: [
       { n: '01', title: 'Full Mouth Rehabilitation', link: '/services#catalogue' },
       { n: '02', title: 'Full Mouth Implants', link: '/services#catalogue' },
-      { n: '03', title: 'Single/Multiple Tooth Replacements With Implants', link: '/services#catalogue' },
+      {
+        n: '03',
+        title: 'Single/Multiple Tooth Replacements With Implants',
+        link: '/services#catalogue',
+      },
       { n: '04', title: 'Aligners' },
       { n: '05', title: 'Braces' },
     ],
@@ -76,8 +85,7 @@ const DOCTORS_DATA = {
     pronoun: 'His',
     tabTitle: 'Orthodontist, Implantologist',
     image: '/images/about/75524db1b2dcef952c107879077fccb06763426e-removebg-preview.webp',
-    imageClass:
-      'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
+    imageClass: 'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
     pill: 'Orthodontist & Implantologist',
     desc1:
       'A distinguished Orthodontist, Implantologist and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence, dedicated to restoring oral health and aesthetics.',
@@ -174,7 +182,11 @@ export default function DoctorProfile() {
           id={activeTab}
           className="relative z-30 mt-8 lg:mt-16 flex flex-col w-full max-w-[1210px] lg:w-[1210px] gap-4 lg:gap-6 px-5 lg:px-0 scroll-mt-28 lg:scroll-mt-32 h-dp-tabs"
         >
-          <Reveal y={20} duration={0.6} className="flex flex-row flex-wrap items-stretch gap-2.5 lg:gap-4 w-full h-dp-tablist">
+          <Reveal
+            y={20}
+            duration={0.6}
+            className="flex flex-row flex-wrap items-stretch gap-2.5 lg:gap-4 w-full h-dp-tablist"
+          >
             {(Object.keys(DOCTORS_DATA) as DoctorId[]).map((id) => {
               const doctor = DOCTORS_DATA[id]
               return (
@@ -265,7 +277,6 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-
         <div className="w-full max-w-[1210px] lg:w-[1210px] mt-12 lg:mt-20 flex flex-col px-5 lg:px-0 h-dp-about">
           <Reveal y={24} duration={0.7} className="flex flex-col">
             <SectionPill variant="solid">In {activeDoctor.pronoun} Own Practice</SectionPill>
@@ -287,7 +298,6 @@ export default function DoctorProfile() {
                   duration={0.6}
                   className={`relative flex w-full justify-between items-start h-tl-row ${index !== 0 ? 'mt-8 lg:mt-16' : ''}`}
                 >
-
                   <div className="flex lg:hidden w-full gap-3.5 items-start h-tl-mobile">
                     <div className="flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[15px] shrink-0">
                       {item.n}
@@ -301,7 +311,6 @@ export default function DoctorProfile() {
                       </p>
                     </div>
                   </div>
-
 
                   <div
                     className={`hidden lg:flex w-1/2 pr-12 flex-col items-end text-right h-tl-l ${isLeft ? '' : 'opacity-0 invisible'}`}
@@ -321,7 +330,6 @@ export default function DoctorProfile() {
                   <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-[54px] h-[54px] rounded-full bg-[#D35B8F] text-white font-poppins font-semibold text-[18px] z-10 ring-[12px] ring-white h-tl-dot">
                     {item.n}
                   </div>
-
 
                   <div
                     className={`hidden lg:flex w-1/2 pl-12 flex-col items-start text-left pt-1 h-tl-r ${!isLeft ? '' : 'opacity-0 invisible'}`}
@@ -343,7 +351,11 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        <Reveal y={40} duration={0.7} className="w-full flex justify-center mt-6 lg:mt-8 mb-4 px-5 lg:px-0">
+        <Reveal
+          y={40}
+          duration={0.7}
+          className="w-full flex justify-center mt-6 lg:mt-8 mb-4 px-5 lg:px-0"
+        >
           <div
             className="flex items-center justify-center w-full max-w-[1280px] lg:w-[1280px] h-auto min-h-0 lg:h-[252px] px-5 py-10 sm:px-10 lg:px-24 bg-cover bg-center bg-no-repeat rounded-2xl lg:rounded-none h-dp-quote"
             style={{
@@ -358,16 +370,26 @@ export default function DoctorProfile() {
           </div>
         </Reveal>
 
-        <div id="specialisations" className="mt-8 lg:mt-12 w-full flex justify-center scroll-mt-8 px-5 lg:px-0">
+        <div
+          id="specialisations"
+          className="mt-8 lg:mt-12 w-full flex justify-center scroll-mt-8 px-5 lg:px-0"
+        >
           <div className="flex w-full max-w-[1280px] lg:w-[1280px] bg-[#F9F4F1] rounded-[20px] lg:rounded-[26px] py-8 lg:py-14 px-4 sm:px-6 lg:px-0 flex-col items-center gap-6 lg:gap-10 h-dp-spec">
-            <Reveal y={24} duration={0.7} className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col gap-2 px-1 lg:px-0">
+            <Reveal
+              y={24}
+              duration={0.7}
+              className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col gap-2 px-1 lg:px-0"
+            >
               <SectionPill>FOCUS AREAS</SectionPill>
               <h2 className="font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-tight lg:leading-none text-[#28231F]">
                 Fields of Specialisation
               </h2>
             </Reveal>
 
-            <Stagger className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col mt-2 lg:mt-4 h-dp-spec-in" gap={0.1}>
+            <Stagger
+              className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col mt-2 lg:mt-4 h-dp-spec-in"
+              gap={0.1}
+            >
               {activeDoctor.specialisations.map((card, index) => {
                 const rowClasses = `group flex items-center justify-between w-full py-5 lg:py-8 gap-3 border-b border-[#28231F]/10 hover:border-[#D35B8F] transition-colors duration-300 h-dp-spec-row ${card.link ? 'cursor-pointer' : 'cursor-default'} ${index === 0 ? 'border-t' : ''}`
                 const rowContent = (
@@ -428,7 +450,12 @@ export default function DoctorProfile() {
               </Reveal>
 
               <div className="flex w-full flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 h-dp-award">
-                <Reveal x={-40} y={0} duration={0.7} className="w-full lg:w-auto flex justify-center">
+                <Reveal
+                  x={-40}
+                  y={0}
+                  duration={0.7}
+                  className="w-full lg:w-auto flex justify-center"
+                >
                   <img
                     key={activeDoctor.id + 'award'}
                     src={activeDoctor.award.image}

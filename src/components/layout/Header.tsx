@@ -246,8 +246,9 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed left-0 top-0 z-[200] w-full bg-white shadow-md transition-transform duration-300 h-hdr-sticky ${isSticky ? 'translate-y-0' : '-translate-y-full'
-          }`}
+        className={`fixed left-0 top-0 z-[200] w-full bg-white shadow-md transition-transform duration-300 h-hdr-sticky ${
+          isSticky ? 'translate-y-0' : '-translate-y-full'
+        }`}
       >
         <div className="mx-auto flex h-[76px] w-[1200px] items-center justify-between">
           <Link to="/" className="flex items-center gap-2 -ml-16">

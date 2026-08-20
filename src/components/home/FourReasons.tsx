@@ -26,7 +26,10 @@ const reasons = [
 export default function FourReasons() {
   return (
     <div className="relative left-0 top-0 flex w-full flex-col px-5 py-10 lg:absolute lg:left-[78px] lg:top-[2934px] lg:w-[1280px] lg:px-0 lg:py-0 gap-8 lg:gap-10 h-reasons">
-      <Stagger className="flex w-full lg:w-[638px] flex-col gap-2.5 lg:gap-[15px] h-reasons-t" gap={0.15}>
+      <Stagger
+        className="flex w-full lg:w-[638px] flex-col gap-2.5 lg:gap-[15px] h-reasons-t"
+        gap={0.15}
+      >
         <StaggerItem>
           <h2 className="font-poppins text-[28px] lg:text-[48px] font-normal leading-tight lg:leading-none text-[#28231F]">
             Four reasons patients stay
@@ -44,7 +47,10 @@ export default function FourReasons() {
         gap={0.12}
       >
         {reasons.map((r) => (
-          <StaggerItem key={r.num} className="flex w-full lg:w-[220px] flex-col items-start lg:items-center h-reasons-i">
+          <StaggerItem
+            key={r.num}
+            className="flex w-full lg:w-[220px] flex-col items-start lg:items-center h-reasons-i"
+          >
             <div className="flex w-full lg:w-[220px] flex-col items-start lg:items-center gap-3 lg:gap-10">
               <div className="relative flex h-[52px] lg:h-[97px] w-[100px] lg:w-[177px] items-start justify-start lg:justify-center overflow-hidden">
                 <span

@@ -78,7 +78,11 @@ export default function ServicesGridSection() {
         gap={0.08}
       >
         {services.map((service, index) => (
-          <StaggerItem key={index} y={28} className="flex flex-col gap-2.5 lg:gap-4 group h-svc-item">
+          <StaggerItem
+            key={index}
+            y={28}
+            className="flex flex-col gap-2.5 lg:gap-4 group h-svc-item"
+          >
             <div className="flex flex-col lg:flex-row gap-2 lg:gap-3 items-start">
               <div
                 className="shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"

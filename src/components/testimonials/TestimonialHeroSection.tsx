@@ -119,7 +119,6 @@ export default function TestimonialHeroSection() {
         ))}
       </div>
 
-
       <div className="lg:hidden w-full max-w-[720px] mx-auto mb-5 overflow-hidden h-tst-strip">
         <div className="flex gap-2.5 overflow-x-auto pb-1 px-0.5 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {patients.slice(0, 10).map((p) => (
@@ -170,7 +169,12 @@ export default function TestimonialHeroSection() {
             <GoogleIcon size={16} />
           </span>
           Read Patient Stories
-          <svg className="w-[18px] h-[18px] lg:w-5 lg:h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg
+            className="w-[18px] h-[18px] lg:w-5 lg:h-5 shrink-0"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

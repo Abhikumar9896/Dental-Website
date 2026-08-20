@@ -1,11 +1,27 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import { tmpdir } from 'node:os'
+import { build } from 'esbuild'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = join(__dirname, '..', 'dist')
 
-const SITE_URL = 'https://dental-Esthetique.vercel.app'
+const ssrOut = join(tmpdir(), `dental-ssr-${Date.now()}.cjs`)
+await build({
+  entryPoints: [join(__dirname, '..', 'src', 'ssr.tsx')],
+  bundle: true,
+  format: 'cjs',
+  platform: 'node',
+  jsx: 'automatic',
+  minify: true,
+  target: 'node20',
+  logLevel: 'silent',
+  outfile: ssrOut,
+})
+const { renderPage } = await import(pathToFileURL(ssrOut).href)
+
+const SITE_URL = 'https://www.dentalesthetique.in'
 
 const routes = [
   {
@@ -16,7 +32,7 @@ const routes = [
       'Multi-speciality dental clinic in Sector 22 Noida. Painless root canal, dental implants, smile designing, teeth whitening & braces by expert dentists. Book an appointment today.',
     image: '/images/home/hero1.webp',
     preloads: [
-      { href: '/images/home/hero1.webp', as: 'image', fetchpriority: 'high' },
+      { href: '/images/home/mobile/hero1-1120.webp', as: 'image', fetchpriority: 'high' },
     ],
     schema: 'home',
   },
@@ -198,7 +214,7 @@ const faqItems = [
   },
 ]
 
-function schemaFor(key, path) {
+function schemaFor(key) {
   if (key === 'home') {
     return [
       dentistSchema,
@@ -242,6 +258,7 @@ function buildHtml(route) {
   const html = readFileSync(join(distDir, 'index.html'), 'utf-8')
   const url = `${SITE_URL}${route.path}`
   const image = `${SITE_URL}${route.image}`
+  const body = renderPage(route.path)
 
   const titleTag = `<title>${escapeHtml(route.title)}</title>`
   const descriptionTag = `<meta name="description" content="${escapeHtml(route.description)}" />`
@@ -267,7 +284,7 @@ function buildHtml(route) {
         `<link rel="preload" as="image" href="${p.href}" ${p.fetchpriority ? `fetchpriority="${p.fetchpriority}"` : ''} />`,
     )
     .join('\n    ')
-  const schemaTags = schemaFor(route.schema, route.path)
+  const schemaTags = schemaFor(route.schema)
     .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
     .join('\n    ')
 
@@ -288,10 +305,18 @@ function buildHtml(route) {
     clean = clean.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
     clean = clean.replace(/<link rel="preload" as="image"[^>]*\/?>/g, '')
     clean = clean.replace(/\n[ \t]*\n+/g, '\n')
-    return `<head>${clean}\n    ${metaTags}\n    ${preloadTags}\n    ${schemaTags}\n  </head>`
+    const earlyTags =
+      (clean.match(/<meta charset[^>]*\/?>\s*/) || [''])[0] +
+      (clean.match(/<meta name="viewport"[^>]*\/?>\s*/) || [''])[0]
+    return `<head>\n    ${earlyTags}${preloadTags}\n    ${metaTags}\n    ${schemaTags}\n    ${clean.replace(/<meta charset[^>]*\/?>\s*/, '').replace(/<meta name="viewport"[^>]*\/?>\s*/, '')}\n  </head>`
   })
 
-  return head
+  const withBody = head.replace(
+    '<div id="root"></div>',
+    `<div id="root">${body}</div>`,
+  )
+
+  return withBody
 }
 
 for (const route of routes) {

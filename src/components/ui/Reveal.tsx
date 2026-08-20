@@ -1,4 +1,3 @@
-import { motion, useReducedMotion, useInView, animate } from 'framer-motion'
 import {
   Children,
   cloneElement,
@@ -6,10 +5,19 @@ import {
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type ReactNode,
 } from 'react'
 
-const EASE = [0.22, 1, 0.36, 1] as const
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)'
+
+function prefersReducedMotion() {
+  return (
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+}
 
 type RevealProps = {
   children: ReactNode
@@ -32,18 +40,41 @@ export default function Reveal({
   blur = false,
   className = '',
 }: RevealProps) {
-  const reduce = useReducedMotion()
-  if (reduce) return <div className={className}>{children}</div>
+  const ref = useRef<HTMLDivElement>(null)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    if (prefersReducedMotion()) return
+    const el = ref.current
+    if (!el) return
+    setHidden(true)
+    if (typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHidden(false)
+          if (once) io.disconnect()
+        } else if (!once) {
+          setHidden(true)
+        }
+      },
+      { rootMargin: '-60px' },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [once])
+
+  const style: CSSProperties = {
+    opacity: hidden ? 0 : 1,
+    transform: hidden ? `translate3d(${x}px, ${y}px, 0)` : 'translate3d(0, 0, 0)',
+    filter: blur && hidden ? 'blur(8px)' : 'none',
+    transition: `opacity ${duration}s ${EASE} ${delay}s, transform ${duration}s ${EASE} ${delay}s, filter ${duration}s ${EASE} ${delay}s`,
+  }
+
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y, x, filter: blur ? 'blur(8px)' : 'none' }}
-      whileInView={{ opacity: 1, y: 0, x: 0, filter: 'blur(0px)' }}
-      viewport={{ once, margin: '-60px' }}
-      transition={{ duration, delay, ease: EASE }}
-    >
+    <div ref={ref} className={className} style={style}>
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -92,24 +123,40 @@ export function StaggerItem({
   gap?: number
   delay?: number
 }) {
-  const reduce = useReducedMotion()
-  if (reduce)
-    return (
-      <div className={className} style={style}>
-        {children}
-      </div>
+  const ref = useRef<HTMLDivElement>(null)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    if (prefersReducedMotion()) return
+    const el = ref.current
+    if (!el) return
+    setHidden(true)
+    if (typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHidden(false)
+          io.disconnect()
+        }
+      },
+      { rootMargin: '-40px' },
     )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  const d = delay + Math.min(index * gap, 0.8)
+  const merged: CSSProperties = {
+    ...style,
+    opacity: hidden ? 0 : 1,
+    transform: hidden ? `translate3d(${x}px, ${y}px, 0)` : 'translate3d(0, 0, 0)',
+    transition: `opacity 0.6s ${EASE} ${d}s, transform 0.6s ${EASE} ${d}s`,
+  }
+
   return (
-    <motion.div
-      className={className}
-      style={style}
-      initial={{ opacity: 0, y, x }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: delay + Math.min(index * gap, 0.8), ease: EASE }}
-    >
+    <div ref={ref} className={className} style={merged}>
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -127,13 +174,17 @@ export function Float({
   className?: string
 }) {
   return (
-    <motion.div
+    <div
       className={className}
-      animate={{ y: [-amplitude / 2, amplitude / 2, -amplitude / 2] }}
-      transition={{ duration, delay, repeat: Infinity, ease: 'easeInOut' }}
+      style={
+        {
+          animation: `h-float ${duration}s ease-in-out ${delay}s infinite`,
+          '--float-a': `${amplitude}px`,
+        } as CSSProperties
+      }
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -149,18 +200,48 @@ export function CountUp({
   className?: string
 }) {
   const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-40px' })
+  const started = useRef(false)
   const [display, setDisplay] = useState('0')
 
   useEffect(() => {
-    if (!inView) return
-    const controls = animate(0, value, {
-      duration,
-      ease: 'easeOut',
-      onUpdate: (v) => setDisplay(Math.round(v).toString()),
-    })
-    return () => controls.stop()
-  }, [inView, value, duration])
+    if (prefersReducedMotion()) {
+      setDisplay(Math.round(value).toString())
+      return
+    }
+    const el = ref.current
+    if (!el) return
+    let raf = 0
+    const run = () => {
+      if (started.current) return
+      started.current = true
+      const t0 = performance.now()
+      const tick = (t: number) => {
+        const p = Math.min((t - t0) / (duration * 1000), 1)
+        const eased = 1 - Math.pow(1 - p, 3)
+        setDisplay(Math.round(value * eased).toString())
+        if (p < 1) raf = requestAnimationFrame(tick)
+      }
+      raf = requestAnimationFrame(tick)
+    }
+    if (typeof IntersectionObserver === 'undefined') {
+      run()
+      return
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          io.disconnect()
+          run()
+        }
+      },
+      { rootMargin: '-40px' },
+    )
+    io.observe(el)
+    return () => {
+      io.disconnect()
+      cancelAnimationFrame(raf)
+    }
+  }, [value, duration])
 
   return (
     <span ref={ref} className={className}>

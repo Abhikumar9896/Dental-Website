@@ -27,12 +27,11 @@ export default function KeyTreatments() {
       </Reveal>
 
       <div className="relative h-auto lg:h-[507px] w-full lg:w-[1275px] flex flex-col gap-3.5 lg:block h-treat-cards">
-
         <Reveal x={-50} y={0} delay={0.1} className="w-full">
           <div className="relative lg:absolute left-0 top-0 lg:top-1 h-auto lg:h-[503px] w-full lg:w-[305px] rounded-xl border border-[rgba(0,0,0,0.22)] bg-white p-5 lg:p-0 flex flex-col gap-4 lg:block h-treat-c1">
             <div className="relative lg:absolute left-0 lg:left-7 top-0 lg:top-7 w-full lg:w-[259px]">
               <p className="h-auto lg:h-[81px] font-poppins text-[40px] lg:text-[64px] font-normal leading-none text-[#28231F] h-treat-c1n">
-                <CountUp value={5000} suffix="+" />
+                <CountUp value={20} suffix="K+" />
               </p>
               <p className="mt-1 font-poppins text-[15px] lg:text-xl text-[#696969]">
                 Successful treatments performed
@@ -75,7 +74,6 @@ export default function KeyTreatments() {
           </div>
         </Reveal>
 
-
         <Reveal x={60} y={0} delay={0.2} className="w-full">
           <NotchedCard
             className="lg:left-[325px] lg:top-0 h-treat-c2"
@@ -115,12 +113,11 @@ export default function KeyTreatments() {
             </div>
 
             <p className="relative lg:absolute left-0 lg:left-7 top-auto lg:top-[366px] z-20 h-auto lg:h-[86px] w-full lg:w-[220px] font-poppins text-[13px] lg:text-sm font-light leading-relaxed lg:leading-[17.06px] text-[#28231F] pr-2">
-              Straighten your teeth discreetly with comfortable, custom-made invisible aligners for a
-              perfectly aligned and confident smile.
+              Straighten your teeth discreetly with comfortable, custom-made invisible aligners for
+              a perfectly aligned and confident smile.
             </p>
           </NotchedCard>
         </Reveal>
-
 
         <Reveal x={80} y={0} delay={0.3} className="w-full">
           <NotchedCard
@@ -143,7 +140,6 @@ export default function KeyTreatments() {
             </div>
           </NotchedCard>
         </Reveal>
-
 
         <Reveal x={80} y={0} delay={0.4} className="w-full">
           <NotchedCard

@@ -1,4 +1,5 @@
-import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
+import HeroButton from '../components/ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
 import PageHero from '../components/ui/PageHero'
 import AppointmentCta from '../components/AppointmentCta'
 import { usePageMeta, SITE_URL } from '../utils/seo'
@@ -55,7 +56,6 @@ export default function Contact() {
   })
   return (
     <div className="w-full overflow-x-hidden bg-white h-contact-page">
-
       <div className="relative mx-auto w-full max-w-full lg:w-[1440px] lg:min-w-[1440px] h-auto lg:h-[1200px] overflow-hidden bg-[#F9F4F1] pb-8 lg:pb-0 h-canvas h-contact-canvas">
         <PageHero
           height="lg:h-[max(100vh,800px)]"
@@ -64,7 +64,8 @@ export default function Contact() {
           tagline="Contact Us"
           title={
             <>
-              <span className="text-black">Contact Dental</span> <span className="text-[#D35B8F]">Esthetique</span>
+              <span className="text-black">Contact Dental</span>{' '}
+              <span className="text-[#D35B8F]">Esthetique</span>
             </>
           }
           description="Have questions or want to book an appointment? We'd love to hear from you."
@@ -83,7 +84,10 @@ export default function Contact() {
 
           <div className="mt-8 lg:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 h-contact-grid">
             {contactCards.map((card) => (
-              <div key={card.title} className="flex flex-col items-start gap-2.5 lg:gap-3 h-contact-card">
+              <div
+                key={card.title}
+                className="flex flex-col items-start gap-2.5 lg:gap-3 h-contact-card"
+              >
                 <div className="flex h-11 w-11 lg:h-12 lg:w-12 items-center justify-center rounded-xl bg-[#f2f8ff] shrink-0">
                   <svg
                     width="22"

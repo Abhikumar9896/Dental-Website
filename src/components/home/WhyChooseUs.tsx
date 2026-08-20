@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
       <Float amplitude={12} duration={5} delay={0.9} className="h-why-f2">
         <div className="relative lg:absolute left-0 lg:left-[364px] top-0 lg:top-[301px] flex h-full min-h-[100px] lg:h-[178px] w-full lg:w-[226px] flex-col justify-center gap-1.5 lg:gap-[10px] rounded-xl lg:rounded-lg bg-gradient-to-br from-[#F2F8FF] to-[#E0EFFB] p-3.5 lg:p-[25px] shadow-[0_15px_40px_rgba(0,0,0,0.08)] border border-[#165ba7]">
           <span className="font-poppins text-[26px] lg:text-[34px] font-semibold leading-none text-[#165ba7]">
-            <CountUp value={50} suffix="K+" />
+            <CountUp value={20} suffix="K+" />
           </span>
           <span className="font-poppins text-[12px] lg:text-[14px] font-semibold leading-none text-gray-600">
             Patients Treated
@@ -78,7 +78,8 @@ export default function WhyChooseUs() {
         <Stagger className="h-why-intro" gap={0.12}>
           <StaggerItem>
             <h2 className="font-poppins text-[22px] lg:text-[36px] font-bold leading-[1.2] text-[#333] whitespace-normal lg:whitespace-nowrap h-why-h">
-              Why Choose <span className="text-[#165ba7]">Dental</span> <span className="text-[#D35B8F]">Esthetique</span> ?
+              Why Choose <span className="text-[#165ba7]">Dental</span>{' '}
+              <span className="text-[#D35B8F]">Esthetique</span> ?
             </h2>
           </StaggerItem>
           <StaggerItem>
@@ -93,7 +94,10 @@ export default function WhyChooseUs() {
           <p className="font-poppins text-[11px] lg:text-[13px] font-semibold tracking-[0.14em] uppercase text-[#9E6187]">
             Key Highlights
           </p>
-          <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 lg:gap-y-8 h-why-grid" gap={0.08}>
+          <Stagger
+            className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 lg:gap-y-8 h-why-grid"
+            gap={0.08}
+          >
             {highlights.map(({ title, description, icon: Icon }) => (
               <StaggerItem key={title}>
                 <div className="flex items-start gap-2.5 lg:gap-3">

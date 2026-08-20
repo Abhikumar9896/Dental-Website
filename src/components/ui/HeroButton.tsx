@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { To } from 'react-router-dom'
 import { scrollToId } from '../../utils/scroll'
+import { BOOK_APPOINTMENT_TO } from './links'
 
 interface HeroButtonProps {
   to?: To
@@ -9,9 +10,6 @@ interface HeroButtonProps {
   className?: string
   variant?: 'solid' | 'outline'
 }
-
-
-export const BOOK_APPOINTMENT_TO: To = { pathname: '/', hash: 'book-appointment' }
 
 export default function HeroButton({
   to = BOOK_APPOINTMENT_TO,

@@ -1,5 +1,6 @@
 import PageHero from '../components/ui/PageHero'
-import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
+import HeroButton from '../components/ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Float } from '../components/ui/Reveal'
 import { usePageMeta, SITE_URL } from '../utils/seo'
@@ -54,7 +55,12 @@ export default function About() {
                 Creating Beautiful Smiles Through Excellence in Dentistry
               </h2>
 
-              <Reveal y={24} delay={0.2} duration={0.7} className="mt-10 flex flex-col gap-6 h-st-points">
+              <Reveal
+                y={24}
+                delay={0.2}
+                duration={0.7}
+                className="mt-10 flex flex-col gap-6 h-st-points"
+              >
                 <ul className="flex flex-col gap-5 h-st-list">
                   {storyPoints.map((point) => (
                     <li key={point} className="flex items-start gap-4">
@@ -151,7 +157,11 @@ export default function About() {
           </div>
         </div>
 
-        <Reveal y={40} duration={0.8} className="mt-24 w-full flex justify-center z-10 mb-4 h-about-banner-wrap">
+        <Reveal
+          y={40}
+          duration={0.8}
+          className="mt-24 w-full flex justify-center z-10 mb-4 h-about-banner-wrap"
+        >
           <div className="w-[1280px] h-[340px] relative overflow-hidden flex flex-col items-center justify-center text-center px-[160px] rounded-tl-[9px] rounded-tr-[200px] rounded-br-[4px] rounded-bl-[200px] shadow-lg h-about-banner">
             <img
               src="/images/home/bgblue.webp"
@@ -163,11 +173,11 @@ export default function About() {
                 Our Commitment to Every Patient
               </h2>
               <p className="font-poppins text-[15px] leading-[1.7] font-normal text-white/90 text-center mb-7 max-w-[900px] h-about-banner-p">
-                At Dental Esthetique, every patient is treated with respect, empathy and honesty.
-                We are committed to providing transparent consultations, personalized treatment
-                plans and a comfortable experience using modern techniques and advanced technology.
-                Our goal is not only to treat dental concerns but to build long-term relationships
-                based on trust and exceptional care.
+                At Dental Esthetique, every patient is treated with respect, empathy and honesty. We
+                are committed to providing transparent consultations, personalized treatment plans
+                and a comfortable experience using modern techniques and advanced technology. Our
+                goal is not only to treat dental concerns but to build long-term relationships based
+                on trust and exceptional care.
               </p>
               <p className="font-fraunces text-[22px] font-medium tracking-wide h-about-banner-brand">
                 Dental Esthetique
@@ -184,16 +194,34 @@ export default function About() {
                 Uncompromising Quality & Care
               </h2>
               <p className="font-poppins text-[16px] leading-relaxed text-[#767676] mt-4 max-w-[480px] h-gtk-p">
-                Your health and comfort are our absolute priorities. We have built a world-class environment backed by elite specialists, cutting-edge diagnostic technology and rigid sterilization protocols so you can experience dentistry at its finest.
+                Your health and comfort are our absolute priorities. We have built a world-class
+                environment backed by elite specialists, cutting-edge diagnostic technology and
+                rigid sterilization protocols so you can experience dentistry at its finest.
               </p>
             </Reveal>
 
             <div className="flex flex-col gap-4 w-[460px] h-gtk-list">
               {clinicStandards.map((item, index) => (
-                <Reveal key={index} y={20} delay={index * 0.1} duration={0.6} className="w-full flex items-center gap-5 bg-white p-5 rounded-2xl border border-gray-100 shadow-[0_4px_15px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_25px_-5px_rgba(22,91,167,0.08)] transition-shadow duration-300 h-gtk-item">
+                <Reveal
+                  key={index}
+                  y={20}
+                  delay={index * 0.1}
+                  duration={0.6}
+                  className="w-full flex items-center gap-5 bg-white p-5 rounded-2xl border border-gray-100 shadow-[0_4px_15px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_25px_-5px_rgba(22,91,167,0.08)] transition-shadow duration-300 h-gtk-item"
+                >
                   <div className="w-12 h-12 rounded-full bg-[#EAF3FA] flex items-center justify-center shrink-0 h-gtk-icon">
-                    <svg className="w-6 h-6 text-[#165ba7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-6 h-6 text-[#165ba7]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <span className="font-poppins text-[17px] font-medium text-[#28231F] h-gtk-item-t">

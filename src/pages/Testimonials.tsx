@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import TestimonialHeroSection from '../components/testimonials/TestimonialHeroSection'
-import { googleReviews } from '../data/reviews'
+import { googleReviews, practoReviews } from '../data/reviews'
 import Reveal from '../components/ui/Reveal'
 import SectionHeading from '../components/ui/SectionHeading'
 import GoogleIcon from '../components/ui/GoogleIcon'
+import PractoIcon from '../components/ui/PractoIcon'
 import ReviewCard from '../components/ui/ReviewCard'
 import { usePageMeta } from '../utils/seo'
 
@@ -97,7 +98,10 @@ function VideoCard({
       el.pause()
       setIsPlaying(false)
     } else {
-      void el.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false))
+      void el
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false))
     }
   }
 
@@ -258,8 +262,9 @@ function CoverflowCarousel({ videos }: { videos: TestimonialVideo[] }) {
             type="button"
             aria-label={`Show video ${index + 1}`}
             onClick={() => setActiveIndex(index)}
-            className={`h-1.5 rounded-full transition-all ${index === activeIndex ? 'w-6 bg-[#165ba7]' : 'w-1.5 bg-gray-300 hover:bg-gray-400'
-              }`}
+            className={`h-1.5 rounded-full transition-all ${
+              index === activeIndex ? 'w-6 bg-[#165ba7]' : 'w-1.5 bg-gray-300 hover:bg-gray-400'
+            }`}
           />
         ))}
       </div>
@@ -276,7 +281,6 @@ export default function Testimonials() {
   })
   return (
     <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden h-tst-page">
-
       <div className="relative mx-auto flex w-full max-w-[100%] lg:w-[1440px] flex-col items-center pb-0 h-canvas">
         <TestimonialHeroSection />
 
@@ -292,13 +296,18 @@ export default function Testimonials() {
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-5 lg:gap-12 w-full z-10 relative">
-              <div className="flex items-center gap-4 lg:gap-5">
-                <div className="w-[52px] h-[52px] lg:w-[60px] lg:h-[60px] bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.08)] border border-gray-100 flex items-center justify-center shrink-0">
-                  <GoogleIcon size={32} />
+              <div className="flex items-center gap-3 lg:gap-4 -ml-1">
+                <div className="flex items-center gap-2">
+                  <div className="w-[40px] h-[40px] lg:w-[48px] lg:h-[48px] bg-white rounded-[14px] shadow-[0_2px_10px_rgb(0,0,0,0.08)] border border-gray-100 flex items-center justify-center shrink-0">
+                    <GoogleIcon size={32} />
+                  </div>
+                  <div className="w-[40px] h-[40px] lg:w-[48px] lg:h-[48px] bg-white rounded-[14px] shadow-[0_2px_10px_rgb(0,0,0,0.08)] border border-gray-100 flex items-center justify-center shrink-0">
+                    <PractoIcon size={32} />
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[#111827] font-bold text-[18px] lg:text-[22px] font-poppins tracking-tight leading-none mb-1">
-                    Google
+                    Google & Practo
                   </span>
                   <span className="text-[#6B7280] text-[13px] lg:text-[14px] font-medium">
                     Customer Reviews
@@ -336,7 +345,7 @@ export default function Testimonials() {
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[#111827] font-bold text-[22px] lg:text-[28px] font-poppins leading-none">
-                      200+
+                      500+
                     </span>
                     <div className="flex items-center justify-center translate-y-[1px]">
                       <svg
@@ -391,7 +400,6 @@ export default function Testimonials() {
             </div>
           </Reveal>
 
-
           <div
             id="patient-stories"
             className="relative w-full overflow-x-hidden pt-10 pb-12 lg:pt-16 lg:pb-16 flex flex-col items-center lg:w-screen lg:left-1/2 lg:-translate-x-1/2 h-tst-stories"
@@ -411,24 +419,23 @@ export default function Testimonials() {
               className="mb-8 lg:mb-16 relative z-10 px-1 lg:px-4 w-full max-w-[800px]"
             />
 
-
             <div className="relative w-full overflow-hidden h-tst-marquee">
               <div className="flex flex-col gap-4 lg:gap-6">
-                <div className="flex w-max animate-marquee [animation-direction:reverse] hover:[animation-play-state:paused] gap-4 lg:gap-6 px-3">
-                  {[
-                    ...googleReviews.slice(0, Math.ceil(googleReviews.length / 2)),
-                    ...googleReviews.slice(0, Math.ceil(googleReviews.length / 2)),
-                  ].map((review, idx) => (
-                    <ReviewCard key={`row1-${idx}`} review={review} />
+                <div
+                  className="flex w-max animate-marquee [animation-direction:reverse] hover:[animation-play-state:paused] gap-4 lg:gap-6 px-3"
+                  style={{ animationDuration: `${googleReviews.length * 2 * 3}s` }}
+                >
+                  {[...googleReviews, ...googleReviews].map((review, idx) => (
+                    <ReviewCard key={`row1-${idx}`} review={review} platform="google" />
                   ))}
                 </div>
 
-                <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-4 lg:gap-6 px-3">
-                  {[
-                    ...googleReviews.slice(Math.ceil(googleReviews.length / 2)),
-                    ...googleReviews.slice(Math.ceil(googleReviews.length / 2)),
-                  ].map((review, idx) => (
-                    <ReviewCard key={`row2-${idx}`} review={review} />
+                <div
+                  className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-4 lg:gap-6 px-3"
+                  style={{ animationDuration: `${practoReviews.length * 2 * 3}s` }}
+                >
+                  {[...practoReviews, ...practoReviews].map((review, idx) => (
+                    <ReviewCard key={`row2-${idx}`} review={review} platform="practo" />
                   ))}
                 </div>
               </div>

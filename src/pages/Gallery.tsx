@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BadgeCheck, Star, Award } from 'lucide-react'
-import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
+import HeroButton from '../components/ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
 import SectionPill from '../components/ui/SectionPill'
 import SectionHeading from '../components/ui/SectionHeading'
 import Reveal, { Stagger, StaggerItem, CountUp } from '../components/ui/Reveal'
@@ -114,14 +115,13 @@ const galleryImages = [
   { src: '/images/patient/unnamed.webp', category: 'patient' },
 ]
 
-const patientImageUrls = galleryImages.map(img => img.src)
+const patientImageUrls = galleryImages.map((img) => img.src)
 
 export default function Gallery() {
   const [filter, setFilter] = useState<'all' | 'patient' | 'clinic'>('all')
 
-  const displayedImages = filter === 'all'
-    ? galleryImages
-    : galleryImages.filter(img => img.category === filter)
+  const displayedImages =
+    filter === 'all' ? galleryImages : galleryImages.filter((img) => img.category === filter)
   usePageMeta({
     title: 'Smile Gallery | Dental Esthetique - Real Patient Results in Noida',
     description:
@@ -133,7 +133,6 @@ export default function Gallery() {
     <div className="w-full bg-[#FAF8F9] font-poppins overflow-x-hidden min-h-screen h-gal-page">
       <div className="relative w-full h-auto min-h-0 lg:h-[800px] bg-white flex justify-center overflow-hidden shrink-0 h-gal-hero-wrap">
         <div className="relative w-full lg:w-[1440px] h-full z-10 h-gal-hero-in">
-
           <div className="lg:hidden w-full overflow-hidden pt-[76px] px-4 h-gal-strip">
             <div className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
               {patientImageUrls.slice(0, 12).map((src, i) => (
@@ -163,8 +162,8 @@ export default function Gallery() {
                   See the life-changing results of our world-class dental treatments. From subtle
                   enhancements to complete smile makeovers, every transformation is planned with
                   precision, executed with care and finished to perfection. Browse our gallery to
-                  witness the artistry behind each confident smile and imagine what yours could
-                  look like.
+                  witness the artistry behind each confident smile and imagine what yours could look
+                  like.
                 </p>
               </div>
             </StaggerItem>
@@ -173,7 +172,7 @@ export default function Gallery() {
                 <div className="flex flex-col min-w-[100px]">
                   <div className="flex items-center gap-1.5 lg:gap-2">
                     <p className="font-poppins text-[22px] sm:text-[26px] font-bold leading-none text-[#165ba7]">
-                      <CountUp value={500} suffix="+" />
+                      <CountUp value={20} suffix="K+" />
                     </p>
                     <BadgeCheck className="w-5 h-5 lg:w-[22px] lg:h-[22px] text-[#165ba7] -mt-1" />
                   </div>
@@ -197,7 +196,7 @@ export default function Gallery() {
                 <div className="flex flex-col gap-1 min-w-[90px]">
                   <div className="flex items-center gap-1.5 lg:gap-2">
                     <span className="font-poppins text-[22px] sm:text-[28px] font-bold leading-none text-[#165ba7]">
-                      <CountUp value={15} suffix="+" />
+                      <CountUp value={18} suffix="+" />
                     </span>
                     <Award className="w-5 h-5 lg:w-[22px] lg:h-[22px] text-[#165ba7] -mt-1" />
                   </div>
@@ -214,7 +213,6 @@ export default function Gallery() {
               <HeroButton to={BOOK_APPOINTMENT_TO} text="Book an appointment" />
             </StaggerItem>
           </Stagger>
-
 
           <div className="hidden lg:block">
             <HeroImageCollage images={patientImageUrls} />
@@ -293,7 +291,7 @@ export default function Gallery() {
           </div>
 
           <Stagger
-            key={filter} // Forces re-animation when filter changes
+            key={filter}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3 lg:gap-4 w-full max-w-[1300px] mx-auto h-gal-family-grid"
             gap={0.04}
           >
@@ -347,7 +345,7 @@ export default function Gallery() {
                 className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#D35B8F] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
               >
                 <h3 className="text-white font-poppins text-3xl sm:text-4xl lg:text-5xl font-semibold mb-1.5 lg:mb-2">
-                  50k+
+                  20K+
                 </h3>
                 <p className="text-white/90 text-[11px] sm:text-sm font-poppins uppercase tracking-wider font-semibold">
                   Transformations

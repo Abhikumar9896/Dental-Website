@@ -1,4 +1,3 @@
-
 const SCROLL_DURATION_MS = 320
 const DEFAULT_OFFSET = 100
 

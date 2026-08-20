@@ -19,10 +19,7 @@ export default function ShowcaseSection() {
         blur
         className="relative lg:absolute left-auto lg:left-1/2 top-auto lg:top-[264px] z-[2] flex w-full lg:w-[749px] lg:-translate-x-1/2 flex-col items-center order-1 h-shc-head"
       >
-        <div
-          className="relative lg:absolute left-auto lg:left-1/2 top-0 z-[2] flex w-full lg:w-[749px] lg:-translate-x-1/2 flex-col items-center px-5 lg:px-0 gap-3.5 lg:gap-5 h-shc-headin"
-        >
-
+        <div className="relative lg:absolute left-auto lg:left-1/2 top-0 z-[2] flex w-full lg:w-[749px] lg:-translate-x-1/2 flex-col items-center px-5 lg:px-0 gap-3.5 lg:gap-5 h-shc-headin">
           <div className="relative flex h-auto w-fit flex-col items-center gap-1 rounded-xl bg-[#EBF4FF] px-5 py-3 shadow-[0px_8px_24px_rgba(0,0,0,0.08)] lg:block lg:h-[81px] lg:w-[179px] lg:overflow-hidden lg:px-0 lg:py-0 h-shc-logo">
             <img
               src={`${IMG}/logo.svg`}
@@ -40,7 +37,6 @@ export default function ShowcaseSection() {
           </h2>
         </div>
       </Reveal>
-
 
       <Float amplitude={10} duration={5} className="order-2 w-full h-shc-f1">
         <div className="relative mx-4 mb-3 lg:mx-0 lg:mb-0 lg:absolute left-auto lg:left-[206px] top-auto lg:top-[60px] z-[3] flex h-auto lg:h-[240px] w-[calc(100%-32px)] max-w-[400px] lg:w-[251px] flex-col lg:block overflow-hidden rounded-xl bg-[#F4F9FF] shadow-[0px_12px_32px_rgba(0,0,0,0.12)] h-shc-f1-card">
@@ -60,7 +56,6 @@ export default function ShowcaseSection() {
               Discreet, custom-made invisible aligners for a confident smile.
             </p>
           </div>
-
 
           <img
             src={`${IMG}/teeth.webp`}
@@ -87,7 +82,6 @@ export default function ShowcaseSection() {
           loading="lazy"
         />
       </Float>
-
 
       <Float amplitude={12} duration={5.5} delay={0.3} className="order-3 w-full h-shc-f3">
         <div
@@ -192,7 +186,6 @@ export default function ShowcaseSection() {
           loading="lazy"
         />
       </Float>
-
 
       <Float amplitude={11} duration={5} delay={0.5} className="order-4 w-full h-shc-f9">
         <div className="relative mx-4 mb-5 lg:mx-0 lg:mb-0 lg:absolute left-auto lg:left-[903px] top-auto lg:top-[563px] z-[3] h-auto lg:h-[242px] w-[calc(100%-32px)] max-w-[400px] lg:w-[278px] overflow-hidden rounded-xl bg-white shadow-[0px_12px_32px_rgba(0,0,0,0.1)] p-4 lg:p-0">

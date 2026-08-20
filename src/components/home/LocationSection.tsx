@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Clock, ChevronRight } from 'lucide-react'
-import { motion } from 'framer-motion'
 import Reveal from '../ui/Reveal'
-import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../ui/links'
 import { scrollToId } from '../../utils/scroll'
+
+const MAP_SRC =
+  'https://maps.google.com/maps?q=Dental%20Esthetique,%2055,%20Vindhyachal%20Marg,%20Block%20B,%20Sector%2022,%20Noida&t=&z=15&ie=UTF8&iwloc=&output=embed'
 
 export default function LocationSection() {
   return (
@@ -27,7 +29,7 @@ export default function LocationSection() {
           className="relative lg:absolute left-0 top-0 w-full lg:w-[950px] h-[240px] sm:h-[280px] lg:h-[640px] shadow-sm bg-gray-50 overflow-hidden rounded-2xl h-loc-map"
         >
           <iframe
-            src="https://maps.google.com/maps?q=Dental%20Esthetique,%2055,%20Vindhyachal%20Marg,%20Block%20B,%20Sector%2022,%20Noida&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src={MAP_SRC}
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -38,46 +40,6 @@ export default function LocationSection() {
           ></iframe>
 
           <div className="absolute inset-0 z-10 hidden lg:block pointer-events-none"></div>
-
-
-
-          <motion.div
-            className="absolute left-[calc(50%-35px)] top-[calc(50%-78px)] pointer-events-none z-20 flex flex-col items-center"
-            style={{ transformOrigin: 'bottom center' }}
-            animate={{
-              scale: [1, 1.05, 1],
-              filter: [
-                'drop-shadow(0 0 0 rgba(178,93,148,0))',
-                'drop-shadow(0 0 12px rgba(178,93,148,0.45))',
-                'drop-shadow(0 0 0 rgba(178,93,148,0))',
-              ],
-            }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <div className="relative w-[60px] h-[80px]">
-              <svg
-                viewBox="-4 -4 68 88"
-                className="absolute -left-[4px] -top-[4px] w-[68px] h-[88px] drop-shadow-xl"
-              >
-                <path
-                  d="M30 0C13.431 0 0 13.431 0 30c0 22.5 30 50 30 50s30-27.5 30-50C60 13.431 46.569 0 30 0z"
-                  fill="#B25D94"
-                  stroke="rgba(178,93,148,0.4)"
-                  strokeWidth="4"
-                />
-              </svg>
-              <div className="absolute left-[1px] top-[1px] w-[58px] h-[58px] bg-white rounded-full flex items-center justify-center shadow-inner z-10">
-                <img
-                  src="/images/home/logo.svg"
-                  alt="Dental Esthetique Pin"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-[85%] h-[85%] object-contain"
-                />
-              </div>
-            </div>
-            <div className="w-[24px] h-[5px] bg-black/20 rounded-[100%] blur-[2px] mt-0 -translate-y-1"></div>
-          </motion.div>
         </Reveal>
 
         <div className="relative lg:absolute right-0 top-0 lg:top-[60px] w-full lg:w-[380px] h-auto min-h-0 lg:min-h-[440px] bg-[#135CB2] flex flex-col pt-5 pb-5 px-4 lg:pt-8 lg:pb-8 lg:px-8 shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 text-white font-poppins rounded-2xl h-loc-hours">

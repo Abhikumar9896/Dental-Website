@@ -19,7 +19,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
           The greatest gift you <br />
           can wear every day is a <br />
           healthy, confident <br />
-          smile.<span className="relative top-[24px] ml-3 text-[80px] font-bold leading-[0]">”</span>
+          smile.
         </h2>
       </div>
 

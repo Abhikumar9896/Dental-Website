@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
-
-const EASE = [0.22, 1, 0.36, 1] as const
+import Reveal from '../ui/Reveal'
+import { BOOK_APPOINTMENT_TO } from '../ui/links'
 
 export default function HorizontalDoctorCard({
   id,
@@ -33,7 +31,11 @@ export default function HorizontalDoctorCard({
     <div className="relative w-full lg:w-[500px] h-[220px] sm:h-[240px] lg:min-h-[320px] lg:h-auto bg-[#f4f4f4] overflow-hidden shrink-0 group h-doc-img">
       <img
         src={imgSrc || '/images/home/doctor.webp'}
-        srcSet={imgSrc ? `${imgSrc.replace('/images/home/', '/images/home/mobile/')} 480w, ${imgSrc} 862w` : undefined}
+        srcSet={
+          imgSrc
+            ? `${imgSrc.replace('/images/home/', '/images/home/mobile/')} 480w, ${imgSrc} 862w`
+            : undefined
+        }
         sizes="100vw"
         alt={name}
         loading="lazy"
@@ -65,7 +67,6 @@ export default function HorizontalDoctorCard({
           </svg>
         </Link>
       </div>
-
 
       <div className="hidden lg:block absolute bottom-0 right-0 bg-[#333] text-white px-3 py-1 text-[12px] font-poppins opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
         {name}
@@ -144,15 +145,14 @@ export default function HorizontalDoctorCard({
   )
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: imagePosition === 'left' ? -80 : 80, scale: 0.97 }}
-      whileInView={{ opacity: 1, x: 0, scale: 1 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.8, ease: EASE }}
+    <Reveal
+      x={imagePosition === 'left' ? -80 : 80}
+      y={0}
+      duration={0.8}
       className={`flex flex-col ${imagePosition === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} w-full lg:w-[1250px] overflow-hidden rounded-2xl lg:rounded-[18px] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-lg transition-shadow duration-300 h-doc ${className}`}
     >
       {imageSection}
       {contentSection}
-    </motion.div>
+    </Reveal>
   )
 }

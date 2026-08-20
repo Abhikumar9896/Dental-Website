@@ -14,8 +14,8 @@ export default function GallerySection() {
         </StaggerItem>
         <StaggerItem>
           <p className="font-poppins text-[15px] lg:text-xl font-normal leading-[1.4] tracking-[0.04em] text-[rgba(40,35,31,0.7)]">
-          Take a closer look at our clinic, treatment environment, facilities and dental care experience.
-
+            Take a closer look at our clinic, treatment environment, facilities and dental care
+            experience.
           </p>
         </StaggerItem>
       </Stagger>

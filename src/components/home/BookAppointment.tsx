@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import Reveal from '../ui/Reveal'
 import { treatments } from '../../data/treatments'
 import { useAppointmentForm } from '../../hooks/useAppointmentForm'
-
-const EASE = [0.22, 1, 0.36, 1] as const
 
 export default function BookAppointment() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -18,11 +16,10 @@ export default function BookAppointment() {
       id="book-appointment"
       className="relative left-0 top-0 w-full h-auto lg:absolute lg:left-[60px] lg:top-[840px] lg:w-[1320px] lg:h-[640px] z-30 scroll-mt-[120px] h-book"
     >
-      <motion.div
-        initial={{ opacity: 0, x: 120 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.9, ease: EASE }}
+      <Reveal
+        x={120}
+        y={0}
+        duration={0.9}
         className="relative lg:absolute right-0 top-0 w-full lg:w-[1000px] h-auto lg:h-[640px] bg-white shadow-[0_15px_50px_rgba(0,0,0,0.06)] flex flex-col pt-8 lg:pt-[50px] pb-8 lg:pb-12 px-5 lg:pl-[300px] lg:pr-[70px] rounded-[20px] h-book-form"
       >
         <h2 className="text-[24px] lg:text-[32px] font-medium text-[#165ba7] mb-4 lg:mb-6 font-poppins">
@@ -34,10 +31,17 @@ export default function BookAppointment() {
           <img
             src="/images/home/img-booking.avif"
             alt="Booking"
+            width={280}
+            height={440}
+            loading="lazy"
+            decoding="async"
             className="absolute left-0 top-0 w-[280px] h-auto object-contain h-book-img"
           />
 
-          <form onSubmit={submit} className="relative lg:absolute right-0 top-0 flex flex-col gap-3 w-full lg:w-[320px] h-book-form-f">
+          <form
+            onSubmit={submit}
+            className="relative lg:absolute right-0 top-0 flex flex-col gap-3 w-full lg:w-[320px] h-book-form-f"
+          >
             <input
               type="text"
               placeholder="Full Name *"
@@ -81,7 +85,7 @@ export default function BookAppointment() {
                   if ('showPicker' in input) {
                     try {
                       input.showPicker()
-                    } catch (err) { }
+                    } catch {}
                   }
                 }}
                 className="relative w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
@@ -109,6 +113,10 @@ export default function BookAppointment() {
 
             <div className="relative">
               <div
+                role="combobox"
+                aria-label="Treatment Required"
+                aria-haspopup="listbox"
+                aria-expanded={isDropdownOpen}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`w-full h-[46px] border ${isDropdownOpen ? 'border-[#165ba7]' : 'border-gray-200/80'} rounded-md px-4 font-poppins text-[14px] flex items-center justify-between cursor-pointer transition-colors bg-white`}
               >
@@ -139,11 +147,7 @@ export default function BookAppointment() {
                     className="fixed inset-0 z-40"
                     onClick={() => setIsDropdownOpen(false)}
                   ></div>
-                  <motion.div
-                    initial={{ opacity: 0, y: -5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute left-0 top-[calc(100%+4px)] w-full max-h-[220px] overflow-y-auto bg-white border border-gray-200/80 rounded-md shadow-xl z-50"
-                  >
+                  <div className="h-drop-in absolute left-0 top-[calc(100%+4px)] w-full max-h-[220px] overflow-y-auto bg-white border border-gray-200/80 rounded-md shadow-xl z-50">
                     {treatments.map((t) => (
                       <div
                         key={t.title}
@@ -165,16 +169,13 @@ export default function BookAppointment() {
                     >
                       Others
                     </div>
-                  </motion.div>
+                  </div>
                 </>
               )}
             </div>
 
             {formData.treatment === 'Others' && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-              >
+              <div className="h-drop-in">
                 <textarea
                   placeholder="Description (Optional)"
                   aria-label="Description (Optional)"
@@ -182,7 +183,7 @@ export default function BookAppointment() {
                   onChange={(e) => updateField('description', e.target.value)}
                   className="w-full h-[54px] lg:h-[66px] border border-gray-200/80 rounded-md px-3 lg:px-4 py-2 lg:py-3 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors resize-none mt-0.5"
                 ></textarea>
-              </motion.div>
+              </div>
             )}
 
             {status === 'success' && (
@@ -245,13 +246,13 @@ export default function BookAppointment() {
             )}
           </form>
         </div>
-      </motion.div>
+      </Reveal>
 
-      <motion.div
-        initial={{ opacity: 0, x: -120 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
+      <Reveal
+        x={-120}
+        y={0}
+        delay={0.15}
+        duration={0.9}
         className="relative lg:absolute left-0 top-0 lg:top-[100px] w-full lg:w-[560px] h-auto lg:h-[440px] bg-[#0A5BA8] flex flex-col justify-center items-center px-6 lg:px-[80px] py-10 lg:py-0 text-center shadow-lg rounded-[20px] h-book-quote"
       >
         <div className="w-[20px] lg:w-[80px] h-[2px] bg-[#D35B8F] mb-2 lg:mb-12"></div>
@@ -269,7 +270,7 @@ export default function BookAppointment() {
         <span className="font-poppins text-white text-[13px] lg:text-[32px] font-medium italic tracking-wide">
           Dr. Deepika Singhal
         </span>
-      </motion.div>
+      </Reveal>
     </div>
   )
 }

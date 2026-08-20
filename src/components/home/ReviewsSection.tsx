@@ -50,7 +50,10 @@ function ViewAllReviewsLink({ className = '' }: { className?: string }) {
 export default function ReviewsSection() {
   return (
     <div className="relative left-0 top-0 flex h-auto w-full flex-col gap-8 px-5 py-10 lg:absolute lg:left-[117px] lg:top-[4315px] lg:h-[489px] lg:w-[1286px] lg:flex-row lg:gap-[200px] lg:px-0 lg:py-0 h-rev">
-      <div className="flex w-full lg:w-[398px] flex-col justify-center pb-0 lg:pb-16 h-rev-l" style={{ gap: 24 }}>
+      <div
+        className="flex w-full lg:w-[398px] flex-col justify-center pb-0 lg:pb-16 h-rev-l"
+        style={{ gap: 24 }}
+      >
         <Stagger gap={0.14}>
           <StaggerItem>
             <div className="relative flex flex-col" style={{ gap: 15 }}>
@@ -61,7 +64,10 @@ export default function ReviewsSection() {
                 decoding="async"
                 className="pointer-events-none absolute left-[-90px] top-[-60px] z-0 h-[167px] w-[163px] h-rev-quotes"
               />
-              <div className="relative z-10 flex flex-col pl-0 lg:pl-[55px] h-rev-in" style={{ gap: 15 }}>
+              <div
+                className="relative z-10 flex flex-col pl-0 lg:pl-[55px] h-rev-in"
+                style={{ gap: 15 }}
+              >
                 <h2 className="w-full lg:w-[287px] font-fraunces text-[28px] lg:text-[36px] font-semibold leading-tight lg:leading-none text-[#28231F]">
                   What our customers say
                 </h2>
@@ -73,7 +79,6 @@ export default function ReviewsSection() {
             </div>
           </StaggerItem>
           <StaggerItem>
-
             <div className="hidden lg:block h-rev-btn-d">
               <ViewAllReviewsLink className="ml-[55px] mt-8" />
             </div>
@@ -81,7 +86,10 @@ export default function ReviewsSection() {
         </Stagger>
       </div>
 
-      <Stagger className="relative h-auto lg:h-[489px] w-full lg:w-[688px] flex flex-col gap-4 lg:block h-rev-r" gap={0.2}>
+      <Stagger
+        className="relative h-auto lg:h-[489px] w-full lg:w-[688px] flex flex-col gap-4 lg:block h-rev-r"
+        gap={0.2}
+      >
         {reviews.map((review, i) => (
           <StaggerItem
             key={review.name}
@@ -127,7 +135,6 @@ export default function ReviewsSection() {
           </StaggerItem>
         ))}
       </Stagger>
-
 
       <div className="flex w-full justify-start lg:hidden h-rev-btn-m">
         <ViewAllReviewsLink />

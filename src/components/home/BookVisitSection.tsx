@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Reveal, { Stagger, StaggerItem } from '../ui/Reveal'
-import { motion } from 'framer-motion'
 import { treatments } from '../../data/treatments'
 import { useAppointmentForm } from '../../hooks/useAppointmentForm'
 
@@ -17,7 +16,11 @@ export default function BookVisitSection() {
       <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent pointer-events-none z-[5]" />
       <div className="relative h-full w-[58%] shrink-0 h-bv-sp"></div>
 
-      <Reveal x={80} blur className="flex w-full lg:w-[42%] flex-col px-5 lg:pl-12 lg:pr-16 pt-6 pb-6 relative z-10 h-bv-c">
+      <Reveal
+        x={80}
+        blur
+        className="flex w-full lg:w-[42%] flex-col px-5 lg:pl-12 lg:pr-16 pt-6 pb-6 relative z-10 h-bv-c"
+      >
         <Stagger className="flex flex-col" gap={0.15}>
           <StaggerItem>
             <div className="flex flex-col mb-3">
@@ -25,7 +28,7 @@ export default function BookVisitSection() {
                 Book Your Visit At
               </span>
               <h2 className="font-poppins text-5xl font-bold text-[#165ba7] leading-tight">
-                Dental <span className="text-[#D35B8F]">Esthetique</span>
+                Dental <span className="text-[#B04B74]">Esthetique</span>
               </h2>
             </div>
           </StaggerItem>
@@ -38,10 +41,16 @@ export default function BookVisitSection() {
           </StaggerItem>
 
           <StaggerItem y={24}>
-            <form className="flex flex-col gap-3 w-full lg:w-[90%] lg:ml-4 h-bv-form" onSubmit={submit}>
+            <form
+              className="flex flex-col gap-3 w-full lg:w-[90%] lg:ml-4 h-bv-form"
+              onSubmit={submit}
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="bv-name" className="font-poppins text-sm font-semibold text-[#333]">
+                  <label
+                    htmlFor="bv-name"
+                    className="font-poppins text-sm font-semibold text-[#333]"
+                  >
                     Full Name <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
@@ -55,7 +64,10 @@ export default function BookVisitSection() {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="bv-phone" className="font-poppins text-sm font-semibold text-[#333]">
+                  <label
+                    htmlFor="bv-phone"
+                    className="font-poppins text-sm font-semibold text-[#333]"
+                  >
                     Phone Number <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
@@ -69,7 +81,10 @@ export default function BookVisitSection() {
                 </div>
 
                 <div className="flex flex-col gap-1 col-span-2">
-                  <label htmlFor="bv-email" className="font-poppins text-sm font-semibold text-[#333]">
+                  <label
+                    htmlFor="bv-email"
+                    className="font-poppins text-sm font-semibold text-[#333]"
+                  >
                     Email Address <span className="text-[#D35B8F]">*</span>
                   </label>
                   <input
@@ -83,7 +98,10 @@ export default function BookVisitSection() {
                 </div>
 
                 <div className="flex flex-col gap-1 col-span-2">
-                  <label htmlFor="bv-date" className="font-poppins text-sm font-semibold text-[#333]">
+                  <label
+                    htmlFor="bv-date"
+                    className="font-poppins text-sm font-semibold text-[#333]"
+                  >
                     Preferred Date & Time <span className="text-[#D35B8F]">*</span>
                   </label>
                   <div className="relative h-bv-date">
@@ -98,10 +116,8 @@ export default function BookVisitSection() {
                         const input = e.currentTarget
                         if ('showPicker' in input) {
                           try {
-                            ; (input as HTMLInputElement & { showPicker: () => void }).showPicker()
-                          } catch {
-
-                          }
+                            ;(input as HTMLInputElement & { showPicker: () => void }).showPicker()
+                          } catch {}
                         }
                       }}
                       onFocus={() => setIsDateFocused(true)}
@@ -131,13 +147,18 @@ export default function BookVisitSection() {
               </div>
 
               <div className="flex flex-col gap-1 w-full">
-                <label htmlFor="bv-treatment" className="font-poppins text-sm font-semibold text-[#333]">
+                <label
+                  htmlFor="bv-treatment"
+                  className="font-poppins text-sm font-semibold text-[#333]"
+                >
                   Treatment Required <span className="text-[#D35B8F]">*</span>
                 </label>
                 <div className="relative">
                   <div
                     id="bv-treatment"
                     role="combobox"
+                    aria-label="Treatment Required"
+                    aria-haspopup="listbox"
                     aria-expanded={isDropdownOpen}
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className={`w-full h-[42px] border ${isDropdownOpen ? 'border-[#165ba7]' : 'border-gray-200'} rounded-md px-4 font-poppins text-[14px] flex items-center justify-between cursor-pointer transition-colors bg-white shadow-sm`}
@@ -169,11 +190,7 @@ export default function BookVisitSection() {
                         className="fixed inset-0 z-40"
                         onClick={() => setIsDropdownOpen(false)}
                       ></div>
-                      <motion.div
-                        initial={{ opacity: 0, y: -5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="absolute left-0 top-[calc(100%+4px)] w-full max-h-[180px] overflow-y-auto bg-white border border-gray-200 rounded-md shadow-xl z-50"
-                      >
+                      <div className="h-drop-in absolute left-0 top-[calc(100%+4px)] w-full max-h-[180px] overflow-y-auto bg-white border border-gray-200 rounded-md shadow-xl z-50">
                         {treatments.map((t) => (
                           <div
                             key={t.title}
@@ -195,19 +212,18 @@ export default function BookVisitSection() {
                         >
                           Others
                         </div>
-                      </motion.div>
+                      </div>
                     </>
                   )}
                 </div>
               </div>
 
               {formData.treatment === 'Others' && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  className="flex flex-col gap-1 w-full"
-                >
-                  <label htmlFor="bv-desc" className="font-poppins text-sm font-semibold text-[#333]">
+                <div className="h-drop-in flex flex-col gap-1 w-full">
+                  <label
+                    htmlFor="bv-desc"
+                    className="font-poppins text-sm font-semibold text-[#333]"
+                  >
                     Description <span className="text-[#D35B8F]">*</span>
                   </label>
                   <textarea
@@ -217,7 +233,7 @@ export default function BookVisitSection() {
                     onChange={(e) => updateField('description', e.target.value)}
                     className="w-full h-[60px] rounded-md border border-gray-200 px-4 py-2.5 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm resize-none"
                   ></textarea>
-                </motion.div>
+                </div>
               )}
 
               {status === 'error' && (

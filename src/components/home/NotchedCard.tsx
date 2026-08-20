@@ -70,7 +70,12 @@ function ArrowBtn({
       }}
       aria-label="View treatment"
     >
-      <img src={`${IMG}/arrow-up.svg`} alt="" width={height <= 36 ? 18 : 24} height={height <= 36 ? 18 : 24} />
+      <img
+        src={`${IMG}/arrow-up.svg`}
+        alt=""
+        width={height <= 36 ? 18 : 24}
+        height={height <= 36 ? 18 : 24}
+      />
     </Link>
   )
 }
@@ -133,7 +138,6 @@ export function NotchedCard({
         } as CSSProperties
       }
     >
-
       <div className="absolute inset-0 lg:hidden rounded-[20px]" style={mobileBg} />
 
       <svg

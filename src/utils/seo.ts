@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export const SITE_URL = 'https://dental-Esthetique.vercel.app'
+export const SITE_URL = 'https://www.dentalesthetique.in'
 
 export type SeoMeta = {
   title: string
@@ -33,7 +33,14 @@ function upsertLink(rel: string, href: string) {
   el.setAttribute('href', href)
 }
 
-export function usePageMeta({ title, description, path, image, type = 'website', robots }: SeoMeta) {
+export function usePageMeta({
+  title,
+  description,
+  path,
+  image,
+  type = 'website',
+  robots,
+}: SeoMeta) {
   useEffect(() => {
     const url = `${SITE_URL}${path}`
     document.title = title

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import HeroButton, { BOOK_APPOINTMENT_TO } from '../components/ui/HeroButton'
+import HeroButton from '../components/ui/HeroButton'
+import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
 import PageHero from '../components/ui/PageHero'
 import SectionPill from '../components/ui/SectionPill'
 import Reveal, { Stagger, StaggerItem } from '../components/ui/Reveal'
@@ -16,6 +17,7 @@ export default function Services() {
   })
   const [active, setActive] = useState<(typeof treatmentCategories)[number]>('All')
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
+  const [expandedSubtype, setExpandedSubtype] = useState<string | null>(null)
   const [showAll, setShowAll] = useState(false)
 
   const filteredTreatments = treatments.filter(
@@ -69,11 +71,13 @@ export default function Services() {
                       setActive(cat)
                       setShowAll(false)
                       setExpandedItem(null)
+                      setExpandedSubtype(null)
                     }}
-                    className={`flex items-center justify-center h-[36px] lg:h-[40px] rounded-[18px] px-3.5 lg:px-5 font-poppins text-[12px] lg:text-[13px] font-medium transition-colors whitespace-nowrap ${isActive
-                      ? 'bg-[#D35B8F] text-white border border-[#D35B8F]'
-                      : 'border border-[#D35B8F] bg-white text-[#404040] hover:bg-[#D35B8F]/5'
-                      }`}
+                    className={`flex items-center justify-center h-[36px] lg:h-[40px] rounded-[18px] px-3.5 lg:px-5 font-poppins text-[12px] lg:text-[13px] font-medium transition-colors whitespace-nowrap ${
+                      isActive
+                        ? 'bg-[#D35B8F] text-white border border-[#D35B8F]'
+                        : 'border border-[#D35B8F] bg-white text-[#404040] hover:bg-[#D35B8F]/5'
+                    }`}
                   >
                     {cat}
                   </button>
@@ -119,26 +123,98 @@ export default function Services() {
                   </div>
 
                   {isExpanded && (
-                    <div className="mt-6 lg:mt-8 flex flex-col lg:flex-row gap-5 lg:gap-[74px] h-cat-exp">
-                      <img
-                        src={`/treatment/${encodeURIComponent(item.title)}.webp`}
-                        className="w-full max-w-[300px] lg:w-[300px] h-auto aspect-[300/160] lg:h-[160px] object-cover rounded-[14px] lg:rounded-[16px] shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0"
-                        alt={item.title}
-                        width={300}
-                        height={160}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      <div className="flex flex-col justify-between py-0 lg:py-1 min-w-0 flex-1">
-                        <p className="font-poppins text-[15px] sm:text-[17px] lg:text-[20px] text-[#28231F] leading-[1.65] lg:leading-[1.6] max-w-[667px]">
-                          {item.content}
-                        </p>
-                        <HeroButton
-                          to={BOOK_APPOINTMENT_TO}
-                          text="Enquiry"
-                          className="mt-5 lg:mt-6 !h-[44px]"
-                        />
-                      </div>
+                    <div className="mt-6 lg:mt-8 flex flex-col gap-6 h-cat-exp">
+                      {item.subtypes && item.subtypes.length > 0 ? (
+                        <div className="flex flex-col gap-6">
+                          <p className="font-poppins text-[15px] sm:text-[17px] lg:text-[20px] text-[#28231F] leading-[1.65] lg:leading-[1.6]">
+                            {item.content}
+                          </p>
+                          <div className="flex flex-col gap-4 border-t border-gray-200 pt-6">
+                            {item.subtypes.map((sub) => {
+                              const isSubExpanded = expandedSubtype === sub.title
+                              return (
+                                <div
+                                  key={sub.title}
+                                  className="flex flex-col border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm transition-all"
+                                >
+                                  <div
+                                    className="flex w-full items-center justify-between p-4 lg:px-6 lg:py-5 cursor-pointer hover:bg-gray-50 transition-colors"
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      setExpandedSubtype(isSubExpanded ? null : sub.title)
+                                    }}
+                                  >
+                                    <h4 className="font-poppins font-semibold text-[15px] sm:text-[17px] lg:text-[18px] text-[#28231F] uppercase tracking-wide">
+                                      {sub.title}
+                                    </h4>
+                                    <svg
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="2.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      className={`text-[#28231F] transition-all duration-300 shrink-0 ${isSubExpanded ? 'rotate-180' : ''}`}
+                                    >
+                                      <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                  </div>
+
+                                  {isSubExpanded && (
+                                    <div className="p-4 lg:p-6 pt-0 flex flex-col lg:flex-row gap-5 lg:gap-[40px] border-t border-gray-100 mt-2">
+                                      <img
+                                        src={`/treatment/${encodeURIComponent(sub.title)}.webp`}
+                                        className="w-full max-w-[300px] lg:w-[260px] h-auto aspect-[300/160] lg:h-[140px] object-cover rounded-[12px] shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0"
+                                        alt={sub.title}
+                                        onError={(e) => {
+                                          e.currentTarget.style.display = 'none'
+                                        }}
+                                        loading="lazy"
+                                        decoding="async"
+                                      />
+                                      <div className="flex flex-col justify-between flex-1 min-w-0">
+                                        <p className="font-poppins text-[14px] lg:text-[15px] text-gray-700 leading-[1.65] lg:leading-[1.6]">
+                                          {sub.content}
+                                        </p>
+                                        <HeroButton
+                                          to={BOOK_APPOINTMENT_TO}
+                                          text="Enquiry"
+                                          className="mt-5 lg:mt-6 !h-[40px] self-start text-[13px] px-6"
+                                        />
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col lg:flex-row gap-5 lg:gap-[74px]">
+                          <img
+                            src={`/treatment/${encodeURIComponent(item.title)}.webp`}
+                            className="w-full max-w-[300px] lg:w-[300px] h-auto aspect-[300/160] lg:h-[160px] object-cover rounded-[14px] lg:rounded-[16px] shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0"
+                            alt={item.title}
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none'
+                            }}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div className="flex flex-col justify-between py-0 lg:py-1 min-w-0 flex-1">
+                            <p className="font-poppins text-[15px] sm:text-[17px] lg:text-[20px] text-[#28231F] leading-[1.65] lg:leading-[1.6] max-w-[800px]">
+                              {item.content}
+                            </p>
+                            <HeroButton
+                              to={BOOK_APPOINTMENT_TO}
+                              text="Enquiry"
+                              className="mt-6 lg:mt-8 !h-[44px] self-start"
+                            />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </Reveal>
