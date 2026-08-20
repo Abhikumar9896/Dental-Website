@@ -4,7 +4,7 @@ export const homeDoctors = [
     name: 'Dr. Deepika Singhal',
     role: 'Endodontist & Cosmetic Dentist',
     description:
-      'Expert Endodontist providing advanced microscopic root canal therapy, aesthetic dentistry, and restorative treatments with precision, comfort, and exceptional patient care.',
+      'Expert Endodontist providing advanced microscopic root canal therapy, aesthetic dentistry and restorative treatments with precision, comfort, and exceptional patient care.',
     imgSrc: '/images/home/e0a9924195fe49bd12e71ddc6eb19b13ace633e8.webp',
     colorScheme: 'blue',
     imagePosition: 'left',
