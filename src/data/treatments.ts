@@ -69,7 +69,7 @@ export const treatments: { title: string; category: TreatmentCategory; content: 
       'Metal braces are a proven, highly effective orthodontic solution for correcting crowding, spacing, and bite issues. Made from durable stainless steel brackets and wires, they gently guide teeth into ideal alignment over time. They are a reliable choice for patients of all ages seeking a strong, cost-effective path to a straighter smile.',
   },
   {
-    title: 'CERAMIC BRACES (ESTHETICS)',
+    title: 'CERAMIC BRACES (Esthetics)',
     category: 'Braces',
     content:
       'Ceramic braces offer the same corrective power as metal braces with a more discreet appearance. Tooth-colored or clear ceramic brackets blend with your natural teeth, making treatment far less noticeable while still delivering precise, predictable alignment results.',
