@@ -296,7 +296,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       await fetch(sheetsWebhook, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, submittedAt: new Date().toISOString() }),
       })
     }
 
