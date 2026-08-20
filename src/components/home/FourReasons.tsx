@@ -63,7 +63,7 @@ export default function FourReasons() {
                 <p className="text-left lg:text-center font-poppins text-[15px] lg:text-xl font-medium leading-snug lg:leading-none text-[#242221]">
                   {r.title}
                 </p>
-                <p className="w-full lg:w-[236px] text-left lg:text-center font-poppins text-[12.5px] lg:text-sm font-normal leading-relaxed lg:leading-none tracking-[0.02em] lg:tracking-[0.04em] text-[rgba(42,42,42,0.7)]">
+                <p className="w-full lg:w-[236px] text-left lg:text-center font-poppins text-[12.5px] lg:text-sm font-normal leading-relaxed tracking-[0.02em] lg:tracking-[0.04em] text-[rgba(42,42,42,0.7)]">
                   {r.desc}
                 </p>
               </div>

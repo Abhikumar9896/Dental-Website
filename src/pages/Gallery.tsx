@@ -347,7 +347,7 @@ export default function Gallery() {
                 className="relative overflow-hidden rounded-xl lg:rounded-2xl bg-[#D35B8F] p-4 sm:p-5 lg:p-6 flex flex-col justify-center items-center text-center shadow-[0_4px_10px_rgba(0,0,0,0.05)] border-[3px] lg:border-[4px] border-white aspect-square group transition-all duration-500 hover:-translate-y-1 h-gal-cta-card"
               >
                 <h3 className="text-white font-poppins text-3xl sm:text-4xl lg:text-5xl font-semibold mb-1.5 lg:mb-2">
-                  500+
+                  50k+
                 </h3>
                 <p className="text-white/90 text-[11px] sm:text-sm font-poppins uppercase tracking-wider font-semibold">
                   Transformations
