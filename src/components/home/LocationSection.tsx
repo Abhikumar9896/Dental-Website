@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Clock, ChevronRight, ExternalLink } from 'lucide-react'
+import { Clock, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Reveal from '../ui/Reveal'
 import { BOOK_APPOINTMENT_TO } from '../ui/HeroButton'
 import { scrollToId } from '../../utils/scroll'
-
-const MAPS_URL = 'https://maps.app.goo.gl/mgbFVCZRaDL7CVeQ8'
 
 export default function LocationSection() {
   return (

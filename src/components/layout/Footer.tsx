@@ -13,15 +13,6 @@ const quickLinks = [
   { to: '/faqs', label: 'FAQs' },
 ] as const
 
-const bottomLinks = [
-  { to: '/about', label: 'ABOUT US' },
-  { to: '/doctors', label: 'DOCTOR PROFILE' },
-  { to: '/services', label: 'TREATMENTS' },
-  { to: '/testimonials', label: 'TESTIMONIALS' },
-  { to: '/gallery', label: 'GALLERY' },
-  { to: '/faqs', label: 'FAQs' },
-] as const
-
 export default function Footer() {
   return (
     <footer className="relative z-20 w-full flex flex-col font-poppins overflow-visible h-ft">
