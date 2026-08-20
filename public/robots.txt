@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://dental-esthetique.vercel.app/sitemap.xml
+Sitemap: https://dental-Esthetique.vercel.app/sitemap.xml

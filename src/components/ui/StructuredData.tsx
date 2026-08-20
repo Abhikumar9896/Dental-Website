@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { SITE_URL } from '../../utils/seo'
 
 const SAME_AS = [
-  'https://www.facebook.com/dentalesthetique/',
-  'https://www.instagram.com/dental.esthetique/',
+  'https://www.facebook.com/dentalEsthetique/',
+  'https://www.instagram.com/dental.Esthetique/',
   'https://wa.me/919818862265',
 ]
 
@@ -23,7 +23,7 @@ export function StructuredData() {
       alternateName: 'Dental ESTHÉTIQUE',
       url: SITE_URL,
       telephone: '+91 98188 62265',
-      email: 'info@dentalesthetique.com',
+      email: 'info@dentalEsthetique.com',
       image: `${SITE_URL}/images/home/hero1.webp`,
       logo: `${SITE_URL}/images/home/logo.svg`,
       priceRange: '₹₹',

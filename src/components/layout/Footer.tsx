@@ -59,10 +59,10 @@ export default function Footer() {
               <div className="flex items-start gap-2.5 text-[#165ba7] font-semibold text-[12.5px] lg:text-[14px]">
                 <Mail size={16} className="shrink-0 mt-0.5" />
                 <a
-                  href="mailto:dentalesthetiqueb55noida@gmail.com"
+                  href="mailto:dentalEsthetiqueb55noida@gmail.com"
                   className="break-all leading-snug hover:underline"
                 >
-                  dentalesthetiqueb55noida@gmail.com
+                  dentalEsthetiqueb55noida@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-2.5 text-[#165ba7] font-semibold text-[12.5px] lg:text-[14px]">
@@ -160,7 +160,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://www.facebook.com/dentalesthetique/"
+                href="https://www.facebook.com/dentalEsthetique/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
@@ -194,7 +194,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/dental.esthetique/"
+                href="https://www.instagram.com/dental.Esthetique/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"

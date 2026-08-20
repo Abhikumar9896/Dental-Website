@@ -32,9 +32,9 @@ export default function HeroBanner() {
       heading: (
         <>
           Transforming Smiles
-          { ' ' }<br className="hidden lg:block" />
+          {' '}<br className="hidden lg:block" />
           with Advanced
-          { ' ' }<br className="hidden lg:block" />
+          {' '}<br className="hidden lg:block" />
           Dental Care.
         </>
       ),
@@ -65,7 +65,7 @@ export default function HeroBanner() {
       heading: (
         <>
           Committed to
-          { ' ' }<br className="hidden lg:block" />
+          {' '}<br className="hidden lg:block" />
           Excellence
         </>
       ),
@@ -81,9 +81,9 @@ export default function HeroBanner() {
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[13px] lg:text-[14px] leading-relaxed">
                   Professional whitening that
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   safely brightens your smile
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   in a single visit.
                 </p>
               </div>
@@ -96,9 +96,9 @@ export default function HeroBanner() {
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[13px] lg:text-[14px] leading-relaxed">
                   Custom prosthetic solutions for
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   comfortable chewing and a
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   natural-looking smile.
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default function HeroBanner() {
       heading: (
         <>
           Let Us Brighten
-          { ' ' }<br className="hidden lg:block" />
+          {' '}<br className="hidden lg:block" />
           Your Smile
         </>
       ),
@@ -136,9 +136,9 @@ export default function HeroBanner() {
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[13px] lg:text-[14px] leading-relaxed">
                   Durable dental implants that
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   restore missing teeth with
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   lasting stability.
                 </p>
               </div>
@@ -151,9 +151,9 @@ export default function HeroBanner() {
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[13px] lg:text-[14px] leading-relaxed">
                   Clear aligners and braces that
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   straighten teeth with comfort
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   and precision.
                 </p>
               </div>
@@ -173,7 +173,7 @@ export default function HeroBanner() {
       topLabelColor: 'text-[#A0557A]',
       heading: (
         <>
-          Personalized & { ' ' }<br className="hidden lg:block" />
+          Personalized & {' '}<br className="hidden lg:block" />
           Comfortable
         </>
       ),
@@ -189,9 +189,9 @@ export default function HeroBanner() {
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[13px] lg:text-[14px] leading-relaxed">
                   Preventive care and protection
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   that keep your smile healthy
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   for the long term.
                 </p>
               </div>
@@ -204,9 +204,9 @@ export default function HeroBanner() {
                 </h3>
                 <p className="font-poppins text-[#3B4657] text-[13px] lg:text-[14px] leading-relaxed">
                   Full-service dentistry tailored
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   to your needs in one
-                  { ' ' }<br className="hidden lg:block" />
+                  {' '}<br className="hidden lg:block" />
                   comfortable visit.
                 </p>
               </div>
@@ -228,9 +228,8 @@ export default function HeroBanner() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 flex items-center pt-14 lg:pt-0 transition-opacity duration-1000 ease-in-out ${
-              currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
+            className={`absolute inset-0 flex items-center pt-14 lg:pt-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
           >
             <img
               src={slide.image}
@@ -243,7 +242,7 @@ export default function HeroBanner() {
             />
             <div
               className={`absolute inset-0 h-full w-full h-hero-grad ${index === 1 ? 'bg-white/70 lg:bg-transparent lg:bg-gradient-to-r lg:from-white/60 lg:via-white/20' : 'bg-white/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-white/90 lg:via-white/50'
-              } lg:to-transparent`}
+                } lg:to-transparent`}
             />
 
             <div className="relative z-20 w-full px-5 md:px-12 lg:px-0 lg:absolute lg:left-[4%] lg:top-[58%] lg:w-[700px] lg:-translate-y-1/2 flex flex-col items-start text-left gap-2.5 lg:gap-4 h-hero-txt">

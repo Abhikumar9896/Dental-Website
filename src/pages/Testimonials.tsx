@@ -258,9 +258,8 @@ function CoverflowCarousel({ videos }: { videos: TestimonialVideo[] }) {
             type="button"
             aria-label={`Show video ${index + 1}`}
             onClick={() => setActiveIndex(index)}
-            className={`h-1.5 rounded-full transition-all ${
-              index === activeIndex ? 'w-6 bg-[#165ba7]' : 'w-1.5 bg-gray-300 hover:bg-gray-400'
-            }`}
+            className={`h-1.5 rounded-full transition-all ${index === activeIndex ? 'w-6 bg-[#165ba7]' : 'w-1.5 bg-gray-300 hover:bg-gray-400'
+              }`}
           />
         ))}
       </div>

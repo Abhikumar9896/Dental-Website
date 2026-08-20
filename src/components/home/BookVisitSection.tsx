@@ -21,11 +21,11 @@ export default function BookVisitSection() {
         <Stagger className="flex flex-col" gap={0.15}>
           <StaggerItem>
             <div className="flex flex-col mb-3">
-              <span className="font-poppins text-3xl font-medium text-[#D35B8F] mb-1">
+              <span className="font-poppins text-3xl font-medium text-[#28231F] mb-1">
                 Book Your Visit At
               </span>
               <h2 className="font-poppins text-5xl font-bold text-[#165ba7] leading-tight">
-                Dental Esthetique
+                Dental <span className="text-[#D35B8F]">Esthetique</span>
               </h2>
             </div>
           </StaggerItem>
@@ -98,7 +98,7 @@ export default function BookVisitSection() {
                         const input = e.currentTarget
                         if ('showPicker' in input) {
                           try {
-                            ;(input as HTMLInputElement & { showPicker: () => void }).showPicker()
+                            ; (input as HTMLInputElement & { showPicker: () => void }).showPicker()
                           } catch {
 
                           }

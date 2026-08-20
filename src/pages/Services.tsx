@@ -71,8 +71,8 @@ export default function Services() {
                       setExpandedItem(null)
                     }}
                     className={`flex items-center justify-center h-[36px] lg:h-[40px] rounded-[18px] px-3.5 lg:px-5 font-poppins text-[12px] lg:text-[13px] font-medium transition-colors whitespace-nowrap ${isActive
-                        ? 'bg-[#D35B8F] text-white border border-[#D35B8F]'
-                        : 'border border-[#D35B8F] bg-white text-[#404040] hover:bg-[#D35B8F]/5'
+                      ? 'bg-[#D35B8F] text-white border border-[#D35B8F]'
+                      : 'border border-[#D35B8F] bg-white text-[#404040] hover:bg-[#D35B8F]/5'
                       }`}
                   >
                     {cat}

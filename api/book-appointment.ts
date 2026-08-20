@@ -12,7 +12,7 @@ type AppointmentPayload = {
 }
 
 
-const BRAND_CID = 'brandlogo@dentalesthetique'
+const BRAND_CID = 'brandlogo@dentalEsthetique'
 
 function escapeHtml(value: string): string {
   return value
@@ -91,7 +91,7 @@ function brandAttachment() {
 
   return [
     {
-      filename: 'dental-esthetique-logo.png',
+      filename: 'dental-Esthetique-logo.png',
       content: Buffer.from(BRAND_LOGO_BASE64, 'base64'),
       cid: BRAND_CID,
       contentDisposition: 'inline' as const,

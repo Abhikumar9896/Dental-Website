@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = join(__dirname, '..', 'dist')
 
-const SITE_URL = 'https://dental-esthetique.vercel.app'
+const SITE_URL = 'https://dental-Esthetique.vercel.app'
 
 const routes = [
   {
@@ -102,7 +102,7 @@ const dentistSchema = {
   alternateName: 'Dental ESTHÉTIQUE',
   url: SITE_URL,
   telephone: '+91 98188 62265',
-  email: 'info@dentalesthetique.com',
+  email: 'info@dentalEsthetique.com',
   image: `${SITE_URL}/images/home/hero1.webp`,
   logo: `${SITE_URL}/images/home/logo.svg`,
   priceRange: '₹₹',
@@ -131,8 +131,8 @@ const dentistSchema = {
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '10:00', closes: '14:00' },
   ],
   sameAs: [
-    'https://www.facebook.com/dentalesthetique/',
-    'https://www.instagram.com/dental.esthetique/',
+    'https://www.facebook.com/dentalEsthetique/',
+    'https://www.instagram.com/dental.Esthetique/',
     'https://wa.me/919818862265',
   ],
   medicalSpecialty: 'Dentistry',
@@ -173,8 +173,8 @@ const doctorSchema = {
 
 const faqItems = [
   {
-    q: 'Why should I choose Dental ESTHETIQUE for my dental treatment?',
-    a: 'Dental ESTHETIQUE combines experienced dental professionals, advanced technology, personalized treatment planning, and a patient-first approach to provide safe, comfortable, and effective dental care.',
+    q: 'Why should I choose Dental Esthetique for my dental treatment?',
+    a: 'Dental Esthetique combines experienced dental professionals, advanced technology, personalized treatment planning, and a patient-first approach to provide safe, comfortable, and effective dental care.',
   },
   {
     q: 'Do I need to book an appointment before visiting?',

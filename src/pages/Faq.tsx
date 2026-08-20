@@ -7,8 +7,8 @@ import { usePageMeta, SITE_URL } from '../utils/seo'
 
 const faqs = [
   {
-    q: 'Why should I choose Dental ESTHETIQUE for my dental treatment?',
-    a: 'At Dental ESTHETIQUE, we combine experienced dental professionals, advanced technology, personalized treatment planning, and a patient-first approach to provide safe, comfortable, and effective dental care. Our focus is on delivering long-term oral health while ensuring a positive treatment experience.',
+    q: 'Why should I choose Dental Esthetique for my dental treatment?',
+    a: 'At Dental Esthetique, we combine experienced dental professionals, advanced technology, personalized treatment planning, and a patient-first approach to provide safe, comfortable, and effective dental care. Our focus is on delivering long-term oral health while ensuring a positive treatment experience.',
   },
   {
     q: 'Do I need to book an appointment before visiting?',

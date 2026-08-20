@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export const SITE_URL = 'https://dental-esthetique.vercel.app'
+export const SITE_URL = 'https://dental-Esthetique.vercel.app'
 
 export type SeoMeta = {
   title: string

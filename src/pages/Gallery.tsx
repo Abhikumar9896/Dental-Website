@@ -119,8 +119,8 @@ const patientImageUrls = galleryImages.map(img => img.src)
 export default function Gallery() {
   const [filter, setFilter] = useState<'all' | 'patient' | 'clinic'>('all')
 
-  const displayedImages = filter === 'all' 
-    ? galleryImages 
+  const displayedImages = filter === 'all'
+    ? galleryImages
     : galleryImages.filter(img => img.category === filter)
   usePageMeta({
     title: 'Smile Gallery | Dental Esthetique - Real Patient Results in Noida',

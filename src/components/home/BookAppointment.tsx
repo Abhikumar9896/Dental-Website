@@ -259,7 +259,7 @@ export default function BookAppointment() {
           <span className="absolute -top-[8px] lg:-top-[30px] -left-[8px] lg:-left-[40px] font-fraunces text-[#FFFFFF] text-[18px] lg:text-[60px] font-bold opacity-80 leading-none">
             "
           </span>
-          At Dental ESTHETIQUE, we are committed to providing you and your family with the highest
+          At Dental Esthetique, we are committed to providing you and your family with the highest
           quality of compassionate dental care.
           <span className="absolute -bottom-[10px] lg:-bottom-[50px] -right-[4px] font-fraunces text-[#FFFFFF] text-[18px] lg:text-[60px] font-bold opacity-80 leading-none">
             "

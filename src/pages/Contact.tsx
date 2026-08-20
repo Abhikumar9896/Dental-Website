@@ -24,8 +24,8 @@ const contactCards = [
   },
   {
     title: 'Email',
-    body: 'info@dentalesthetique.com',
-    href: 'mailto:info@dentalesthetique.com',
+    body: 'info@dentalEsthetique.com',
+    href: 'mailto:info@dentalEsthetique.com',
     icon: (
       <>
         <rect x="2" y="4" width="20" height="16" rx="2" />

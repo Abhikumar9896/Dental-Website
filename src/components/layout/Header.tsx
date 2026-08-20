@@ -175,7 +175,7 @@ export default function Header() {
             <div className="flex items-center gap-6 -mr-16 h-hdr-social">
               <div className="flex items-center gap-4 text-[#1E73BE]">
                 <a
-                  href="https://www.facebook.com/dentalesthetique/"
+                  href="https://www.facebook.com/dentalEsthetique/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
@@ -207,7 +207,7 @@ export default function Header() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/dental.esthetique/"
+                  href="https://www.instagram.com/dental.Esthetique/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -303,7 +303,7 @@ export default function Header() {
 
           <div className="flex items-center gap-4 text-[#1E73BE] -mr-16">
             <a
-              href="https://www.facebook.com/dentalesthetique/"
+              href="https://www.facebook.com/dentalEsthetique/"
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
@@ -335,7 +335,7 @@ export default function Header() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/dental.esthetique/"
+              href="https://www.instagram.com/dental.Esthetique/"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
@@ -416,7 +416,7 @@ export default function Header() {
               </a>
               <div className="flex items-center justify-center gap-4 text-[#1E73BE]">
                 <a
-                  href="https://www.facebook.com/dentalesthetique/"
+                  href="https://www.facebook.com/dentalEsthetique/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
@@ -446,7 +446,7 @@ export default function Header() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/dental.esthetique/"
+                  href="https://www.instagram.com/dental.Esthetique/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
