@@ -25,16 +25,11 @@ export const treatments: {
   subtypes?: { title: string; content: string }[]
 }[] = [
   {
-    title: 'ROOT CANAL TREATMENT',
+    title: 'SINGLE SITTING RCT',
     category: 'Single Sitting RCT',
     content:
-      'Root Canal Treatment (RCT) is a highly successful procedure used to save a tooth that is severely infected or decayed. We utilize advanced technology to ensure a painless, effective treatment that restores your natural tooth.',
+      'Root Canal Treatment (RCT) is a highly successful procedure used to save a tooth that is severely infected or decayed. Single Sitting Root Canal Treatment completes the entire root canal procedure in one comfortable visit. Using advanced techniques and precise instrumentation, we remove infection, clean the canals and seal the tooth the same day - saving your natural tooth with minimal appointments and maximum comfort.',
     subtypes: [
-      {
-        title: 'SINGLE SITTING RCT',
-        content:
-          'Single Sitting Root Canal Treatment completes the entire root canal procedure in one comfortable visit. Using advanced techniques and precise instrumentation, we remove infection, clean the canals and seal the tooth the same day - saving your natural tooth with minimal appointments and maximum comfort.',
-      },
       {
         title: 'RE-RCT',
         content:
@@ -49,7 +44,7 @@ export const treatments: {
   },
 
   {
-    title: 'DENTAL IMPLANTS',
+    title: 'IMPLANTS',
     category: 'Implants',
     content:
       'Dental implants are the gold standard for replacing missing teeth. They provide a strong, permanent foundation that looks, feels, and functions exactly like your natural teeth.',
@@ -75,23 +70,23 @@ export const treatments: {
   },
 
   {
-    title: 'ORTHODONTICS (BRACES & ALIGNERS)',
+    title: 'BRACES',
     category: 'Braces',
     content:
       'Orthodontic treatments correct crowded, crooked, or misaligned teeth, giving you a perfectly straight and confident smile. We offer a range of solutions from traditional braces to virtually invisible aligners.',
     subtypes: [
       {
-        title: 'METAL BRACES',
+        title: 'METAL',
         content:
           'Metal braces are a proven, highly effective orthodontic solution for correcting crowding, spacing and bite issues. Made from durable stainless steel brackets and wires, they gently guide teeth into ideal alignment over time. They are a reliable choice for patients of all ages seeking a strong, cost-effective path to a straighter smile.',
       },
       {
-        title: 'CERAMIC BRACES (Esthetics)',
+        title: 'CERAMIC (ESTHETICS)',
         content:
           'Ceramic braces offer the same corrective power as metal braces with a more discreet appearance. Tooth-colored or clear ceramic brackets blend with your natural teeth, making treatment far less noticeable while still delivering precise, predictable alignment results.',
       },
       {
-        title: 'SELF-LIGATING BRACES',
+        title: 'SELF LIGATING',
         content:
           'Self-ligating braces are a modern orthodontic solution that use specialized brackets with built-in clips to hold the archwire in place, eliminating the need for traditional elastic ties. This innovative design reduces friction and pressure on the teeth, often leading to faster treatment times, fewer clinical visits and a more comfortable alignment process.',
       },
@@ -266,34 +261,19 @@ export const treatments: {
       'Pediatric dentistry focuses on the oral health of children from infancy through the teen years. We provide gentle, specialized care to ensure your child develops a healthy, confident smile in a comfortable environment.',
     subtypes: [
       {
-        title: 'FILLINGS',
+        title: 'FILLINGS / ZIRCONIA CROWNS',
         content:
-          'Pediatric dental fillings restore cavity-damaged baby or young permanent teeth back to healthy function. We use gentle techniques and tooth-colored materials so children stay comfortable while we stop decay and protect their developing smiles.',
+          'Pediatric dental fillings restore cavity-damaged baby or young permanent teeth back to healthy function. We use gentle techniques and tooth-colored materials. Pediatric zirconia crowns are strong, tooth-colored caps used to restore extensively decayed or damaged baby teeth. They look natural, are highly durable and help preserve space and function until the permanent teeth erupt.',
       },
       {
-        title: 'ZIRCONIA CROWNS',
+        title: 'PULPOTOMY / PULPECTOMY',
         content:
-          'Pediatric zirconia crowns are strong, tooth-colored caps used to restore extensively decayed or damaged baby teeth. They look natural, are highly durable and help preserve space and function until the permanent teeth erupt.',
+          "A pulpotomy is a gentle procedure performed when decay reaches the upper nerve pulp. We carefully remove the infected pulp while leaving healthy roots intact. A pulpectomy is essentially a root canal for a primary tooth. When infection extends down into the roots, the entire nerve tissue is carefully removed, cleaned, and filled to eliminate severe toothache and guide adult teeth in.",
       },
       {
-        title: 'PULPOTOMY',
+        title: 'SPACE MAINTAINER / ORTHO APPLIANCES',
         content:
-          "A pulpotomy is a gentle, restorative procedure primarily performed on a child's primary (baby) tooth when decay has reached the upper part of the nerve pulp. We carefully remove the infected pulp from the crown of the tooth while leaving the healthy root nerves intact. This relieves pain and preserves the baby tooth until it naturally falls out.",
-      },
-      {
-        title: 'PULPECTOMY',
-        content:
-          "A pulpectomy is essentially a root canal treatment for a child's primary tooth. When infection extends down into the tooth's roots, the entire nerve tissue must be carefully removed. The canals are then cleaned, sterilized and filled with an absorbable material. This crucial procedure eliminates severe toothache and saves the tooth to guide the adult teeth in.",
-      },
-      {
-        title: 'SPACE MAINTAINER',
-        content:
-          'A space maintainer is a small, custom-made dental appliance used when a child loses a baby tooth prematurely. It simply holds the empty space open, preventing adjacent teeth from shifting or tilting into the gap. This ensures that the underlying permanent tooth has enough room to erupt properly, often preventing the need for extensive orthodontic work later.',
-      },
-      {
-        title: 'ORTHO APPLIANCES',
-        content:
-          'Orthodontic appliances encompass a variety of custom-fitted devices, such as retainers, expanders and habit-breaking appliances. They are expertly designed to guide jaw growth, correct bite discrepancies, or maintain the alignment of teeth after braces. These crucial tools support healthy oral development and ensure a functional, perfectly aligned smile for life.',
+          'A space maintainer is a small custom appliance used when a child loses a baby tooth prematurely, holding the space open to prevent adjacent teeth from shifting. Orthodontic appliances encompass a variety of custom-fitted devices, such as retainers and expanders, expertly designed to guide jaw growth, correct bite discrepancies, and support healthy oral development.',
       },
     ],
   },
