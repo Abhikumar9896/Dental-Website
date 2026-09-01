@@ -5,8 +5,10 @@ import { useAppointmentForm } from '../../hooks/useAppointmentForm'
 
 export default function BookVisitSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [isDateFocused, setIsDateFocused] = useState(false)
-  const { formData, updateField, setTreatment, status, errorMessage, submit } = useAppointmentForm()
+  const { formData, updateField, setTreatment, setSubTreatment, status, errorMessage, submit } = useAppointmentForm()
+
+  const selectedTreatmentData = treatments.find((t) => t.title === formData.treatment)
+  const hasSubtypes = selectedTreatmentData?.subtypes && selectedTreatmentData.subtypes.length > 0
 
   return (
     <section
@@ -45,7 +47,7 @@ export default function BookVisitSection() {
               className="flex flex-col gap-3 w-full lg:w-[90%] lg:ml-4 h-bv-form"
               onSubmit={submit}
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 w-full">
                 <div className="flex flex-col gap-1">
                   <label
                     htmlFor="bv-name"
@@ -57,6 +59,9 @@ export default function BookVisitSection() {
                     id="bv-name"
                     type="text"
                     required
+                    minLength={3}
+                    pattern="[a-zA-Z\s]+"
+                    title="Name must contain at least 3 alphabetic characters."
                     value={formData.name}
                     onChange={(e) => updateField('name', e.target.value)}
                     className="h-[42px] rounded-md border border-gray-200 px-4 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm"
@@ -74,13 +79,15 @@ export default function BookVisitSection() {
                     id="bv-phone"
                     type="tel"
                     required
+                    pattern="^[6-9]\d{9}$"
+                    title="Please enter a valid 10-digit Indian mobile number starting with 6-9."
                     value={formData.phone}
                     onChange={(e) => updateField('phone', e.target.value)}
                     className="h-[42px] rounded-md border border-gray-200 px-4 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm"
                   />
                 </div>
 
-                <div className="flex flex-col gap-1 col-span-2">
+                <div className="flex flex-col gap-1 lg:col-span-2">
                   <label
                     htmlFor="bv-email"
                     className="font-poppins text-sm font-semibold text-[#333]"
@@ -97,7 +104,7 @@ export default function BookVisitSection() {
                   />
                 </div>
 
-                <div className="flex flex-col gap-1 col-span-2">
+                <div className="flex flex-col gap-1 lg:col-span-2">
                   <label
                     htmlFor="bv-date"
                     className="font-poppins text-sm font-semibold text-[#333]"
@@ -107,9 +114,9 @@ export default function BookVisitSection() {
                   <div className="relative h-bv-date">
                     <input
                       id="bv-date"
-                      type={isDateFocused || formData.date ? 'datetime-local' : 'text'}
-                      placeholder="dd-mm-year --:--"
+                      type="datetime-local"
                       required
+                      min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
                       value={formData.date}
                       onChange={(e) => updateField('date', e.target.value)}
                       onClick={(e) => {
@@ -120,8 +127,6 @@ export default function BookVisitSection() {
                           } catch {}
                         }
                       }}
-                      onFocus={() => setIsDateFocused(true)}
-                      onBlur={() => setIsDateFocused(false)}
                       className="h-[42px] w-full rounded-md border border-gray-200 px-4 pr-11 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm text-gray-500 cursor-pointer [&::-webkit-calendar-picker-indicator]:hidden"
                     />
                     <div className="pointer-events-none absolute right-3 top-1/2 z-[1] -translate-y-1/2 text-gray-400">
@@ -164,7 +169,9 @@ export default function BookVisitSection() {
                     className={`w-full h-[42px] border ${isDropdownOpen ? 'border-[#165ba7]' : 'border-gray-200'} rounded-md px-4 font-poppins text-[14px] flex items-center justify-between cursor-pointer transition-colors bg-white shadow-sm`}
                   >
                     <span className={formData.treatment ? 'text-[#333]' : 'text-gray-500'}>
-                      {formData.treatment || 'Select Treatment'}
+                      {formData.subTreatment 
+                        ? `${formData.treatment} - ${formData.subTreatment}` 
+                        : formData.treatment || 'Select Treatment'}
                     </span>
                     <div
                       className={`text-gray-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -191,27 +198,60 @@ export default function BookVisitSection() {
                         onClick={() => setIsDropdownOpen(false)}
                       ></div>
                       <div className="h-drop-in absolute left-0 top-[calc(100%+4px)] w-full max-h-[180px] overflow-y-auto bg-white border border-gray-200 rounded-md shadow-xl z-50">
-                        {treatments.map((t) => (
-                          <div
-                            key={t.title}
-                            className="px-4 py-2 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors"
-                            onClick={() => {
-                              setTreatment(t.title)
-                              setIsDropdownOpen(false)
-                            }}
-                          >
-                            {t.title}
-                          </div>
-                        ))}
-                        <div
-                          className="px-4 py-2 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors border-t border-gray-100"
-                          onClick={() => {
-                            setTreatment('Others')
-                            setIsDropdownOpen(false)
-                          }}
-                        >
-                          Others
-                        </div>
+                        {hasSubtypes && !formData.subTreatment ? (
+                          <>
+                            <div
+                              className="px-4 py-2 text-[13px] text-gray-500 font-poppins font-medium border-b border-gray-100 bg-gray-50 flex items-center gap-2 cursor-pointer hover:bg-gray-100"
+                              onClick={() => {
+                                setTreatment('')
+                              }}
+                            >
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                              </svg>
+                              Back to all treatments
+                            </div>
+                            {selectedTreatmentData!.subtypes!.map((sub) => (
+                              <div
+                                key={sub.title}
+                                className="px-4 py-2 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors pl-6 relative"
+                                onClick={() => {
+                                  setSubTreatment(sub.title)
+                                  setIsDropdownOpen(false)
+                                }}
+                              >
+                                <span className="absolute left-2.5 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#D35B8F] opacity-50"></span>
+                                {sub.title}
+                              </div>
+                            ))}
+                          </>
+                        ) : (
+                          <>
+                            {treatments.map((t) => (
+                              <div
+                                key={t.title}
+                                className="px-4 py-2 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors"
+                                onClick={() => {
+                                  setTreatment(t.title)
+                                  if (!t.subtypes || t.subtypes.length === 0) {
+                                    setIsDropdownOpen(false)
+                                  }
+                                }}
+                              >
+                                {t.title}
+                              </div>
+                            ))}
+                            <div
+                              className="px-4 py-2 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors border-t border-gray-100"
+                              onClick={() => {
+                                setTreatment('Others')
+                                setIsDropdownOpen(false)
+                              }}
+                            >
+                              Others
+                            </div>
+                          </>
+                        )}
                       </div>
                     </>
                   )}

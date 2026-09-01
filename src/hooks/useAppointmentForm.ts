@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { treatments } from '../data/treatments'
 
 export type AppointmentFormData = {
   name: string
@@ -7,6 +8,7 @@ export type AppointmentFormData = {
   email: string
   date: string
   treatment: string
+  subTreatment: string
   description: string
 }
 
@@ -18,6 +20,7 @@ const EMPTY_FORM: AppointmentFormData = {
   email: '',
   date: '',
   treatment: '',
+  subTreatment: '',
   description: '',
 }
 
@@ -30,7 +33,11 @@ export function useAppointmentForm() {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const setTreatment = (treatment: string) => updateField('treatment', treatment)
+  const setTreatment = (treatment: string) => {
+    setFormData((prev) => ({ ...prev, treatment, subTreatment: '' }))
+  }
+
+  const setSubTreatment = (subTreatment: string) => updateField('subTreatment', subTreatment)
 
   const reset = () => {
     setFormData(EMPTY_FORM)
@@ -83,14 +90,29 @@ export function useAppointmentForm() {
       return
     }
 
+    const selectedTreatmentData = treatments.find((t) => t.title === formData.treatment)
+    if (selectedTreatmentData?.subtypes && selectedTreatmentData.subtypes.length > 0) {
+      if (!formData.subTreatment) {
+        setStatus('error')
+        setErrorMessage('Please select a specific treatment option.')
+        return
+      }
+    }
+
     setStatus('submitting')
     setErrorMessage('')
 
     try {
+      const finalTreatment = formData.subTreatment 
+        ? `${formData.treatment} - ${formData.subTreatment}`
+        : formData.treatment
+
+      const payload = { ...formData, treatment: finalTreatment }
+
       const res = await fetch('/api/book-appointment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       })
 
       let data: { error?: string } = {}
@@ -114,5 +136,5 @@ export function useAppointmentForm() {
     }
   }
 
-  return { formData, updateField, setTreatment, status, errorMessage, reset, submit }
+  return { formData, updateField, setTreatment, setSubTreatment, status, errorMessage, reset, submit }
 }

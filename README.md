@@ -1,238 +1,40 @@
-# Dental Esthetique Website
+# Dental Esthetique
 
-React site for Dental Esthetique, a dental clinic in Noida. Built with Vite + TypeScript + Tailwind CSS.
+Website for Dental Esthetique clinic in Noida.
 
 ## Tech Stack
 
-- React 19
-- TypeScript 6
-- Vite 8
-- Tailwind CSS 4
-- React Router 7
-- Nodemailer (serverless function on Vercel for the appointment form)
+Frontend: React 19, TypeScript, Vite
+Styling: Tailwind CSS 4
+Routing: React Router 7
+API: Vercel Serverless Functions (Nodemailer)
 
-## Getting Started
+## Local Development
+
+Run the following commands to start the project locally:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173 in your browser.
+The site will load at http://localhost:5173
 
-## Project Scripts
+## Commands
 
-| Command              | What it does                         |
-| -------------------- | ------------------------------------ |
-| `npm run dev`        | Start dev server                     |
-| `npm run build`      | Type check + production build        |
-| `npm run lint`       | Run oxlint                           |
-| `npm run format`     | Check formatting with Prettier       |
-| `npm run format:fix` | Auto-fix formatting                  |
-| `npm run preview`    | Preview production build locally     |
+npm run dev: Start development server
+npm run build: Type check and build
+npm run preview: Preview production build locally
 
-Always run `npm run build` before pushing. It runs TypeScript check first, then builds. If type check fails, build won't happen.
+## Deployment
 
-## Deploying to Vercel
+The project is configured for Vercel.
+To enable the appointment booking form, add the following environment variables in the Vercel dashboard:
 
-1. Push the repo to GitHub and import it on [vercel.com](https://vercel.com). Vite is auto-detected - no `vercel.json` needed. The `api/` folder deploys as serverless functions automatically.
-2. Add the SMTP environment variables in Vercel (Project → Settings → Environment Variables). Copy them from `.env.example`:
-   - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `MAIL_TO`
-3. Deploy. The form on the home page will now email appointment requests to `MAIL_TO`.
-
-To test locally, run `vercel dev` (installs Vercel CLI) - it serves the Vite build and the API function together. The form lives at `/#book-appointment`.
-
-## Folder Structure
-
-```
-Dental-Website/
-├── api/
-│   └── book-appointment.ts   # Vercel serverless function (nodemailer → SMTP)
-├── public/
-│   ├── favicon.svg
-│   ├── images/
-│   │   ├── home/            # Home page images (logo, hero, gallery, etc.)
-│   │   └── about/           # About page images
-│   └── treatment/           # Treatment card images
-├── src/
-│   ├── main.tsx             # Entry point, renders App
-│   ├── App.tsx              # Routes + lazy loading
-│   ├── index.css            # Tailwind config, fonts, base styles
-│   ├── pages/               # One file per page/route
-│   │   ├── Home.tsx
-│   │   ├── About.tsx
-│   │   ├── DoctorProfile.tsx
-│   │   ├── Services.tsx
-│   │   ├── Contact.tsx
-│   │   └── NotFound.tsx
-│   └── components/
-│       ├── layout/          # Header, Footer, Layout wrapper
-│       ├── home/            # Home page section components
-│       ├── ui/              # Shared reusable components
-│       ├── AppointmentCta.tsx
-│       ├── ErrorBoundary.tsx
-│       └── HeroToothCollage.tsx
-├── index.html
-├── package.json
-├── vite.config.ts
-├── tsconfig.json            # References tsconfig.app.json + tsconfig.node.json
-├── tsconfig.app.json        # TypeScript config for src/
-├── tsconfig.node.json       # TypeScript config for vite.config.ts
-├── .oxlintrc.json           # Linter config
-├── .prettierrc              # Formatter config
-└── .gitignore
-```
-
-## How the Code Works
-
-### Pages and Routing
-
-All routes are defined in `src/App.tsx`. Each page is lazy-loaded so the code only loads when someone visits that route.
-
-```
-/           -> Home.tsx
-/about      -> About.tsx
-/doctors    -> DoctorProfile.tsx
-/services   -> Services.tsx
-/contact    -> Contact.tsx
-*           -> NotFound.tsx (404 page)
-```
-
-Every page sits inside the Layout component which wraps it with Header and Footer.
-
-### Layout System
-
-`src/components/layout/Layout.tsx` renders Header at the top, page content in the middle (via React Router's Outlet), and Footer at the bottom.
-
-### Component Organization
-
-- `pages/` - Each file is a full page. These are big files because each page is a complete visual design from Figma.
-- `components/home/` - Components that only exist on the Home page. The Home page was split into sections (HeroBanner, DoctorCard, KeyTreatments, etc.) to keep things manageable.
-- `components/ui/` - Components used across multiple pages: PageHero, StarRating, WhatsAppFloat.
-- `components/layout/` - Header, Footer, Layout shell.
-- `components/` - AppointmentCta is used on multiple pages. ErrorBoundary catches render crashes. HeroToothCollage is the tooth images cluster on Home.
-
-### Styling Approach
-
-This project uses inline absolute positioning to match a Figma design pixel-perfectly. Every page is a fixed 1440px wide artboard.
-
-You'll see a lot of this:
-
-```tsx
-<div className="absolute left-[153px] top-[5514px] h-[818px] w-[1072px]">
-```
-
-That's intentional. The Figma design uses absolute positions on a 1440px canvas, and the code follows the same approach. It's not responsive - the site is designed for desktop only.
-
-### Fonts
-
-Three fonts are loaded from Google Fonts:
-- **Fraunces** - Headings, buttons, nav links
-- **Poppins** - Body text, descriptions
-- **Gabriela** - Used only for "Smiles" text in the hero
-
-You use them like this in Tailwind:
-
-```tsx
-className="font-[family-name:var(--font-fraunces)]"
-className="font-[family-name:var(--font-poppins)]"
-```
-
-### Path Alias
-
-The project uses `@/` as an alias for `src/`. So instead of:
-
-```tsx
-import Header from '../components/layout/Header'
-```
-
-You can write:
-
-```tsx
-import Header from '@/components/layout/Header'
-```
-
-Both styles exist in the codebase. Relative paths (`../`) are more common. Use whichever fits the context.
-
-### Images
-
-All images live in `public/` folder. They are referenced like:
-
-```tsx
-const IMG = '/images/home'
-<img src={`${IMG}/hero-bg-5ed7fb.png`} />
-```
-
-Most components define a `const IMG` at the top pointing to their image folder. This is just a shorthand to avoid repeating the full path everywhere.
-
-## Things to Know
-
-### The Site is Not Responsive
-
-Every page is a fixed 1440px wide. On smaller screens, the page scrolls horizontally. This is by design since the Figma mockup was for desktop. If someone asks you to make it responsive, that's a big task.
-
-### Form Sends Email via Nodemailer
-
-The appointment form on the home page (`BookAppointment.tsx`) submits to a Vercel serverless
-function at `api/book-appointment.ts`, which sends the request to the clinic inbox using Nodemailer
-over SMTP. It's still a static site on Vercel - the `api/` folder is deployed as serverless
-functions, no separate server needed.
-
-### FAQ Section Has No Answers
-
-The FAQ accordion in FaqSection.tsx expands and collapses, but there's no answer content rendered. The `faqs` array only has questions. Answers need to be added.
-
-### SHOW MORE Buttons Are Placeholders
-
-The "SHOW MORE" buttons in Services.tsx and GallerySection.tsx don't have click handlers. They're visual placeholders from the Figma design.
-
-### Awards Section is Empty
-
-The Awards section in DoctorProfile.tsx has a heading but no content below it.
-
-## Linting and Formatting
-
-- **oxlint** for linting (not ESLint)
-- **Prettier** for formatting
-
-Run `npm run lint` and `npm run format` before committing. If formatting is off, run `npm run format:fix`.
-
-## Adding a New Page
-
-1. Create the page file in `src/pages/YourPage.tsx`
-2. Add a lazy import in `src/App.tsx`:
-   ```tsx
-   const YourPage = lazy(() => import('@/pages/YourPage'))
-   ```
-3. Add a route inside the Layout Route:
-   ```tsx
-   <Route path="your-page" element={<YourPage />} />
-   ```
-4. Add a nav link in `src/components/layout/Header.tsx` if needed
-
-## Adding a New Component
-
-- If it's used on one page only, put it in `src/components/home/` or keep it in the page file
-- If it's used across pages, put it in `src/components/ui/`
-- If it's a layout piece (header, footer, nav), put it in `src/components/layout/`
-
-## Common Gotchas
-
-- **Unused variables will fail the build.** TypeScript is set to `noUnusedLocals: true` and `noUnusedParameters: true`. Remove any variable you're not using.
-- **Comments are not allowed.** The codebase follows a no-comments policy. Remove `//` and `{/* */}` comments.
-- **No emojis in code.** Keep it clean.
-- **`as const` is used a lot.** This tells TypeScript to infer the narrowest possible type. Don't remove it.
-- **Images need width/height.** Most images in the codebase specify dimensions to avoid layout shift. Add them when adding new images.
-- **`loading="lazy"` on below-the-fold images.** Images that aren't visible on initial load should have `loading="lazy"` for performance.
-
-## Useful Files to Read First
-
-If you're new to this project, read these files in this order:
-
-1. `src/main.tsx` - Where it all starts
-2. `src/App.tsx` - Routes and lazy loading
-3. `src/components/layout/Layout.tsx` - How pages get wrapped
-4. `src/pages/Home.tsx` - See how a page is structured
-5. `src/components/home/HeroBanner.tsx` - Understand the styling approach
-6. `src/index.css` - Tailwind theme tokens and fonts
-7. `vite.config.ts` - Build config and path alias
+SMTP_HOST
+SMTP_PORT
+SMTP_SECURE
+SMTP_USER
+SMTP_PASS
+SMTP_FROM
+MAIL_TO

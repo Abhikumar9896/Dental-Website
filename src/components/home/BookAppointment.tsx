@@ -5,8 +5,10 @@ import { useAppointmentForm } from '../../hooks/useAppointmentForm'
 
 export default function BookAppointment() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [isDateFocused, setIsDateFocused] = useState(false)
-  const { formData, updateField, setTreatment, status, errorMessage, submit } = useAppointmentForm()
+  const { formData, updateField, setTreatment, setSubTreatment, status, errorMessage, submit } = useAppointmentForm()
+
+  const selectedTreatmentData = treatments.find((t) => t.title === formData.treatment)
+  const hasSubtypes = selectedTreatmentData?.subtypes && selectedTreatmentData.subtypes.length > 0
 
   const inputBaseClass =
     'w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors'
@@ -79,9 +81,7 @@ export default function BookAppointment() {
 
             <div className="relative">
               <input
-                type={isDateFocused || formData.date ? 'datetime-local' : 'text'}
-                placeholder="Preferred Date & Time *"
-                aria-label="Preferred Date & Time *"
+                type="datetime-local"
                 required
                 min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
                 value={formData.date}
@@ -95,8 +95,6 @@ export default function BookAppointment() {
                   }
                 }}
                 className="relative w-full h-[40px] lg:h-[46px] border border-gray-200/80 rounded-md px-3 lg:px-4 font-poppins text-[13px] lg:text-[14px] text-gray-500 outline-none focus:outline-none focus:ring-1 focus:ring-[#165ba7] focus:border-[#165ba7] transition-colors [&::-webkit-calendar-picker-indicator]:hidden z-10 bg-transparent"
-                onFocus={() => setIsDateFocused(true)}
-                onBlur={() => setIsDateFocused(false)}
               />
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 z-0">
                 <svg
@@ -127,7 +125,9 @@ export default function BookAppointment() {
                 className={`w-full h-[46px] border ${isDropdownOpen ? 'border-[#165ba7]' : 'border-gray-200/80'} rounded-md px-4 font-poppins text-[14px] flex items-center justify-between cursor-pointer transition-colors bg-white`}
               >
                 <span className={formData.treatment ? 'text-[#333] font-medium' : 'text-gray-500'}>
-                  {formData.treatment || 'Treatment Required *'}
+                  {formData.subTreatment 
+                    ? `${formData.treatment} - ${formData.subTreatment}` 
+                    : formData.treatment || 'Treatment Required *'}
                 </span>
                 <div
                   className={`text-gray-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -154,27 +154,60 @@ export default function BookAppointment() {
                     onClick={() => setIsDropdownOpen(false)}
                   ></div>
                   <div className="h-drop-in absolute left-0 top-[calc(100%+4px)] w-full max-h-[220px] overflow-y-auto bg-white border border-gray-200/80 rounded-md shadow-xl z-50">
-                    {treatments.map((t) => (
-                      <div
-                        key={t.title}
-                        className="px-4 py-2.5 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors"
-                        onClick={() => {
-                          setTreatment(t.title)
-                          setIsDropdownOpen(false)
-                        }}
-                      >
-                        {t.title}
-                      </div>
-                    ))}
-                    <div
-                      className="px-4 py-2.5 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors border-t border-gray-100"
-                      onClick={() => {
-                        setTreatment('Others')
-                        setIsDropdownOpen(false)
-                      }}
-                    >
-                      Others
-                    </div>
+                    {hasSubtypes && !formData.subTreatment ? (
+                      <>
+                        <div
+                          className="px-4 py-2.5 text-[13px] text-gray-500 font-poppins font-medium border-b border-gray-100 bg-gray-50 flex items-center gap-2 cursor-pointer hover:bg-gray-100"
+                          onClick={() => {
+                            setTreatment('')
+                          }}
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                          </svg>
+                          Back to all treatments
+                        </div>
+                        {selectedTreatmentData!.subtypes!.map((sub) => (
+                          <div
+                            key={sub.title}
+                            className="px-4 py-2.5 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors pl-6 relative"
+                            onClick={() => {
+                              setSubTreatment(sub.title)
+                              setIsDropdownOpen(false)
+                            }}
+                          >
+                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#D35B8F] opacity-50"></span>
+                            {sub.title}
+                          </div>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        {treatments.map((t) => (
+                          <div
+                            key={t.title}
+                            className="px-4 py-2.5 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors"
+                            onClick={() => {
+                              setTreatment(t.title)
+                              if (!t.subtypes || t.subtypes.length === 0) {
+                                setIsDropdownOpen(false)
+                              }
+                            }}
+                          >
+                            {t.title}
+                          </div>
+                        ))}
+                        <div
+                          className="px-4 py-2.5 text-[13px] text-gray-600 font-poppins hover:bg-[#F8F6F1] hover:text-[#165ba7] cursor-pointer transition-colors border-t border-gray-100"
+                          onClick={() => {
+                            setTreatment('Others')
+                            setIsDropdownOpen(false)
+                          }}
+                        >
+                          Others
+                        </div>
+                      </>
+                    )}
                   </div>
                 </>
               )}
