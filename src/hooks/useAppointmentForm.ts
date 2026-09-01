@@ -42,6 +42,47 @@ export function useAppointmentForm() {
     e.preventDefault()
     if (status === 'submitting') return
 
+    const nameStr = formData.name.trim()
+    if (nameStr.length < 3 || !/^[a-zA-Z\s]+$/.test(nameStr)) {
+      setStatus('error')
+      setErrorMessage('Name must be at least 3 characters long and contain only letters.')
+      return
+    }
+
+    const phoneStr = formData.phone.trim()
+    if (!/^[6-9]\d{9}$/.test(phoneStr)) {
+      setStatus('error')
+      setErrorMessage('Please enter a valid 10-digit Indian mobile number.')
+      return
+    }
+
+    const emailStr = formData.email.trim()
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailStr)) {
+      setStatus('error')
+      setErrorMessage('Please enter a valid email address.')
+      return
+    }
+
+    if (!formData.date) {
+      setStatus('error')
+      setErrorMessage('Please select a preferred date & time.')
+      return
+    }
+
+    const selectedDate = new Date(formData.date)
+    const now = new Date()
+    if (selectedDate < now) {
+      setStatus('error')
+      setErrorMessage('Booking date and time cannot be in the past.')
+      return
+    }
+
+    if (!formData.treatment) {
+      setStatus('error')
+      setErrorMessage('Please select a treatment required.')
+      return
+    }
+
     setStatus('submitting')
     setErrorMessage('')
 
@@ -60,7 +101,7 @@ export function useAppointmentForm() {
       }
 
       if (!res.ok) {
-        throw new Error(data.error || 'Something went wrong. Please try again.')
+        throw new Error(data.error || "We couldn't process your request at this moment. Please try again or contact us directly.")
       }
 
       setStatus('success')
@@ -68,7 +109,7 @@ export function useAppointmentForm() {
     } catch (error) {
       setStatus('error')
       setErrorMessage(
-        error instanceof Error ? error.message : 'Something went wrong. Please try again.',
+        error instanceof Error ? error.message : "We couldn't process your request at this moment. Please try again or contact us directly.",
       )
     }
   }

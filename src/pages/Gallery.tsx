@@ -74,10 +74,16 @@ function HeroImageCollage({ images }: { images: string[] }) {
 }
 
 const treatmentImages = [
-  '/images/gallery/image.webp',
-  '/images/gallery/image copy.webp',
-  '/images/gallery/image copy 2.webp',
-  '/images/gallery/image copy 3.webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.52.08 PM.jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.04 PM (1).jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 1.04.56 PM.jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM (1).jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM.jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM (2).jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.04 PM.jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM (2).jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM.jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM (1).jpeg',
 ]
 
 const galleryImages = [
@@ -112,7 +118,7 @@ const galleryImages = [
   { src: '/images/patient/unnamed (7).webp', category: 'patient' },
   { src: '/images/patient/unnamed (8).webp', category: 'patient' },
   { src: '/images/patient/unnamed (9).webp', category: 'patient' },
-  { src: '/images/patient/unnamed.webp', category: 'patient' },
+
 ]
 
 const patientImageUrls = galleryImages.map((img) => img.src)
@@ -233,28 +239,44 @@ export default function Gallery() {
             className="mb-8 sm:mb-12 lg:mb-16"
           />
 
-          <Stagger
-            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 w-full max-w-[1300px] h-gal-ba-grid"
-            gap={0.1}
-          >
-            {treatmentImages.map((src, idx) => (
-              <StaggerItem
-                key={idx}
-                y={26}
-                className="relative group overflow-hidden rounded-xl lg:rounded-2xl bg-white shadow-md border border-gray-100 p-1.5 sm:p-2"
-              >
-                <div className="overflow-hidden rounded-lg lg:rounded-xl bg-gray-50">
-                  <img
-                    src={src}
-                    alt={`Treatment result ${idx + 1}`}
-                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
         </section>
+      </div>
+
+      <div className="relative w-full overflow-hidden">
+        <style>{`
+          @keyframes marquee-ba {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee-ba {
+            animation: marquee-ba ${treatmentImages.length * 6}s linear infinite;
+          }
+          .animate-marquee-ba:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+        <div
+          className="flex items-center w-max animate-marquee-ba hover:[animation-play-state:paused] gap-3 sm:gap-4 lg:gap-6 px-4"
+        >
+          {[...treatmentImages, ...treatmentImages, ...treatmentImages, ...treatmentImages].map((src, idx) => (
+            <div
+              key={idx}
+              className="relative group overflow-hidden rounded-xl lg:rounded-2xl bg-white shadow-md border border-gray-100 shrink-0 w-[140px] sm:w-[160px] md:w-[200px] lg:w-[240px] aspect-[9/16]"
+            >
+              <div className="w-full h-full overflow-hidden rounded-lg lg:rounded-xl bg-gray-50">
+                <img
+                  src={src}
+                  alt={`Treatment result ${(idx % treatmentImages.length) + 1}`}
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col items-center pb-0 px-0 h-gal-body-2">
 
         <div className="w-full max-w-[1200px] h-[1px] bg-gray-200 my-8 lg:my-8 mx-4 sm:mx-6" />
 

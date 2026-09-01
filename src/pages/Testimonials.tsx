@@ -23,6 +23,12 @@ const optimizedVideo = (id: string): TestimonialVideo => ({
   poster: `${VIDEO_BASE}/${id}.webp`,
 })
 
+const optimizedVideoJpg = (id: string): TestimonialVideo => ({
+  id,
+  src: `${VIDEO_BASE}/${id}.mp4`,
+  poster: `${VIDEO_BASE}/${id}.jpg`,
+})
+
 const gallery2Video = (file: string, fit: TestimonialVideo['fit'] = 'cover'): TestimonialVideo => ({
   id: file,
   src: `/gallery2/${file}.MP4`,
@@ -44,6 +50,14 @@ const videoFiles: TestimonialVideo[] = [
   gallery2Video('9a49936b-77a4-4d78-aa52-9828095c09f6', 'contain'),
   optimizedVideo('video-08'),
   gallery2Video('e22d0978-8093-4ae5-8504-68362823baac', 'contain'),
+  optimizedVideoJpg('video-09'),
+  optimizedVideoJpg('video-10'),
+  optimizedVideoJpg('video-11'),
+  optimizedVideoJpg('video-12'),
+  optimizedVideoJpg('video-13'),
+  optimizedVideoJpg('video-14'),
+  optimizedVideoJpg('video-15'),
+  optimizedVideoJpg('video-16'),
 ]
 
 function VideoCard({

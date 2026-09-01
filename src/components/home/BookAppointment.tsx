@@ -47,6 +47,9 @@ export default function BookAppointment() {
               placeholder="Full Name *"
               aria-label="Full Name *"
               required
+              minLength={3}
+              pattern="[a-zA-Z\s]+"
+              title="Name must contain at least 3 alphabetic characters."
               value={formData.name}
               onChange={(e) => updateField('name', e.target.value)}
               className={inputBaseClass}
@@ -57,6 +60,8 @@ export default function BookAppointment() {
               placeholder="Phone Number *"
               aria-label="Phone Number *"
               required
+              pattern="^[6-9]\d{9}$"
+              title="Please enter a valid 10-digit Indian mobile number starting with 6-9."
               value={formData.phone}
               onChange={(e) => updateField('phone', e.target.value)}
               className={inputBaseClass}
@@ -78,6 +83,7 @@ export default function BookAppointment() {
                 placeholder="Preferred Date & Time *"
                 aria-label="Preferred Date & Time *"
                 required
+                min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
                 value={formData.date}
                 onChange={(e) => updateField('date', e.target.value)}
                 onClick={(e) => {

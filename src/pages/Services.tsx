@@ -165,9 +165,14 @@ export default function Services() {
                                   {isSubExpanded && (
                                     <div className="p-4 lg:p-6 pt-0 flex flex-col lg:flex-row gap-5 lg:gap-[40px] border-t border-gray-100 mt-2">
                                       <img
-                                        src={`/treatment/${encodeURIComponent(sub.title)}.webp`}
-                                        className="w-full max-w-[300px] lg:w-[260px] h-auto aspect-[300/160] lg:h-[140px] object-cover rounded-[12px] shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0"
+                                        src={sub.image || `/treatment/${encodeURIComponent(sub.title)}.webp`}
+                                        className={`shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0 rounded-[12px] ${
+                                          (sub as any).isVerticalImage
+                                            ? 'w-full max-w-[150px] lg:w-[130px] h-auto object-contain max-h-[250px]'
+                                            : 'w-full max-w-[300px] lg:w-[260px] h-auto aspect-[300/160] lg:h-[140px] object-cover'
+                                        }`}
                                         alt={sub.title}
+                                        style={{ objectPosition: (sub as any).imagePosition || 'center' }}
                                         onError={(e) => {
                                           e.currentTarget.style.display = 'none'
                                         }}
@@ -194,7 +199,7 @@ export default function Services() {
                       ) : (
                         <div className="flex flex-col lg:flex-row gap-5 lg:gap-[74px]">
                           <img
-                            src={`/treatment/${encodeURIComponent(item.title)}.webp`}
+                            src={(item as any).image || `/treatment/${encodeURIComponent(item.title)}.webp`}
                             className="w-full max-w-[300px] lg:w-[300px] h-auto aspect-[300/160] lg:h-[160px] object-cover rounded-[14px] lg:rounded-[16px] shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0"
                             alt={item.title}
                             onError={(e) => {

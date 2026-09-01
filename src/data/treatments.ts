@@ -22,7 +22,8 @@ export const treatments: {
   title: string
   category: TreatmentCategory
   content: string
-  subtypes?: { title: string; content: string }[]
+  image?: string
+  subtypes?: { title: string; content: string; image?: string; imagePosition?: string; isVerticalImage?: boolean }[]
 }[] = [
   {
     title: 'SINGLE SITTING RCT',
@@ -34,11 +35,13 @@ export const treatments: {
         title: 'RE-RCT',
         content:
           "A failed root canal doesn't mean you have to lose your tooth. Our advanced Re-Root Canal Treatment (Re-RCT) meticulously removes old filling material, clears out new infections and thoroughly seals the tooth. This specialized procedure gives your natural tooth a second chance, restoring your long-term oral health and comfort with expert precision.",
+        image: '/images/treatment-images/RE-RCT.jpeg',
       },
       {
         title: 'MICROSCOPIC RCT',
         content:
           'Microscopic Root Canal Treatment utilizes state-of-the-art dental microscopes to magnify the intricate structures inside your tooth. This advanced technology allows our endodontists to locate hidden canals and precisely remove infections that the naked eye might miss. The result is a highly thorough cleaning that maximizes the chances of saving your natural tooth permanently.',
+        image: '/images/treatment-images/MICROSCOPIC RCT.jpeg',
       },
     ],
   },
@@ -53,11 +56,14 @@ export const treatments: {
         title: 'SINGLE TOOTH IMPLANTS',
         content:
           'A single tooth implant is the most natural-looking and feeling replacement for a missing tooth. A biocompatible titanium post is gently placed into your jawbone to act as an artificial root. Once integrated, a custom-crafted ceramic crown is securely attached, flawlessly restoring your chewing ability and completing your smile without affecting adjacent teeth.',
+        image: '/images/treatment-images/Single tooth implants.jpg',
       },
       {
         title: 'FULL MOUTH IMPLANTS',
         content:
           'Full mouth implants offer a life-changing solution for patients missing all or most of their teeth. By strategically placing several titanium implants into the jawbone, we can securely anchor a full arch of beautiful, permanent replacement teeth. This comprehensive treatment restores full chewing strength, prevents bone loss and gives you back your confident smile.',
+        image: '/images/treatment-images/full mouth implants.jpg',
+        isVerticalImage: true,
       },
     ],
   },
@@ -79,11 +85,13 @@ export const treatments: {
         title: 'METAL',
         content:
           'Metal braces are a proven, highly effective orthodontic solution for correcting crowding, spacing and bite issues. Made from durable stainless steel brackets and wires, they gently guide teeth into ideal alignment over time. They are a reliable choice for patients of all ages seeking a strong, cost-effective path to a straighter smile.',
+        image: '/images/treatment-images/Metal Braces.jpg',
       },
       {
         title: 'CERAMIC (ESTHETICS)',
         content:
           'Ceramic braces offer the same corrective power as metal braces with a more discreet appearance. Tooth-colored or clear ceramic brackets blend with your natural teeth, making treatment far less noticeable while still delivering precise, predictable alignment results.',
+        image: '/images/treatment-images/Ceramic Braces.jpeg',
       },
       {
         title: 'SELF LIGATING',
@@ -94,6 +102,7 @@ export const treatments: {
         title: 'TEETH ALIGNERS',
         content:
           'Clear aligners are a popular, virtually invisible alternative to traditional metal braces. Using a series of custom-made, removable plastic trays, they gently and gradually shift your teeth into perfect alignment. Because they are removable, you can easily brush, floss and enjoy all your favorite foods throughout your orthodontic treatment.',
+        image: '/images/treatment-images/Teeth Aligners.jpg',
       },
       {
         title: 'INVISALIGN',
@@ -113,6 +122,8 @@ export const treatments: {
         title: 'FLEXIBLE DENTURES',
         content:
           'Flexible dentures are a comfortable, lightweight alternative to traditional rigid acrylic dentures. Made from a special biocompatible thermoplastic material, they gently flex to adapt to the unique contours of your mouth. They require no metal clasps, making them virtually invisible while providing a secure fit and excellent everyday comfort.',
+        image: '/images/treatment-images/flexible dentures.jpg',
+        imagePosition: 'top',
       },
       {
         title: 'FIXED PARTIAL DENTURES',
@@ -137,6 +148,7 @@ export const treatments: {
         title: 'ZIRCONIA',
         content:
           'Zirconia is a cutting-edge, ultra-durable ceramic material used for crafting high-quality crowns and bridges. It is incredibly strong and highly resistant to chipping or fracturing, making it ideal for both front and back teeth. Beyond its strength, zirconia can be customized to match the exact shade and translucency of your natural teeth.',
+        image: '/images/treatment-images/zirconia crowns.jpg',
       },
       {
         title: '3M',
@@ -157,6 +169,7 @@ export const treatments: {
         title: '3M LAVA',
         content:
           'The 3M LAVA ceramic system is renowned globally for producing restorations that excel in both durability and aesthetics. By combining a high-strength zirconia core with specialized veneering ceramics, 3M LAVA crowns and bridges offer a precise, comfortable fit. They are designed to withstand heavy chewing forces while maintaining a beautiful, natural translucency.',
+        image: '/images/treatment-images/3M Lava.jpg',
       },
       {
         title: 'BRUXER',
@@ -224,6 +237,7 @@ export const treatments: {
     category: 'Zoom Teeth Whitening',
     content:
       'Philips Zoom Teeth Whitening is a highly effective, professional in-office treatment that can brighten your smile by up to eight shades in just one visit. It uses a specialized LED light-activated gel to safely break down deep stains and discoloration caused by coffee, tea, or aging. The result is a dramatically whiter, brilliant smile in under an hour.',
+    image: '/images/treatment-images/ZOOM TEETH WHITENING.jpg',
   },
 
   {
@@ -231,6 +245,7 @@ export const treatments: {
     category: 'Dental Jewellery',
     content:
       'Dental jewellery adds a subtle, stylish sparkle to your smile with tiny crystal or gemstone designs bonded safely to the tooth surface. The procedure is quick, painless and non-invasive - no drilling required. You can choose from elegant designs that enhance your look while remaining easy to remove whenever you wish.',
+    image: '/images/treatment-images/DENTAL JEWELLERY.jpg',
   },
 
   {
@@ -245,6 +260,7 @@ export const treatments: {
     category: 'Gums Surgeries',
     content:
       'Advanced gum (periodontal) surgeries are designed to treat severe gum disease, restore receded gumlines, or reshape gum tissue for aesthetic purposes. By gently removing deep bacteria, smoothing tooth roots, or grafting healthy tissue, we halt the progression of periodontal disease. These procedures protect your bone and ensure a healthy, stable foundation for your teeth.',
+    image: '/images/treatment-images/GUMS SURGERIES.jpg',
   },
 
   {
@@ -259,6 +275,7 @@ export const treatments: {
     category: 'Child Dentistry',
     content:
       'Pediatric dentistry focuses on the oral health of children from infancy through the teen years. We provide gentle, specialized care to ensure your child develops a healthy, confident smile in a comfortable environment.',
+    image: '/images/treatment-images/child dentistrty.jpeg',
     subtypes: [
       {
         title: 'FILLINGS / ZIRCONIA CROWNS',

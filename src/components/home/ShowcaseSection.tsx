@@ -1,7 +1,42 @@
+import { useState, useEffect } from 'react'
 import StarRating from '../ui/StarRating'
 import Reveal, { Float } from '../ui/Reveal'
 
 const IMG = '/images/home'
+
+const TREATMENT_NAMES = [
+  'Implants',
+  'Root Canal Treatment',
+  'Braces',
+  'Aligners',
+  'Full Mouth Reconstruction',
+  'Veneers',
+  'Child Dentistry'
+]
+
+function RotatingText({ startIndex = 0 }: { startIndex?: number }) {
+  const [index, setIndex] = useState(startIndex)
+  const [fade, setFade] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false)
+      setTimeout(() => {
+        setIndex((prev) => (prev + 2) % TREATMENT_NAMES.length)
+        setFade(true)
+      }, 300)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span
+      className={`font-fraunces text-[19px] tracking-tight font-normal leading-none text-[#28231F] whitespace-nowrap transition-opacity duration-300 ${fade ? 'opacity-100' : 'opacity-0'}`}
+    >
+      {TREATMENT_NAMES[index]}
+    </span>
+  )
+}
 
 export default function ShowcaseSection() {
   return (
@@ -124,22 +159,18 @@ export default function ShowcaseSection() {
 
       <Float amplitude={8} duration={4.5} delay={0.2} className="h-shc-f5">
         <div
-          className="absolute left-[1215px] top-[393px] z-[3] flex h-[56px] w-fit items-center justify-center rounded-md bg-white"
-          style={{ padding: '13px 20px', gap: 10 }}
+          className="absolute left-[1115px] top-[393px] z-[3] flex h-[56px] w-[265px] items-center justify-center rounded-md bg-white transition-all duration-300"
+          style={{ padding: '13px 8px', gap: 10 }}
         >
-          <span className="font-fraunces text-2xl font-normal leading-none text-[#28231F] whitespace-nowrap">
-            Dental Implants
-          </span>
+          <RotatingText startIndex={0} />
         </div>
       </Float>
       <Float amplitude={10} duration={5} delay={0.6} className="h-shc-f6">
         <div
-          className="absolute left-[1134px] top-[461px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-md bg-[#A3C9E2]"
-          style={{ padding: '13px 10px', gap: 10 }}
+          className="absolute left-[1055px] top-[461px] z-[3] flex h-[56px] w-[265px] items-center justify-center rounded-md bg-[#A3C9E2] transition-all duration-300"
+          style={{ padding: '13px 8px', gap: 10 }}
         >
-          <span className="font-fraunces text-2xl font-normal leading-none text-[#28231F]">
-            Teeth Whitening
-          </span>
+          <RotatingText startIndex={1} />
         </div>
       </Float>
 
