@@ -39,6 +39,29 @@ export function useAppointmentForm() {
 
   const setSubTreatment = (subTreatment: string) => updateField('subTreatment', subTreatment)
 
+  const setDate = (value: string) => {
+    if (!value) {
+      updateField('date', '')
+      return
+    }
+    
+    const selected = new Date(value)
+    const now = new Date()
+    
+    // Check if the selected date is strictly in the past (allowing for 1-minute grace)
+    if (selected.getTime() < now.getTime() - 60000) {
+      updateField('date', '')
+      setStatus('error')
+      setErrorMessage('Booking date and time cannot be in the past.')
+    } else {
+      updateField('date', value)
+      if (status === 'error' && errorMessage.includes('date')) {
+        setStatus('idle')
+        setErrorMessage('')
+      }
+    }
+  }
+
   const reset = () => {
     setFormData(EMPTY_FORM)
     setStatus('idle')
@@ -136,5 +159,5 @@ export function useAppointmentForm() {
     }
   }
 
-  return { formData, updateField, setTreatment, setSubTreatment, status, errorMessage, reset, submit }
+  return { formData, updateField, setTreatment, setSubTreatment, setDate, status, errorMessage, reset, submit }
 }

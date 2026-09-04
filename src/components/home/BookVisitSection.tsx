@@ -5,7 +5,7 @@ import { useAppointmentForm } from '../../hooks/useAppointmentForm'
 
 export default function BookVisitSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const { formData, updateField, setTreatment, setSubTreatment, status, errorMessage, submit } = useAppointmentForm()
+  const { formData, updateField, setTreatment, setSubTreatment, setDate, status, errorMessage, submit } = useAppointmentForm()
 
   const selectedTreatmentData = treatments.find((t) => t.title === formData.treatment)
   const hasSubtypes = selectedTreatmentData?.subtypes && selectedTreatmentData.subtypes.length > 0
@@ -118,7 +118,7 @@ export default function BookVisitSection() {
                       required
                       min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
                       value={formData.date}
-                      onChange={(e) => updateField('date', e.target.value)}
+                      onChange={(e) => setDate(e.target.value)}
                       onClick={(e) => {
                         const input = e.currentTarget
                         if ('showPicker' in input) {
