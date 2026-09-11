@@ -307,7 +307,7 @@ export default function BookAppointment() {
         </p>
         <div className="w-[20px] lg:w-[80px] h-[2px] bg-[#D35B8F] mt-2 lg:mt-12 mb-2 lg:mb-8"></div>
         <span className="font-poppins text-white text-[13px] lg:text-[32px] font-medium italic tracking-wide">
-          Dr. Deepika Singhal & Dr. Abhinav Jain
+          Dr. Deepika Singhal<br /> Dr. Abhinav Jain
         </span>
       </Reveal>
     </div>

@@ -8,7 +8,7 @@ import FourReasons from '../components/home/FourReasons'
 import ShowcaseSection from '../components/home/ShowcaseSection'
 import ReviewsSection from '../components/home/ReviewsSection'
 import GallerySection from '../components/home/GallerySection'
-import BookVisitSection from '../components/home/BookVisitSection'
+
 import ServicesGridSection from '../components/home/ServicesGridSection'
 import LocationSection from '../components/home/LocationSection'
 
@@ -23,7 +23,7 @@ export default function Home() {
     path: '/',
   })
   return (
-    <div className="relative overflow-x-hidden bg-white mx-auto w-full lg:w-[1440px] h-auto lg:h-[9150px] h-canvas">
+    <div className="relative overflow-x-hidden bg-white mx-auto w-full lg:w-[1440px] h-auto lg:h-[8550px] h-canvas">
       <HeroBanner />
 
       <div className="hidden lg:block absolute left-0 top-[786px] w-full h-[740px] bg-[#F5F7FA] z-10 h-band" />
@@ -47,7 +47,7 @@ export default function Home() {
           <ShowcaseSection />
           <ReviewsSection />
           <GallerySection />
-          <BookVisitSection />
+
           <ServicesGridSection />
           <LocationSection />
         </div>

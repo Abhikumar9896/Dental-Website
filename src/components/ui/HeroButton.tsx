@@ -54,8 +54,10 @@ export default function HeroButton({
         onClick={
           isHash
             ? (e) => {
-                e.preventDefault()
-                scrollToId(href)
+                if (window.location.pathname === '/') {
+                  e.preventDefault()
+                  scrollToId(href)
+                }
               }
             : undefined
         }
@@ -66,7 +68,17 @@ export default function HeroButton({
   }
 
   return (
-    <Link to={to} className={combinedClasses}>
+    <Link 
+      to={to} 
+      className={combinedClasses}
+      onClick={(e) => {
+        if (typeof to === 'string' && to.includes('#') && window.location.pathname === '/') {
+          e.preventDefault()
+          const id = to.split('#')[1]
+          if (id) scrollToId(id)
+        }
+      }}
+    >
       {content}
     </Link>
   )

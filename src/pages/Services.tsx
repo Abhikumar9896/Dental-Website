@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import HeroButton from '../components/ui/HeroButton'
 import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
 import PageHero from '../components/ui/PageHero'
@@ -17,8 +18,60 @@ export default function Services() {
   })
   const [active, setActive] = useState<(typeof treatmentCategories)[number]>('All')
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
-  const [expandedSubtype, setExpandedSubtype] = useState<string | null>(null)
+  const [expandedSubtypes, setExpandedSubtypes] = useState<string[]>([])
   const [showAll, setShowAll] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const itemParam = params.get('item')
+    const subtypeParam = params.get('subtype')
+    const categoryParam = params.get('category')
+
+    if (categoryParam) {
+      setActive(categoryParam as (typeof treatmentCategories)[number])
+    } else if (itemParam) {
+      // If we only passed 'item', we can automatically select the right category
+      const foundTreatment = treatments.find(t => t.title === itemParam)
+      if (foundTreatment) {
+        setActive(foundTreatment.category)
+      }
+    }
+
+    if (itemParam) {
+      setExpandedItem(itemParam)
+      setShowAll(true)
+      
+      const foundItem = treatments.find(t => t.title === itemParam)
+      if (foundItem?.subtypes) {
+        // If they asked for a specific subtype, maybe just open that one, or all of them.
+        // We'll open all of them by default when a parent opens.
+        setExpandedSubtypes(foundItem.subtypes.map(s => s.title))
+      }
+    } else if (subtypeParam) {
+      setExpandedSubtypes([subtypeParam])
+    }
+
+    // Scroll down to the specific item if we came with specific params
+    if (itemParam || categoryParam) {
+      setTimeout(() => {
+        let el = null
+        if (subtypeParam) {
+          el = document.getElementById(`subtype-${subtypeParam}`)
+        }
+        if (!el && itemParam) {
+          el = document.getElementById(`treatment-${itemParam}`)
+        }
+        if (!el) {
+          el = document.getElementById('catalogue')
+        }
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 100
+          window.scrollTo({ top: y, behavior: 'smooth' })
+        }
+      }, 400) // slight delay to let state render and Framer Motion mount
+    }
+  }, [location.search])
 
   const filteredTreatments = treatments.filter(
     (item) => active === 'All' || item.category === active,
@@ -71,7 +124,7 @@ export default function Services() {
                       setActive(cat)
                       setShowAll(false)
                       setExpandedItem(null)
-                      setExpandedSubtype(null)
+                      setExpandedSubtypes([])
                     }}
                     className={`flex items-center justify-center h-[36px] lg:h-[40px] rounded-[18px] px-3.5 lg:px-5 font-poppins text-[12px] lg:text-[13px] font-medium transition-colors whitespace-nowrap ${
                       isActive
@@ -97,8 +150,17 @@ export default function Services() {
                   className="flex flex-col border-b border-[#D9D9D9] pb-5 lg:pb-6"
                 >
                   <div
-                    className="group flex w-full items-start sm:items-center justify-between gap-3 cursor-pointer transition-colors"
-                    onClick={() => setExpandedItem(isExpanded ? null : item.title)}
+                    id={`treatment-${item.title}`}
+                    className="group flex w-full items-start sm:items-center justify-between gap-3 cursor-pointer transition-colors scroll-mt-32"
+                    onClick={() => {
+                      const willExpand = !isExpanded
+                      setExpandedItem(willExpand ? item.title : null)
+                      if (willExpand && item.subtypes) {
+                        setExpandedSubtypes(item.subtypes.map(s => s.title))
+                      } else {
+                        setExpandedSubtypes([])
+                      }
+                    }}
                     onMouseEnter={() => {
                       const img = new Image()
                       img.src = `/treatment/${encodeURIComponent(item.title)}.webp`
@@ -131,17 +193,20 @@ export default function Services() {
                           </p>
                           <div className="flex flex-col gap-4 border-t border-gray-200 pt-6">
                             {item.subtypes.map((sub) => {
-                              const isSubExpanded = expandedSubtype === sub.title
+                              const isSubExpanded = expandedSubtypes.includes(sub.title)
                               return (
                                 <div
                                   key={sub.title}
-                                  className="flex flex-col border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm transition-all"
+                                  id={`subtype-${sub.title}`}
+                                  className="flex flex-col border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm transition-all scroll-mt-32"
                                 >
                                   <div
                                     className="flex w-full items-center justify-between p-4 lg:px-6 lg:py-5 cursor-pointer hover:bg-gray-50 transition-colors"
                                     onClick={(e) => {
                                       e.stopPropagation()
-                                      setExpandedSubtype(isSubExpanded ? null : sub.title)
+                                      setExpandedSubtypes(prev => 
+                                        isSubExpanded ? prev.filter(t => t !== sub.title) : [...prev, sub.title]
+                                      )
                                     }}
                                   >
                                     <h4 className="font-poppins font-semibold text-[15px] sm:text-[17px] lg:text-[18px] text-[#28231F] uppercase tracking-wide">

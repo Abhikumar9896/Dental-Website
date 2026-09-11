@@ -50,7 +50,7 @@ export default function About() {
         <div className="mt-16 w-full flex justify-center bg-white z-10 h-about-story">
           <div className="flex w-[1280px] items-center justify-between gap-16 h-st-row">
             <Reveal x={-40} y={0} duration={0.8} className="w-[600px] flex flex-col h-st-txt">
-              <SectionPill>02 · OUR STORY</SectionPill>
+              <SectionPill>01 · OUR STORY</SectionPill>
               <h2 className="mt-3 font-poppins text-[40px] font-semibold leading-[1.1] text-[#28231F] h-st-h">
                 Creating Beautiful Smiles Through Excellence in Dentistry
               </h2>
@@ -104,7 +104,7 @@ export default function About() {
         <div className="mt-24 w-full flex justify-center bg-white z-10 h-about-vm">
           <div className="flex w-[1280px] items-center justify-between gap-10 h-vm-row">
             <Reveal x={-40} y={0} duration={0.8} className="w-[460px] flex flex-col h-vm-t">
-              <SectionPill>03 · VISION & MISSION</SectionPill>
+              <SectionPill>02 · VISION & MISSION</SectionPill>
               <h2 className="mt-4 font-fraunces text-[40px] font-bold leading-[1.2] text-[#28231F] h-vm-h">
                 What we&apos;re working toward
               </h2>

@@ -1,4 +1,40 @@
+import { useState, useEffect } from 'react'
+
 const IMG = '/images/home'
+
+const CTA_TREATMENT_NAMES = [
+  'Implants',
+  'Root Canal Treatment',
+  'Braces',
+  'Aligners',
+  'Full Mouth Reconstruction',
+  'Veneers',
+  'Child Dentistry'
+]
+
+function RotatingText({ startIndex = 0 }: { startIndex?: number }) {
+  const [index, setIndex] = useState(startIndex)
+  const [fade, setFade] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false)
+      setTimeout(() => {
+        setIndex((prev) => (prev + 2) % CTA_TREATMENT_NAMES.length)
+        setFade(true)
+      }, 300)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span
+      className={`font-fraunces text-[20px] tracking-tight font-normal leading-none text-[#28231F] whitespace-nowrap transition-opacity duration-300 ${fade ? 'opacity-100' : 'opacity-0'}`}
+    >
+      {CTA_TREATMENT_NAMES[index]}
+    </span>
+  )
+}
 
 type AppointmentCtaProps = {
   top: number
@@ -25,9 +61,9 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
 
       <div className="absolute left-[910px] top-[74px] z-[1] h-[280px] w-[280px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_12px_32px_rgba(0,0,0,0.15)] h-cta-blob">
         <img
-          src={`${IMG}/cta-patient.png`}
+          src={`${IMG}/cta-patient-new.jpeg`}
           alt="Happy Patient"
-          className="h-full w-full object-cover scale-[1.4] -translate-y-[5%] translate-x-[20%]"
+          className="h-full w-full object-cover object-left"
           loading="lazy"
         />
       </div>
@@ -65,21 +101,17 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
       </div>
 
       <div
-        className="absolute left-[1070px] top-[295px] z-[3] flex h-[56px] w-fit px-5 items-center justify-center rounded-xl bg-white h-cta-p1"
+        className="absolute left-[1020px] top-[295px] z-[3] flex h-[56px] w-[280px] px-6 items-center justify-center rounded-xl bg-white h-cta-p1 transition-all duration-300"
         style={{ padding: '13px 20px 10px', gap: 10 }}
       >
-        <span className="font-fraunces text-2xl font-normal leading-none text-[#28231F] whitespace-nowrap">
-          Gums Surgeries
-        </span>
+        <RotatingText startIndex={0} />
       </div>
 
       <div
-        className="absolute left-[1028px] top-[359px] z-[3] flex h-[56px] w-[222px] items-center justify-center rounded-xl bg-[#b3d4f6] h-cta-p2"
-        style={{ padding: '13px 10px 10px', gap: 10 }}
+        className="absolute left-[980px] top-[359px] z-[3] flex h-[56px] w-[280px] px-6 items-center justify-center rounded-xl bg-[#b3d4f6] h-cta-p2 transition-all duration-300"
+        style={{ padding: '13px 20px 10px', gap: 10 }}
       >
-        <span className="font-fraunces text-2xl font-normal leading-none text-[#28231F]">
-          Teeth Whitening
-        </span>
+        <RotatingText startIndex={1} />
       </div>
     </div>
   )

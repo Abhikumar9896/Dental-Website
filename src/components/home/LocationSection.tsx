@@ -9,7 +9,7 @@ const MAP_SRC =
 
 export default function LocationSection() {
   return (
-    <div className="relative left-0 top-0 w-full flex flex-col items-center pb-10 lg:absolute lg:top-[6781px] lg:pb-16 font-poppins h-loc">
+    <div className="relative left-0 top-0 w-full flex flex-col items-center pb-10 lg:absolute lg:top-[6181px] lg:pb-16 font-poppins h-loc">
       <div className="mb-6 lg:mb-12 flex flex-col items-center text-center max-w-[800px] px-5">
         <h2 className="text-[26px] lg:text-[52px] tracking-tight h-loc-h">
           <span className="text-black font-normal">Contact</span>{' '}

@@ -111,42 +111,51 @@ export default function BookVisitSection() {
                   >
                     Preferred Date & Time <span className="text-[#D35B8F]">*</span>
                   </label>
-                  <div className="relative h-bv-date">
+                  <div className="relative flex items-center h-[42px] w-full rounded-md border border-gray-200 bg-white shadow-sm focus-within:border-[#165ba7] overflow-hidden">
                     <input
                       id="bv-date"
-                      type="datetime-local"
+                      type="date"
                       required
-                      min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
-                      value={formData.date}
-                      onChange={(e) => setDate(e.target.value)}
-                      onClick={(e) => {
-                        const input = e.currentTarget
-                        if ('showPicker' in input) {
-                          try {
-                            ;(input as HTMLInputElement & { showPicker: () => void }).showPicker()
-                          } catch {}
+                      min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)}
+                      value={formData.date ? formData.date.split('T')[0] : ''}
+                      onChange={(e) => {
+                        const datePart = e.target.value
+                        let timePart = formData.date && formData.date.includes('T') ? formData.date.split('T')[1] : ''
+                        
+                        const localToday = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
+                        
+                        if (datePart === localToday) {
+                          const currentTime = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(11, 16)
+                          if (!timePart || timePart < currentTime) {
+                            timePart = currentTime
+                          }
                         }
+
+                        if (datePart && timePart) setDate(`${datePart}T${timePart}`)
+                        else if (datePart) setDate(datePart)
+                        else setDate('')
                       }}
-                      className="h-[42px] w-full rounded-md border border-gray-200 px-4 pr-11 font-poppins text-sm outline-none focus:border-[#165ba7] bg-white shadow-sm text-gray-500 cursor-pointer [&::-webkit-calendar-picker-indicator]:hidden"
+                      className="h-full flex-1 bg-transparent pl-4 pr-2 font-poppins text-sm outline-none text-gray-600 cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-50"
                     />
-                    <div className="pointer-events-none absolute right-3 top-1/2 z-[1] -translate-y-1/2 text-gray-400">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden
-                      >
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                        <line x1="16" y1="2" x2="16" y2="6" />
-                        <line x1="8" y1="2" x2="8" y2="6" />
-                        <line x1="3" y1="10" x2="21" y2="10" />
-                      </svg>
-                    </div>
+                    <div className="w-[1px] h-[60%] bg-gray-200"></div>
+                    <input
+                      id="bv-time"
+                      type="time"
+                      required
+                      min={
+                        formData.date && formData.date.split('T')[0] === new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
+                          ? new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(11, 16)
+                          : undefined
+                      }
+                      value={formData.date && formData.date.includes('T') ? formData.date.split('T')[1] : ''}
+                      onChange={(e) => {
+                        const timePart = e.target.value
+                        const datePart = formData.date ? formData.date.split('T')[0] : new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
+                        if (timePart) setDate(`${datePart}T${timePart}`)
+                        else setDate(datePart)
+                      }}
+                      className="h-full w-[115px] bg-transparent pl-2 pr-4 font-poppins text-sm outline-none text-gray-600 cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-50"
+                    />
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../ui/Reveal'
 import { BOOK_APPOINTMENT_TO } from '../ui/links'
+import { scrollToId } from '../../utils/scroll'
 
 export default function HorizontalDoctorCard({
   id,
@@ -127,6 +128,12 @@ export default function HorizontalDoctorCard({
       <div className="mt-auto flex flex-col items-start pt-1">
         <Link
           to={BOOK_APPOINTMENT_TO}
+          onClick={(e) => {
+            if (window.location.pathname === '/') {
+              e.preventDefault()
+              scrollToId('book-appointment')
+            }
+          }}
           className="flex items-center gap-1.5 text-[#C1497D] hover:text-[#a86a8a] font-poppins text-[13px] font-bold cursor-pointer group/btn transition-colors"
         >
           Book Appointment

@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PageHero from '../components/ui/PageHero'
 import HeroButton from '../components/ui/HeroButton'
 import { BOOK_APPOINTMENT_TO } from '../components/ui/links'
@@ -15,12 +14,12 @@ const DOCTORS_DATA = {
       {
         n: '01',
         title: 'Single Sitting Painless Root Canal Treatment (RCT)',
-        link: '/services#catalogue',
+        link: '/services?item=SINGLE SITTING RCT#catalogue',
       },
-      { n: '02', title: 'Microscopic Root Canal Treatment (RCT)', link: '/services#catalogue' },
-      { n: '03', title: 'Re-RCT Treatment', link: '/services#catalogue' },
-      { n: '04', title: 'Smile Designing' },
-      { n: '05', title: 'Cosmetic Treatments' },
+      { n: '02', title: 'Microscopic Root Canal Treatment (RCT)', link: '/services?category=Single Sitting RCT&item=SINGLE SITTING RCT&subtype=MICROSCOPIC RCT#catalogue' },
+      { n: '03', title: 'Re-RCT Treatment', link: '/services?category=Single Sitting RCT&item=SINGLE SITTING RCT&subtype=RE-RCT#catalogue' },
+      { n: '04', title: 'Smile Designing', link: '/services?item=VENEERS#catalogue' },
+      { n: '05', title: 'Cosmetic Treatments', link: '/services?item=COSMETIC FILLINGS#catalogue' },
     ],
     name: 'Dr. Deepika Singhal',
     pronoun: 'Her',
@@ -71,15 +70,15 @@ const DOCTORS_DATA = {
     id: 'aj',
     initials: 'AJ',
     specialisations: [
-      { n: '01', title: 'Full Mouth Rehabilitation', link: '/services#catalogue' },
-      { n: '02', title: 'Full Mouth Implants', link: '/services#catalogue' },
+      { n: '01', title: 'Full Mouth Rehabilitation', link: '/services?item=FULL MOUTH RECONSTRUCTION#catalogue' },
+      { n: '02', title: 'Full Mouth Implants', link: '/services?category=Implants&item=IMPLANTS&subtype=FULL MOUTH IMPLANTS#catalogue' },
       {
         n: '03',
         title: 'Single/Multiple Tooth Replacements With Implants',
-        link: '/services#catalogue',
+        link: '/services?category=Implants&item=IMPLANTS&subtype=SINGLE TOOTH IMPLANTS#catalogue',
       },
-      { n: '04', title: 'Aligners' },
-      { n: '05', title: 'Braces' },
+      { n: '04', title: 'Aligners', link: '/services?category=Braces&item=BRACES&subtype=TEETH ALIGNERS#catalogue' },
+      { n: '05', title: 'Braces', link: '/services?item=BRACES#catalogue' },
     ],
     name: 'Dr. Abhinav Jain',
     pronoun: 'His',
@@ -138,26 +137,6 @@ export default function DoctorProfile() {
     path: '/doctors',
     image: `${SITE_URL}/images/about/docprofile.webp`,
   })
-  const location = useLocation()
-
-  const getInitialTab = (): DoctorId => {
-    const hash = location.hash.replace('#', '') as DoctorId
-    if (Object.keys(DOCTORS_DATA).includes(hash)) {
-      return hash
-    }
-    return 'ds'
-  }
-
-  const [activeTab, setActiveTab] = useState<DoctorId>(getInitialTab())
-
-  useEffect(() => {
-    const hash = location.hash.replace('#', '') as DoctorId
-    if (Object.keys(DOCTORS_DATA).includes(hash)) {
-      setActiveTab(hash)
-    }
-  }, [location.hash])
-
-  const activeDoctor = DOCTORS_DATA[activeTab]
 
   return (
     <div className="w-full bg-white font-poppins overflow-x-hidden h-dp-page">
@@ -178,42 +157,14 @@ export default function DoctorProfile() {
           <HeroButton to="/services#catalogue" text="See treatments" variant="outline" />
         </PageHero>
 
-        <div
-          id={activeTab}
-          className="relative z-30 mt-8 lg:mt-16 flex flex-col w-full max-w-[1210px] lg:w-[1210px] gap-4 lg:gap-6 px-5 lg:px-0 scroll-mt-28 lg:scroll-mt-32 h-dp-tabs"
-        >
-          <Reveal
-            y={20}
-            duration={0.6}
-            className="flex flex-row flex-wrap items-stretch gap-2.5 lg:gap-4 w-full h-dp-tablist"
-          >
-            {(Object.keys(DOCTORS_DATA) as DoctorId[]).map((id) => {
-              const doctor = DOCTORS_DATA[id]
-              return (
-                <button
-                  key={id}
-                  onClick={() => setActiveTab(id)}
-                  className={`flex items-center gap-2.5 lg:gap-3 border-[2px] rounded-full p-1.5 pr-3 lg:pr-6 transition-all flex-1 min-w-0 lg:flex-none lg:w-auto ${activeTab === id ? 'border-[#165ba7] bg-gray-100 shadow-sm' : 'border-transparent bg-gray-100 hover:bg-gray-200 opacity-90'}`}
-                >
-                  <div className="bg-[#165ba7] text-white rounded-full w-[34px] h-[34px] lg:w-[38px] lg:h-[38px] flex items-center justify-center text-sm font-bold shrink-0">
-                    {doctor.initials}
-                  </div>
-                  <div className="flex flex-col text-left min-w-0">
-                    <span className="font-poppins text-[#28231F] font-bold text-[12px] lg:text-[13px] leading-tight truncate lg:whitespace-normal">
-                      {doctor.name}
-                    </span>
-                    <span className="font-poppins text-[8px] lg:text-[9px] text-[#767676] uppercase tracking-[0.04em] mt-0.5 font-medium leading-snug line-clamp-2 lg:line-clamp-none">
-                      {doctor.tabTitle}
-                    </span>
-                  </div>
-                </button>
-              )
-            })}
-          </Reveal>
-
-          <div className="flex w-full flex-col lg:flex-row overflow-visible items-center mt-6 lg:mt-10 gap-8 lg:gap-0 h-dp-intro">
-            <Reveal
-              key={activeTab}
+        <div className="relative z-30 mt-8 lg:mt-16 flex flex-col w-full max-w-[1210px] lg:w-[1210px] gap-8 lg:gap-12 px-5 lg:px-0 h-dp-tabs">
+          {(['ds', 'aj'] as DoctorId[]).map((doctorId, docIndex) => {
+            const activeDoctor = DOCTORS_DATA[doctorId]
+            return (
+              <div key={doctorId} id={doctorId} className="flex flex-col w-full scroll-mt-28 lg:scroll-mt-32">
+                <div className={`flex w-full flex-col lg:flex-row overflow-visible items-center gap-8 lg:gap-0 h-dp-intro ${docIndex !== 0 ? 'pt-8 lg:pt-12 border-t border-gray-100' : ''}`}>
+                  <Reveal
+                    key={doctorId}
               x={-40}
               y={0}
               duration={0.7}
@@ -235,7 +186,7 @@ export default function DoctorProfile() {
             </Reveal>
 
             <Reveal
-              key={activeTab + 'info'}
+              key={doctorId + 'info'}
               x={40}
               y={0}
               duration={0.7}
@@ -275,8 +226,6 @@ export default function DoctorProfile() {
               </div>
             </Reveal>
           </div>
-        </div>
-
         <div className="w-full max-w-[1210px] lg:w-[1210px] mt-12 lg:mt-20 flex flex-col px-5 lg:px-0 h-dp-about">
           <Reveal y={24} duration={0.7} className="flex flex-col">
             <SectionPill variant="solid">In {activeDoctor.pronoun} Own Practice</SectionPill>
@@ -292,7 +241,7 @@ export default function DoctorProfile() {
               const isLeft = index % 2 === 0
               return (
                 <Reveal
-                  key={activeTab + item.n}
+                  key={doctorId + item.n}
                   y={30}
                   delay={Math.min(index * 0.08, 0.3)}
                   duration={0.6}
@@ -374,11 +323,11 @@ export default function DoctorProfile() {
           id="specialisations"
           className="mt-8 lg:mt-12 w-full flex justify-center scroll-mt-8 px-5 lg:px-0"
         >
-          <div className="flex w-full max-w-[1280px] lg:w-[1280px] bg-[#F9F4F1] rounded-[20px] lg:rounded-[26px] py-8 lg:py-14 px-4 sm:px-6 lg:px-0 flex-col items-center gap-6 lg:gap-10 h-dp-spec">
+          <div className="flex w-full max-w-[1280px] lg:w-[1280px] bg-[#F9F4F1] rounded-[20px] lg:rounded-[26px] py-8 lg:py-14 px-4 sm:px-6 lg:px-12 xl:px-16 flex-col items-center gap-6 lg:gap-10 h-dp-spec">
             <Reveal
               y={24}
               duration={0.7}
-              className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col gap-2 px-1 lg:px-0"
+              className="flex w-full max-w-[1120px] flex-col gap-2 px-1 lg:px-0"
             >
               <SectionPill>FOCUS AREAS</SectionPill>
               <h2 className="font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-tight lg:leading-none text-[#28231F]">
@@ -387,7 +336,7 @@ export default function DoctorProfile() {
             </Reveal>
 
             <Stagger
-              className="flex w-full max-w-[1239px] lg:w-[1239px] flex-col mt-2 lg:mt-4 h-dp-spec-in"
+              className="flex w-full max-w-[1120px] flex-col mt-2 lg:mt-4 h-dp-spec-in"
               gap={0.1}
             >
               {activeDoctor.specialisations.map((card, index) => {
@@ -439,66 +388,70 @@ export default function DoctorProfile() {
           </div>
         </div>
 
-        {activeTab === 'ds' && (
-          <div className="mt-10 lg:mt-12 w-full flex justify-center mb-10 lg:mb-16 px-5 lg:px-0">
-            <div className="w-full max-w-[1239px] lg:w-[1239px] flex flex-col gap-6 lg:gap-10">
-              <Reveal y={24} duration={0.7} className="flex flex-col gap-3 pt-4 lg:pt-8">
-                <SectionPill>RECOGNITION</SectionPill>
-                <h2 className="font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-tight lg:leading-none text-[#28231F]">
-                  Awards
-                </h2>
-              </Reveal>
+              {doctorId === 'ds' && (
+                <div className="mt-10 lg:mt-12 w-full flex justify-center mb-4 lg:mb-6">
+                  <div className="w-full max-w-[1239px] lg:w-[1239px] flex flex-col gap-6 lg:gap-10">
+                    <Reveal y={24} duration={0.7} className="flex flex-col gap-3 pt-4 lg:pt-8">
+                      <SectionPill>RECOGNITION</SectionPill>
+                      <h2 className="font-fraunces text-[26px] sm:text-[30px] lg:text-[36px] font-bold leading-tight lg:leading-none text-[#28231F]">
+                        Awards
+                      </h2>
+                    </Reveal>
 
-              <div className="flex w-full flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 h-dp-award">
-                <Reveal
-                  x={-40}
-                  y={0}
-                  duration={0.7}
-                  className="w-full lg:w-auto flex justify-center"
-                >
-                  <img
-                    key={activeDoctor.id + 'award'}
-                    src={activeDoctor.award.image}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full max-w-[320px] sm:max-w-[400px] lg:w-[480px] h-auto shrink-0 h-dp-award-img"
-                    alt="Award"
-                  />
-                </Reveal>
+                    <div className="flex w-full flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 h-dp-award">
+                      <Reveal
+                        x={-40}
+                        y={0}
+                        duration={0.7}
+                        className="w-full lg:w-auto flex justify-center"
+                      >
+                        <img
+                          key={activeDoctor.id + 'award'}
+                          src={activeDoctor.award.image}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full max-w-[320px] sm:max-w-[400px] lg:w-[480px] h-auto shrink-0 h-dp-award-img"
+                          alt="Award"
+                        />
+                      </Reveal>
 
-                <div className="hidden lg:block w-[1px] h-[266px] bg-[#D5EAE3] shrink-0 mx-12 h-dp-award-line" />
+                      <div className="hidden lg:block w-[1px] h-[266px] bg-[#D5EAE3] shrink-0 mx-12 h-dp-award-line" />
 
-                <Reveal
-                  x={40}
-                  y={0}
-                  duration={0.7}
-                  delay={0.15}
-                  className="flex flex-col flex-1 w-full max-w-[616px]"
-                >
-                  <div className="flex items-center">
-                    <SectionPill>{activeDoctor.award.pill}</SectionPill>
+                      <Reveal
+                        x={40}
+                        y={0}
+                        duration={0.7}
+                        delay={0.15}
+                        className="flex flex-col flex-1 w-full max-w-[616px]"
+                      >
+                        <div className="flex items-center">
+                          <SectionPill>{activeDoctor.award.pill}</SectionPill>
+                        </div>
+                        <div className="mt-4 lg:mt-6 flex items-start">
+                          <h3 className="font-fraunces text-[24px] sm:text-[28px] lg:text-[36px] font-bold text-[#28231F] leading-[1.2]">
+                            {activeDoctor.award.title}
+                          </h3>
+                        </div>
+                        <div className="mt-3 lg:mt-4">
+                          <p className="font-poppins text-[14px] lg:text-[16px] leading-[1.7] text-[#28231F]/90 font-medium">
+                            {activeDoctor.award.desc}
+                          </p>
+                        </div>
+                        <HeroButton
+                          to={activeDoctor.award.buttonLink}
+                          text={activeDoctor.award.buttonText}
+                          className="mt-6 lg:mt-8 !h-[44px]"
+                        />
+                      </Reveal>
+                    </div>
                   </div>
-                  <div className="mt-4 lg:mt-6 flex items-start">
-                    <h3 className="font-fraunces text-[24px] sm:text-[28px] lg:text-[36px] font-bold text-[#28231F] leading-[1.2]">
-                      {activeDoctor.award.title}
-                    </h3>
-                  </div>
-                  <div className="mt-3 lg:mt-4">
-                    <p className="font-poppins text-[14px] lg:text-[16px] leading-[1.7] text-[#28231F]/90 font-medium">
-                      {activeDoctor.award.desc}
-                    </p>
-                  </div>
-                  <HeroButton
-                    to={activeDoctor.award.buttonLink}
-                    text={activeDoctor.award.buttonText}
-                    className="mt-6 lg:mt-8 !h-[44px]"
-                  />
-                </Reveal>
-              </div>
+                </div>
+              )}
             </div>
-          </div>
-        )}
+          )
+        })}
       </div>
     </div>
+  </div>
   )
 }
