@@ -61,9 +61,9 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
 
       <div className="absolute left-[910px] top-[74px] z-[1] h-[280px] w-[280px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_12px_32px_rgba(0,0,0,0.15)] h-cta-blob">
         <img
-          src={`${IMG}/cta-patient-new.webp`}
+          src="/images/treatment-images/chatgpt-team.webp"
           alt="Happy Patient"
-          className="h-full w-full object-cover object-left"
+          className="h-full w-full object-cover object-center scale-[1.3] -translate-y-8 translate-x-4"
           loading="lazy"
         />
       </div>

@@ -87,6 +87,10 @@ const treatmentImages = [
 ]
 
 const galleryImages = [
+  { src: '/images/treatment-images/doc1.webp', category: 'other' },
+  { src: '/images/treatment-images/doc2.webp', category: 'other' },
+  { src: '/images/treatment-images/doc3.webp', category: 'other' },
+  { src: '/images/treatment-images/doc4.webp', category: 'other' },
   { src: '/images/gallery/doctor-patient-2.webp', category: 'patient' },
   { src: '/images/gallery/clinic-machine-1.webp', category: 'clinic' },
   { src: '/images/gallery/clinic-machine-10.webp', category: 'clinic' },
