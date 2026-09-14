@@ -95,7 +95,7 @@ const routes = [
     description:
       'Read real patient reviews and video testimonials for Dental Esthetique, Noida. See why patients trust us for painless root canals, implants and smile makeovers.',
     image: '/images/home/hero1.webp',
-    preloads: [],
+    preloads: [{ href: '/images/home/hero1.webp', as: 'image', fetchpriority: 'high' }],
     schema: 'dentist',
   },
   {
@@ -105,7 +105,7 @@ const routes = [
     description:
       'Browse real patient smile transformations and clinic photos from Dental Esthetique, Noida - root canals, implants, smile designing, veneers and more.',
     image: '/images/gallery/image.webp',
-    preloads: [],
+    preloads: [{ href: '/images/gallery/image.webp', as: 'image', fetchpriority: 'high' }],
     schema: 'dentist',
   },
 ]

@@ -7,6 +7,8 @@ export default function SpecializedTeam() {
         src="/images/about/team-2.webp"
         sizes="100vw"
         alt="Specialized Team"
+        width={1536}
+        height={1024}
         loading="lazy"
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-left z-0"

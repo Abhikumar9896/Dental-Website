@@ -28,6 +28,9 @@ export default function GallerySection() {
           <img
             src={`${IMG}/gallery-1-1b2b07.webp`}
             alt=""
+            width={429}
+            height={608}
+            decoding="async"
             className="h-full w-full object-cover object-[center_15%] lg:object-center"
             loading="lazy"
           />
@@ -39,6 +42,9 @@ export default function GallerySection() {
               <img
                 src={`${IMG}/gallery-2-1cd89a.webp`}
                 alt=""
+                width={631}
+                height={314}
+                decoding="async"
                 className="h-full w-full object-cover object-[center_20%] lg:object-center"
                 loading="lazy"
               />
@@ -49,6 +55,9 @@ export default function GallerySection() {
                 <img
                   src={`${IMG}/gallery-3-717ab4.webp`}
                   alt=""
+                  width={309}
+                  height={273}
+                  decoding="async"
                   className="h-full w-full object-cover object-[center_25%] lg:object-center"
                   loading="lazy"
                 />
@@ -57,6 +66,9 @@ export default function GallerySection() {
                 <img
                   src={`${IMG}/hero-clinic.webp`}
                   alt="Dental Clinic Interior"
+                  width={310}
+                  height={273}
+                  decoding="async"
                   className="h-full w-full object-cover object-center"
                   loading="lazy"
                 />

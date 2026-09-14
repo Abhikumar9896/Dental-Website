@@ -63,7 +63,7 @@ function HeroImageCollage({ images }: { images: string[] }) {
                 key={`col${colIdx + 1}-${idx}`}
                 className="w-full h-auto shrink-0 rounded-[20px] overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.08)] border-[3px] border-white"
               >
-                <img src={src} alt="" className="w-full h-auto object-cover block" />
+                <img src={src} alt="" loading="lazy" decoding="async" className="w-full h-auto object-cover block" />
               </div>
             ))}
           </div>

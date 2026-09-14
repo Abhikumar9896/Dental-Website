@@ -41,13 +41,15 @@ function RotatingText({ startIndex = 0 }: { startIndex?: number }) {
 export default function ShowcaseSection() {
   return (
     <div className="relative left-0 top-0 h-auto w-full overflow-hidden lg:absolute lg:top-[3395px] lg:h-[840px] lg:w-[1440px] h-shc">
-      <img
-        src={`${IMG}/bgblue.webp`}
-        alt=""
-        loading="lazy"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+          <img
+            src={`${IMG}/bgblue.webp`}
+            alt=""
+            width={1440}
+            height={840}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
 
       <Reveal
         y={40}
@@ -95,6 +97,9 @@ export default function ShowcaseSection() {
           <img
             src={`${IMG}/teeth.webp`}
             alt=""
+            width={280}
+            height={200}
+            decoding="async"
             className="pointer-events-none absolute z-[1] hidden max-w-none object-contain lg:block h-shc-f1-desk-img"
             loading="lazy"
             style={{
@@ -113,6 +118,9 @@ export default function ShowcaseSection() {
         <img
           src={`${IMG}/avatar-circle-45d0fa.webp`}
           alt=""
+          width={98}
+          height={98}
+          decoding="async"
           className="absolute left-[63px] top-[175px] z-20 h-[98px] w-[98px] rounded-full object-cover shadow-[0px_8px_20px_rgba(0,0,0,0.14)]"
           loading="lazy"
         />
@@ -191,6 +199,8 @@ export default function ShowcaseSection() {
           <img
             src={`${IMG}/loyalty-ring.svg?v=6`}
             alt=""
+            width={145}
+            height={144}
             loading="lazy"
             decoding="async"
             className="pointer-events-none absolute left-[223px] top-[51px] z-[1] h-[144px] w-[145px]"
@@ -213,6 +223,9 @@ export default function ShowcaseSection() {
         <img
           src={`${IMG}/clinic-row-60cc89.webp`}
           alt=""
+          width={268}
+          height={146}
+          decoding="async"
           className="absolute left-[420px] top-[668px] z-[3] h-[146px] w-[268px] rounded-xl border border-white object-cover"
           loading="lazy"
         />
@@ -239,6 +252,9 @@ export default function ShowcaseSection() {
           <img
             src={`${IMG}/smile-designing.webp`}
             alt=""
+            width={228}
+            height={127}
+            decoding="async"
             className="relative lg:absolute left-0 lg:left-[25px] top-auto lg:top-[93px] z-[1] mt-3 lg:mt-0 h-[110px] lg:h-[127px] w-full lg:w-[228px] rounded-xl object-cover"
             loading="lazy"
           />
