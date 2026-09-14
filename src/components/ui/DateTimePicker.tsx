@@ -169,11 +169,26 @@ export default function DateTimePicker({
     let h12 = timeH12, min = timeMin, ampm = timeAmpm
 
     if (!isClinicH24Valid(to24(h12, ampm), dw)) {
-      // Reset to 10:00 AM — first valid clinic slot
       h12 = 10; min = 0; ampm = 'AM'
       setTimeH12(10)
       setTimeMin(0)
       setTimeAmpm('AM')
+    }
+
+    if (minParsed && y === minParsed.year && mo === minParsed.month && d === minParsed.day) {
+      const h24 = to24(h12, ampm)
+      if (h24 < minParsed.hour24 || (h24 === minParsed.hour24 && min < minParsed.minute)) {
+        h12 = minParsed.hour12; min = minParsed.minute; ampm = minParsed.ampm
+        setTimeH12(minParsed.hour12)
+        setTimeMin(minParsed.minute)
+        setTimeAmpm(minParsed.ampm)
+        if (!isClinicH24Valid(to24(h12, ampm), dw)) {
+          h12 = 10; min = 0; ampm = 'AM'
+          setTimeH12(10)
+          setTimeMin(0)
+          setTimeAmpm('AM')
+        }
+      }
     }
 
     emit(y, mo, d, h12, min, ampm)
@@ -181,7 +196,16 @@ export default function DateTimePicker({
 
   function handleHour(h: number) {
     setTimeH12(h)
-    if (parsed) emit(parsed.year, parsed.month, parsed.day, h, timeMin, timeAmpm)
+    if (parsed) {
+      const h24 = to24(h, timeAmpm)
+      let min = timeMin
+      if (minParsed && parsed.year === minParsed.year && parsed.month === minParsed.month && parsed.day === minParsed.day) {
+        if (h24 < minParsed.hour24) min = 59
+        else if (h24 === minParsed.hour24 && min < minParsed.minute) min = minParsed.minute
+      }
+      setTimeMin(min)
+      emit(parsed.year, parsed.month, parsed.day, h, min, timeAmpm)
+    }
   }
 
   function handleMinute(m: number) {
@@ -216,6 +240,18 @@ export default function DateTimePicker({
            finalAp = 'AM'
          }
       }
+
+      if (minParsed && parsed.year === minParsed.year && parsed.month === minParsed.month && parsed.day === minParsed.day) {
+        if (h24 < minParsed.hour24) {
+          h24 = minParsed.hour24
+          h12 = h24 === 0 ? 12 : h24 > 12 ? h24 - 12 : h24
+          finalAp = h24 >= 12 ? 'PM' : 'AM'
+          m = minParsed.minute
+        } else if (h24 === minParsed.hour24 && m < minParsed.minute) {
+          m = minParsed.minute
+        }
+      }
+
       setTimeH12(h12)
       setTimeMin(m)
       setTimeAmpm(finalAp)
@@ -230,6 +266,11 @@ export default function DateTimePicker({
     const y = now.getFullYear()
     const mo = now.getMonth() + 1
     const d = now.getDate()
+
+    if (minParsed && (y < minParsed.year || (y === minParsed.year && (mo < minParsed.month || (mo === minParsed.month && d < minParsed.day))))) {
+      return
+    }
+
     let h24 = now.getHours()
     let min = now.getMinutes()
     const dw = now.getDay()
@@ -237,6 +278,17 @@ export default function DateTimePicker({
     if (!isClinicH24Valid(h24, dw)) {
       h24 = 10
       min = 0
+    }
+
+    if (minParsed && y === minParsed.year && mo === minParsed.month && d === minParsed.day) {
+      if (h24 < minParsed.hour24 || (h24 === minParsed.hour24 && min < minParsed.minute)) {
+        h24 = minParsed.hour24
+        min = minParsed.minute
+        if (!isClinicH24Valid(h24, dw)) {
+          h24 = 10
+          min = 0
+        }
+      }
     }
     
     onChange(buildVal(y, mo, d, h24, min))
