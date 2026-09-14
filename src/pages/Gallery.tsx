@@ -74,16 +74,16 @@ function HeroImageCollage({ images }: { images: string[] }) {
 }
 
 const treatmentImages = [
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.52.08 PM.jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.04 PM (1).jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 1.04.56 PM.jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM (1).jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM.jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM (2).jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.04 PM.jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM (2).jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM.jpeg',
-  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM (1).jpeg',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.52.08 PM.webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.04 PM (1).webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 1.04.56 PM.webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM (1).webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM.webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM (2).webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.04 PM.webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM (2).webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.05 PM.webp',
+  '/images/before-after/WhatsApp Image 2026-09-01 at 12.13.06 PM (1).webp',
 ]
 
 const galleryImages = [
@@ -92,9 +92,9 @@ const galleryImages = [
   { src: '/images/gallery/clinic-machine-10.webp', category: 'clinic' },
   { src: '/images/gallery/Clinic machine 4.webp', category: 'clinic' },
   { src: '/images/gallery/clinic machine 10 (1).webp', category: 'clinic' },
-  { src: '/images/gallery/gallery-1.jpg', category: 'patient' },
-  { src: '/images/gallery/gallery-2.jpg', category: 'patient' },
-  { src: '/images/gallery/clinic-machine-2.jpg', category: 'clinic' },
+  { src: '/images/gallery/gallery-1.webp', category: 'patient' },
+  { src: '/images/gallery/gallery-2.webp', category: 'patient' },
+  { src: '/images/gallery/clinic-machine-2.webp', category: 'clinic' },
   { src: '/images/gallery/clinic-machine-3.webp', category: 'clinic' },
   { src: '/images/gallery/clinic-machine-5.webp', category: 'clinic' },
   { src: '/images/gallery/clinic-machine-9.webp', category: 'clinic' },

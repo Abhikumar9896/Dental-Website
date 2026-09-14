@@ -160,6 +160,16 @@ export default function Services() {
                       } else {
                         setExpandedSubtypes([])
                       }
+                      
+                      if (willExpand) {
+                        setTimeout(() => {
+                          const el = document.getElementById(`treatment-${item.title}`)
+                          if (el) {
+                            const y = el.getBoundingClientRect().top + window.scrollY - 120
+                            window.scrollTo({ top: y, behavior: 'smooth' })
+                          }
+                        }, 300)
+                      }
                     }}
                     onMouseEnter={() => {
                       const img = new Image()
@@ -233,7 +243,7 @@ export default function Services() {
                                         src={sub.image || `/treatment/${encodeURIComponent(sub.title)}.webp`}
                                         className={`shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0 rounded-[12px] ${
                                           (sub as any).isVerticalImage
-                                            ? 'w-full max-w-[150px] lg:w-[130px] h-auto object-contain max-h-[250px]'
+                                            ? 'w-full max-w-[250px] lg:w-[250px] h-auto object-contain max-h-[250px]'
                                             : 'w-full max-w-[300px] lg:w-[260px] h-auto aspect-[300/160] lg:h-[140px] object-cover'
                                         }`}
                                         alt={sub.title}
@@ -264,8 +274,12 @@ export default function Services() {
                       ) : (
                         <div className="flex flex-col lg:flex-row gap-5 lg:gap-[74px]">
                           <img
-                            src={(item as any).image || `/treatment/${encodeURIComponent(item.title)}.webp`}
-                            className="w-full max-w-[300px] lg:w-[300px] h-auto aspect-[300/160] lg:h-[160px] object-cover rounded-[14px] lg:rounded-[16px] shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0"
+                            src={item.image || `/treatment/${encodeURIComponent(item.title)}.webp`}
+                            className={`shrink-0 bg-[#F3F4F6] mx-auto lg:mx-0 rounded-[14px] lg:rounded-[16px] ${
+                              item.isVerticalImage
+                                ? 'w-full max-w-[250px] lg:w-[250px] h-auto object-contain max-h-[300px]'
+                                : 'w-full max-w-[300px] lg:w-[300px] h-auto aspect-[300/160] lg:h-[160px] object-cover'
+                            }`}
                             alt={item.title}
                             onError={(e) => {
                               e.currentTarget.style.display = 'none'

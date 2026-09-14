@@ -24,11 +24,11 @@ export const homeDoctors = [
     role: 'Orthodontist & Implantologist',
     description:
       'Experienced Orthodontist and Implantologist dedicated to transforming smiles through advanced orthodontics, dental implants and patient-focused treatment planning.',
-    imgSrc: '/images/home/75524db1b2dcef952c107879077fccb06763426e.webp',
+    imgSrc: '/images/treatment-images/dr-abhinav-jain-new.webp',
     colorScheme: 'pink',
     imagePosition: 'right',
 
-    imgObjectPosition: 'object-[center_28%] lg:object-[center_30%]',
+    imgObjectPosition: 'object-center lg:object-center',
     bulletPoints: [
       'B.D.S., M.D.S.',
       '18+ Years of Clinical Experience',

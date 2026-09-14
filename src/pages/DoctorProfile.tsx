@@ -83,8 +83,8 @@ const DOCTORS_DATA = {
     name: 'Dr. Abhinav Jain',
     pronoun: 'His',
     tabTitle: 'Orthodontist, Implantologist',
-    image: '/images/about/75524db1b2dcef952c107879077fccb06763426e-removebg-preview.webp',
-    imageClass: 'absolute w-[135%] h-[135%] max-w-none object-cover object-top left-0 -top-[25%]',
+    image: '/images/treatment-images/dr-abhinav-jain-new.webp',
+    imageClass: 'absolute w-full h-full object-cover object-top',
     pill: 'Orthodontist & Implantologist',
     desc1:
       'A distinguished Orthodontist, Implantologist and Full Mouth Rehabilitation Specialist with over 18 years of clinical excellence, dedicated to restoring oral health and aesthetics.',

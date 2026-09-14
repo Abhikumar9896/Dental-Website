@@ -61,7 +61,7 @@ export default function AppointmentCta({ top, className = '' }: AppointmentCtaPr
 
       <div className="absolute left-[910px] top-[74px] z-[1] h-[280px] w-[280px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_12px_32px_rgba(0,0,0,0.15)] h-cta-blob">
         <img
-          src={`${IMG}/cta-patient-new.jpeg`}
+          src={`${IMG}/cta-patient-new.webp`}
           alt="Happy Patient"
           className="h-full w-full object-cover object-left"
           loading="lazy"

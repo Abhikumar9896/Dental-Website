@@ -26,13 +26,13 @@ const optimizedVideo = (id: string): TestimonialVideo => ({
 const optimizedVideoJpg = (id: string): TestimonialVideo => ({
   id,
   src: `${VIDEO_BASE}/${id}.mp4`,
-  poster: `${VIDEO_BASE}/${id}.jpg`,
+  poster: `${VIDEO_BASE}/${id}.webp`,
 })
 
 const gallery2Video = (file: string, fit: TestimonialVideo['fit'] = 'cover'): TestimonialVideo => ({
   id: file,
   src: `/gallery2/${file}.MP4`,
-  poster: `/gallery2/${file}.jpg`,
+  poster: `/gallery2/${file}.webp`,
   fit,
 })
 

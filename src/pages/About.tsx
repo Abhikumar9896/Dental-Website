@@ -80,7 +80,7 @@ export default function About() {
                 style={{ boxShadow: '0 0 0 3px rgba(193,135,164,0.4)' }}
               >
                 <img
-                  src={`${IMG}/about-story.jpg`}
+                  src={`${IMG}/about-story.webp`}
                   alt="Dental Esthetique clinic exterior"
                   className="h-full w-full object-cover"
                   loading="lazy"
