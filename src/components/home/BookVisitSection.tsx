@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Reveal, { Stagger, StaggerItem } from '../ui/Reveal'
 import { treatments } from '../../data/treatments'
 import { useAppointmentForm } from '../../hooks/useAppointmentForm'
+import DateTimePicker from '../ui/DateTimePicker'
 
 export default function BookVisitSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -111,52 +112,13 @@ export default function BookVisitSection() {
                   >
                     Preferred Date & Time <span className="text-[#D35B8F]">*</span>
                   </label>
-                  <div className="relative flex items-center h-[42px] w-full rounded-md border border-gray-200 bg-white shadow-sm focus-within:border-[#165ba7] overflow-hidden">
-                    <input
-                      id="bv-date"
-                      type="date"
-                      required
-                      min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)}
-                      value={formData.date ? formData.date.split('T')[0] : ''}
-                      onChange={(e) => {
-                        const datePart = e.target.value
-                        let timePart = formData.date && formData.date.includes('T') ? formData.date.split('T')[1] : ''
-                        
-                        const localToday = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
-                        
-                        if (datePart === localToday) {
-                          const currentTime = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(11, 16)
-                          if (!timePart || timePart < currentTime) {
-                            timePart = currentTime
-                          }
-                        }
-
-                        if (datePart && timePart) setDate(`${datePart}T${timePart}`)
-                        else if (datePart) setDate(datePart)
-                        else setDate('')
-                      }}
-                      className="h-full flex-1 bg-transparent pl-4 pr-2 font-poppins text-sm outline-none text-gray-600 cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-50"
-                    />
-                    <div className="w-[1px] h-[60%] bg-gray-200"></div>
-                    <input
-                      id="bv-time"
-                      type="time"
-                      required
-                      min={
-                        formData.date && formData.date.split('T')[0] === new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
-                          ? new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(11, 16)
-                          : undefined
-                      }
-                      value={formData.date && formData.date.includes('T') ? formData.date.split('T')[1] : ''}
-                      onChange={(e) => {
-                        const timePart = e.target.value
-                        const datePart = formData.date ? formData.date.split('T')[0] : new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10)
-                        if (timePart) setDate(`${datePart}T${timePart}`)
-                        else setDate(datePart)
-                      }}
-                      className="h-full w-[115px] bg-transparent pl-2 pr-4 font-poppins text-sm outline-none text-gray-600 cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-50"
-                    />
-                  </div>
+                  <DateTimePicker
+                    id="bv-date"
+                    value={formData.date}
+                    onChange={setDate}
+                    min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
+                    placeholder="Select date & time"
+                  />
                 </div>
               </div>
 

@@ -47,8 +47,7 @@ const slides = [
     ),
   },
   {
-    image: `/images/about/hero2.webp`,
-    mobileImage: '/images/about/mobile/hero2.webp',
+    image: '/images/about/team-1.webp',
     topLabel: 'Care For Your Smile',
     topLabelColor: 'text-[#A0557A]',
     heading: (
@@ -97,8 +96,7 @@ const slides = [
     ),
   },
   {
-    image: `/images/home/hero3.webp`,
-    mobileImage: '/images/home/mobile/hero3.webp',
+    image: '/images/about/team-3.webp',
     topLabel: 'Care For a Lifetime',
     topLabelColor: 'text-[#A0557A]',
     heading: (
