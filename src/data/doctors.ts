@@ -5,12 +5,12 @@ export const homeDoctors = [
     role: 'Endodontist & Cosmetic Dentist',
     description:
       'Expert Endodontist providing advanced microscopic root canal therapy, aesthetic dentistry and restorative treatments with precision, comfort and exceptional patient care.',
-    imgSrc: '/images/home/e0a9924195fe49bd12e71ddc6eb19b13ace633e8.webp',
+    imgSrc: '/images/treatment-images/dr-deepika-singhal-new.webp',
     colorScheme: 'blue',
     imagePosition: 'left',
 
-    imgObjectPosition: 'object-[center_18%] lg:object-center',
-    imgClassName: 'lg:!top-[-40px] lg:!h-[calc(100%+40px)]',
+    imgObjectPosition: 'object-center lg:object-center',
+    imgClassName: '',
     bulletPoints: [
       'B.D.S., M.D.S. (Endodontist)',
       '18+ Years of Clinical Experience',

@@ -24,8 +24,8 @@ const DOCTORS_DATA = {
     name: 'Dr. Deepika Singhal',
     pronoun: 'Her',
     tabTitle: 'Endodontist, Cosmetic Dentist',
-    image: '/images/home/57dc078b4b52d3c3a7d118abc184bcd908bb21d9.webp',
-    imageClass: 'w-full h-full object-cover object-top scale-[1.05]',
+    image: '/images/treatment-images/dr-deepika-singhal-new.webp',
+    imageClass: 'absolute w-full h-full object-cover object-top',
     pill: 'Endodontist & Cosmetic Dentist',
     desc1:
       'A distinguished Endodontist and Cosmetic Dentist with over 18 years of clinical excellence, renowned for delivering world-class dental care through precision, innovation and uncompromising clinical standards.',
